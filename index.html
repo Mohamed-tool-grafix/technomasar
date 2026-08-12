@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تكنومسار | ألعاب مجانية</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Tahoma,sans-serif;
+  background:#0b1020;
+  color:white;
+}
+
+header{
+  background:#11182b;
+  padding:18px;
+  border-bottom:1px solid #293550;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 18px;
+}
+
+.logo{
+  font-size:27px;
+  font-weight:bold;
+  color:#5ee7ff;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-right:18px;
+}
+
+.hero{
+  padding:70px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#12294b,#29184c);
+}
+
+.hero h1{
+  font-size:55px;
+  margin:10px;
+}
+
+.hero p{
+  color:#c4cede;
+  font-size:18px;
+  line-height:1.8;
+}
+
+.button{
+  display:inline-block;
+  background:#19c7ee;
+  color:#06111d;
+  padding:13px 25px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:15px;
+}
+
+section{
+  padding:45px 0;
+}
+
+h2{
+  font-size:30px;
+}
+
+.search{
+  width:100%;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid #33425f;
+  background:#111a2c;
+  color:white;
+  font-size:16px;
+  margin-bottom:25px;
+}
+
+.games{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:#111a2c;
+  border:1px solid #293853;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.cover{
+  height:160px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:60px;
+  background:linear-gradient(135deg,#1d4d68,#40226b);
+}
+
+.card-content{
+  padding:18px;
+}
+
+.card h3{
+  margin-top:0;
+}
+
+.card p{
+  color:#aebbd0;
+  line-height:1.7;
+}
+
+.download{
+  display:block;
+  text-align:center;
+  background:#19c7ee;
+  color:#06111d;
+  padding:12px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:15px;
+}
+
+.about{
+  background:#0f1728;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#8491a8;
+}
+
+@media(max-width:700px){
+  .games{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  nav a{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">🎮 تكنومسار</div>
+
+<div>
+<a href="#home">الرئيسية</a>
+<a href="#games">الألعاب</a>
+<a href="#about">عن الموقع</a>
+</div>
+
+</nav>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container">
+
+<h1>🎮 تكنومسار</h1>
+
+<p>
+مرحبًا بك في تكنومسار 🚀<br>
+مكان لنشر الألعاب ومشاركتها مع الجميع مجانًا.
+</p>
+
+<a class="button" href="#games">استكشف الألعاب</a>
+
+</div>
+</section>
+
+<section id="games">
+<div class="container">
+
+<h2>🎮 الألعاب</h2>
+
+<input
+class="search"
+id="search"
+type="text"
+placeholder="🔎 ابحث عن لعبة..."
+>
+
+<div class="games" id="gameList">
+
+<div class="card">
+<div class="cover">🚗</div>
+
+<div class="card-content">
+<h3>لعبة السباق</h3>
+
+<p>
+لعبة سباق ممتعة. سيتم وضع لعبتك الحقيقية هنا.
+</p>
+
+<a class="download" href="#">
+📥 تحميل مجاني
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+<div class="cover">⚔️</div>
+
+<div class="card-content">
+<h3>مغامرة الأبطال</h3>
+
+<p>
+لعبة أكشن ومغامرات.
+</p>
+
+<a class="download" href="#">
+📥 تحميل مجاني
+</a>
+
+</div>
+</div>
+
+
+<div class="card">
+<div class="cover">🧩</div>
+
+<div class="card-content">
+<h3>تحدي العقل</h3>
+
+<p>
+لعبة ألغاز وتحديات.
+</p>
+
+<a class="download" href="#">
+📥 تحميل مجاني
+</a>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container">
+
+<h2>ℹ️ عن تكنومسار</h2>
+
+<p>
+تكنومسار هو موقع لنشر الألعاب ومشاركتها مجانًا.
+</p>
+
+</div>
+</section>
+
+<footer>
+© 2026 تكنومسار
+</footer>
+
+
+<script>
+
+const search = document.getElementById("search");
+
+const cards = document.querySelectorAll(".card");
+
+search.addEventListener("input",function(){
+
+let text = search.value.toLowerCase();
+
+cards.forEach(function(card){
+
+if(card.innerText.toLowerCase().includes(text)){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
