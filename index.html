@@ -1,922 +1,1006 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>تكنومسار | 3D Runner</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>تكنومسار | تحميل ألعاب مجانية للكمبيوتر</title>
+
+<meta name="description"
+content="تكنومسار لتحميل الألعاب المجانية للكمبيوتر واكتشاف ألعاب مفتوحة المصدر.">
+
+<meta name="robots" content="index,follow">
+
+<link rel="canonical"
+href="https://mohamed-tool-grafix.github.io/technomasar/">
+
+<meta property="og:title"
+content="تكنومسار | تحميل ألعاب مجانية">
+
+<meta property="og:description"
+content="اكتشف وحمّل ألعاب الكمبيوتر المجانية والمفتوحة المصدر.">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-    overflow:hidden;
-    background:#050816;
-    font-family:Arial,"Segoe UI",sans-serif;
-    color:white;
+    font-family:
+    "Segoe UI",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+    background:#070b18;
+    color:#fff;
+    line-height:1.7;
 }
 
-#game{
-    position:fixed;
-    inset:0;
+a{
+    text-decoration:none;
 }
 
-#ui{
-    position:fixed;
-    top:18px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:10;
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(7,11,24,.92);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+    min-height:75px;
+
     display:flex;
-    gap:12px;
-    direction:rtl;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.box{
-    background:rgba(5,10,25,.82);
-    border:1px solid rgba(97,231,255,.35);
-    backdrop-filter:blur(10px);
-    padding:10px 18px;
-    border-radius:14px;
+.logo{
+    color:#61e7ff;
+    font-size:25px;
+    font-weight:900;
+}
+
+.nav{
+    display:flex;
+    gap:8px;
+}
+
+.nav a{
+    color:#cbd5e1;
+    padding:10px 15px;
+    border-radius:10px;
     font-weight:bold;
 }
 
-#message{
-    position:fixed;
-    inset:0;
-    z-index:20;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(0,0,0,.5);
-}
-
-.panel{
-    width:min(420px,90%);
-    padding:30px;
-    text-align:center;
-    border-radius:25px;
-    background:linear-gradient(145deg,#101c38,#080d1e);
-    border:1px solid #18c5eb;
-    box-shadow:0 20px 70px #000;
-}
-
-.panel h1{
+.nav a:hover{
     color:#61e7ff;
-    font-size:38px;
-    margin-bottom:12px;
+    background:#102033;
 }
 
-.panel p{
-    color:#aebbd0;
-    line-height:1.8;
+/* HERO */
+
+.hero{
+    padding:100px 20px;
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(24,197,235,.18),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 80% 20%,
+        rgba(117,87,255,.20),
+        transparent 35%
+    ),
+
+    linear-gradient(
+        135deg,
+        #0b1933,
+        #211340
+    );
+}
+
+.badge{
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:100px;
+
+    color:#61e7ff;
+
+    border:
+    1px solid rgba(24,197,235,.35);
+
+    background:
+    rgba(24,197,235,.08);
+
     margin-bottom:20px;
 }
 
-button{
-    border:0;
+.hero h1{
+    font-size:
+    clamp(40px,6vw,68px);
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#61e7ff;
+}
+
+.hero p{
+    max-width:750px;
+
+    margin:auto;
+
+    color:#b7c3d7;
+
+    font-size:18px;
+}
+
+.hero-button{
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:14px 28px;
+
     border-radius:13px;
-    padding:13px 28px;
+
     background:#18c5eb;
+
     color:#03111b;
-    font-size:17px;
+
     font-weight:900;
-    cursor:pointer;
+
+    transition:.2s;
 }
 
-button:hover{
+.hero-button:hover{
     background:#61e7ff;
-    transform:translateY(-2px);
+    transform:translateY(-3px);
 }
 
-#gameOver{
-    display:none;
+/* SECTION */
+
+section{
+    padding:75px 0;
 }
 
-#hint{
-    position:fixed;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:10;
-    color:#cbd5e1;
-    background:rgba(0,0,0,.45);
-    padding:9px 16px;
+.title{
+    font-size:35px;
+    margin-bottom:8px;
+}
+
+.description{
+    color:#94a3bd;
+    margin-bottom:30px;
+}
+
+/* SEARCH */
+
+.search{
+    width:100%;
+
+    padding:16px 20px;
+
+    margin-bottom:30px;
+
+    border-radius:13px;
+
+    border:
+    1px solid #263653;
+
+    background:#0d1528;
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+}
+
+.search:focus{
+    border-color:#18c5eb;
+}
+
+/* FILTERS */
+
+.filters{
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:30px;
+}
+
+.filter{
+    border:
+    1px solid #263653;
+
+    background:#0d1528;
+
+    color:#aebbd0;
+
+    padding:9px 17px;
+
+    border-radius:100px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.filter:hover,
+.filter.active{
+    color:#61e7ff;
+    border-color:#18c5eb;
+}
+
+/* GAMES */
+
+.games{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,minmax(0,1fr));
+
+    gap:22px;
+}
+
+.card{
+    overflow:hidden;
+
     border-radius:20px;
-    font-size:14px;
+
+    background:
+    linear-gradient(
+        180deg,
+        #121b31,
+        #0d1527
+    );
+
+    border:
+    1px solid #253454;
+
+    transition:.3s;
 }
+
+.card:hover{
+    transform:translateY(-7px);
+
+    border-color:#18c5eb;
+
+    box-shadow:
+    0 20px 50px
+    rgba(0,0,0,.35);
+}
+
+.cover{
+    height:210px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.cover img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.3s;
+}
+
+.card:hover .cover img{
+    transform:scale(1.06);
+}
+
+.content{
+    padding:20px;
+}
+
+.content h3{
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.category{
+    color:#61e7ff;
+    font-size:13px;
+}
+
+.content p{
+    color:#94a3bd;
+
+    font-size:14px;
+
+    margin:12px 0;
+
+    min-height:70px;
+}
+
+.info{
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#8190a8;
+
+    font-size:13px;
+
+    margin-bottom:15px;
+}
+
+.download{
+    display:block;
+
+    text-align:center;
+
+    padding:12px;
+
+    border-radius:11px;
+
+    background:#18c5eb;
+
+    color:#03111b;
+
+    font-weight:900;
+
+    transition:.2s;
+}
+
+.download:hover{
+    background:#61e7ff;
+}
+
+/* ABOUT */
+
+.about{
+    background:#0b1222;
+
+    border-top:
+    1px solid rgba(255,255,255,.05);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.05);
+}
+
+.about p{
+    max-width:800px;
+
+    color:#aebbd0;
+
+    margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#050914;
+
+    padding:40px 0;
+
+    text-align:center;
+
+    color:#66748b;
+}
+
+footer strong{
+    color:#61e7ff;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .games{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .nav{
+        display:none;
+    }
+
+    .games{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:75px 15px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<div id="game"></div>
+<!-- HEADER -->
 
-<div id="ui">
-    <div class="box">🏆 النقاط: <span id="score">0</span></div>
-    <div class="box">🪙 العملات: <span id="coins">0</span></div>
-</div>
+<header>
 
-<div id="hint">
-    🖱️ حرّك الماوس يمين ويسار للتحرك
-</div>
+<div class="container">
 
-<div id="message">
+<nav class="navbar">
 
-    <div class="panel" id="startPanel">
-        <h1>🏃 Runner 3D</h1>
-        <p>
-            لعبة جري ثلاثية الأبعاد أصلية.
-            تحرك بين المسارات واجمع العملات
-            وتجنب القطارات والعوائق.
-        </p>
+<a href="#" class="logo">
+🎮 تكنومسار
+</a>
 
-        <button onclick="startGame()">
-            ▶ ابدأ اللعب
-        </button>
-    </div>
+<div class="nav">
 
-    <div class="panel" id="gameOver">
-        <h1>💥 انتهت اللعبة</h1>
+<a href="#home">
+الرئيسية
+</a>
 
-        <p>
-            نتيجتك:
-            <strong id="finalScore">0</strong>
-            <br>
-            العملات:
-            <strong id="finalCoins">0</strong>
-        </p>
+<a href="#games">
+الألعاب
+</a>
 
-        <button onclick="startGame()">
-            🔄 العب مرة أخرى
-        </button>
-    </div>
+<a href="#about">
+عن الموقع
+</a>
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="badge">
+🔥 ألعاب مجانية للكمبيوتر
+</div>
+
+<h1>
+حمّل
+<span>ألعابك المفضلة</span>
+بسهولة
+</h1>
+
+<p>
+اكتشف مجموعة من الألعاب المجانية
+والمفتوحة المصدر للكمبيوتر،
+وتعرف على معلومات اللعبة ومتطلبات التشغيل.
+</p>
+
+<a href="#games"
+class="hero-button">
+
+🎮 تصفح الألعاب
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- GAMES -->
+
+<section id="games">
+
+<div class="container">
+
+<h2 class="title">
+🎮 ألعاب الكمبيوتر
+</h2>
+
+<p class="description">
+اختر اللعبة واضغط على زر التحميل.
+</p>
+
+
+<input
+type="search"
+id="search"
+class="search"
+placeholder="🔎 ابحث عن لعبة..."
+autocomplete="off"
+>
+
+
+<div class="filters">
+
+<button
+class="filter active"
+data-category="all">
+
+الكل
+
+</button>
+
+<button
+class="filter"
+data-category="سباق">
+
+🏎️ سباق
+
+</button>
+
+<button
+class="filter"
+data-category="استراتيجية">
+
+⚔️ استراتيجية
+
+</button>
+
+<button
+class="filter"
+data-category="منصات">
+
+🕹️ منصات
+
+</button>
+
+<button
+class="filter"
+data-category="فضاء">
+
+🚀 فضاء
+
+</button>
+
+</div>
+
+
+<div class="games" id="gamesList">
+
+
+<!-- GAME 1 -->
+
+<article
+class="card"
+data-category="سباق"
+data-name="SuperTuxKart">
+
+<div class="cover">
+
+<img
+src="images/supertuxkart.jpg"
+alt="SuperTuxKart"
+loading="lazy">
+
+</div>
+
+<div class="content">
+
+<h3>
+SuperTuxKart
+</h3>
+
+<span class="category">
+🏎️ سباق
+</span>
+
+<p>
+لعبة سباق كارت مجانية
+ومفتوحة المصدر.
+</p>
+
+<div class="info">
+
+<span>
+💾 1.5 GB
+</span>
+
+<span>
+🖥️ Windows
+</span>
+
+</div>
+
+<a
+href="downloads/supertuxkart.zip"
+download
+class="download">
+
+⬇️ تحميل اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- GAME 2 -->
+
+<article
+class="card"
+data-category="استراتيجية"
+data-name="0 A.D.">
+
+<div class="cover">
+
+<img
+src="images/0ad.jpg"
+alt="0 A.D."
+loading="lazy">
+
+</div>
+
+<div class="content">
+
+<h3>
+0 A.D.
+</h3>
+
+<span class="category">
+⚔️ استراتيجية
+</span>
+
+<p>
+لعبة استراتيجية تاريخية
+مجانية ومفتوحة المصدر.
+</p>
+
+<div class="info">
+
+<span>
+💾 2 GB
+</span>
+
+<span>
+🖥️ Windows
+</span>
+
+</div>
+
+<a
+href="downloads/0ad.zip"
+download
+class="download">
+
+⬇️ تحميل اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- GAME 3 -->
+
+<article
+class="card"
+data-category="منصات"
+data-name="SuperTux">
+
+<div class="cover">
+
+<img
+src="images/supertux.jpg"
+alt="SuperTux"
+loading="lazy">
+
+</div>
+
+<div class="content">
+
+<h3>
+SuperTux
+</h3>
+
+<span class="category">
+🕹️ منصات
+</span>
+
+<p>
+لعبة منصات مجانية
+ومفتوحة المصدر.
+</p>
+
+<div class="info">
+
+<span>
+💾 300 MB
+</span>
+
+<span>
+🖥️ Windows
+</span>
+
+</div>
+
+<a
+href="downloads/supertux.zip"
+download
+class="download">
+
+⬇️ تحميل اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- GAME 4 -->
+
+<article
+class="card"
+data-category="فضاء"
+data-name="Endless Sky">
+
+<div class="cover">
+
+<img
+src="images/endless-sky.jpg"
+alt="Endless Sky"
+loading="lazy">
+
+</div>
+
+<div class="content">
+
+<h3>
+Endless Sky
+</h3>
+
+<span class="category">
+🚀 فضاء
+</span>
+
+<p>
+استكشف الفضاء وخض المعارك
+وتاجر بين الكواكب.
+</p>
+
+<div class="info">
+
+<span>
+💾 600 MB
+</span>
+
+<span>
+🖥️ Windows
+</span>
+
+</div>
+
+<a
+href="downloads/endless-sky.zip"
+download
+class="download">
+
+⬇️ تحميل اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+
+<p
+id="noResults"
+style="
+display:none;
+text-align:center;
+padding:40px;
+color:#94a3bd;
+">
+
+😔 لم نجد لعبة مطابقة للبحث.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section
+class="about"
+id="about">
+
+<div class="container">
+
+<h2 class="title">
+🚀 عن تكنومسار
+</h2>
+
+<p>
+تكنومسار موقع عربي لاكتشاف
+الألعاب المجانية والمفتوحة المصدر
+للكمبيوتر.
+</p>
+
+<p>
+نحرص على توفير معلومات واضحة
+عن الألعاب وروابط تحميل قانونية
+للمحتوى الذي نملك حق توزيعه.
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<strong>
+🎮 تكنومسار
+</strong>
+
+<br><br>
+
+تحت إشراف محمد حامد
+
+<br><br>
+
+© 2026 جميع الحقوق محفوظة
+
+</footer>
+
 
 <script>
 
 /* =========================
-   إعداد المشهد
+   SEARCH
 ========================= */
 
-const scene = new THREE.Scene();
+const search =
+document.getElementById("search");
 
-scene.background = new THREE.Color(0x07111f);
+const cards =
+document.querySelectorAll(".card");
 
-scene.fog = new THREE.Fog(
-    0x07111f,
-    20,
-    150
-);
+const filters =
+document.querySelectorAll(".filter");
 
-const camera = new THREE.PerspectiveCamera(
-    60,
-    innerWidth / innerHeight,
-    .1,
-    300
-);
+const noResults =
+document.getElementById("noResults");
 
-camera.position.set(0,5.5,10);
-camera.lookAt(0,1,-15);
-
-const renderer = new THREE.WebGLRenderer({
-    antialias:true
-});
-
-renderer.setPixelRatio(
-    Math.min(devicePixelRatio,2)
-);
-
-renderer.setSize(
-    innerWidth,
-    innerHeight
-);
-
-renderer.shadowMap.enabled = true;
-
-document
-    .getElementById("game")
-    .appendChild(renderer.domElement);
+let currentCategory="all";
 
 
-/* =========================
-   الإضاءة
-========================= */
+function filterGames(){
 
-const ambient = new THREE.HemisphereLight(
-    0x9edfff,
-    0x080b18,
-    2
-);
+    const text =
+    search.value
+    .toLowerCase()
+    .trim();
 
-scene.add(ambient);
+    let visible=0;
 
-const light = new THREE.DirectionalLight(
-    0xffffff,
-    3
-);
+    cards.forEach(card=>{
 
-light.position.set(5,12,10);
+        const name =
+        card.dataset.name
+        .toLowerCase();
 
-light.castShadow = true;
+        const category =
+        card.dataset.category;
 
-scene.add(light);
+        const textMatch =
+        name.includes(text);
 
+        const categoryMatch =
+        currentCategory==="all" ||
+        category===currentCategory;
 
-/* =========================
-   الأرض والسكك
-========================= */
+        if(
+            textMatch &&
+            categoryMatch
+        ){
 
-const road = new THREE.Mesh(
-    new THREE.BoxGeometry(15,.3,180),
-    new THREE.MeshStandardMaterial({
-        color:0x101827
-    })
-);
+            card.style.display="";
 
-road.position.set(0,-.25,-55);
+            visible++;
 
-road.receiveShadow = true;
+        }else{
 
-scene.add(road);
+            card.style.display="none";
 
-
-/* خطوط المسارات */
-
-const laneLines = [];
-
-for(let z=5;z>-160;z-=8){
-
-    [-1.5,1.5].forEach(x=>{
-
-        const line = new THREE.Mesh(
-            new THREE.BoxGeometry(.08,.03,4),
-            new THREE.MeshBasicMaterial({
-                color:0x18c5eb
-            })
-        );
-
-        line.position.set(x,0,z);
-
-        scene.add(line);
-
-        laneLines.push(line);
+        }
 
     });
+
+
+    noResults.style.display =
+    visible===0
+    ? "block"
+    : "none";
 }
 
 
-/* القضبان */
-
-for(let x of [-5.2,-1.7,1.7,5.2]){
-
-    const rail = new THREE.Mesh(
-        new THREE.BoxGeometry(.12,.15,180),
-        new THREE.MeshStandardMaterial({
-            color:0x8899aa,
-            metalness:.8
-        })
-    );
-
-    rail.position.set(x,.05,-55);
-
-    scene.add(rail);
-}
-
-
-/* =========================
-   شخصية اللاعب
-========================= */
-
-const player = new THREE.Group();
-
-const body = new THREE.Mesh(
-    new THREE.BoxGeometry(.8,1.25,.55),
-    new THREE.MeshStandardMaterial({
-        color:0x18c5eb,
-        roughness:.4
-    })
-);
-
-body.position.y=.8;
-
-body.castShadow=true;
-
-player.add(body);
-
-
-/* الرأس */
-
-const head = new THREE.Mesh(
-    new THREE.SphereGeometry(.38,24,24),
-    new THREE.MeshStandardMaterial({
-        color:0xffc49a
-    })
-);
-
-head.position.y=1.7;
-
-head.castShadow=true;
-
-player.add(head);
-
-
-/* الشعر */
-
-const hair = new THREE.Mesh(
-    new THREE.SphereGeometry(.4,20,12),
-    new THREE.MeshStandardMaterial({
-        color:0x171717
-    })
-);
-
-hair.scale.y=.45;
-
-hair.position.y=1.95;
-
-player.add(hair);
-
-
-/* الأرجل */
-
-for(let x of [-.22,.22]){
-
-    const leg = new THREE.Mesh(
-        new THREE.BoxGeometry(.2,.7,.25),
-        new THREE.MeshStandardMaterial({
-            color:0x263b62
-        })
-    );
-
-    leg.position.set(x,.0,0);
-
-    leg.castShadow=true;
-
-    player.add(leg);
-}
-
-player.position.set(0,0,5);
-
-scene.add(player);
-
-
-/* =========================
-   عناصر اللعبة
-========================= */
-
-let obstacles=[];
-let coins=[];
-let trains=[];
-
-const lanes=[-3.4,0,3.4];
-
-let currentLane=1;
-let targetX=0;
-
-let score=0;
-let coinCount=0;
-
-let speed=.45;
-
-let running=false;
-
-let spawnTimer=0;
-
-
-/* =========================
-   إنشاء عملة
-========================= */
-
-function createCoin(){
-
-    const coin = new THREE.Mesh(
-        new THREE.TorusGeometry(
-            .35,
-            .09,
-            12,
-            24
-        ),
-        new THREE.MeshStandardMaterial({
-            color:0xffd21c,
-            emissive:0x8a5b00
-        })
-    );
-
-    coin.rotation.y=Math.PI/2;
-
-    coin.position.set(
-        lanes[
-            Math.floor(Math.random()*3)
-        ],
-        1,
-        -100
-    );
-
-    coin.castShadow=true;
-
-    scene.add(coin);
-
-    coins.push(coin);
-}
-
-
-/* =========================
-   إنشاء حاجز
-========================= */
-
-function createObstacle(){
-
-    const obstacle = new THREE.Mesh(
-        new THREE.BoxGeometry(
-            1.5,
-            1.3,
-            1.3
-        ),
-        new THREE.MeshStandardMaterial({
-            color:0xef4444
-        })
-    );
-
-    obstacle.position.set(
-        lanes[
-            Math.floor(Math.random()*3)
-        ],
-        .65,
-        -100
-    );
-
-    obstacle.castShadow=true;
-
-    scene.add(obstacle);
-
-    obstacles.push(obstacle);
-}
-
-
-/* =========================
-   إنشاء قطار
-========================= */
-
-function createTrain(){
-
-    const train = new THREE.Group();
-
-    const main = new THREE.Mesh(
-        new THREE.BoxGeometry(
-            2.7,
-            2.8,
-            8
-        ),
-        new THREE.MeshStandardMaterial({
-            color:0x7c3aed,
-            metalness:.2
-        })
-    );
-
-    main.position.y=1.4;
-
-    main.castShadow=true;
-
-    train.add(main);
-
-
-    const front = new THREE.Mesh(
-        new THREE.BoxGeometry(
-            2.2,
-            .8,
-            .2
-        ),
-        new THREE.MeshStandardMaterial({
-            color:0x61e7ff,
-            emissive:0x075985
-        })
-    );
-
-    front.position.set(0,1.5,-4.1);
-
-    train.add(front);
-
-    train.position.set(
-        lanes[
-            Math.floor(Math.random()*3)
-        ],
-        0,
-        -120
-    );
-
-    scene.add(train);
-
-    trains.push(train);
-}
-
-
-/* =========================
-   التحكم بالماوس
-========================= */
-
-document.addEventListener(
-    "mousemove",
-    e => {
-
-        if(!running) return;
-
-        const center =
-            innerWidth / 2;
-
-        const difference =
-            e.clientX - center;
-
-        if(difference < -150){
-            currentLane=0;
-        }
-        else if(difference > 150){
-            currentLane=2;
-        }
-        else{
-            currentLane=1;
-        }
-
-        targetX=lanes[currentLane];
-    }
+search.addEventListener(
+    "input",
+    filterGames
 );
 
 
-/* =========================
-   لمس الموبايل
-========================= */
+filters.forEach(button=>{
 
-let touchStartX=0;
+    button.addEventListener(
+        "click",
+        ()=>{
 
-document.addEventListener(
-    "touchstart",
-    e => {
-        touchStartX =
-            e.touches[0].clientX;
-    }
-);
-
-document.addEventListener(
-    "touchend",
-    e => {
-
-        if(!running) return;
-
-        const end =
-            e.changedTouches[0].clientX;
-
-        const diff =
-            end-touchStartX;
-
-        if(diff>50)
-            currentLane=Math.min(
-                2,
-                currentLane+1
+            filters.forEach(
+                b=>b.classList.remove("active")
             );
 
-        if(diff<-50)
-            currentLane=Math.max(
-                0,
-                currentLane-1
-            );
+            button.classList.add("active");
 
-        targetX=lanes[currentLane];
-    }
-);
+            currentCategory =
+            button.dataset.category;
 
+            filterGames();
 
-/* =========================
-   بدء اللعبة
-========================= */
-
-function startGame(){
-
-    obstacles.forEach(x=>scene.remove(x));
-    coins.forEach(x=>scene.remove(x));
-    trains.forEach(x=>scene.remove(x));
-
-    obstacles=[];
-    coins=[];
-    trains=[];
-
-    score=0;
-    coinCount=0;
-    speed=.45;
-    spawnTimer=0;
-
-    currentLane=1;
-    targetX=0;
-
-    player.position.x=0;
-
-    document.getElementById("score")
-        .textContent=0;
-
-    document.getElementById("coins")
-        .textContent=0;
-
-    document.getElementById("message")
-        .style.display="none";
-
-    running=true;
-}
-
-
-/* =========================
-   Game Over
-========================= */
-
-function gameOver(){
-
-    running=false;
-
-    document.getElementById("finalScore")
-        .textContent=Math.floor(score);
-
-    document.getElementById("finalCoins")
-        .textContent=coinCount;
-
-    document.getElementById("gameOver")
-        .style.display="block";
-
-    document.getElementById("startPanel")
-        .style.display="none";
-
-    document.getElementById("message")
-        .style.display="flex";
-}
-
-
-/* =========================
-   التصادم
-========================= */
-
-function collision(a,b){
-
-    const box1 =
-        new THREE.Box3()
-        .setFromObject(a);
-
-    const box2 =
-        new THREE.Box3()
-        .setFromObject(b);
-
-    return box1.intersectsBox(box2);
-}
-
-
-/* =========================
-   تحديث اللعبة
-========================= */
-
-function updateGame(){
-
-    if(!running) return;
-
-
-    /* حركة اللاعب */
-
-    player.position.x +=
-        (targetX-player.position.x)
-        *.16;
-
-
-    /* زيادة السرعة */
-
-    speed += .00035;
-
-    score += speed;
-
-    document.getElementById("score")
-        .textContent=Math.floor(score);
-
-
-    /* Spawn */
-
-    spawnTimer += speed;
-
-    if(spawnTimer>25){
-
-        spawnTimer=0;
-
-        const random =
-            Math.random();
-
-        if(random<.45){
-            createObstacle();
-        }
-        else if(random<.75){
-            createCoin();
-        }
-        else{
-            createTrain();
-        }
-    }
-
-
-    /* تحريك العوائق */
-
-    obstacles.forEach(
-        obstacle => {
-
-            obstacle.position.z += speed;
-
-            obstacle.rotation.y += .01;
-
-            if(collision(
-                player,
-                obstacle
-            )){
-                gameOver();
-            }
         }
     );
 
-
-    /* تحريك القطارات */
-
-    trains.forEach(
-        train => {
-
-            train.position.z +=
-                speed*.85;
-
-            if(collision(
-                player,
-                train
-            )){
-                gameOver();
-            }
-        }
-    );
-
-
-    /* العملات */
-
-    coins.forEach(
-        coin => {
-
-            coin.position.z += speed;
-
-            coin.rotation.x += .08;
-            coin.rotation.z += .05;
-
-            if(collision(
-                player,
-                coin
-            )){
-
-                coinCount++;
-
-                document.getElementById("coins")
-                    .textContent=coinCount;
-
-                coin.position.z=1000;
-            }
-        }
-    );
-
-
-    /* حذف العناصر القديمة */
-
-    obstacles =
-        obstacles.filter(
-            obstacle => {
-
-                if(obstacle.position.z>15){
-
-                    scene.remove(obstacle);
-
-                    return false;
-                }
-
-                return true;
-            }
-        );
-
-
-    trains =
-        trains.filter(
-            train => {
-
-                if(train.position.z>15){
-
-                    scene.remove(train);
-
-                    return false;
-                }
-
-                return true;
-            }
-        );
-
-
-    coins =
-        coins.filter(
-            coin => {
-
-                if(coin.position.z>15){
-
-                    scene.remove(coin);
-
-                    return false;
-                }
-
-                return true;
-            }
-        );
-
-
-    /* حركة خطوط الطريق */
-
-    laneLines.forEach(
-        line => {
-
-            line.position.z += speed;
-
-            if(line.position.z>10)
-                line.position.z=-160;
-        }
-    );
-
-
-    /* اهتزاز بسيط للشخصية */
-
-    player.rotation.z =
-        Math.sin(
-            Date.now()*.008
-        )*.035;
-
-    player.position.y =
-        Math.abs(
-            Math.sin(
-                Date.now()*.012
-            )
-        )*.05;
-
-}
-
-
-/* =========================
-   الكاميرا
-========================= */
-
-function updateCamera(){
-
-    camera.position.x +=
-        (player.position.x-camera.position.x)
-        *.06;
-
-    camera.lookAt(
-        player.position.x,
-        1,
-        -18
-    );
-}
-
-
-/* =========================
-   Loop
-========================= */
-
-function animate(){
-
-    requestAnimationFrame(animate);
-
-    updateGame();
-
-    updateCamera();
-
-    renderer.render(
-        scene,
-        camera
-    );
-}
-
-animate();
-
-
-/* =========================
-   تغيير حجم الشاشة
-========================= */
-
-window.addEventListener(
-    "resize",
-    () => {
-
-        camera.aspect =
-            innerWidth/innerHeight;
-
-        camera.updateProjectionMatrix();
-
-        renderer.setSize(
-            innerWidth,
-            innerHeight
-        );
-
-    }
-);
+});
 
 </script>
 
