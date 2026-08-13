@@ -1,1081 +1,922 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>تكنومسار | ألعاب مجانية وألعاب متصفح</title>
-
-  <meta name="description"
-        content="تكنومسار موقع عربي لاكتشاف الألعاب المجانية والمفتوحة المصدر للكمبيوتر، بالإضافة إلى ألعاب متصفح مجانية يمكنك لعبها مباشرة.">
-
-  <meta name="robots" content="index, follow">
-
-  <meta name="author" content="تكنومسار">
-
-  <meta name="theme-color" content="#070b18">
-
-  <link rel="canonical"
-        href="https://mohamed-tool-grafix.github.io/technomasar/">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-
-  <meta property="og:title"
-        content="تكنومسار | ألعاب مجانية وألعاب متصفح">
-
-  <meta property="og:description"
-        content="اكتشف ألعابًا مجانية ومفتوحة المصدر للكمبيوتر والعب ألعاب متصفح مجانية مباشرة من تكنومسار.">
-
-  <meta property="og:url"
-        content="https://mohamed-tool-grafix.github.io/technomasar/">
-
-  <meta property="og:site_name"
-        content="تكنومسار">
-
-  <meta property="og:locale"
-        content="ar_AR">
-
-  <meta property="og:image"
-        content="https://mohamed-tool-grafix.github.io/technomasar/images/technomasar-cover.jpg">
-
-  <meta property="og:image:alt"
-        content="تكنومسار - ألعاب مجانية وألعاب متصفح">
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card"
-        content="summary_large_image">
-
-  <meta name="twitter:title"
-        content="تكنومسار | ألعاب مجانية وألعاب متصفح">
-
-  <meta name="twitter:description"
-        content="اكتشف ألعاب الكمبيوتر المجانية والمفتوحة المصدر والعب ألعاب المتصفح مباشرة.">
-
-  <meta name="twitter:image"
-        content="https://mohamed-tool-grafix.github.io/technomasar/images/technomasar-cover.jpg">
-
-  <!-- Sitemap -->
-  <link rel="sitemap"
-        type="application/xml"
-        href="https://mohamed-tool-grafix.github.io/technomasar/sitemap.xml">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "تكنومسار",
-    "alternateName": "TechnoMasar",
-    "url": "https://mohamed-tool-grafix.github.io/technomasar/",
-    "description": "موقع عربي لاكتشاف الألعاب المجانية والمفتوحة المصدر وألعاب المتصفح.",
-    "inLanguage": "ar"
-  }
-  </script>
-
-  <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-      background: #070b18;
-      color: white;
-      line-height: 1.7;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    button,
-    input {
-      font-family: inherit;
-    }
-
-    .container {
-      width: min(1150px, 92%);
-      margin: auto;
-    }
-
-    /* HEADER */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-      background: rgba(7, 11, 24, .90);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-
-    .navbar {
-      min-height: 75px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      color: #61e7ff;
-      font-size: 25px;
-      font-weight: 900;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 8px;
-    }
-
-    .nav-links a {
-      color: #cbd5e1;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    .nav-links a:hover {
-      color: #61e7ff;
-      background: rgba(24,197,235,.08);
-    }
-
-    /* HERO */
-
-    .hero {
-      padding: 110px 20px;
-      text-align: center;
-
-      background:
-        radial-gradient(
-          circle at 20% 20%,
-          rgba(24,197,235,.17),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at 80% 20%,
-          rgba(117,87,255,.2),
-          transparent 35%
-        ),
-        linear-gradient(
-          135deg,
-          #0b1933,
-          #211340
-        );
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 16px;
-      border-radius: 100px;
-      background: rgba(24,197,235,.1);
-      border: 1px solid rgba(24,197,235,.3);
-      color: #61e7ff;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 68px);
-      line-height: 1.2;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: #61e7ff;
-    }
-
-    .hero p {
-      max-width: 750px;
-      margin: auto;
-      color: #b7c3d7;
-      font-size: 18px;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 26px;
-      border-radius: 13px;
-      background: #18c5eb;
-      color: #03111b;
-      font-weight: 900;
-      transition: .25s;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-      background: #61e7ff;
-    }
-
-    /* SECTION */
-
-    section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      font-size: 35px;
-      margin-bottom: 8px;
-    }
-
-    .section-description {
-      color: #94a3bd;
-      margin-bottom: 30px;
-    }
-
-    /* SEARCH */
-
-    .search {
-      width: 100%;
-      padding: 16px 20px;
-      margin-bottom: 25px;
-      border-radius: 13px;
-      border: 1px solid #263653;
-      background: #0d1528;
-      color: white;
-      outline: none;
-      font-size: 16px;
-    }
-
-    .search:focus {
-      border-color: #18c5eb;
-    }
-
-    /* FILTERS */
-
-    .filters {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 30px;
-    }
-
-    .filter {
-      padding: 9px 16px;
-      border-radius: 100px;
-      border: 1px solid #263653;
-      background: #0d1528;
-      color: #aebbd0;
-      cursor: pointer;
-    }
-
-    .filter:hover,
-    .filter.active {
-      color: #61e7ff;
-      border-color: #18c5eb;
-      background: rgba(24,197,235,.08);
-    }
-
-    /* GAMES */
-
-    .games {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: linear-gradient(
-        180deg,
-        #121b31,
-        #0d1527
-      );
-
-      border: 1px solid #253454;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: .3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: #18c5eb;
-      box-shadow: 0 20px 45px rgba(0,0,0,.3);
-    }
-
-    .cover {
-      height: 190px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 75px;
-    }
-
-    .cover1 {
-      background: linear-gradient(135deg,#075985,#312e81);
-    }
-
-    .cover2 {
-      background: linear-gradient(135deg,#431407,#581c87);
-    }
-
-    .cover3 {
-      background: linear-gradient(135deg,#14532d,#164e63);
-    }
-
-    .cover4 {
-      background: linear-gradient(135deg,#172554,#581c87);
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card h3 {
-      font-size: 21px;
-      margin-bottom: 6px;
-    }
-
-    .category {
-      color: #61e7ff;
-      font-size: 13px;
-    }
-
-    .card p {
-      color: #94a3bd;
-      font-size: 14px;
-      line-height: 1.9;
-      margin: 12px 0;
-      min-height: 80px;
-    }
-
-    .play-button {
-      display: block;
-      text-align: center;
-      padding: 12px;
-      border-radius: 11px;
-      background: #18c5eb;
-      color: #03111b;
-      font-weight: 900;
-    }
-
-    .play-button:hover {
-      background: #61e7ff;
-    }
-
-    /* BROWSER GAMES */
-
-    .browser-games {
-      background: #0b1222;
-      border-top: 1px solid rgba(255,255,255,.05);
-      border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-
-    .browser-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 20px;
-    }
-
-    .browser-card {
-      background: linear-gradient(
-        145deg,
-        #111c33,
-        #0d1425
-      );
-
-      border: 1px solid #253454;
-      border-radius: 20px;
-      padding: 25px;
-      text-align: center;
-      transition: .3s;
-    }
-
-    .browser-card:hover {
-      transform: translateY(-6px);
-      border-color: #18c5eb;
-    }
-
-    .browser-icon {
-      font-size: 60px;
-      margin-bottom: 10px;
-    }
-
-    .browser-card h3 {
-      margin-bottom: 8px;
-    }
-
-    .browser-card p {
-      color: #94a3bd;
-      font-size: 14px;
-      min-height: 55px;
-      margin-bottom: 15px;
-    }
-
-    .game-start {
-      width: 100%;
-      border: 0;
-      padding: 12px;
-      border-radius: 11px;
-      background: #18c5eb;
-      color: #03111b;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .game-start:hover {
-      background: #61e7ff;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: #0b1222;
-      border-top: 1px solid rgba(255,255,255,.05);
-      border-bottom: 1px solid rgba(255,255,255,.05);
-    }
-
-    .about p {
-      max-width: 800px;
-      color: #aebbd0;
-      margin-bottom: 15px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #050914;
-      padding: 40px 0;
-      text-align: center;
-      color: #66748b;
-    }
-
-    footer strong {
-      color: #61e7ff;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:1000px) {
-
-      .games {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .browser-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-    }
-
-    @media(max-width:650px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .games {
-        grid-template-columns: 1fr;
-      }
-
-      .browser-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding: 75px 15px;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تكنومسار | 3D Runner</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+    overflow:hidden;
+    background:#050816;
+    font-family:Arial,"Segoe UI",sans-serif;
+    color:white;
+}
+
+#game{
+    position:fixed;
+    inset:0;
+}
+
+#ui{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:10;
+    display:flex;
+    gap:12px;
+    direction:rtl;
+}
+
+.box{
+    background:rgba(5,10,25,.82);
+    border:1px solid rgba(97,231,255,.35);
+    backdrop-filter:blur(10px);
+    padding:10px 18px;
+    border-radius:14px;
+    font-weight:bold;
+}
+
+#message{
+    position:fixed;
+    inset:0;
+    z-index:20;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.5);
+}
+
+.panel{
+    width:min(420px,90%);
+    padding:30px;
+    text-align:center;
+    border-radius:25px;
+    background:linear-gradient(145deg,#101c38,#080d1e);
+    border:1px solid #18c5eb;
+    box-shadow:0 20px 70px #000;
+}
+
+.panel h1{
+    color:#61e7ff;
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.panel p{
+    color:#aebbd0;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+button{
+    border:0;
+    border-radius:13px;
+    padding:13px 28px;
+    background:#18c5eb;
+    color:#03111b;
+    font-size:17px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#61e7ff;
+    transform:translateY(-2px);
+}
+
+#gameOver{
+    display:none;
+}
+
+#hint{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:10;
+    color:#cbd5e1;
+    background:rgba(0,0,0,.45);
+    padding:9px 16px;
+    border-radius:20px;
+    font-size:14px;
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<div id="game"></div>
 
-  <div class="container">
+<div id="ui">
+    <div class="box">🏆 النقاط: <span id="score">0</span></div>
+    <div class="box">🪙 العملات: <span id="coins">0</span></div>
+</div>
 
-    <nav class="navbar" aria-label="القائمة الرئيسية">
+<div id="hint">
+    🖱️ حرّك الماوس يمين ويسار للتحرك
+</div>
 
-      <a href="#home"
-         class="logo"
-         aria-label="الصفحة الرئيسية - تكنومسار">
-        🎮 تكنومسار
-      </a>
+<div id="message">
 
-      <div class="nav-links">
+    <div class="panel" id="startPanel">
+        <h1>🏃 Runner 3D</h1>
+        <p>
+            لعبة جري ثلاثية الأبعاد أصلية.
+            تحرك بين المسارات واجمع العملات
+            وتجنب القطارات والعوائق.
+        </p>
 
-        <a href="#home">الرئيسية</a>
-
-        <a href="#games">الألعاب</a>
-
-        <a href="#browser-games">ألعاب المتصفح</a>
-
-        <a href="#about">عن الموقع</a>
-
-      </div>
-
-    </nav>
-
-  </div>
-
-</header>
-
-<main>
-
-  <!-- HERO -->
-
-  <section class="hero" id="home">
-
-    <div class="container">
-
-      <div class="badge">
-        🔥 ألعاب مجانية ومفتوحة المصدر
-      </div>
-
-      <h1>
-        اكتشف
-        <span>أفضل الألعاب المجانية</span>
-        للكمبيوتر
-      </h1>
-
-      <p>
-        اكتشف ألعابًا مجانية ومفتوحة المصدر
-        للعب على الكمبيوتر، بالإضافة إلى ألعاب
-        متصفح مجانية يمكنك لعبها مباشرة.
-      </p>
-
-      <a href="#browser-games"
-         class="button">
-        🎮 العب الآن
-      </a>
-
+        <button onclick="startGame()">
+            ▶ ابدأ اللعب
+        </button>
     </div>
 
-  </section>
+    <div class="panel" id="gameOver">
+        <h1>💥 انتهت اللعبة</h1>
 
+        <p>
+            نتيجتك:
+            <strong id="finalScore">0</strong>
+            <br>
+            العملات:
+            <strong id="finalCoins">0</strong>
+        </p>
 
-  <!-- COMPUTER GAMES -->
-
-  <section id="games">
-
-    <div class="container">
-
-      <h2 class="section-title">
-        🎮 ألعاب الكمبيوتر المجانية
-      </h2>
-
-      <p class="section-description">
-        اكتشف ألعاب كمبيوتر مجانية ومفتوحة المصدر
-        واختر اللعبة لمعرفة معلوماتها ومصدرها الرسمي.
-      </p>
-
-      <label for="search" class="sr-only">
-        البحث عن لعبة
-      </label>
-
-      <input
-        id="search"
-        class="search"
-        type="search"
-        placeholder="🔎 ابحث عن لعبة..."
-        autocomplete="off"
-        aria-label="البحث عن لعبة"
-      >
-
-      <div class="filters">
-
-        <button class="filter active"
-                data-category="all">
-          الكل
+        <button onclick="startGame()">
+            🔄 العب مرة أخرى
         </button>
-
-        <button class="filter"
-                data-category="سباق">
-          🏎️ سباق
-        </button>
-
-        <button class="filter"
-                data-category="استراتيجية">
-          ⚔️ استراتيجية
-        </button>
-
-        <button class="filter"
-                data-category="منصات">
-          🕹️ منصات
-        </button>
-
-        <button class="filter"
-                data-category="فضاء">
-          🚀 فضاء
-        </button>
-
-      </div>
-
-      <div class="games" id="gameList">
-
-        <article class="card"
-                 data-category="سباق">
-
-          <div class="cover cover1"
-               aria-hidden="true">
-            🏎️
-          </div>
-
-          <div class="card-content">
-
-            <h3>SuperTuxKart</h3>
-
-            <span class="category">
-              🏎️ سباق
-            </span>
-
-            <p>
-              لعبة سباق كارت مجانية ومفتوحة المصدر،
-              تحتوي على حلبات وأنماط لعب متعددة.
-            </p>
-
-            <a href="games/supertuxkart.html"
-               class="play-button">
-              🎮 تفاصيل SuperTuxKart
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="card"
-                 data-category="استراتيجية">
-
-          <div class="cover cover2"
-               aria-hidden="true">
-            ⚔️
-          </div>
-
-          <div class="card-content">
-
-            <h3>0 A.D.</h3>
-
-            <span class="category">
-              ⚔️ استراتيجية
-            </span>
-
-            <p>
-              لعبة استراتيجية تاريخية مجانية
-              ومفتوحة المصدر تدور حول الحروب القديمة.
-            </p>
-
-            <a href="games/0ad.html"
-               class="play-button">
-              🎮 تفاصيل 0 A.D.
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="card"
-                 data-category="منصات">
-
-          <div class="cover cover3"
-               aria-hidden="true">
-            🐧
-          </div>
-
-          <div class="card-content">
-
-            <h3>SuperTux</h3>
-
-            <span class="category">
-              🕹️ منصات
-            </span>
-
-            <p>
-              لعبة منصات مجانية ومفتوحة المصدر
-              بطابع ممتع ومغامرات متنوعة.
-            </p>
-
-            <a href="games/supertux.html"
-               class="play-button">
-              🎮 تفاصيل SuperTux
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <article class="card"
-                 data-category="فضاء">
-
-          <div class="cover cover4"
-               aria-hidden="true">
-            🚀
-          </div>
-
-          <div class="card-content">
-
-            <h3>Endless Sky</h3>
-
-            <span class="category">
-              🚀 فضاء
-            </span>
-
-            <p>
-              استكشف الفضاء وتاجر وخض المعارك
-              في لعبة مجانية ومفتوحة المصدر.
-            </p>
-
-            <a href="games/endless-sky.html"
-               class="play-button">
-              🎮 تفاصيل Endless Sky
-            </a>
-
-          </div>
-
-        </article>
-
-      </div>
-
-      <p id="noResults"
-         style="display:none;text-align:center;color:#94a3bd;padding:40px;">
-        😔 لم نجد لعبة مطابقة لبحثك.
-      </p>
-
     </div>
 
-  </section>
+</div>
 
-
-  <!-- BROWSER GAMES -->
-
-  <section id="browser-games"
-           class="browser-games">
-
-    <div class="container">
-
-      <h2 class="section-title">
-        🕹️ ألعاب المتصفح المجانية
-      </h2>
-
-      <p class="section-description">
-        ألعاب مجانية تعمل مباشرة داخل موقع تكنومسار بدون تحميل.
-      </p>
-
-      <div class="browser-grid">
-
-        <div class="browser-card">
-
-          <div class="browser-icon"
-               aria-hidden="true">
-            🎯
-          </div>
-
-          <h3>تصويب الهدف</h3>
-
-          <p>
-            اضغط على الهدف المتحرك واجمع أكبر عدد من النقاط.
-          </p>
-
-          <button class="game-start">
-            ▶️ العب الآن
-          </button>
-
-        </div>
-
-
-        <div class="browser-card">
-
-          <div class="browser-icon"
-               aria-hidden="true">
-            🐍
-          </div>
-
-          <h3>Snake</h3>
-
-          <p>
-            لعبة الثعبان الكلاسيكية المجانية داخل المتصفح.
-          </p>
-
-          <button class="game-start">
-            ▶️ العب الآن
-          </button>
-
-        </div>
-
-
-        <div class="browser-card">
-
-          <div class="browser-icon"
-               aria-hidden="true">
-            ❌
-          </div>
-
-          <h3>XO</h3>
-
-          <p>
-            العب إكس أو الكلاسيكية ضد الكمبيوتر.
-          </p>
-
-          <button class="game-start">
-            ▶️ العب الآن
-          </button>
-
-        </div>
-
-
-        <div class="browser-card">
-
-          <div class="browser-icon"
-               aria-hidden="true">
-            🧠
-          </div>
-
-          <h3>لعبة الذاكرة</h3>
-
-          <p>
-            اختبر ذاكرتك وابحث عن البطاقات المتشابهة.
-          </p>
-
-          <button class="game-start">
-            ▶️ العب الآن
-          </button>
-
-        </div>
-
-
-        <div class="browser-card">
-
-          <div class="browser-icon"
-               aria-hidden="true">
-            ✊
-          </div>
-
-          <h3>حجر ورق مقص</h3>
-
-          <p>
-            اختبر مهارتك ضد الكمبيوتر في لعبة حجر ورق مقص.
-          </p>
-
-          <button class="game-start">
-            ▶️ العب الآن
-          </button>
-
-        </div>
-
-
-        <div class="browser-card">
-
-          <div class="browser-icon"
-               aria-hidden="true">
-            🔢
-          </div>
-
-          <h3>خمن الرقم</h3>
-
-          <p>
-            حاول تخمين الرقم الذي اختاره الكمبيوتر.
-          </p>
-
-          <button class="game-start">
-            ▶️ العب الآن
-          </button>
-
-        </div>
-
-
-        <div class="browser-card">
-
-          <div class="browser-icon"
-               aria-hidden="true">
-            🧱
-          </div>
-
-          <h3>كسر الطوب</h3>
-
-          <p>
-            حرك المضرب وحاول كسر جميع الطوب.
-          </p>
-
-          <button class="game-start">
-            ▶️ العب الآن
-          </button>
-
-        </div>
-
-
-        <div class="browser-card">
-
-          <div class="browser-icon"
-               aria-hidden="true">
-            🏎️
-          </div>
-
-          <h3>سباق السيارات</h3>
-
-          <p>
-            تجنب السيارات وحاول تسجيل أكبر نتيجة.
-          </p>
-
-          <button class="game-start">
-            ▶️ العب الآن
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-
-  <section class="about"
-           id="about">
-
-    <div class="container">
-
-      <h2 class="section-title">
-        🚀 عن تكنومسار
-      </h2>
-
-      <p>
-        تكنومسار موقع عربي يساعد المستخدمين
-        على اكتشاف الألعاب المجانية والمفتوحة المصدر
-        للكمبيوتر.
-      </p>
-
-      <p>
-        كما يوفر الموقع مجموعة من ألعاب المتصفح
-        التي يمكن تشغيلها مباشرة بدون تحميل.
-      </p>
-
-      <p>
-        نحن لا نستضيف ملفات الألعاب الخارجية،
-        ولكن نوفر معلومات عنها وروابط للمصادر الرسمية.
-      </p>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer>
-
-  <strong>🎮 تكنومسار</strong>
-
-  <br><br>
-
-  تحت إشراف محمد حامد
-
-  <br><br>
-
-  © 2026 تكنومسار - جميع الحقوق محفوظة
-
-</footer>
-
-
-<style>
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
-  }
-</style>
-
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 
 <script>
 
-const search = document.getElementById("search");
-const cards = document.querySelectorAll(".card");
-const filters = document.querySelectorAll(".filter");
-const noResults = document.getElementById("noResults");
+/* =========================
+   إعداد المشهد
+========================= */
 
-let currentCategory = "all";
+const scene = new THREE.Scene();
 
-function filterGames() {
+scene.background = new THREE.Color(0x07111f);
 
-  const text =
-    search.value.toLowerCase().trim();
-
-  let visible = 0;
-
-  cards.forEach(card => {
-
-    const content =
-      card.innerText.toLowerCase();
-
-    const category =
-      card.dataset.category;
-
-    const textMatch =
-      content.includes(text);
-
-    const categoryMatch =
-      currentCategory === "all" ||
-      category === currentCategory;
-
-    if (textMatch && categoryMatch) {
-
-      card.style.display = "";
-      visible++;
-
-    } else {
-
-      card.style.display = "none";
-
-    }
-
-  });
-
-  noResults.style.display =
-    visible === 0 ? "block" : "none";
-}
-
-search.addEventListener(
-  "input",
-  filterGames
+scene.fog = new THREE.Fog(
+    0x07111f,
+    20,
+    150
 );
 
-filters.forEach(button => {
+const camera = new THREE.PerspectiveCamera(
+    60,
+    innerWidth / innerHeight,
+    .1,
+    300
+);
 
-  button.addEventListener(
-    "click",
+camera.position.set(0,5.5,10);
+camera.lookAt(0,1,-15);
+
+const renderer = new THREE.WebGLRenderer({
+    antialias:true
+});
+
+renderer.setPixelRatio(
+    Math.min(devicePixelRatio,2)
+);
+
+renderer.setSize(
+    innerWidth,
+    innerHeight
+);
+
+renderer.shadowMap.enabled = true;
+
+document
+    .getElementById("game")
+    .appendChild(renderer.domElement);
+
+
+/* =========================
+   الإضاءة
+========================= */
+
+const ambient = new THREE.HemisphereLight(
+    0x9edfff,
+    0x080b18,
+    2
+);
+
+scene.add(ambient);
+
+const light = new THREE.DirectionalLight(
+    0xffffff,
+    3
+);
+
+light.position.set(5,12,10);
+
+light.castShadow = true;
+
+scene.add(light);
+
+
+/* =========================
+   الأرض والسكك
+========================= */
+
+const road = new THREE.Mesh(
+    new THREE.BoxGeometry(15,.3,180),
+    new THREE.MeshStandardMaterial({
+        color:0x101827
+    })
+);
+
+road.position.set(0,-.25,-55);
+
+road.receiveShadow = true;
+
+scene.add(road);
+
+
+/* خطوط المسارات */
+
+const laneLines = [];
+
+for(let z=5;z>-160;z-=8){
+
+    [-1.5,1.5].forEach(x=>{
+
+        const line = new THREE.Mesh(
+            new THREE.BoxGeometry(.08,.03,4),
+            new THREE.MeshBasicMaterial({
+                color:0x18c5eb
+            })
+        );
+
+        line.position.set(x,0,z);
+
+        scene.add(line);
+
+        laneLines.push(line);
+
+    });
+}
+
+
+/* القضبان */
+
+for(let x of [-5.2,-1.7,1.7,5.2]){
+
+    const rail = new THREE.Mesh(
+        new THREE.BoxGeometry(.12,.15,180),
+        new THREE.MeshStandardMaterial({
+            color:0x8899aa,
+            metalness:.8
+        })
+    );
+
+    rail.position.set(x,.05,-55);
+
+    scene.add(rail);
+}
+
+
+/* =========================
+   شخصية اللاعب
+========================= */
+
+const player = new THREE.Group();
+
+const body = new THREE.Mesh(
+    new THREE.BoxGeometry(.8,1.25,.55),
+    new THREE.MeshStandardMaterial({
+        color:0x18c5eb,
+        roughness:.4
+    })
+);
+
+body.position.y=.8;
+
+body.castShadow=true;
+
+player.add(body);
+
+
+/* الرأس */
+
+const head = new THREE.Mesh(
+    new THREE.SphereGeometry(.38,24,24),
+    new THREE.MeshStandardMaterial({
+        color:0xffc49a
+    })
+);
+
+head.position.y=1.7;
+
+head.castShadow=true;
+
+player.add(head);
+
+
+/* الشعر */
+
+const hair = new THREE.Mesh(
+    new THREE.SphereGeometry(.4,20,12),
+    new THREE.MeshStandardMaterial({
+        color:0x171717
+    })
+);
+
+hair.scale.y=.45;
+
+hair.position.y=1.95;
+
+player.add(hair);
+
+
+/* الأرجل */
+
+for(let x of [-.22,.22]){
+
+    const leg = new THREE.Mesh(
+        new THREE.BoxGeometry(.2,.7,.25),
+        new THREE.MeshStandardMaterial({
+            color:0x263b62
+        })
+    );
+
+    leg.position.set(x,.0,0);
+
+    leg.castShadow=true;
+
+    player.add(leg);
+}
+
+player.position.set(0,0,5);
+
+scene.add(player);
+
+
+/* =========================
+   عناصر اللعبة
+========================= */
+
+let obstacles=[];
+let coins=[];
+let trains=[];
+
+const lanes=[-3.4,0,3.4];
+
+let currentLane=1;
+let targetX=0;
+
+let score=0;
+let coinCount=0;
+
+let speed=.45;
+
+let running=false;
+
+let spawnTimer=0;
+
+
+/* =========================
+   إنشاء عملة
+========================= */
+
+function createCoin(){
+
+    const coin = new THREE.Mesh(
+        new THREE.TorusGeometry(
+            .35,
+            .09,
+            12,
+            24
+        ),
+        new THREE.MeshStandardMaterial({
+            color:0xffd21c,
+            emissive:0x8a5b00
+        })
+    );
+
+    coin.rotation.y=Math.PI/2;
+
+    coin.position.set(
+        lanes[
+            Math.floor(Math.random()*3)
+        ],
+        1,
+        -100
+    );
+
+    coin.castShadow=true;
+
+    scene.add(coin);
+
+    coins.push(coin);
+}
+
+
+/* =========================
+   إنشاء حاجز
+========================= */
+
+function createObstacle(){
+
+    const obstacle = new THREE.Mesh(
+        new THREE.BoxGeometry(
+            1.5,
+            1.3,
+            1.3
+        ),
+        new THREE.MeshStandardMaterial({
+            color:0xef4444
+        })
+    );
+
+    obstacle.position.set(
+        lanes[
+            Math.floor(Math.random()*3)
+        ],
+        .65,
+        -100
+    );
+
+    obstacle.castShadow=true;
+
+    scene.add(obstacle);
+
+    obstacles.push(obstacle);
+}
+
+
+/* =========================
+   إنشاء قطار
+========================= */
+
+function createTrain(){
+
+    const train = new THREE.Group();
+
+    const main = new THREE.Mesh(
+        new THREE.BoxGeometry(
+            2.7,
+            2.8,
+            8
+        ),
+        new THREE.MeshStandardMaterial({
+            color:0x7c3aed,
+            metalness:.2
+        })
+    );
+
+    main.position.y=1.4;
+
+    main.castShadow=true;
+
+    train.add(main);
+
+
+    const front = new THREE.Mesh(
+        new THREE.BoxGeometry(
+            2.2,
+            .8,
+            .2
+        ),
+        new THREE.MeshStandardMaterial({
+            color:0x61e7ff,
+            emissive:0x075985
+        })
+    );
+
+    front.position.set(0,1.5,-4.1);
+
+    train.add(front);
+
+    train.position.set(
+        lanes[
+            Math.floor(Math.random()*3)
+        ],
+        0,
+        -120
+    );
+
+    scene.add(train);
+
+    trains.push(train);
+}
+
+
+/* =========================
+   التحكم بالماوس
+========================= */
+
+document.addEventListener(
+    "mousemove",
+    e => {
+
+        if(!running) return;
+
+        const center =
+            innerWidth / 2;
+
+        const difference =
+            e.clientX - center;
+
+        if(difference < -150){
+            currentLane=0;
+        }
+        else if(difference > 150){
+            currentLane=2;
+        }
+        else{
+            currentLane=1;
+        }
+
+        targetX=lanes[currentLane];
+    }
+);
+
+
+/* =========================
+   لمس الموبايل
+========================= */
+
+let touchStartX=0;
+
+document.addEventListener(
+    "touchstart",
+    e => {
+        touchStartX =
+            e.touches[0].clientX;
+    }
+);
+
+document.addEventListener(
+    "touchend",
+    e => {
+
+        if(!running) return;
+
+        const end =
+            e.changedTouches[0].clientX;
+
+        const diff =
+            end-touchStartX;
+
+        if(diff>50)
+            currentLane=Math.min(
+                2,
+                currentLane+1
+            );
+
+        if(diff<-50)
+            currentLane=Math.max(
+                0,
+                currentLane-1
+            );
+
+        targetX=lanes[currentLane];
+    }
+);
+
+
+/* =========================
+   بدء اللعبة
+========================= */
+
+function startGame(){
+
+    obstacles.forEach(x=>scene.remove(x));
+    coins.forEach(x=>scene.remove(x));
+    trains.forEach(x=>scene.remove(x));
+
+    obstacles=[];
+    coins=[];
+    trains=[];
+
+    score=0;
+    coinCount=0;
+    speed=.45;
+    spawnTimer=0;
+
+    currentLane=1;
+    targetX=0;
+
+    player.position.x=0;
+
+    document.getElementById("score")
+        .textContent=0;
+
+    document.getElementById("coins")
+        .textContent=0;
+
+    document.getElementById("message")
+        .style.display="none";
+
+    running=true;
+}
+
+
+/* =========================
+   Game Over
+========================= */
+
+function gameOver(){
+
+    running=false;
+
+    document.getElementById("finalScore")
+        .textContent=Math.floor(score);
+
+    document.getElementById("finalCoins")
+        .textContent=coinCount;
+
+    document.getElementById("gameOver")
+        .style.display="block";
+
+    document.getElementById("startPanel")
+        .style.display="none";
+
+    document.getElementById("message")
+        .style.display="flex";
+}
+
+
+/* =========================
+   التصادم
+========================= */
+
+function collision(a,b){
+
+    const box1 =
+        new THREE.Box3()
+        .setFromObject(a);
+
+    const box2 =
+        new THREE.Box3()
+        .setFromObject(b);
+
+    return box1.intersectsBox(box2);
+}
+
+
+/* =========================
+   تحديث اللعبة
+========================= */
+
+function updateGame(){
+
+    if(!running) return;
+
+
+    /* حركة اللاعب */
+
+    player.position.x +=
+        (targetX-player.position.x)
+        *.16;
+
+
+    /* زيادة السرعة */
+
+    speed += .00035;
+
+    score += speed;
+
+    document.getElementById("score")
+        .textContent=Math.floor(score);
+
+
+    /* Spawn */
+
+    spawnTimer += speed;
+
+    if(spawnTimer>25){
+
+        spawnTimer=0;
+
+        const random =
+            Math.random();
+
+        if(random<.45){
+            createObstacle();
+        }
+        else if(random<.75){
+            createCoin();
+        }
+        else{
+            createTrain();
+        }
+    }
+
+
+    /* تحريك العوائق */
+
+    obstacles.forEach(
+        obstacle => {
+
+            obstacle.position.z += speed;
+
+            obstacle.rotation.y += .01;
+
+            if(collision(
+                player,
+                obstacle
+            )){
+                gameOver();
+            }
+        }
+    );
+
+
+    /* تحريك القطارات */
+
+    trains.forEach(
+        train => {
+
+            train.position.z +=
+                speed*.85;
+
+            if(collision(
+                player,
+                train
+            )){
+                gameOver();
+            }
+        }
+    );
+
+
+    /* العملات */
+
+    coins.forEach(
+        coin => {
+
+            coin.position.z += speed;
+
+            coin.rotation.x += .08;
+            coin.rotation.z += .05;
+
+            if(collision(
+                player,
+                coin
+            )){
+
+                coinCount++;
+
+                document.getElementById("coins")
+                    .textContent=coinCount;
+
+                coin.position.z=1000;
+            }
+        }
+    );
+
+
+    /* حذف العناصر القديمة */
+
+    obstacles =
+        obstacles.filter(
+            obstacle => {
+
+                if(obstacle.position.z>15){
+
+                    scene.remove(obstacle);
+
+                    return false;
+                }
+
+                return true;
+            }
+        );
+
+
+    trains =
+        trains.filter(
+            train => {
+
+                if(train.position.z>15){
+
+                    scene.remove(train);
+
+                    return false;
+                }
+
+                return true;
+            }
+        );
+
+
+    coins =
+        coins.filter(
+            coin => {
+
+                if(coin.position.z>15){
+
+                    scene.remove(coin);
+
+                    return false;
+                }
+
+                return true;
+            }
+        );
+
+
+    /* حركة خطوط الطريق */
+
+    laneLines.forEach(
+        line => {
+
+            line.position.z += speed;
+
+            if(line.position.z>10)
+                line.position.z=-160;
+        }
+    );
+
+
+    /* اهتزاز بسيط للشخصية */
+
+    player.rotation.z =
+        Math.sin(
+            Date.now()*.008
+        )*.035;
+
+    player.position.y =
+        Math.abs(
+            Math.sin(
+                Date.now()*.012
+            )
+        )*.05;
+
+}
+
+
+/* =========================
+   الكاميرا
+========================= */
+
+function updateCamera(){
+
+    camera.position.x +=
+        (player.position.x-camera.position.x)
+        *.06;
+
+    camera.lookAt(
+        player.position.x,
+        1,
+        -18
+    );
+}
+
+
+/* =========================
+   Loop
+========================= */
+
+function animate(){
+
+    requestAnimationFrame(animate);
+
+    updateGame();
+
+    updateCamera();
+
+    renderer.render(
+        scene,
+        camera
+    );
+}
+
+animate();
+
+
+/* =========================
+   تغيير حجم الشاشة
+========================= */
+
+window.addEventListener(
+    "resize",
     () => {
 
-      filters.forEach(btn =>
-        btn.classList.remove("active")
-      );
+        camera.aspect =
+            innerWidth/innerHeight;
 
-      button.classList.add("active");
+        camera.updateProjectionMatrix();
 
-      currentCategory =
-        button.dataset.category;
-
-      filterGames();
+        renderer.setSize(
+            innerWidth,
+            innerHeight
+        );
 
     }
-  );
-
-});
+);
 
 </script>
 
