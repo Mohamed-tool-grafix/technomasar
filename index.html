@@ -6,12 +6,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>تكنومسار | تحميل ألعاب الكمبيوتر</title>
+<title>تكنومسار | ألعاب مجانية للكمبيوتر</title>
 
 <meta name="description"
-content="تكنومسار - اكتشف ألعاب الكمبيوتر والألعاب المجانية وتصفح صفحات الألعاب وتحميلها.">
+content="تكنومسار - اكتشف ألعاب الكمبيوتر المجانية والمفتوحة المصدر، وتعرف على تفاصيل الألعاب وروابط التحميل الرسمية.">
 
 <meta name="robots" content="index,follow">
+
+<link rel="canonical"
+href="https://mohamed-tool-grafix.github.io/technomasar/">
+
+<meta name="theme-color" content="#111827">
 
 <style>
 
@@ -19,6 +24,10 @@ content="تكنومسار - اكتشف ألعاب الكمبيوتر والأل�
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -139,7 +148,7 @@ header{
     );
 
     color:white;
-    padding:65px 20px;
+    padding:70px 20px;
 
     text-align:center;
 }
@@ -170,7 +179,7 @@ main{
 .section{
     background:white;
 
-    border-radius:8px;
+    border-radius:10px;
 
     padding:25px;
 
@@ -184,7 +193,6 @@ main{
 .section-title{
     display:flex;
     align-items:center;
-    justify-content:space-between;
 
     border-right:
     5px solid #19c8ee;
@@ -215,7 +223,7 @@ main{
 
     border:1px solid #e1e6ed;
 
-    border-radius:8px;
+    border-radius:12px;
 
     overflow:hidden;
 
@@ -236,9 +244,11 @@ main{
     width:100%;
     height:190px;
 
-    object-fit:cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    display:block;
+    font-size:75px;
 
     background:
     linear-gradient(
@@ -253,7 +263,7 @@ main{
 }
 
 .game-title{
-    font-size:19px;
+    font-size:20px;
     font-weight:900;
 
     margin-bottom:5px;
@@ -273,9 +283,7 @@ main{
     margin:
     10px 0 15px;
 
-    height:45px;
-
-    overflow:hidden;
+    min-height:55px;
 }
 
 .game-meta{
@@ -298,9 +306,9 @@ main{
 
     color:#04131b;
 
-    padding:10px;
+    padding:11px;
 
-    border-radius:6px;
+    border-radius:7px;
 
     font-weight:900;
 }
@@ -343,6 +351,30 @@ main{
     border-color:#19c8ee;
 
     color:#078aa7;
+}
+
+
+/* ================= NOTICE ================= */
+
+.notice{
+    background:#ecfeff;
+
+    border:
+    1px solid #a5f3fc;
+
+    color:#155e75;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    margin-bottom:30px;
+
+    line-height:1.9;
+}
+
+.notice strong{
+    color:#0369a1;
 }
 
 
@@ -482,7 +514,7 @@ footer{
 <body>
 
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -506,6 +538,10 @@ footer{
 التصنيفات
 </a>
 
+<a href="games/games.html">
+صفحة الألعاب
+</a>
+
 </nav>
 
 </div>
@@ -513,7 +549,7 @@ footer{
 </header>
 
 
-<!-- SEARCH -->
+<!-- ================= SEARCH ================= -->
 
 <div class="search-area">
 
@@ -528,7 +564,7 @@ type="search"
 placeholder="🔎 ابحث عن اسم اللعبة..."
 autocomplete="off">
 
-<button>
+<button type="submit">
 بحث
 </button>
 
@@ -539,19 +575,26 @@ autocomplete="off">
 </div>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
 <div class="container">
 
 <h1>
+
 مرحبًا بك في
-<span>تكنومسار</span>
+
+<span>
+تكنومسار
+</span>
+
 </h1>
 
 <p>
-اكتشف ألعاب الكمبيوتر وتصفح تفاصيل كل لعبة بسهولة.
+اكتشف ألعاب الكمبيوتر المجانية
+والمفتوحة المصدر وتعرف على طريقة تحميلها
+من مصادرها الرسمية.
 </p>
 
 </div>
@@ -564,7 +607,22 @@ autocomplete="off">
 <div class="container">
 
 
-<!-- FEATURED -->
+<!-- ================= NOTICE ================= -->
+
+<div class="notice">
+
+<strong>🎮 مرحبًا بك في تكنومسار</strong>
+
+<br>
+
+نحن نساعدك على اكتشاف الألعاب المجانية
+والمفتوحة المصدر والوصول إلى مصادرها الرسمية.
+لا نستضيف ملفات الألعاب التجارية المحمية بحقوق النشر.
+
+</div>
+
+
+<!-- ================= FEATURED ================= -->
 
 <section class="section">
 
@@ -580,68 +638,19 @@ autocomplete="off">
 <div class="games">
 
 
-<article class="game-card"
-data-game="لعبة الحرب 3d">
-
-<div class="game-image"
-style="
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-">
-⚔️
-</div>
-
-<div class="game-info">
-
-<div class="game-title">
-لعبة الحرب 3D
-</div>
-
-<div class="game-category">
-🎯 حرب وتصويب
-</div>
-
-<p class="game-description">
-لعبة أكشن وتصويب ثلاثية الأبعاد.
-</p>
-
-<div class="game-meta">
-<span>⭐ 4.8</span>
-<span>💾 2.5 GB</span>
-</div>
-
-<a
-href="games/war3d.html"
-class="game-button">
-
-🎮 تفاصيل اللعبة
-
-</a>
-
-</div>
-
-</article>
-
+<!-- SuperTuxKart -->
 
 <article class="game-card"
-data-game="لعبة سباق السيارات">
+data-game="supertuxkart سوبرتكس كارت سباق">
 
-<div class="game-image"
-style="
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-">
+<div class="game-image">
 🏎️
 </div>
 
 <div class="game-info">
 
 <div class="game-title">
-سباق السيارات
+SuperTuxKart
 </div>
 
 <div class="game-category">
@@ -649,19 +658,30 @@ font-size:70px;
 </div>
 
 <p class="game-description">
-استمتع بسباقات سريعة ومنافسات قوية.
+
+لعبة سباق كارت مجانية
+ومفتوحة المصدر تحتوي على حلبات
+وأنماط لعب متعددة.
+
 </p>
 
 <div class="game-meta">
-<span>⭐ 4.7</span>
-<span>💾 1.8 GB</span>
+
+<span>
+⭐ مجانية
+</span>
+
+<span>
+💻 Windows
+</span>
+
 </div>
 
 <a
-href="games/racing.html"
+href="games/games.html"
 class="game-button">
 
-🎮 تفاصيل اللعبة
+🎮 تفاصيل وتحميل
 
 </a>
 
@@ -670,43 +690,50 @@ class="game-button">
 </article>
 
 
-<article class="game-card"
-data-game="لعبة الرعب">
+<!-- 0 A.D. -->
 
-<div class="game-image"
-style="
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-">
-👻
+<article class="game-card"
+data-game="0 ad استراتيجية حرب تاريخية">
+
+<div class="game-image">
+⚔️
 </div>
 
 <div class="game-info">
 
 <div class="game-title">
-لعبة الرعب
+0 A.D.
 </div>
 
 <div class="game-category">
-👻 رعب
+⚔️ استراتيجية
 </div>
 
 <p class="game-description">
-مغامرة رعب وأجواء مليئة بالإثارة.
+
+لعبة استراتيجية تاريخية
+مجانية ومفتوحة المصدر
+تدور أحداثها في العصور القديمة.
+
 </p>
 
 <div class="game-meta">
-<span>⭐ 4.6</span>
-<span>💾 3.2 GB</span>
+
+<span>
+⭐ مجانية
+</span>
+
+<span>
+💻 Windows
+</span>
+
 </div>
 
 <a
-href="games/horror.html"
+href="games/games.html"
 class="game-button">
 
-🎮 تفاصيل اللعبة
+🎮 تفاصيل وتحميل
 
 </a>
 
@@ -715,43 +742,102 @@ class="game-button">
 </article>
 
 
-<article class="game-card"
-data-game="لعبة مغامرات">
+<!-- Endless Sky -->
 
-<div class="game-image"
-style="
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-">
-🗺️
+<article class="game-card"
+data-game="endless sky فضاء سفن">
+
+<div class="game-image">
+🚀
 </div>
 
 <div class="game-info">
 
 <div class="game-title">
-مغامرات 3D
+Endless Sky
 </div>
 
 <div class="game-category">
-🗺️ مغامرات
+🚀 فضاء
 </div>
 
 <p class="game-description">
-استكشف عالمًا واسعًا وخوض مغامرات مختلفة.
+
+استكشف الفضاء وتاجر
+وخض المعارك في لعبة
+مجانية ومفتوحة المصدر.
+
 </p>
 
 <div class="game-meta">
-<span>⭐ 4.5</span>
-<span>💾 4.1 GB</span>
+
+<span>
+⭐ مجانية
+</span>
+
+<span>
+💻 Windows
+</span>
+
 </div>
 
 <a
-href="games/adventure.html"
+href="games/games.html"
 class="game-button">
 
-🎮 تفاصيل اللعبة
+🎮 تفاصيل وتحميل
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- SuperTux -->
+
+<article class="game-card"
+data-game="supertux سوبرتكس منصات">
+
+<div class="game-image">
+🐧
+</div>
+
+<div class="game-info">
+
+<div class="game-title">
+SuperTux
+</div>
+
+<div class="game-category">
+🕹️ منصات
+</div>
+
+<p class="game-description">
+
+لعبة منصات مجانية
+ومفتوحة المصدر بطابع
+ممتع ومغامرات متنوعة.
+
+</p>
+
+<div class="game-meta">
+
+<span>
+⭐ مجانية
+</span>
+
+<span>
+💻 Windows
+</span>
+
+</div>
+
+<a
+href="games/games.html"
+class="game-button">
+
+🎮 تفاصيل وتحميل
 
 </a>
 
@@ -765,7 +851,7 @@ class="game-button">
 </section>
 
 
-<!-- LATEST -->
+<!-- ================= LATEST ================= -->
 
 <section class="section"
 id="latest">
@@ -778,46 +864,155 @@ id="latest">
 
 </div>
 
+
 <div class="games">
 
 
-<article class="game-card"
-data-game="لعبة اكشن">
+<!-- OpenTTD -->
 
-<div class="game-image"
-style="
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-">
+<article class="game-card"
+data-game="openttd قطارات استراتيجية">
+
+<div class="game-image">
+🚂
+</div>
+
+<div class="game-info">
+
+<div class="game-title">
+OpenTTD
+</div>
+
+<div class="game-category">
+🚂 محاكاة واستراتيجية
+</div>
+
+<p class="game-description">
+
+لعبة إدارة ونقل ومحاكاة
+مجانية ومفتوحة المصدر.
+
+</p>
+
+<div class="game-meta">
+
+<span>
+⭐ مجانية
+</span>
+
+<span>
+💻 Windows
+</span>
+
+</div>
+
+<a
+href="games/games.html"
+class="game-button">
+
+🎮 تفاصيل وتحميل
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- Minetest -->
+
+<article class="game-card"
+data-game="luanti minetest بناء">
+
+<div class="game-image">
+🧱
+</div>
+
+<div class="game-info">
+
+<div class="game-title">
+Luanti
+</div>
+
+<div class="game-category">
+🧱 بناء واستكشاف
+</div>
+
+<p class="game-description">
+
+منصة ألعاب مفتوحة المصدر
+للبناء والاستكشاف.
+
+</p>
+
+<div class="game-meta">
+
+<span>
+⭐ مجانية
+</span>
+
+<span>
+💻 Windows
+</span>
+
+</div>
+
+<a
+href="games/games.html"
+class="game-button">
+
+🎮 تفاصيل وتحميل
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- Warzone 2100 -->
+
+<article class="game-card"
+data-game="warzone 2100 استراتيجية">
+
+<div class="game-image">
 💥
 </div>
 
 <div class="game-info">
 
 <div class="game-title">
-لعبة أكشن
+Warzone 2100
 </div>
 
 <div class="game-category">
-💥 أكشن
+💥 استراتيجية
 </div>
 
 <p class="game-description">
-أكشن ومواجهات في عالم ثلاثي الأبعاد.
+
+لعبة استراتيجية عسكرية
+مجانية ومفتوحة المصدر.
+
 </p>
 
 <div class="game-meta">
-<span>⭐ 4.4</span>
-<span>💾 2.9 GB</span>
+
+<span>
+⭐ مجانية
+</span>
+
+<span>
+💻 Windows
+</span>
+
 </div>
 
 <a
-href="games/action.html"
+href="games/games.html"
 class="game-button">
 
-🎮 تفاصيل اللعبة
+🎮 تفاصيل وتحميل
 
 </a>
 
@@ -826,113 +1021,19 @@ class="game-button">
 </article>
 
 
-<article class="game-card"
-data-game="لعبة نجاة">
-
-<div class="game-image"
-style="
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-">
-🧟
-</div>
-
-<div class="game-info">
-
-<div class="game-title">
-لعبة النجاة
-</div>
-
-<div class="game-category">
-🧟 نجاة
-</div>
-
-<p class="game-description">
-حاول البقاء على قيد الحياة في عالم خطير.
-</p>
-
-<div class="game-meta">
-<span>⭐ 4.3</span>
-<span>💾 3.7 GB</span>
-</div>
-
-<a
-href="games/survival.html"
-class="game-button">
-
-🎮 تفاصيل اللعبة
-
-</a>
-
-</div>
-
-</article>
-
+<!-- OpenRA -->
 
 <article class="game-card"
-data-game="لعبة فضاء">
+data-game="openra استراتيجية حرب">
 
-<div class="game-image"
-style="
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-">
-🚀
-</div>
-
-<div class="game-info">
-
-<div class="game-title">
-مغامرة الفضاء
-</div>
-
-<div class="game-category">
-🚀 فضاء
-</div>
-
-<p class="game-description">
-استكشف الكواكب والمجرات في مغامرة فضائية.
-</p>
-
-<div class="game-meta">
-<span>⭐ 4.2</span>
-<span>💾 2.1 GB</span>
-</div>
-
-<a
-href="games/space.html"
-class="game-button">
-
-🎮 تفاصيل اللعبة
-
-</a>
-
-</div>
-
-</article>
-
-
-<article class="game-card"
-data-game="لعبة استراتيجية">
-
-<div class="game-image"
-style="
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-">
+<div class="game-image">
 🏰
 </div>
 
 <div class="game-info">
 
 <div class="game-title">
-الحرب الاستراتيجية
+OpenRA
 </div>
 
 <div class="game-category">
@@ -940,19 +1041,29 @@ font-size:70px;
 </div>
 
 <p class="game-description">
-ابنِ جيشك وخطط للفوز بالمعارك.
+
+مشروع مجاني ومفتوح المصدر
+لألعاب الاستراتيجية الكلاسيكية.
+
 </p>
 
 <div class="game-meta">
-<span>⭐ 4.1</span>
-<span>💾 1.6 GB</span>
+
+<span>
+⭐ مجانية
+</span>
+
+<span>
+💻 Windows
+</span>
+
 </div>
 
 <a
-href="games/strategy.html"
+href="games/games.html"
 class="game-button">
 
-🎮 تفاصيل اللعبة
+🎮 تفاصيل وتحميل
 
 </a>
 
@@ -962,6 +1073,7 @@ class="game-button">
 
 
 </div>
+
 
 <div class="no-results"
 id="noResults">
@@ -973,7 +1085,7 @@ id="noResults">
 </section>
 
 
-<!-- CATEGORIES -->
+<!-- ================= CATEGORIES ================= -->
 
 <section class="section"
 id="categories">
@@ -986,54 +1098,79 @@ id="categories">
 
 </div>
 
+
 <div class="categories">
 
-<a href="#">
-⚔️ ألعاب الحرب
-</a>
-
-<a href="#">
-🎯 ألعاب التصويب
-</a>
-
-<a href="#">
+<a
+class="category"
+href="games/games.html">
 🏎️ ألعاب السباق
 </a>
 
-<a href="#">
-👻 ألعاب الرعب
+<a
+class="category"
+href="games/games.html">
+⚔️ ألعاب الاستراتيجية
 </a>
 
-<a href="#">
-🧟 ألعاب النجاة
+<a
+class="category"
+href="games/games.html">
+🕹️ ألعاب المنصات
 </a>
 
-<a href="#">
-🗺️ ألعاب المغامرات
-</a>
-
-<a href="#">
-🏰 ألعاب الاستراتيجية
-</a>
-
-<a href="#">
+<a
+class="category"
+href="games/games.html">
 🚀 ألعاب الفضاء
 </a>
 
-<a href="#">
-⚽ ألعاب الرياضة
+<a
+class="category"
+href="games/games.html">
+🧱 ألعاب البناء
 </a>
 
-<a href="#">
-🎮 ألعاب 3D
+<a
+class="category"
+href="games/games.html">
+🚂 ألعاب المحاكاة
 </a>
 
-<a href="#">
+<a
+class="category"
+href="games/games.html">
+🎯 ألعاب الأكشن
+</a>
+
+<a
+class="category"
+href="games/games.html">
 🧩 ألعاب الألغاز
 </a>
 
-<a href="#">
-🥊 ألعاب القتال
+<a
+class="category"
+href="games/games.html">
+⚽ ألعاب الرياضة
+</a>
+
+<a
+class="category"
+href="games/games.html">
+👾 ألعاب مجانية
+</a>
+
+<a
+class="category"
+href="games/games.html">
+🌐 مفتوحة المصدر
+</a>
+
+<a
+class="category"
+href="games/games.html">
+💻 ألعاب الكمبيوتر
 </a>
 
 </div>
@@ -1046,7 +1183,7 @@ id="categories">
 </main>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1055,7 +1192,9 @@ id="categories">
 </div>
 
 <p>
-موقع لاكتشاف الألعاب ومعلوماتها وروابط التحميل المصرح بها.
+موقع لاكتشاف الألعاب المجانية
+والمفتوحة المصدر ومعلوماتها
+وروابط مصادرها الرسمية.
 </p>
 
 <p class="footer-name">
@@ -1063,17 +1202,13 @@ Mohamed Hamed
 </p>
 
 <p>
-للتواصل: 01207799214
-</p>
-
-<br>
-
-<p>
 © 2026 تكنومسار - جميع الحقوق محفوظة
 </p>
 
 </footer>
 
+
+<!-- ================= SEARCH SCRIPT ================= -->
 
 <script>
 
@@ -1109,6 +1244,7 @@ function(){
         ){
 
             card.style.display = "";
+
             found++;
 
         }else{
@@ -1119,6 +1255,7 @@ function(){
 
     });
 
+
     noResults.style.display =
     found === 0
     ? "block"
@@ -1126,8 +1263,10 @@ function(){
 
 });
 
+
 </script>
 
 
 </body>
+
 </html>
