@@ -10,10 +10,10 @@
 <title>تكنومسار | ألعاب مجانية للكمبيوتر</title>
 
 <meta name="description"
-content="تكنومسار - اكتشف أفضل الألعاب المجانية للكمبيوتر، ألعاب السباق والمغامرات والألغاز والأكشن.">
+content="تكنومسار - اكتشف والعب ألعابًا مجانية وممتعة للكمبيوتر، مثل Snake وPong وBreakout وألعاب الذاكرة.">
 
 <meta name="keywords"
-content="ألعاب مجانية, ألعاب كمبيوتر, ألعاب مجانية للكمبيوتر, ألعاب سباق, ألعاب مغامرات, ألعاب ألغاز, تكنومسار">
+content="ألعاب مجانية, ألعاب كمبيوتر, ألعاب متصفح, Snake, Pong, Breakout, ألعاب ألغاز, تكنومسار">
 
 <meta name="robots" content="index, follow">
 
@@ -24,6 +24,7 @@ href="https://mohamed-tool-grafix.github.io/technomasar/">
 
 <meta name="theme-color" content="#080d1c">
 
+
 <!-- Open Graph -->
 
 <meta property="og:type" content="website">
@@ -32,7 +33,7 @@ href="https://mohamed-tool-grafix.github.io/technomasar/">
 content="تكنومسار | ألعاب مجانية للكمبيوتر">
 
 <meta property="og:description"
-content="اكتشف ألعابًا مجانية وممتعة للكمبيوتر على تكنومسار.">
+content="العب ألعابًا مجانية مباشرة من المتصفح على تكنومسار.">
 
 <meta property="og:url"
 content="https://mohamed-tool-grafix.github.io/technomasar/">
@@ -51,7 +52,7 @@ content="https://mohamed-tool-grafix.github.io/technomasar/">
   "name":"تكنومسار",
   "alternateName":"TechnoMasar",
   "url":"https://mohamed-tool-grafix.github.io/technomasar/",
-  "description":"موقع عربي لاكتشاف الألعاب المجانية للكمبيوتر.",
+  "description":"موقع عربي للألعاب المجانية التي تعمل مباشرة في المتصفح.",
   "inLanguage":"ar"
 }
 </script>
@@ -59,9 +60,9 @@ content="https://mohamed-tool-grafix.github.io/technomasar/">
 
 <style>
 
-/* =========================
+/* =====================================================
    RESET
-========================= */
+===================================================== */
 
 *{
     margin:0;
@@ -74,6 +75,7 @@ html{
 }
 
 body{
+
     font-family:
     "Segoe UI",
     Tahoma,
@@ -81,9 +83,11 @@ body{
     sans-serif;
 
     background:#070b18;
+
     color:#fff;
 
     line-height:1.7;
+
     overflow-x:hidden;
 }
 
@@ -97,9 +101,9 @@ input{
 }
 
 
-/* =========================
+/* =====================================================
    VARIABLES
-========================= */
+===================================================== */
 
 :root{
 
@@ -108,8 +112,6 @@ input{
     --header:#0b1122;
 
     --card:#10182b;
-
-    --card2:#131d34;
 
     --border:#253454;
 
@@ -123,14 +125,12 @@ input{
 
     --muted:#94a3bd;
 
-    --green:#34d399;
-
 }
 
 
-/* =========================
+/* =====================================================
    CONTAINER
-========================= */
+===================================================== */
 
 .container{
 
@@ -141,9 +141,9 @@ input{
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header{
 
@@ -153,11 +153,12 @@ header{
 
     z-index:9999;
 
-    background:rgba(7,11,24,.82);
+    background:rgba(7,11,24,.85);
 
     backdrop-filter:blur(18px);
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
 
 }
 
@@ -171,7 +172,7 @@ header{
 
     justify-content:space-between;
 
-    gap:30px;
+    gap:25px;
 
 }
 
@@ -182,8 +183,6 @@ header{
     font-size:25px;
 
     font-weight:900;
-
-    letter-spacing:-1px;
 
     display:flex;
 
@@ -205,7 +204,7 @@ header{
 
     align-items:center;
 
-    gap:8px;
+    gap:7px;
 
 }
 
@@ -213,7 +212,7 @@ header{
 
     color:#cbd5e1;
 
-    padding:10px 15px;
+    padding:10px 14px;
 
     border-radius:10px;
 
@@ -227,16 +226,15 @@ header{
 
     color:#fff;
 
-    background:rgba(24,197,235,.1);
+    background:
+    rgba(24,197,235,.1);
 
 }
 
-
-/* زر الهيدر */
-
 .nav-button{
 
-    background:linear-gradient(
+    background:
+    linear-gradient(
         135deg,
         var(--cyan),
         #168bdc
@@ -244,16 +242,16 @@ header{
 
     color:#04111d !important;
 
-    padding:10px 18px !important;
-
-    box-shadow:0 8px 25px rgba(24,197,235,.18);
+    box-shadow:
+    0 8px 25px
+    rgba(24,197,235,.18);
 
 }
 
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero{
 
@@ -291,9 +289,6 @@ header{
 
 }
 
-
-/* دوائر خلفية */
-
 .hero::before{
 
     content:"";
@@ -306,7 +301,8 @@ header{
 
     border-radius:50%;
 
-    background:rgba(24,197,235,.08);
+    background:
+    rgba(24,197,235,.08);
 
     filter:blur(20px);
 
@@ -328,7 +324,8 @@ header{
 
     border-radius:50%;
 
-    background:rgba(117,87,255,.1);
+    background:
+    rgba(117,87,255,.1);
 
     filter:blur(30px);
 
@@ -360,9 +357,12 @@ header{
 
     gap:8px;
 
-    background:rgba(24,197,235,.1);
+    background:
+    rgba(24,197,235,.1);
 
-    border:1px solid rgba(24,197,235,.25);
+    border:
+    1px solid
+    rgba(24,197,235,.25);
 
     color:var(--cyan-light);
 
@@ -380,7 +380,8 @@ header{
 
 .hero h1{
 
-    font-size:clamp(38px,6vw,68px);
+    font-size:
+    clamp(38px,6vw,68px);
 
     line-height:1.15;
 
@@ -394,7 +395,8 @@ header{
 
 .hero h1 span{
 
-    background:linear-gradient(
+    background:
+    linear-gradient(
         90deg,
         var(--cyan-light),
         #a78bfa
@@ -450,11 +452,16 @@ header{
 
     transition:.25s;
 
+    cursor:pointer;
+
+    border:0;
+
 }
 
 .btn-primary{
 
-    background:linear-gradient(
+    background:
+    linear-gradient(
         135deg,
         var(--cyan),
         #178edc
@@ -463,7 +470,8 @@ header{
     color:#03111b;
 
     box-shadow:
-        0 12px 35px rgba(24,197,235,.2);
+    0 12px 35px
+    rgba(24,197,235,.2);
 
 }
 
@@ -472,7 +480,8 @@ header{
     transform:translateY(-3px);
 
     box-shadow:
-        0 16px 40px rgba(24,197,235,.35);
+    0 16px 40px
+    rgba(24,197,235,.35);
 
 }
 
@@ -480,24 +489,25 @@ header{
 
     color:#fff;
 
-    border:1px solid #344565;
+    border:
+    1px solid #344565;
 
-    background:rgba(255,255,255,.04);
+    background:
+    rgba(255,255,255,.04);
 
 }
 
 .btn-secondary:hover{
 
-    background:rgba(255,255,255,.08);
-
-    border-color:#536787;
+    background:
+    rgba(255,255,255,.08);
 
 }
 
 
-/* =========================
+/* =====================================================
    STATS
-========================= */
+===================================================== */
 
 .stats{
 
@@ -513,7 +523,8 @@ header{
 
     display:grid;
 
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+    repeat(3,1fr);
 
     gap:15px;
 
@@ -521,9 +532,11 @@ header{
 
 .stat{
 
-    background:rgba(16,24,43,.9);
+    background:
+    rgba(16,24,43,.92);
 
-    border:1px solid var(--border);
+    border:
+    1px solid var(--border);
 
     border-radius:18px;
 
@@ -541,8 +554,6 @@ header{
 
     font-size:28px;
 
-    color:#fff;
-
 }
 
 .stat span{
@@ -554,27 +565,13 @@ header{
 }
 
 
-/* =========================
+/* =====================================================
    SECTIONS
-========================= */
+===================================================== */
 
 section{
 
     padding:90px 0;
-
-}
-
-.section-head{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:end;
-
-    gap:20px;
-
-    margin-bottom:28px;
 
 }
 
@@ -584,7 +581,7 @@ section{
 
     font-weight:900;
 
-    margin-bottom:6px;
+    margin-bottom:7px;
 
 }
 
@@ -594,22 +591,20 @@ section{
 
     font-size:16px;
 
+    margin-bottom:28px;
+
 }
 
 
-/* =========================
+/* =====================================================
    SEARCH
-========================= */
-
-.search-area{
-
-    margin-bottom:30px;
-
-}
+===================================================== */
 
 .search-box{
 
     position:relative;
+
+    margin-bottom:14px;
 
 }
 
@@ -621,7 +616,8 @@ section{
 
     border-radius:14px;
 
-    border:1px solid var(--border);
+    border:
+    1px solid var(--border);
 
     background:#0d1528;
 
@@ -631,8 +627,6 @@ section{
 
     font-size:16px;
 
-    transition:.25s;
-
 }
 
 .search-box input:focus{
@@ -640,7 +634,8 @@ section{
     border-color:var(--cyan);
 
     box-shadow:
-        0 0 0 4px rgba(24,197,235,.08);
+    0 0 0 4px
+    rgba(24,197,235,.08);
 
 }
 
@@ -652,16 +647,17 @@ section{
 
     top:50%;
 
-    transform:translateY(-50%);
+    transform:
+    translateY(-50%);
 
     font-size:20px;
 
 }
 
 
-/* =========================
+/* =====================================================
    FILTERS
-========================= */
+===================================================== */
 
 .filters{
 
@@ -671,13 +667,14 @@ section{
 
     flex-wrap:wrap;
 
-    margin-top:14px;
+    margin-bottom:30px;
 
 }
 
 .filter{
 
-    border:1px solid var(--border);
+    border:
+    1px solid var(--border);
 
     background:#0d1528;
 
@@ -696,7 +693,8 @@ section{
 .filter:hover,
 .filter.active{
 
-    background:rgba(24,197,235,.1);
+    background:
+    rgba(24,197,235,.1);
 
     color:var(--cyan-light);
 
@@ -705,63 +703,58 @@ section{
 }
 
 
-/* =========================
-   GAMES GRID
-========================= */
+/* =====================================================
+   GAMES
+===================================================== */
 
 .games{
 
     display:grid;
 
     grid-template-columns:
-        repeat(3,minmax(0,1fr));
+    repeat(4,minmax(0,1fr));
 
-    gap:22px;
+    gap:20px;
 
 }
 
 .card{
 
     background:
-        linear-gradient(
-            180deg,
-            #121b31,
-            #0e1628
-        );
+    linear-gradient(
+        180deg,
+        #121b31,
+        #0e1628
+    );
 
-    border:1px solid var(--border);
+    border:
+    1px solid var(--border);
 
     border-radius:20px;
 
     overflow:hidden;
 
-    transition:
-        transform .3s,
-        border-color .3s,
-        box-shadow .3s;
+    transition:.3s;
 
 }
 
 .card:hover{
 
-    transform:translateY(-8px);
+    transform:
+    translateY(-8px);
 
-    border-color:rgba(24,197,235,.55);
+    border-color:
+    rgba(24,197,235,.55);
 
     box-shadow:
-        0 18px 50px rgba(0,0,0,.35),
-        0 0 30px rgba(24,197,235,.07);
+    0 18px 50px
+    rgba(0,0,0,.35);
 
 }
 
-
-/* صورة اللعبة */
-
 .cover{
 
-    height:190px;
-
-    position:relative;
+    height:180px;
 
     display:flex;
 
@@ -769,9 +762,11 @@ section{
 
     justify-content:center;
 
-    overflow:hidden;
+    font-size:70px;
 
-    font-size:75px;
+    position:relative;
+
+    overflow:hidden;
 
 }
 
@@ -784,107 +779,75 @@ section{
     inset:0;
 
     background:
-        linear-gradient(
-            180deg,
-            transparent 45%,
-            rgba(5,9,20,.7)
-        );
+    linear-gradient(
+        180deg,
+        transparent,
+        rgba(5,9,20,.65)
+    );
 
 }
 
 .cover-1{
 
     background:
-        radial-gradient(
-            circle at 30% 30%,
-            #2dd4bf,
-            transparent 25%
-        ),
-        linear-gradient(
-            135deg,
-            #123c5a,
-            #35206d
-        );
+    radial-gradient(
+        circle at 30% 30%,
+        #2dd4bf,
+        transparent 25%
+    ),
+    linear-gradient(
+        135deg,
+        #123c5a,
+        #35206d
+    );
 
 }
 
 .cover-2{
 
     background:
-        radial-gradient(
-            circle at 70% 30%,
-            #f97316,
-            transparent 22%
-        ),
-        linear-gradient(
-            135deg,
-            #301d52,
-            #111f48
-        );
+    radial-gradient(
+        circle at 70% 30%,
+        #f97316,
+        transparent 22%
+    ),
+    linear-gradient(
+        135deg,
+        #301d52,
+        #111f48
+    );
 
 }
 
 .cover-3{
 
     background:
-        radial-gradient(
-            circle at 40% 40%,
-            #facc15,
-            transparent 20%
-        ),
-        linear-gradient(
-            135deg,
-            #17435b,
-            #412066
-        );
+    radial-gradient(
+        circle at 40% 40%,
+        #facc15,
+        transparent 20%
+    ),
+    linear-gradient(
+        135deg,
+        #17435b,
+        #412066
+    );
 
 }
 
 .cover-4{
 
     background:
-        radial-gradient(
-            circle at 60% 30%,
-            #fb7185,
-            transparent 20%
-        ),
-        linear-gradient(
-            135deg,
-            #182d59,
-            #4a205c
-        );
-
-}
-
-.cover-5{
-
-    background:
-        radial-gradient(
-            circle at 30% 30%,
-            #38bdf8,
-            transparent 22%
-        ),
-        linear-gradient(
-            135deg,
-            #153f58,
-            #25245d
-        );
-
-}
-
-.cover-6{
-
-    background:
-        radial-gradient(
-            circle at 70% 40%,
-            #a78bfa,
-            transparent 23%
-        ),
-        linear-gradient(
-            135deg,
-            #241b50,
-            #12394f
-        );
+    radial-gradient(
+        circle at 60% 30%,
+        #fb7185,
+        transparent 20%
+    ),
+    linear-gradient(
+        135deg,
+        #182d59,
+        #4a205c
+    );
 
 }
 
@@ -894,17 +857,20 @@ section{
 
     z-index:2;
 
+    animation:
+    float 3s ease-in-out infinite;
+
     filter:
-        drop-shadow(0 10px 15px rgba(0,0,0,.35));
+    drop-shadow(
+        0 10px 15px
+        rgba(0,0,0,.4)
+    );
 
 }
 
-
-/* محتوى الكارت */
-
 .card-content{
 
-    padding:20px;
+    padding:19px;
 
 }
 
@@ -912,21 +878,19 @@ section{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:space-between;
 
-    gap:10px;
+    align-items:center;
 
-    margin-bottom:10px;
+    gap:8px;
+
+    margin-bottom:9px;
 
 }
 
 .card h3{
 
-    font-size:21px;
-
-    font-weight:850;
+    font-size:19px;
 
 }
 
@@ -934,7 +898,7 @@ section{
 
     color:#facc15;
 
-    font-size:14px;
+    font-size:13px;
 
     white-space:nowrap;
 
@@ -946,9 +910,12 @@ section{
 
     color:var(--cyan-light);
 
-    background:rgba(24,197,235,.08);
+    background:
+    rgba(24,197,235,.08);
 
-    border:1px solid rgba(24,197,235,.15);
+    border:
+    1px solid
+    rgba(24,197,235,.15);
 
     padding:4px 9px;
 
@@ -964,11 +931,11 @@ section{
 
     color:#98a7be;
 
-    font-size:14px;
+    font-size:13px;
 
-    line-height:1.9;
+    line-height:1.8;
 
-    min-height:53px;
+    min-height:48px;
 
 }
 
@@ -980,13 +947,14 @@ section{
 
     text-align:center;
 
-    margin-top:17px;
+    margin-top:16px;
 
     padding:12px;
 
     border-radius:11px;
 
-    background:linear-gradient(
+    background:
+    linear-gradient(
         135deg,
         var(--cyan),
         #168fdc
@@ -996,38 +964,42 @@ section{
 
     font-weight:900;
 
+    border:0;
+
+    cursor:pointer;
+
     transition:.2s;
 
 }
 
 .play-button:hover{
 
-    transform:scale(1.02);
-
     background:var(--cyan-light);
+
+    transform:scale(1.02);
 
 }
 
 
-/* =========================
+/* =====================================================
    ABOUT
-========================= */
+===================================================== */
 
 .about{
 
     background:
-
     radial-gradient(
         circle at 80% 20%,
         rgba(117,87,255,.1),
         transparent 30%
     ),
-
     #0b1222;
 
-    border-top:1px solid rgba(255,255,255,.04);
+    border-top:
+    1px solid rgba(255,255,255,.04);
 
-    border-bottom:1px solid rgba(255,255,255,.04);
+    border-bottom:
+    1px solid rgba(255,255,255,.04);
 
 }
 
@@ -1036,7 +1008,7 @@ section{
     display:grid;
 
     grid-template-columns:
-        1.2fr .8fr;
+    1.2fr .8fr;
 
     gap:45px;
 
@@ -1065,13 +1037,14 @@ section{
 .about-box{
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(24,197,235,.1),
-            rgba(117,87,255,.1)
-        );
+    linear-gradient(
+        145deg,
+        rgba(24,197,235,.1),
+        rgba(117,87,255,.1)
+    );
 
-    border:1px solid var(--border);
+    border:
+    1px solid var(--border);
 
     border-radius:22px;
 
@@ -1079,7 +1052,7 @@ section{
 
 }
 
-.about-box div{
+.about-item{
 
     display:flex;
 
@@ -1089,34 +1062,34 @@ section{
 
     padding:15px 0;
 
-    border-bottom:1px solid rgba(255,255,255,.07);
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.07);
 
 }
 
-.about-box div:last-child{
+.about-item:last-child{
 
     border-bottom:0;
 
 }
 
-.about-box strong{
+.about-item strong{
 
     display:block;
 
 }
 
-.about-box span{
+.about-item small{
 
     color:var(--muted);
-
-    font-size:13px;
 
 }
 
 
-/* =========================
+/* =====================================================
    CTA
-========================= */
+===================================================== */
 
 .cta{
 
@@ -1132,16 +1105,15 @@ section{
 
     border-radius:25px;
 
-    border:1px solid var(--border);
+    border:
+    1px solid var(--border);
 
     background:
-
     radial-gradient(
         circle at 50% 0%,
         rgba(24,197,235,.14),
         transparent 45%
     ),
-
     #10182c;
 
 }
@@ -1163,15 +1135,17 @@ section{
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
 
     background:#050914;
 
-    border-top:1px solid rgba(255,255,255,.06);
+    border-top:
+    1px solid
+    rgba(255,255,255,.06);
 
     padding:45px 0 25px;
 
@@ -1237,7 +1211,9 @@ footer{
 
     font-size:13px;
 
-    border-top:1px solid rgba(255,255,255,.05);
+    border-top:
+    1px solid
+    rgba(255,255,255,.05);
 
     margin-top:30px;
 
@@ -1246,9 +1222,242 @@ footer{
 }
 
 
-/* =========================
+/* =====================================================
+   GAME MODAL
+===================================================== */
+
+.game-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(2,5,14,.92);
+
+    backdrop-filter:blur(10px);
+
+    z-index:10000;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px;
+
+}
+
+.game-modal.show{
+
+    display:flex;
+
+}
+
+.game-window{
+
+    width:min(850px,100%);
+
+    max-height:95vh;
+
+    overflow:auto;
+
+    background:#0b1326;
+
+    border:
+    1px solid #2b3b5d;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 30px 100px
+    rgba(0,0,0,.6);
+
+    padding:20px;
+
+}
+
+.game-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:15px;
+
+}
+
+.game-header h2{
+
+    font-size:22px;
+
+}
+
+.close-game{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    border:
+    1px solid #33435f;
+
+    background:#111b31;
+
+    color:#fff;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+}
+
+.close-game:hover{
+
+    background:#ef4444;
+
+}
+
+
+/* =====================================================
+   CANVAS
+===================================================== */
+
+canvas{
+
+    display:block;
+
+    width:100%;
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:#050914;
+
+    border:
+    2px solid #243552;
+
+    border-radius:12px;
+
+}
+
+.game-info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:15px;
+
+    color:#9eacc2;
+
+    font-size:14px;
+
+}
+
+.restart-btn{
+
+    margin-top:15px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--cyan),
+        #178edc
+    );
+
+    color:#03111b;
+
+    border:0;
+
+    padding:11px 20px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   MEMORY
+===================================================== */
+
+.memory-grid{
+
+    width:min(500px,100%);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:10px;
+
+}
+
+.memory-card{
+
+    aspect-ratio:1;
+
+    border:0;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #162544,
+        #24355a
+    );
+
+    color:#fff;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.memory-card:hover{
+
+    transform:scale(1.03);
+
+}
+
+.memory-card.open{
+
+    background:
+    linear-gradient(
+        135deg,
+        #0e7898,
+        #4c3c9d
+    );
+
+}
+
+
+/* =====================================================
    NO RESULTS
-========================= */
+===================================================== */
 
 .no-results{
 
@@ -1263,18 +1472,22 @@ footer{
 }
 
 
-/* =========================
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
     .games{
 
         grid-template-columns:
-            repeat(2,minmax(0,1fr));
+        repeat(2,minmax(0,1fr));
 
     }
+
+}
+
+@media(max-width:800px){
 
     .about-grid{
 
@@ -1330,15 +1543,15 @@ footer{
 
     }
 
-    .stats-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
     .stats{
 
         margin-top:-20px;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
 
     }
 
@@ -1360,12 +1573,6 @@ footer{
 
     }
 
-    .cover{
-
-        height:180px;
-
-    }
-
     .footer-content{
 
         flex-direction:column;
@@ -1381,9 +1588,9 @@ footer{
 }
 
 
-/* =========================
+/* =====================================================
    ANIMATION
-========================= */
+===================================================== */
 
 @keyframes float{
 
@@ -1401,12 +1608,6 @@ footer{
 
 }
 
-.game-icon{
-
-    animation:float 3s ease-in-out infinite;
-
-}
-
 </style>
 
 </head>
@@ -1415,9 +1616,9 @@ footer{
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header>
 
@@ -1426,8 +1627,15 @@ footer{
 <nav class="navbar">
 
 <a href="#home" class="logo">
-🎮 <span>تكنومسار</span>
+
+🎮
+
+<span>
+تكنومسار
+</span>
+
 </a>
+
 
 <div class="nav-links">
 
@@ -1460,9 +1668,9 @@ footer{
 <main>
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero" id="home">
 
@@ -1471,15 +1679,20 @@ footer{
 <div class="hero-content">
 
 <div class="badge">
-🔥 ألعاب مجانية وممتعة
+🔥 ألعاب مجانية تعمل مباشرة في المتصفح
 </div>
+
 
 <h1>
 
 اكتشف عالمًا من
-<span>الألعاب المجانية</span>
+
+<span>
+الألعاب المجانية
+</span>
 
 </h1>
+
 
 <p>
 
@@ -1487,23 +1700,26 @@ footer{
 
 <br>
 
-اكتشف مجموعة متنوعة من ألعاب الكمبيوتر
-في مكان واحد، من السباق والمغامرات
-إلى الألغاز والأكشن.
+العب مجموعة من الألعاب الممتعة
+مباشرة من المتصفح بدون تحميل.
 
 </p>
 
+
 <div class="hero-buttons">
 
-<a href="#games" class="btn btn-primary">
+<a href="#games"
+class="btn btn-primary">
 
 🎮 استكشف الألعاب
 
 </a>
 
-<a href="#about" class="btn btn-secondary">
 
-ℹ️ تعرف علينا
+<a href="#about"
+class="btn btn-secondary">
+
+ℹ️ عن تكنومسار
 
 </a>
 
@@ -1517,9 +1733,9 @@ footer{
 
 
 
-<!-- =========================
+<!-- =====================================================
      STATS
-========================= -->
+===================================================== -->
 
 <div class="stats">
 
@@ -1527,72 +1743,77 @@ footer{
 
 <div class="stats-grid">
 
+
 <div class="stat">
 
-<strong>50+</strong>
+<strong>
+4
+</strong>
 
 <span>
-لعبة مجانية
+ألعاب مجانية
 </span>
 
 </div>
 
+
 <div class="stat">
 
-<strong>4</strong>
+<strong>
+100%
+</strong>
 
 <span>
-تصنيفات ألعاب
+تعمل من المتصفح
 </span>
 
 </div>
 
+
 <div class="stat">
 
-<strong>100%</strong>
+<strong>
+0
+</strong>
 
 <span>
-مجاني للجميع
+برامج مطلوبة
 </span>
 
 </div>
 
-</div>
 
 </div>
 
 </div>
 
+</div>
 
 
-<!-- =========================
+
+<!-- =====================================================
      GAMES
-========================= -->
+===================================================== -->
 
 <section id="games">
 
 <div class="container">
 
-<div class="section-head">
-
-<div>
 
 <h2 class="section-title">
 🎮 الألعاب المميزة
 </h2>
 
+
 <p class="section-description">
-اختر لعبتك المفضلة وابدأ المغامرة.
+
+اختر اللعبة التي تريدها واضغط «العب الآن».
+
 </p>
 
-</div>
-
-</div>
 
 
-<!-- Search -->
-
-<div class="search-area">
+<!-- SEARCH -->
 
 <div class="search-box">
 
@@ -1611,57 +1832,80 @@ autocomplete="off"
 </div>
 
 
+
+<!-- FILTERS -->
+
 <div class="filters">
 
-<button class="filter active" data-category="all">
+<button
+class="filter active"
+data-category="all">
+
 الكل
+
 </button>
 
-<button class="filter" data-category="سباق">
-🏎️ سباق
+
+<button
+class="filter"
+data-category="arcade">
+
+🎮 أركيد
+
 </button>
 
-<button class="filter" data-category="أكشن">
-⚔️ أكشن
-</button>
 
-<button class="filter" data-category="ألغاز">
+<button
+class="filter"
+data-category="puzzle">
+
 🧩 ألغاز
+
 </button>
 
-<button class="filter" data-category="مغامرات">
-🗺️ مغامرات
+
+<button
+class="filter"
+data-category="classic">
+
+⭐ كلاسيكية
+
 </button>
 
 </div>
 
-</div>
 
 
-
-<!-- Games -->
+<!-- GAME GRID -->
 
 <div class="games" id="gameList">
 
 
-<!-- Game 1 -->
+<!-- SNAKE -->
 
-<article class="card" data-category="سباق">
+<article
+class="card"
+data-category="classic"
+data-search="snake ثعبان كلاسيكية">
 
 <div class="cover cover-1">
 
-<span class="game-icon">
-🏎️
+<span
+class="game-icon">
+
+🐍
+
 </span>
 
 </div>
+
 
 <div class="card-content">
 
 <div class="game-top">
 
 <h3>
-لعبة السباق
+Snake
 </h3>
 
 <span class="rating">
@@ -1670,18 +1914,27 @@ autocomplete="off"
 
 </div>
 
+
 <span class="category">
-🏎️ سباق
+⭐ كلاسيكية
 </span>
 
+
 <p>
-لعبة سباق ممتعة لمحبي السيارات
-والسرعة والتحديات المثيرة.
+
+كبر الثعبان عن طريق جمع الطعام
+وتجنب الاصطدام بالجدار أو بنفسك.
+
 </p>
 
-<a href="#" class="play-button">
+
+<button
+class="play-button"
+onclick="openGame('snake')">
+
 🎮 العب الآن
-</a>
+
+</button>
 
 </div>
 
@@ -1689,24 +1942,31 @@ autocomplete="off"
 
 
 
-<!-- Game 2 -->
+<!-- PONG -->
 
-<article class="card" data-category="أكشن">
+<article
+class="card"
+data-category="arcade"
+data-search="pong بينج بونج اركيد">
 
 <div class="cover cover-2">
 
-<span class="game-icon">
-⚔️
+<span
+class="game-icon">
+
+🏓
+
 </span>
 
 </div>
+
 
 <div class="card-content">
 
 <div class="game-top">
 
 <h3>
-مغامرة الأبطال
+Pong
 </h3>
 
 <span class="rating">
@@ -1715,18 +1975,27 @@ autocomplete="off"
 
 </div>
 
+
 <span class="category">
-⚔️ أكشن
+🎮 أركيد
 </span>
 
+
 <p>
-واجه الأعداء وخض مغامرات
-وتحديات مليئة بالإثارة.
+
+واجه الكمبيوتر وحاول تسجيل
+أكبر عدد من النقاط.
+
 </p>
 
-<a href="#" class="play-button">
+
+<button
+class="play-button"
+onclick="openGame('pong')">
+
 🎮 العب الآن
-</a>
+
+</button>
 
 </div>
 
@@ -1734,24 +2003,31 @@ autocomplete="off"
 
 
 
-<!-- Game 3 -->
+<!-- BREAKOUT -->
 
-<article class="card" data-category="ألغاز">
+<article
+class="card"
+data-category="arcade"
+data-search="breakout كسر الطوب اركيد">
 
 <div class="cover cover-3">
 
-<span class="game-icon">
-🧩
+<span
+class="game-icon">
+
+🧱
+
 </span>
 
 </div>
+
 
 <div class="card-content">
 
 <div class="game-top">
 
 <h3>
-تحدي العقل
+Breakout
 </h3>
 
 <span class="rating">
@@ -1760,18 +2036,27 @@ autocomplete="off"
 
 </div>
 
+
 <span class="category">
-🧩 ألغاز
+🎮 أركيد
 </span>
 
+
 <p>
-اختبر ذكاءك وتركيزك مع مجموعة
-من الألغاز والتحديات الممتعة.
+
+حرّك المضرب وحطم جميع
+الطوب دون أن تسقط الكرة.
+
 </p>
 
-<a href="#" class="play-button">
+
+<button
+class="play-button"
+onclick="openGame('breakout')">
+
 🎮 العب الآن
-</a>
+
+</button>
 
 </div>
 
@@ -1779,114 +2064,31 @@ autocomplete="off"
 
 
 
-<!-- Game 4 -->
+<!-- MEMORY -->
 
-<article class="card" data-category="مغامرات">
+<article
+class="card"
+data-category="puzzle"
+data-search="memory ذاكرة مطابقة الغاز">
 
 <div class="cover cover-4">
 
-<span class="game-icon">
-🗺️
+<span
+class="game-icon">
+
+🧠
+
 </span>
 
 </div>
+
 
 <div class="card-content">
 
 <div class="game-top">
 
 <h3>
-رحلة المغامرة
-</h3>
-
-<span class="rating">
-⭐ 4.6
-</span>
-
-</div>
-
-<span class="category">
-🗺️ مغامرات
-</span>
-
-<p>
-استكشف عوالم جديدة واكتشف
-الأسرار خلال رحلة مليئة بالمغامرات.
-</p>
-
-<a href="#" class="play-button">
-🎮 العب الآن
-</a>
-
-</div>
-
-</article>
-
-
-
-<!-- Game 5 -->
-
-<article class="card" data-category="سباق">
-
-<div class="cover cover-5">
-
-<span class="game-icon">
-🚗
-</span>
-
-</div>
-
-<div class="card-content">
-
-<div class="game-top">
-
-<h3>
-سباق الشوارع
-</h3>
-
-<span class="rating">
-⭐ 4.5
-</span>
-
-</div>
-
-<span class="category">
-🏎️ سباق
-</span>
-
-<p>
-تحدى خصومك وحاول الوصول إلى
-خط النهاية بأسرع وقت ممكن.
-</p>
-
-<a href="#" class="play-button">
-🎮 العب الآن
-</a>
-
-</div>
-
-</article>
-
-
-
-<!-- Game 6 -->
-
-<article class="card" data-category="أكشن">
-
-<div class="cover cover-6">
-
-<span class="game-icon">
-🔥
-</span>
-
-</div>
-
-<div class="card-content">
-
-<div class="game-top">
-
-<h3>
-المحارب الأخير
+Memory
 </h3>
 
 <span class="rating">
@@ -1895,18 +2097,27 @@ autocomplete="off"
 
 </div>
 
+
 <span class="category">
-⚔️ أكشن
+🧩 ألغاز
 </span>
 
+
 <p>
-معارك قوية ومراحل مختلفة
-في لعبة مليئة بالحماس والإثارة.
+
+اختبر ذاكرتك واعثر على
+الأزواج المتطابقة بأقل عدد من المحاولات.
+
 </p>
 
-<a href="#" class="play-button">
+
+<button
+class="play-button"
+onclick="openGame('memory')">
+
 🎮 العب الآن
-</a>
+
+</button>
 
 </div>
 
@@ -1916,7 +2127,9 @@ autocomplete="off"
 </div>
 
 
-<div class="no-results" id="noResults">
+<div
+class="no-results"
+id="noResults">
 
 😔 لم نجد لعبة تطابق بحثك.
 
@@ -1928,9 +2141,9 @@ autocomplete="off"
 
 
 
-<!-- =========================
+<!-- =====================================================
      ABOUT
-========================= -->
+===================================================== -->
 
 <section class="about" id="about">
 
@@ -1938,43 +2151,50 @@ autocomplete="off"
 
 <div class="about-grid">
 
+
 <div>
 
 <h2>
 🚀 عن تكنومسار
 </h2>
 
-<p>
-
-تكنومسار هو موقع عربي مخصص
-لاكتشاف الألعاب المجانية والممتعة
-للكمبيوتر.
-
-</p>
 
 <p>
 
-هدفنا هو جمع الألعاب في مكان بسيط
-وسريع وسهل الاستخدام، حتى تتمكن
-من اكتشاف ألعاب جديدة والاستمتاع
-بوقتك.
+تكنومسار هو موقع عربي لتجربة
+الألعاب الخفيفة والممتعة مباشرة
+من المتصفح.
 
 </p>
 
-<a href="#games" class="btn btn-primary">
 
-🎮 استكشف الألعاب
+<p>
+
+لا تحتاج إلى تثبيت برنامج خاص.
+اختر اللعبة واضغط «العب الآن»
+وابدأ اللعب.
+
+</p>
+
+
+<a
+href="#games"
+class="btn btn-primary">
+
+🎮 ابدأ اللعب
 
 </a>
 
 </div>
 
 
+
 <div class="about-box">
 
-<div>
 
-<span style="font-size:30px;">
+<div class="about-item">
+
+<span style="font-size:30px">
 🎮
 </span>
 
@@ -1984,55 +2204,56 @@ autocomplete="off"
 ألعاب متنوعة
 </strong>
 
-<span>
-سباق، أكشن، ألغاز ومغامرات
-</span>
+<small>
+أركيد وألغاز وألعاب كلاسيكية
+</small>
 
 </div>
 
 </div>
 
 
-<div>
+<div class="about-item">
 
-<span style="font-size:30px;">
+<span style="font-size:30px">
 ⚡
 </span>
 
 <div>
 
 <strong>
-تجربة بسيطة
+تشغيل مباشر
 </strong>
 
-<span>
-واجهة سريعة وسهلة الاستخدام
-</span>
+<small>
+لا تحتاج إلى تحميل اللعبة
+</small>
 
 </div>
 
 </div>
 
 
-<div>
+<div class="about-item">
 
-<span style="font-size:30px;">
-🆓
+<span style="font-size:30px">
+📱
 </span>
 
 <div>
 
 <strong>
-مجانية
+متوافق مع الهاتف
 </strong>
 
-<span>
-اكتشف ألعابًا مجانية
-</span>
+<small>
+واجهة متجاوبة مع الشاشات المختلفة
+</small>
 
 </div>
 
 </div>
+
 
 </div>
 
@@ -2044,9 +2265,9 @@ autocomplete="off"
 
 
 
-<!-- =========================
+<!-- =====================================================
      CTA
-========================= -->
+===================================================== -->
 
 <section class="cta">
 
@@ -2058,13 +2279,17 @@ autocomplete="off"
 🎮 مستعد للعب؟
 </h2>
 
+
 <p>
-اكتشف الألعاب المتاحة واختر لعبتك المفضلة الآن.
+اختر إحدى الألعاب وابدأ التحدي الآن.
 </p>
 
-<a href="#games" class="btn btn-primary">
 
-🔥 استكشف جميع الألعاب
+<a
+href="#games"
+class="btn btn-primary">
+
+🔥 العب الآن
 
 </a>
 
@@ -2079,15 +2304,16 @@ autocomplete="off"
 
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
 <div class="container">
 
 <div class="footer-content">
+
 
 <div>
 
@@ -2096,8 +2322,10 @@ autocomplete="off"
 </div>
 
 <p class="footer-text">
-منصة عربية لاكتشاف الألعاب المجانية
-والممتعة للكمبيوتر.
+
+منصة عربية للألعاب الخفيفة
+والممتعة التي تعمل مباشرة في المتصفح.
+
 </p>
 
 </div>
@@ -2118,6 +2346,7 @@ autocomplete="off"
 </a>
 
 </div>
+
 
 </div>
 
@@ -2144,11 +2373,88 @@ autocomplete="off"
 
 
 
+<!-- =====================================================
+     GAME MODAL
+===================================================== -->
+
+<div
+class="game-modal"
+id="gameModal"
+onclick="outsideClose(event)">
+
+
+<div class="game-window">
+
+
+<div class="game-header">
+
+<h2 id="gameTitle">
+🎮 اللعبة
+</h2>
+
+
+<button
+class="close-game"
+onclick="closeGame()">
+
+✕
+
+</button>
+
+</div>
+
+
+<!-- CANVAS GAMES -->
+
+<canvas
+id="gameCanvas"
+width="700"
+height="450">
+</canvas>
+
+
+<!-- MEMORY -->
+
+<div
+id="memoryGame"
+class="memory-grid"
+style="display:none">
+</div>
+
+
+<div class="game-info">
+
+<span id="gameScore">
+النقاط: 0
+</span>
+
+<span id="gameHelp">
+استخدم الأسهم للتحكم
+</span>
+
+</div>
+
+
+<button
+class="restart-btn"
+onclick="restartCurrentGame()">
+
+🔄 إعادة اللعبة
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
 <script>
 
-/* =========================
-   SEARCH + FILTER
-========================= */
+/* =====================================================
+   SEARCH
+===================================================== */
 
 const search =
 document.getElementById("search");
@@ -2178,22 +2484,27 @@ function filterGames(){
     cards.forEach(card => {
 
         const content =
-        card.innerText.toLowerCase();
+        (
+            card.innerText +
+            " " +
+            card.dataset.search
+        ).toLowerCase();
+
 
         const category =
         card.dataset.category;
 
 
-        const matchesText =
+        const matchText =
         content.includes(text);
 
 
-        const matchesCategory =
+        const matchCategory =
         currentCategory === "all" ||
         category === currentCategory;
 
 
-        if(matchesText && matchesCategory){
+        if(matchText && matchCategory){
 
             card.style.display = "";
 
@@ -2208,28 +2519,19 @@ function filterGames(){
     });
 
 
-    if(visible === 0){
-
-        noResults.style.display = "block";
-
-    }else{
-
-        noResults.style.display = "none";
-
-    }
+    noResults.style.display =
+    visible === 0
+    ? "block"
+    : "none";
 
 }
 
-
-/* البحث */
 
 search.addEventListener(
     "input",
     filterGames
 );
 
-
-/* التصنيفات */
 
 filters.forEach(button => {
 
@@ -2258,6 +2560,1459 @@ filters.forEach(button => {
 
 });
 
+
+/* =====================================================
+   GAME SYSTEM
+===================================================== */
+
+const modal =
+document.getElementById("gameModal");
+
+const canvas =
+document.getElementById("gameCanvas");
+
+const ctx =
+canvas.getContext("2d");
+
+const title =
+document.getElementById("gameTitle");
+
+const scoreText =
+document.getElementById("gameScore");
+
+const helpText =
+document.getElementById("gameHelp");
+
+const memoryGame =
+document.getElementById("memoryGame");
+
+
+let currentGame = "";
+
+let animationId = null;
+
+
+/* =====================================================
+   OPEN GAME
+===================================================== */
+
+function openGame(game){
+
+    currentGame = game;
+
+    modal.classList.add("show");
+
+    canvas.style.display = "block";
+
+    memoryGame.style.display = "none";
+
+    cancelAnimationFrame(animationId);
+
+
+    if(game === "snake"){
+
+        title.innerText =
+        "🐍 Snake";
+
+        helpText.innerText =
+        "استخدم الأسهم للتحكم";
+
+        startSnake();
+
+    }
+
+
+    if(game === "pong"){
+
+        title.innerText =
+        "🏓 Pong";
+
+        helpText.innerText =
+        "حرّك المضرب بالماوس أو الأسهم";
+
+        startPong();
+
+    }
+
+
+    if(game === "breakout"){
+
+        title.innerText =
+        "🧱 Breakout";
+
+        helpText.innerText =
+        "استخدم الأسهم أو الماوس";
+
+        startBreakout();
+
+    }
+
+
+    if(game === "memory"){
+
+        canvas.style.display =
+        "none";
+
+        memoryGame.style.display =
+        "grid";
+
+        title.innerText =
+        "🧠 Memory";
+
+        helpText.innerText =
+        "اضغط على البطاقات وابحث عن الأزواج";
+
+        startMemory();
+
+    }
+
+}
+
+
+/* =====================================================
+   CLOSE GAME
+===================================================== */
+
+function closeGame(){
+
+    modal.classList.remove("show");
+
+    cancelAnimationFrame(animationId);
+
+}
+
+
+function outsideClose(e){
+
+    if(e.target === modal){
+
+        closeGame();
+
+    }
+
+}
+
+
+function restartCurrentGame(){
+
+    if(currentGame){
+
+        openGame(currentGame);
+
+    }
+
+}
+
+
+/* =====================================================
+   SNAKE
+===================================================== */
+
+let snake = [];
+
+let food = {};
+
+let snakeDirection = {
+    x:1,
+    y:0
+};
+
+let snakeNextDirection = {
+    x:1,
+    y:0
+};
+
+let snakeScore = 0;
+
+let snakeTimer;
+
+
+function startSnake(){
+
+    clearInterval(snakeTimer);
+
+    snake = [
+
+        {x:10,y:10},
+
+        {x:9,y:10},
+
+        {x:8,y:10}
+
+    ];
+
+
+    food = randomFood();
+
+    snakeDirection = {
+        x:1,
+        y:0
+    };
+
+    snakeNextDirection = {
+        x:1,
+        y:0
+    };
+
+    snakeScore = 0;
+
+    scoreText.innerText =
+    "النقاط: 0";
+
+
+    snakeTimer =
+    setInterval(
+        snakeLoop,
+        110
+    );
+
+}
+
+
+function randomFood(){
+
+    return {
+
+        x:
+        Math.floor(
+            Math.random()*28
+        ),
+
+        y:
+        Math.floor(
+            Math.random()*18
+        )
+
+    };
+
+}
+
+
+function snakeLoop(){
+
+    snakeDirection =
+    snakeNextDirection;
+
+
+    const head = {
+
+        x:
+        snake[0].x +
+        snakeDirection.x,
+
+        y:
+        snake[0].y +
+        snakeDirection.y
+
+    };
+
+
+    if(
+
+        head.x < 0 ||
+        head.x >= 28 ||
+        head.y < 0 ||
+        head.y >= 18
+
+    ){
+
+        snakeGameOver();
+
+        return;
+
+    }
+
+
+    for(
+        let i=0;
+        i<snake.length;
+        i++
+    ){
+
+        if(
+
+            snake[i].x === head.x &&
+            snake[i].y === head.y
+
+        ){
+
+            snakeGameOver();
+
+            return;
+
+        }
+
+    }
+
+
+    snake.unshift(head);
+
+
+    if(
+
+        head.x === food.x &&
+        head.y === food.y
+
+    ){
+
+        snakeScore++;
+
+        scoreText.innerText =
+        "النقاط: " + snakeScore;
+
+        food = randomFood();
+
+    }else{
+
+        snake.pop();
+
+    }
+
+
+    drawSnake();
+
+}
+
+
+function drawSnake(){
+
+    ctx.fillStyle =
+    "#050914";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    const size = 25;
+
+
+    snake.forEach(
+        (part,index) => {
+
+            ctx.fillStyle =
+            index === 0
+            ? "#61e7ff"
+            : "#18c5eb";
+
+            ctx.fillRect(
+                part.x*size,
+                part.y*size,
+                size-2,
+                size-2
+            );
+
+        }
+    );
+
+
+    ctx.fillStyle =
+    "#ef4444";
+
+    ctx.beginPath();
+
+    ctx.arc(
+        food.x*size+12,
+        food.y*size+12,
+        9,
+        0,
+        Math.PI*2
+    );
+
+    ctx.fill();
+
+}
+
+
+function snakeGameOver(){
+
+    clearInterval(snakeTimer);
+
+    ctx.fillStyle =
+    "rgba(0,0,0,.7)";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    ctx.fillStyle =
+    "#fff";
+
+    ctx.textAlign =
+    "center";
+
+    ctx.font =
+    "bold 36px Arial";
+
+    ctx.fillText(
+        "انتهت اللعبة!",
+        canvas.width/2,
+        canvas.height/2
+    );
+
+
+    ctx.font =
+    "18px Arial";
+
+    ctx.fillText(
+        "النقاط: " + snakeScore,
+        canvas.width/2,
+        canvas.height/2+40
+    );
+
+}
+
+
+/* =====================================================
+   SNAKE CONTROLS
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(currentGame !== "snake"){
+            return;
+        }
+
+
+        if(
+            e.key === "ArrowUp" &&
+            snakeDirection.y !== 1
+        ){
+
+            snakeNextDirection = {
+                x:0,
+                y:-1
+            };
+
+        }
+
+
+        if(
+            e.key === "ArrowDown" &&
+            snakeDirection.y !== -1
+        ){
+
+            snakeNextDirection = {
+                x:0,
+                y:1
+            };
+
+        }
+
+
+        if(
+            e.key === "ArrowLeft" &&
+            snakeDirection.x !== 1
+        ){
+
+            snakeNextDirection = {
+                x:-1,
+                y:0
+            };
+
+        }
+
+
+        if(
+            e.key === "ArrowRight" &&
+            snakeDirection.x !== -1
+        ){
+
+            snakeNextDirection = {
+                x:1,
+                y:0
+            };
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   PONG
+===================================================== */
+
+let pong;
+
+let pongAnimation;
+
+
+function startPong(){
+
+    pong = {
+
+        playerY:190,
+
+        computerY:190,
+
+        ballX:350,
+
+        ballY:225,
+
+        ballVX:5,
+
+        ballVY:3,
+
+        playerScore:0,
+
+        computerScore:0
+
+    };
+
+
+    scoreText.innerText =
+    "أنت 0 : 0 الكمبيوتر";
+
+
+    pongAnimation =
+    requestAnimationFrame(
+        pongLoop
+    );
+
+}
+
+
+function pongLoop(){
+
+    ctx.fillStyle =
+    "#050914";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    /* خط المنتصف */
+
+    ctx.strokeStyle =
+    "#243552";
+
+    ctx.setLineDash(
+        [8,10]
+    );
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+        350,
+        0
+    );
+
+    ctx.lineTo(
+        350,
+        450
+    );
+
+    ctx.stroke();
+
+    ctx.setLineDash([]);
+
+
+    /* اللاعب */
+
+    ctx.fillStyle =
+    "#61e7ff";
+
+    ctx.fillRect(
+        20,
+        pong.playerY,
+        14,
+        80
+    );
+
+
+    /* الكمبيوتر */
+
+    ctx.fillStyle =
+    "#a78bfa";
+
+    ctx.fillRect(
+        666,
+        pong.computerY,
+        14,
+        80
+    );
+
+
+    /* الكرة */
+
+    ctx.fillStyle =
+    "#fff";
+
+    ctx.beginPath();
+
+    ctx.arc(
+        pong.ballX,
+        pong.ballY,
+        9,
+        0,
+        Math.PI*2
+    );
+
+    ctx.fill();
+
+
+    /* الكرة */
+
+    pong.ballX +=
+    pong.ballVX;
+
+    pong.ballY +=
+    pong.ballVY;
+
+
+    if(
+        pong.ballY < 9 ||
+        pong.ballY > 441
+    ){
+
+        pong.ballVY *= -1;
+
+    }
+
+
+    /* الكمبيوتر */
+
+    const computerCenter =
+    pong.computerY + 40;
+
+
+    if(
+        computerCenter <
+        pong.ballY
+    ){
+
+        pong.computerY += 3.3;
+
+    }else{
+
+        pong.computerY -= 3.3;
+
+    }
+
+
+    pong.computerY =
+    Math.max(
+        0,
+        Math.min(
+            370,
+            pong.computerY
+        )
+    );
+
+
+    /* تصادم اللاعب */
+
+    if(
+
+        pong.ballX < 34 &&
+        pong.ballX > 20 &&
+        pong.ballY >
+        pong.playerY &&
+        pong.ballY <
+        pong.playerY+80
+
+    ){
+
+        pong.ballVX =
+        Math.abs(pong.ballVX);
+
+    }
+
+
+    /* تصادم الكمبيوتر */
+
+    if(
+
+        pong.ballX > 650 &&
+        pong.ballX < 680 &&
+        pong.ballY >
+        pong.computerY &&
+        pong.ballY <
+        pong.computerY+80
+
+    ){
+
+        pong.ballVX =
+        -Math.abs(pong.ballVX);
+
+    }
+
+
+    /* نقطة */
+
+    if(pong.ballX < 0){
+
+        pong.computerScore++;
+
+        resetPongBall();
+
+    }
+
+
+    if(pong.ballX > 700){
+
+        pong.playerScore++;
+
+        resetPongBall();
+
+    }
+
+
+    scoreText.innerText =
+    "أنت " +
+    pong.playerScore +
+    " : " +
+    pong.computerScore +
+    " الكمبيوتر";
+
+
+    pongAnimation =
+    requestAnimationFrame(
+        pongLoop
+    );
+
+}
+
+
+function resetPongBall(){
+
+    pong.ballX = 350;
+
+    pong.ballY = 225;
+
+    pong.ballVX =
+    pong.ballVX > 0
+    ? -5
+    : 5;
+
+    pong.ballVY =
+    Math.random() > .5
+    ? 3
+    : -3;
+
+}
+
+
+/* =====================================================
+   PONG CONTROLS
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(currentGame !== "pong"){
+            return;
+        }
+
+
+        if(e.key === "ArrowUp"){
+
+            pong.playerY -= 25;
+
+        }
+
+
+        if(e.key === "ArrowDown"){
+
+            pong.playerY += 25;
+
+        }
+
+
+        pong.playerY =
+        Math.max(
+            0,
+            Math.min(
+                370,
+                pong.playerY
+            )
+        );
+
+    }
+);
+
+
+canvas.addEventListener(
+    "mousemove",
+    function(e){
+
+        if(currentGame !== "pong"){
+            return;
+        }
+
+
+        const rect =
+        canvas.getBoundingClientRect();
+
+
+        const y =
+        (e.clientY -
+        rect.top) /
+        rect.height *
+        canvas.height;
+
+
+        pong.playerY =
+        Math.max(
+            0,
+            Math.min(
+                370,
+                y-40
+            )
+        );
+
+    }
+);
+
+
+/* =====================================================
+   BREAKOUT
+===================================================== */
+
+let breakout;
+
+function startBreakout(){
+
+    breakout = {
+
+        paddleX:300,
+
+        ballX:350,
+
+        ballY:400,
+
+        ballVX:4,
+
+        ballVY:-4,
+
+        score:0,
+
+        bricks:[]
+
+    };
+
+
+    for(
+        let row=0;
+        row<5;
+        row++
+    ){
+
+        for(
+            let col=0;
+            col<9;
+            col++
+        ){
+
+            breakout.bricks.push({
+
+                x:
+                25 +
+                col*75,
+
+                y:
+                40 +
+                row*28,
+
+                alive:true
+
+            });
+
+        }
+
+    }
+
+
+    scoreText.innerText =
+    "النقاط: 0";
+
+
+    breakoutLoop();
+
+}
+
+
+function breakoutLoop(){
+
+    ctx.fillStyle =
+    "#050914";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    /* الطوب */
+
+    breakout.bricks.forEach(
+        brick => {
+
+            if(!brick.alive){
+                return;
+            }
+
+
+            ctx.fillStyle =
+            "#18c5eb";
+
+            ctx.fillRect(
+                brick.x,
+                brick.y,
+                65,
+                20
+            );
+
+        }
+    );
+
+
+    /* المضرب */
+
+    ctx.fillStyle =
+    "#61e7ff";
+
+    ctx.fillRect(
+        breakout.paddleX,
+        420,
+        100,
+        12
+    );
+
+
+    /* الكرة */
+
+    ctx.fillStyle =
+    "#fff";
+
+    ctx.beginPath();
+
+    ctx.arc(
+        breakout.ballX,
+        breakout.ballY,
+        8,
+        0,
+        Math.PI*2
+    );
+
+    ctx.fill();
+
+
+    /* الحركة */
+
+    breakout.ballX +=
+    breakout.ballVX;
+
+    breakout.ballY +=
+    breakout.ballVY;
+
+
+    if(
+        breakout.ballX < 8 ||
+        breakout.ballX > 692
+    ){
+
+        breakout.ballVX *= -1;
+
+    }
+
+
+    if(
+        breakout.ballY < 8
+    ){
+
+        breakout.ballVY *= -1;
+
+    }
+
+
+    /* المضرب */
+
+    if(
+
+        breakout.ballY > 410 &&
+        breakout.ballY < 432 &&
+        breakout.ballX >
+        breakout.paddleX &&
+        breakout.ballX <
+        breakout.paddleX+100
+
+    ){
+
+        breakout.ballVY =
+        -Math.abs(
+            breakout.ballVY
+        );
+
+    }
+
+
+    /* الطوب */
+
+    breakout.bricks.forEach(
+        brick => {
+
+            if(!brick.alive){
+                return;
+            }
+
+
+            if(
+
+                breakout.ballX >
+                brick.x &&
+                breakout.ballX <
+                brick.x+65 &&
+                breakout.ballY >
+                brick.y &&
+                breakout.ballY <
+                brick.y+20
+
+            ){
+
+                brick.alive = false;
+
+                breakout.ballVY *= -1;
+
+                breakout.score++;
+
+                scoreText.innerText =
+                "النقاط: " +
+                breakout.score;
+
+            }
+
+        }
+    );
+
+
+    /* سقوط الكرة */
+
+    if(
+        breakout.ballY > 460
+    ){
+
+        breakoutGameOver();
+
+        return;
+
+    }
+
+
+    /* الفوز */
+
+    if(
+        breakout.bricks.every(
+            brick => !brick.alive
+        )
+    ){
+
+        breakoutWin();
+
+        return;
+
+    }
+
+
+    animationId =
+    requestAnimationFrame(
+        breakoutLoop
+    );
+
+}
+
+
+function breakoutGameOver(){
+
+    showCanvasMessage(
+        "انتهت اللعبة!",
+        "النقاط: " +
+        breakout.score
+    );
+
+}
+
+
+function breakoutWin(){
+
+    showCanvasMessage(
+        "🎉 فزت!",
+        "لقد حطمت كل الطوب"
+    );
+
+}
+
+
+function showCanvasMessage(
+    first,
+    second
+){
+
+    ctx.fillStyle =
+    "rgba(0,0,0,.7)";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    ctx.fillStyle =
+    "#fff";
+
+    ctx.textAlign =
+    "center";
+
+    ctx.font =
+    "bold 36px Arial";
+
+    ctx.fillText(
+        first,
+        350,
+        210
+    );
+
+
+    ctx.font =
+    "18px Arial";
+
+    ctx.fillText(
+        second,
+        350,
+        250
+    );
+
+}
+
+
+/* =====================================================
+   BREAKOUT CONTROLS
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(currentGame !== "breakout"){
+            return;
+        }
+
+
+        if(e.key === "ArrowLeft"){
+
+            breakout.paddleX -= 30;
+
+        }
+
+
+        if(e.key === "ArrowRight"){
+
+            breakout.paddleX += 30;
+
+        }
+
+
+        breakout.paddleX =
+        Math.max(
+            0,
+            Math.min(
+                600,
+                breakout.paddleX
+            )
+        );
+
+    }
+);
+
+
+canvas.addEventListener(
+    "mousemove",
+    function(e){
+
+        if(currentGame !== "breakout"){
+            return;
+        }
+
+
+        const rect =
+        canvas.getBoundingClientRect();
+
+
+        const x =
+        (e.clientX -
+        rect.left) /
+        rect.width *
+        canvas.width;
+
+
+        breakout.paddleX =
+        Math.max(
+            0,
+            Math.min(
+                600,
+                x-50
+            )
+        );
+
+    }
+);
+
+
+/* =====================================================
+   MEMORY
+===================================================== */
+
+let memoryFirst = null;
+
+let memorySecond = null;
+
+let memoryLocked = false;
+
+let memoryMoves = 0;
+
+
+function startMemory(){
+
+    memoryGame.innerHTML = "";
+
+    memoryFirst = null;
+
+    memorySecond = null;
+
+    memoryLocked = false;
+
+    memoryMoves = 0;
+
+
+    scoreText.innerText =
+    "المحاولات: 0";
+
+
+    const symbols = [
+
+        "🎮",
+        "🎮",
+
+        "🚗",
+        "🚗",
+
+        "⚔️",
+        "⚔️",
+
+        "🐍",
+        "🐍",
+
+        "🏓",
+        "🏓",
+
+        "🧩",
+        "🧩",
+
+        "🔥",
+        "🔥",
+
+        "🚀",
+        "🚀"
+
+    ];
+
+
+    symbols.sort(
+        () =>
+        Math.random()-.5
+    );
+
+
+    symbols.forEach(
+        symbol => {
+
+            const card =
+            document.createElement(
+                "button"
+            );
+
+
+            card.className =
+            "memory-card";
+
+
+            card.innerText =
+            "❓";
+
+
+            card.dataset.symbol =
+            symbol;
+
+
+            card.addEventListener(
+                "click",
+                () =>
+                flipMemory(card)
+            );
+
+
+            memoryGame.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+function flipMemory(card){
+
+    if(
+        memoryLocked ||
+        card.classList.contains("open")
+    ){
+
+        return;
+
+    }
+
+
+    card.classList.add("open");
+
+    card.innerText =
+    card.dataset.symbol;
+
+
+    if(!memoryFirst){
+
+        memoryFirst = card;
+
+        return;
+
+    }
+
+
+    memorySecond = card;
+
+    memoryMoves++;
+
+    scoreText.innerText =
+    "المحاولات: " +
+    memoryMoves;
+
+
+    if(
+
+        memoryFirst.dataset.symbol ===
+        memorySecond.dataset.symbol
+
+    ){
+
+        memoryFirst = null;
+
+        memorySecond = null;
+
+
+        const allCards =
+        document.querySelectorAll(
+            ".memory-card"
+        );
+
+
+        if(
+            [...allCards].every(
+                c =>
+                c.classList.contains("open")
+            )
+        ){
+
+            setTimeout(
+                () => {
+
+                    alert(
+                        "🎉 مبروك! أكملت اللعبة في " +
+                        memoryMoves +
+                        " محاولات."
+                    );
+
+                },
+                300
+            );
+
+        }
+
+    }else{
+
+        memoryLocked = true;
+
+
+        setTimeout(
+            () => {
+
+                memoryFirst.classList.remove(
+                    "open"
+                );
+
+                memorySecond.classList.remove(
+                    "open"
+                );
+
+
+                memoryFirst.innerText =
+                "❓";
+
+                memorySecond.innerText =
+                "❓";
+
+
+                memoryFirst = null;
+
+                memorySecond = null;
+
+                memoryLocked = false;
+
+            },
+            750
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   ESC CLOSE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(
+            e.key === "Escape"
+        ){
+
+            closeGame();
+
+        }
+
+    }
+);
 
 </script>
 
