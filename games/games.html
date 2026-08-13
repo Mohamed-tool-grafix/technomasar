@@ -1,16 +1,12 @@
-Enter file contents here
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ألعاب مجانية | تكنوماسر</title>
-
-<meta name="description"
-content="ألعاب مجانية ومفتوحة المصدر للكمبيوتر - تكنوماسر">
+<title>SuperTuxKart - تحميل لعبة مجانية | تكنوماسر</title>
 
 <style>
 
@@ -27,212 +23,130 @@ body{
 
 header{
     background:#0d1528;
-    padding:25px 15px;
+    padding:25px;
     text-align:center;
     border-bottom:1px solid #263653;
 }
 
 header h1{
     color:#61e7ff;
-    margin:0 0 10px;
-}
-
-header p{
-    color:#94a3bd;
     margin:0;
 }
 
 .container{
-    width:min(1100px,92%);
+    width:min(850px,92%);
     margin:auto;
 }
 
-.games{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
-
-    gap:22px;
-    padding:40px 0;
-}
-
-.game{
-    background:
-    linear-gradient(180deg,#121b31,#0d1527);
-
-    border:1px solid #253454;
+.game-page{
+    margin:40px 0;
+    background:#111b30;
+    border:1px solid #263653;
     border-radius:20px;
-    overflow:hidden;
-    transition:.3s;
+    padding:30px;
+    text-align:center;
 }
 
-.game:hover{
-    transform:translateY(-7px);
-    border-color:#18c5eb;
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.35);
+.game-icon{
+    font-size:100px;
+    padding:40px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#075985,#312e81);
 }
 
-.cover{
-    height:180px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:75px;
-
-    background:
-    linear-gradient(135deg,#075985,#312e81);
-}
-
-.content{
-    padding:22px;
-}
-
-.game h2{
+h2{
     color:#61e7ff;
-    margin-top:0;
+    font-size:32px;
 }
 
-.game p{
-    color:#94a3bd;
-    line-height:1.8;
+.description{
+    color:#b7c3d7;
+    line-height:2;
+    font-size:17px;
 }
 
 .info{
     display:flex;
-    gap:7px;
+    justify-content:center;
+    gap:10px;
     flex-wrap:wrap;
-    margin:15px 0;
+    margin:25px 0;
 }
 
 .info span{
     background:#17243d;
-    color:#b7c3d7;
-    padding:6px 9px;
-    border-radius:7px;
-    font-size:12px;
+    padding:8px 14px;
+    border-radius:8px;
+    color:#cbd5e1;
 }
 
 .download{
     display:block;
     background:#18c5eb;
     color:#03111b;
-
-    text-align:center;
-
     text-decoration:none;
-
-    padding:13px;
-
-    border-radius:11px;
-
+    padding:16px;
+    border-radius:12px;
     font-weight:900;
-
-    margin-top:15px;
+    font-size:18px;
+    margin:20px auto;
+    max-width:400px;
 }
 
 .download:hover{
     background:#61e7ff;
+    transform:translateY(-2px);
 }
 
-.source{
-    display:block;
-
-    text-align:center;
-
+.official{
     color:#61e7ff;
-
     text-decoration:none;
-
-    padding:11px;
-
-    margin-top:8px;
-
-    border:1px solid #304462;
-
-    border-radius:11px;
 }
 
-.source:hover{
-    background:#17243d;
-}
-
-.notice{
-    background:#111b30;
-    border:1px solid #304462;
-    border-radius:15px;
-
-    padding:20px;
-
-    margin-bottom:40px;
-
-    color:#aebbd0;
-
+.note{
+    margin-top:25px;
+    color:#94a3bd;
+    font-size:14px;
     line-height:1.8;
 }
 
-.notice strong{
-    color:#61e7ff;
-}
-
 footer{
-    background:#050914;
     text-align:center;
+    background:#050914;
     padding:35px;
-
     color:#66748b;
 }
 
-footer strong{
-    color:#61e7ff;
-}
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <header>
 
-<h1>
-🎮 ألعاب تكنوماسر
-</h1>
+<h1>🎮 تكنوماسر</h1>
 
-<p>
-ألعاب مجانية ومفتوحة المصدر
-</p>
+<p>ألعاب مجانية ومفتوحة المصدر</p>
 
 </header>
 
 
 <main class="container">
 
+<div class="game-page">
 
-<div class="games">
-
-
-<!-- SuperTuxKart -->
-
-<div class="game">
-
-<div class="cover">
+<div class="game-icon">
 🏎️
 </div>
-
-<div class="content">
 
 <h2>
 SuperTuxKart
 </h2>
 
-<p>
-لعبة سباق كارت مجانية ومفتوحة المصدر،
-تحتوي على حلبات وشخصيات وأنماط لعب متعددة.
+<p class="description">
+لعبة سباق كارت مجانية ومفتوحة المصدر.
+استمتع بالسباقات والحلبات والشخصيات
+وأنماط اللعب المختلفة.
 </p>
 
 
@@ -240,182 +154,55 @@ SuperTuxKart
 
 <span>🏎️ سباق</span>
 
-<span>💾 مجاني</span>
+<span>💾 مجانية</span>
 
 <span>🖥️ Windows</span>
 
-<span>🌐 مفتوح المصدر</span>
+<span>🌐 مفتوحة المصدر</span>
 
 </div>
 
 
 <a
 class="download"
-href="https://supertuxkart.net/Download"
+href="https://supertuxkart.github.io/stk-website/Download"
 target="_blank"
 rel="noopener">
 
-⬇️ تحميل اللعبة
+⬇️ تحميل SuperTuxKart
 
 </a>
 
 
 <a
-class="source"
-href="https://supertuxkart.net/"
+class="official"
+href="https://supertuxkart.github.io/"
 target="_blank"
 rel="noopener">
 
-🔗 الموقع الرسمي
+🔗 الموقع الرسمي للعبة
 
 </a>
 
-</div>
 
-</div>
+<p class="note">
+
+اضغط على "تحميل SuperTuxKart" للوصول
+إلى تنزيل Windows الرسمي.
+المشروع يوفر نسخ Windows 32-bit و64-bit
+وأنظمة أخرى. <span data-assistant-content-reference="" data-assistant-grouped-webpages="" data-content-reference-type="grouped_webpages"><span aria-label="المصادر" data-assistant-grouped-webpages-list="" role="group"><span data-assistant-grouped-webpages-item=""><button aria-controls="assistant-sources-dialog" aria-haspopup="dialog" aria-label="supertuxkart.github.io" data-assistant-sources-trigger="" data-assistant-sources-payload="[{&quot;attribution&quot;:&quot;supertuxkart.github.io&quot;,&quot;title&quot;:&quot;Download - SuperTuxKart&quot;,&quot;url&quot;:&quot;https://supertuxkart.github.io/stk-website/Download?utm_source=chatgpt.com&quot;}]" data-assistant-grouped-webpages-trigger="" type="button"><span aria-hidden="true" data-assistant-source-icon="">S<img alt="" data-assistant-source-icon-image="" src="https://www.google.com/s2/favicons?domain=https%3A%2F%2Fsupertuxkart.github.io&sz=128" ></span><span data-assistant-reference-title="">supertuxkart.github.io</span></button></span></span></span>
 
 
-<!-- 0 A.D. -->
-
-<div class="game">
-
-<div class="cover">
-⚔️
-</div>
-
-<div class="content">
-
-<h2>
-0 A.D.
-</h2>
-
-<p>
-لعبة استراتيجية تاريخية مجانية
-ومفتوحة المصدر تدور أحداثها في العصور القديمة.
 </p>
 
-
-<div class="info">
-
-<span>⚔️ استراتيجية</span>
-
-<span>💾 مجاني</span>
-
-<span>🖥️ Windows</span>
-
-<span>🌐 مفتوح المصدر</span>
-
 </div>
-
-
-<a
-class="download"
-href="https://play0ad.com/download/"
-target="_blank"
-rel="noopener">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-
-<a
-class="source"
-href="https://play0ad.com/"
-target="_blank"
-rel="noopener">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</div>
-
-</div>
-
-
-<!-- Endless Sky -->
-
-<div class="game">
-
-<div class="cover">
-🚀
-</div>
-
-<div class="content">
-
-<h2>
-Endless Sky
-</h2>
-
-<p>
-استكشف الفضاء وتاجر وخض المعارك
-في لعبة مجانية ومفتوحة المصدر.
-</p>
-
-
-<div class="info">
-
-<span>🚀 فضاء</span>
-
-<span>💾 مجاني</span>
-
-<span>🖥️ Windows</span>
-
-<span>🌐 مفتوح المصدر</span>
-
-</div>
-
-
-<a
-class="download"
-href="https://endless-sky.github.io/"
-target="_blank"
-rel="noopener">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-
-<a
-class="source"
-href="https://github.com/endless-sky/endless-sky"
-target="_blank"
-rel="noopener">
-
-🔗 المصدر
-
-</a>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<div class="notice">
-
-<strong>⚠️ تنبيه:</strong>
-
-هذه الصفحة تعرض ألعابًا مجانية ومفتوحة المصدر.
-أزرار التحميل تنقل الزائر إلى مصادر الألعاب الرسمية.
-لا ترفع ألعابًا تجارية محمية بحقوق النشر
-مثل PES 2013 إلى موقعك بدون إذن.
-
-</div>
-
 
 </main>
 
 
 <footer>
 
-<strong>
-🎮 تكنوماسر
-</strong>
+<strong>🎮 تكنوماسر</strong>
 
 <br><br>
 
@@ -426,7 +213,6 @@ rel="noopener">
 © 2026 جميع الحقوق محفوظة
 
 </footer>
-
 
 </body>
 
