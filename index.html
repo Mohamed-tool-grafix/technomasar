@@ -1,91 +1,623 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>تكنومسار | تحميل الألعاب</title>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>تكنومسار | تحميل ألعاب الكمبيوتر</title>
 
 <meta name="description"
-content="تكنومسار - اكتشف ألعاب الكمبيوتر المجانية وتحميل الألعاب بشكل منظم.">
+content="تكنومسار - اكتشف ألعاب الكمبيوتر والألعاب المجانية وتصفح صفحات الألعاب وتحميلها.">
 
-<link rel="stylesheet" href="style.css">
+<meta name="robots" content="index,follow">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:
+    Arial,
+    "Segoe UI",
+    Tahoma,
+    sans-serif;
+
+    background:#eef1f5;
+    color:#222;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1200px,94%);
+    margin:auto;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    background:#111827;
+    color:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+.topbar{
+    min-height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+    color:#19c8ee;
+    white-space:nowrap;
+}
+
+.nav{
+    display:flex;
+    gap:8px;
+}
+
+.nav a{
+    color:#dbeafe;
+    padding:10px 15px;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.nav a:hover{
+    background:#1f2937;
+    color:#19c8ee;
+}
+
+
+/* ================= SEARCH ================= */
+
+.search-area{
+    background:#1e293b;
+    padding:25px 0;
+}
+
+.search-box{
+    display:flex;
+    max-width:800px;
+    margin:auto;
+}
+
+.search-box input{
+    width:100%;
+    padding:16px 20px;
+
+    border:0;
+    outline:0;
+
+    border-radius:0 8px 8px 0;
+
+    font-size:17px;
+}
+
+.search-box button{
+    width:100px;
+
+    border:0;
+    border-radius:8px 0 0 8px;
+
+    background:#19c8ee;
+    color:#06121a;
+
+    font-size:18px;
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #172554
+    );
+
+    color:white;
+    padding:65px 20px;
+
+    text-align:center;
+}
+
+.hero h1{
+    font-size:
+    clamp(35px,5vw,58px);
+
+    margin-bottom:12px;
+}
+
+.hero h1 span{
+    color:#19c8ee;
+}
+
+.hero p{
+    color:#cbd5e1;
+    font-size:18px;
+}
+
+
+/* ================= MAIN ================= */
+
+main{
+    padding:35px 0;
+}
+
+.section{
+    background:white;
+
+    border-radius:8px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+    box-shadow:
+    0 2px 10px
+    rgba(0,0,0,.05);
+}
+
+.section-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    border-right:
+    5px solid #19c8ee;
+
+    padding-right:12px;
+
+    margin-bottom:25px;
+}
+
+.section-title h2{
+    font-size:27px;
+}
+
+
+/* ================= GAMES ================= */
+
+.games{
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+    gap:20px;
+}
+
+.game-card{
+    background:#fff;
+
+    border:1px solid #e1e6ed;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    transition:.25s;
+}
+
+.game-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 12px 25px
+    rgba(0,0,0,.12);
+
+    border-color:#19c8ee;
+}
+
+.game-image{
+    width:100%;
+    height:190px;
+
+    object-fit:cover;
+
+    display:block;
+
+    background:
+    linear-gradient(
+        135deg,
+        #172554,
+        #0891b2
+    );
+}
+
+.game-info{
+    padding:16px;
+}
+
+.game-title{
+    font-size:19px;
+    font-weight:900;
+
+    margin-bottom:5px;
+}
+
+.game-category{
+    color:#0891b2;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.game-description{
+    color:#64748b;
+
+    font-size:14px;
+
+    margin:
+    10px 0 15px;
+
+    height:45px;
+
+    overflow:hidden;
+}
+
+.game-meta{
+    display:flex;
+    justify-content:space-between;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    margin-bottom:12px;
+}
+
+.game-button{
+    display:block;
+
+    text-align:center;
+
+    background:#19c8ee;
+
+    color:#04131b;
+
+    padding:10px;
+
+    border-radius:6px;
+
+    font-weight:900;
+}
+
+.game-button:hover{
+    background:#08b5dc;
+}
+
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+    display:grid;
+
+    grid-template-columns:
+    repeat(6,1fr);
+
+    gap:12px;
+}
+
+.category{
+    padding:18px 10px;
+
+    text-align:center;
+
+    background:#f1f5f9;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:7px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.category:hover{
+    background:#e0faff;
+
+    border-color:#19c8ee;
+
+    color:#078aa7;
+}
+
+
+/* ================= EMPTY ================= */
+
+.no-results{
+    display:none;
+
+    text-align:center;
+
+    padding:50px;
+
+    color:#64748b;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#111827;
+
+    color:#94a3b8;
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    margin-top:20px;
+}
+
+.footer-logo{
+    color:#19c8ee;
+
+    font-size:24px;
+
+    font-weight:900;
+
+    margin-bottom:10px;
+}
+
+.footer-name{
+    color:white;
+
+    font-weight:bold;
+
+    margin-top:10px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1050px){
+
+    .games{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+    .categories{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+}
+
+
+@media(max-width:750px){
+
+    .topbar{
+        flex-direction:column;
+
+        padding:15px 0;
+    }
+
+    .nav{
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+    }
+
+    .games{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .categories{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .container{
+        width:94%;
+    }
+
+    .hero{
+        padding:45px 15px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .section{
+        padding:15px;
+    }
+
+    .games{
+        grid-template-columns:1fr;
+    }
+
+    .categories{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .game-image{
+        height:210px;
+    }
+
+    .search-box button{
+        width:75px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-    <div class="container navbar">
 
-        <a class="logo" href="index.html">
-            🎮 تكنومسار
-        </a>
+<div class="container topbar">
 
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="#games">الألعاب</a>
-            <a href="#categories">التصنيفات</a>
-        </nav>
+<a href="index.html" class="logo">
+🎮 تكنومسار
+</a>
 
-    </div>
+<nav class="nav">
+
+<a href="index.html">
+الرئيسية
+</a>
+
+<a href="#latest">
+أحدث الألعاب
+</a>
+
+<a href="#categories">
+التصنيفات
+</a>
+
+</nav>
+
+</div>
+
 </header>
+
+
+<!-- SEARCH -->
+
+<div class="search-area">
+
+<div class="container">
+
+<form class="search-box"
+onsubmit="return false;">
+
+<input
+id="search"
+type="search"
+placeholder="🔎 ابحث عن اسم اللعبة..."
+autocomplete="off">
+
+<button>
+بحث
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+مرحبًا بك في
+<span>تكنومسار</span>
+</h1>
+
+<p>
+اكتشف ألعاب الكمبيوتر وتصفح تفاصيل كل لعبة بسهولة.
+</p>
+
+</div>
+
+</section>
+
 
 <main>
 
-<section class="hero">
-    <div class="container">
-
-        <span>🔥 مكتبة ألعاب تكنومسار</span>
-
-        <h1>
-            حمل ألعابك المفضلة
-        </h1>
-
-        <p>
-            اكتشف أحدث الألعاب وتصفح الألعاب حسب التصنيف.
-        </p>
-
-        <input
-            id="search"
-            type="search"
-            placeholder="🔎 ابحث عن لعبة..."
-        >
-
-    </div>
-</section>
-
-
-<section id="games">
-
 <div class="container">
 
-<h2>🎮 أحدث الألعاب</h2>
 
-<div class="games" id="gameList">
+<!-- FEATURED -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>
+🔥 ألعاب مميزة
+</h2>
+
+</div>
 
 
-<article class="game-card">
+<div class="games">
 
-<img src="images/game1.jpg"
-     alt="لعبة حرب">
+
+<article class="game-card"
+data-game="لعبة الحرب 3d">
+
+<div class="game-image"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+">
+⚔️
+</div>
 
 <div class="game-info">
 
-<span class="category">
-⚔️ حرب
-</span>
-
-<h3>
+<div class="game-title">
 لعبة الحرب 3D
-</h3>
+</div>
 
-<p>
-لعبة حرب ثلاثية الأبعاد مليئة بالمغامرات والمعارك.
+<div class="game-category">
+🎯 حرب وتصويب
+</div>
+
+<p class="game-description">
+لعبة أكشن وتصويب ثلاثية الأبعاد.
 </p>
 
-<a class="download"
-   href="games/game1.html">
-   🎮 تفاصيل اللعبة
+<div class="game-meta">
+<span>⭐ 4.8</span>
+<span>💾 2.5 GB</span>
+</div>
+
+<a
+href="games/war3d.html"
+class="game-button">
+
+🎮 تفاصيل اللعبة
+
 </a>
 
 </div>
@@ -93,28 +625,134 @@ content="تكنومسار - اكتشف ألعاب الكمبيوتر المجا�
 </article>
 
 
-<article class="game-card">
+<article class="game-card"
+data-game="لعبة سباق السيارات">
 
-<img src="images/game2.jpg"
-     alt="لعبة سباق">
+<div class="game-image"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+">
+🏎️
+</div>
 
 <div class="game-info">
 
-<span class="category">
+<div class="game-title">
+سباق السيارات
+</div>
+
+<div class="game-category">
 🏎️ سباق
-</span>
+</div>
 
-<h3>
-لعبة سباق السيارات
-</h3>
-
-<p>
-استمتع بسباقات السيارات والسرعة على مجموعة من الحلبات.
+<p class="game-description">
+استمتع بسباقات سريعة ومنافسات قوية.
 </p>
 
-<a class="download"
-   href="games/game2.html">
-   🎮 تفاصيل اللعبة
+<div class="game-meta">
+<span>⭐ 4.7</span>
+<span>💾 1.8 GB</span>
+</div>
+
+<a
+href="games/racing.html"
+class="game-button">
+
+🎮 تفاصيل اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+<article class="game-card"
+data-game="لعبة الرعب">
+
+<div class="game-image"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+">
+👻
+</div>
+
+<div class="game-info">
+
+<div class="game-title">
+لعبة الرعب
+</div>
+
+<div class="game-category">
+👻 رعب
+</div>
+
+<p class="game-description">
+مغامرة رعب وأجواء مليئة بالإثارة.
+</p>
+
+<div class="game-meta">
+<span>⭐ 4.6</span>
+<span>💾 3.2 GB</span>
+</div>
+
+<a
+href="games/horror.html"
+class="game-button">
+
+🎮 تفاصيل اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+<article class="game-card"
+data-game="لعبة مغامرات">
+
+<div class="game-image"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+">
+🗺️
+</div>
+
+<div class="game-info">
+
+<div class="game-title">
+مغامرات 3D
+</div>
+
+<div class="game-category">
+🗺️ مغامرات
+</div>
+
+<p class="game-description">
+استكشف عالمًا واسعًا وخوض مغامرات مختلفة.
+</p>
+
+<div class="game-meta">
+<span>⭐ 4.5</span>
+<span>💾 4.1 GB</span>
+</div>
+
+<a
+href="games/adventure.html"
+class="game-button">
+
+🎮 تفاصيل اللعبة
+
 </a>
 
 </div>
@@ -124,40 +762,303 @@ content="تكنومسار - اكتشف ألعاب الكمبيوتر المجا�
 
 </div>
 
+</section>
+
+
+<!-- LATEST -->
+
+<section class="section"
+id="latest">
+
+<div class="section-title">
+
+<h2>
+🆕 أحدث الألعاب
+</h2>
+
+</div>
+
+<div class="games">
+
+
+<article class="game-card"
+data-game="لعبة اكشن">
+
+<div class="game-image"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+">
+💥
+</div>
+
+<div class="game-info">
+
+<div class="game-title">
+لعبة أكشن
+</div>
+
+<div class="game-category">
+💥 أكشن
+</div>
+
+<p class="game-description">
+أكشن ومواجهات في عالم ثلاثي الأبعاد.
+</p>
+
+<div class="game-meta">
+<span>⭐ 4.4</span>
+<span>💾 2.9 GB</span>
+</div>
+
+<a
+href="games/action.html"
+class="game-button">
+
+🎮 تفاصيل اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+<article class="game-card"
+data-game="لعبة نجاة">
+
+<div class="game-image"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+">
+🧟
+</div>
+
+<div class="game-info">
+
+<div class="game-title">
+لعبة النجاة
+</div>
+
+<div class="game-category">
+🧟 نجاة
+</div>
+
+<p class="game-description">
+حاول البقاء على قيد الحياة في عالم خطير.
+</p>
+
+<div class="game-meta">
+<span>⭐ 4.3</span>
+<span>💾 3.7 GB</span>
+</div>
+
+<a
+href="games/survival.html"
+class="game-button">
+
+🎮 تفاصيل اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+<article class="game-card"
+data-game="لعبة فضاء">
+
+<div class="game-image"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+">
+🚀
+</div>
+
+<div class="game-info">
+
+<div class="game-title">
+مغامرة الفضاء
+</div>
+
+<div class="game-category">
+🚀 فضاء
+</div>
+
+<p class="game-description">
+استكشف الكواكب والمجرات في مغامرة فضائية.
+</p>
+
+<div class="game-meta">
+<span>⭐ 4.2</span>
+<span>💾 2.1 GB</span>
+</div>
+
+<a
+href="games/space.html"
+class="game-button">
+
+🎮 تفاصيل اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+<article class="game-card"
+data-game="لعبة استراتيجية">
+
+<div class="game-image"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:70px;
+">
+🏰
+</div>
+
+<div class="game-info">
+
+<div class="game-title">
+الحرب الاستراتيجية
+</div>
+
+<div class="game-category">
+🏰 استراتيجية
+</div>
+
+<p class="game-description">
+ابنِ جيشك وخطط للفوز بالمعارك.
+</p>
+
+<div class="game-meta">
+<span>⭐ 4.1</span>
+<span>💾 1.6 GB</span>
+</div>
+
+<a
+href="games/strategy.html"
+class="game-button">
+
+🎮 تفاصيل اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+<div class="no-results"
+id="noResults">
+
+😔 لم يتم العثور على لعبة بهذا الاسم.
+
 </div>
 
 </section>
 
 
-<section id="categories" class="categories">
+<!-- CATEGORIES -->
 
-<div class="container">
+<section class="section"
+id="categories">
 
-<h2>📂 التصنيفات</h2>
+<div class="section-title">
 
-<div class="category-grid">
-
-<div>⚔️ ألعاب الحرب</div>
-<div>🏎️ ألعاب السباق</div>
-<div>👻 ألعاب الرعب</div>
-<div>🎯 ألعاب التصويب</div>
-<div>🗺️ ألعاب المغامرات</div>
-<div>🧟 ألعاب النجاة</div>
+<h2>
+📂 تصنيفات الألعاب
+</h2>
 
 </div>
+
+<div class="categories">
+
+<a href="#">
+⚔️ ألعاب الحرب
+</a>
+
+<a href="#">
+🎯 ألعاب التصويب
+</a>
+
+<a href="#">
+🏎️ ألعاب السباق
+</a>
+
+<a href="#">
+👻 ألعاب الرعب
+</a>
+
+<a href="#">
+🧟 ألعاب النجاة
+</a>
+
+<a href="#">
+🗺️ ألعاب المغامرات
+</a>
+
+<a href="#">
+🏰 ألعاب الاستراتيجية
+</a>
+
+<a href="#">
+🚀 ألعاب الفضاء
+</a>
+
+<a href="#">
+⚽ ألعاب الرياضة
+</a>
+
+<a href="#">
+🎮 ألعاب 3D
+</a>
+
+<a href="#">
+🧩 ألعاب الألغاز
+</a>
+
+<a href="#">
+🥊 ألعاب القتال
+</a>
 
 </div>
 
 </section>
+
+
+</div>
 
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-<strong>🎮 تكنومسار</strong>
+<div class="footer-logo">
+🎮 تكنومسار
+</div>
 
 <p>
+موقع لاكتشاف الألعاب ومعلوماتها وروابط التحميل المصرح بها.
+</p>
+
+<p class="footer-name">
 Mohamed Hamed
 </p>
 
@@ -165,8 +1066,10 @@ Mohamed Hamed
 للتواصل: 01207799214
 </p>
 
+<br>
+
 <p>
-© 2026 تكنومسار
+© 2026 تكنومسار - جميع الحقوق محفوظة
 </p>
 
 </footer>
@@ -180,26 +1083,51 @@ document.getElementById("search");
 const cards =
 document.querySelectorAll(".game-card");
 
-search.addEventListener("input", function(){
+const noResults =
+document.getElementById("noResults");
 
-    const text =
-    this.value.toLowerCase().trim();
+
+search.addEventListener(
+"input",
+function(){
+
+    const value =
+    this.value
+    .toLowerCase()
+    .trim();
+
+    let found = 0;
 
     cards.forEach(card => {
 
-        const content =
-        card.innerText.toLowerCase();
+        const name =
+        card.dataset.game
+        .toLowerCase();
 
-        card.style.display =
-        content.includes(text)
-        ? ""
-        : "none";
+        if(
+            name.includes(value)
+        ){
+
+            card.style.display = "";
+            found++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
 
     });
+
+    noResults.style.display =
+    found === 0
+    ? "block"
+    : "none";
 
 });
 
 </script>
+
 
 </body>
 </html>
