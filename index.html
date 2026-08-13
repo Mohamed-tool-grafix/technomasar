@@ -2,26 +2,73 @@
 <html lang="ar" dir="rtl">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>تكنومسار | تحميل ألعاب مجانية للكمبيوتر</title>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+تكنومسار | تحميل ألعاب مجانية للكمبيوتر
+</title>
 
 <meta name="description"
-content="تكنومسار لتحميل الألعاب المجانية للكمبيوتر واكتشاف ألعاب مفتوحة المصدر.">
+content="تكنومسار - اكتشف ألعاب الكمبيوتر المجانية والمفتوحة المصدر، تعرف على تفاصيل الألعاب ومتطلبات التشغيل وروابط التحميل.">
 
-<meta name="robots" content="index,follow">
+<meta name="robots"
+content="index, follow">
+
+<meta name="author"
+content="تكنومسار">
 
 <link rel="canonical"
 href="https://mohamed-tool-grafix.github.io/technomasar/">
+
+<meta name="theme-color"
+content="#070b18">
+
+
+<!-- Open Graph -->
+
+<meta property="og:type"
+content="website">
 
 <meta property="og:title"
 content="تكنومسار | تحميل ألعاب مجانية">
 
 <meta property="og:description"
-content="اكتشف وحمّل ألعاب الكمبيوتر المجانية والمفتوحة المصدر.">
+content="اكتشف أفضل الألعاب المجانية والمفتوحة المصدر للكمبيوتر.">
+
+<meta property="og:url"
+content="https://mohamed-tool-grafix.github.io/technomasar/">
+
+<meta property="og:site_name"
+content="تكنومسار">
+
+<meta property="og:locale"
+content="ar_AR">
+
+
+<!-- Structured Data -->
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"تكنومسار",
+  "alternateName":"TechnoMasar",
+  "url":"https://mohamed-tool-grafix.github.io/technomasar/",
+  "description":"موقع عربي لاكتشاف الألعاب المجانية والمفتوحة المصدر.",
+  "inLanguage":"ar"
+}
+</script>
+
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -34,252 +81,477 @@ html{
 }
 
 body{
+
     font-family:
     "Segoe UI",
     Tahoma,
     Arial,
     sans-serif;
 
-    background:#070b18;
+    background:#060a16;
+
     color:#fff;
+
     line-height:1.7;
+
 }
 
 a{
     text-decoration:none;
 }
 
-.container{
-    width:min(1150px,92%);
-    margin:auto;
+button,
+input{
+    font-family:inherit;
 }
 
-/* HEADER */
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+
+    --primary:#18c5eb;
+
+    --primary-light:#61e7ff;
+
+    --bg:#060a16;
+
+    --card:#10192c;
+
+    --border:#253653;
+
+    --text:#ffffff;
+
+    --muted:#94a3bd;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+
+    width:min(1180px,92%);
+
+    margin:auto;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
 
 header{
+
     position:sticky;
+
     top:0;
-    z-index:1000;
 
-    background:rgba(7,11,24,.92);
+    z-index:9999;
 
-    backdrop-filter:blur(15px);
+    background:
+    rgba(6,10,22,.92);
+
+    backdrop-filter:
+    blur(18px);
 
     border-bottom:
-    1px solid rgba(255,255,255,.08);
+    1px solid
+    rgba(255,255,255,.07);
+
 }
 
 .navbar{
-    min-height:75px;
+
+    min-height:74px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
 }
 
 .logo{
-    color:#61e7ff;
+
+    color:var(--primary-light);
+
     font-size:25px;
+
     font-weight:900;
+
 }
 
-.nav{
+.logo span{
+
+    color:#fff;
+
+}
+
+.nav-links{
+
     display:flex;
-    gap:8px;
+
+    gap:6px;
+
 }
 
-.nav a{
+.nav-links a{
+
     color:#cbd5e1;
+
     padding:10px 15px;
+
     border-radius:10px;
+
     font-weight:bold;
+
+    transition:.2s;
+
 }
 
-.nav a:hover{
-    color:#61e7ff;
-    background:#102033;
+.nav-links a:hover{
+
+    color:var(--primary-light);
+
+    background:
+    rgba(24,197,235,.08);
+
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    padding:100px 20px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:
+    110px 20px
+    120px;
+
     text-align:center;
 
     background:
+
     radial-gradient(
-        circle at 20% 20%,
+        circle at 15% 20%,
         rgba(24,197,235,.18),
         transparent 30%
     ),
 
     radial-gradient(
-        circle at 80% 20%,
+        circle at 85% 20%,
         rgba(117,87,255,.20),
-        transparent 35%
+        transparent 32%
     ),
 
     linear-gradient(
         135deg,
         #0b1933,
-        #211340
+        #21133f
     );
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:
+    rgba(24,197,235,.06);
+
+    filter:blur(60px);
+
+    bottom:-150px;
+
+    left:-100px;
+
 }
 
 .badge{
+
     display:inline-block;
 
-    padding:8px 18px;
+    padding:
+    8px 17px;
 
     border-radius:100px;
 
-    color:#61e7ff;
-
-    border:
-    1px solid rgba(24,197,235,.35);
+    color:var(--primary-light);
 
     background:
     rgba(24,197,235,.08);
 
+    border:
+    1px solid
+    rgba(24,197,235,.3);
+
     margin-bottom:20px;
+
+    font-weight:bold;
+
 }
 
 .hero h1{
+
     font-size:
-    clamp(40px,6vw,68px);
+    clamp(40px,6vw,72px);
 
     line-height:1.2;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
+
 }
 
 .hero h1 span{
-    color:#61e7ff;
+
+    color:var(--primary-light);
+
 }
 
 .hero p{
-    max-width:750px;
+
+    max-width:760px;
 
     margin:auto;
 
     color:#b7c3d7;
 
     font-size:18px;
+
 }
 
-.hero-button{
-    display:inline-block;
+.hero-buttons{
 
     margin-top:30px;
 
-    padding:14px 28px;
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-button{
+
+    display:inline-block;
+
+    padding:
+    14px 27px;
 
     border-radius:13px;
 
-    background:#18c5eb;
+    background:var(--primary);
 
     color:#03111b;
 
     font-weight:900;
 
-    transition:.2s;
+    transition:.25s;
+
 }
 
 .hero-button:hover{
-    background:#61e7ff;
-    transform:translateY(-3px);
+
+    transform:
+    translateY(-3px);
+
+    background:
+    var(--primary-light);
+
 }
 
-/* SECTION */
+.hero-button.secondary{
 
-section{
-    padding:75px 0;
-}
+    background:
+    rgba(255,255,255,.06);
 
-.title{
-    font-size:35px;
-    margin-bottom:8px;
-}
-
-.description{
-    color:#94a3bd;
-    margin-bottom:30px;
-}
-
-/* SEARCH */
-
-.search{
-    width:100%;
-
-    padding:16px 20px;
-
-    margin-bottom:30px;
-
-    border-radius:13px;
+    color:#fff;
 
     border:
-    1px solid #263653;
+    1px solid
+    rgba(255,255,255,.12);
 
-    background:#0d1528;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+
+    padding:80px 0;
+
+}
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:end;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+}
+
+.section-title{
+
+    font-size:35px;
+
+}
+
+.section-description{
+
+    color:var(--muted);
+
+    margin-top:5px;
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+
+    position:relative;
+
+    margin-bottom:25px;
+
+}
+
+.search{
+
+    width:100%;
+
+    padding:
+    17px 20px;
+
+    border-radius:14px;
+
+    border:
+    1px solid
+    var(--border);
+
+    background:#0c1426;
 
     color:white;
 
+    outline:none;
+
     font-size:16px;
 
-    outline:none;
 }
 
 .search:focus{
-    border-color:#18c5eb;
+
+    border-color:
+    var(--primary);
+
+    box-shadow:
+    0 0 0 3px
+    rgba(24,197,235,.08);
+
 }
 
-/* FILTERS */
+
+/* =========================
+   FILTERS
+========================= */
 
 .filters{
+
     display:flex;
 
-    gap:10px;
+    gap:9px;
 
     flex-wrap:wrap;
 
     margin-bottom:30px;
+
 }
 
 .filter{
-    border:
-    1px solid #263653;
 
-    background:#0d1528;
+    border:
+    1px solid
+    var(--border);
+
+    background:#0c1426;
 
     color:#aebbd0;
 
-    padding:9px 17px;
+    padding:
+    9px 17px;
 
     border-radius:100px;
 
     cursor:pointer;
 
-    font-weight:bold;
+    transition:.2s;
+
 }
 
 .filter:hover,
 .filter.active{
-    color:#61e7ff;
-    border-color:#18c5eb;
+
+    color:
+    var(--primary-light);
+
+    border-color:
+    var(--primary);
+
+    background:
+    rgba(24,197,235,.08);
+
 }
 
-/* GAMES */
+
+/* =========================
+   GAMES GRID
+========================= */
 
 .games{
+
     display:grid;
 
     grid-template-columns:
     repeat(3,minmax(0,1fr));
 
     gap:22px;
+
 }
 
 .card{
+
     overflow:hidden;
 
     border-radius:20px;
@@ -287,75 +559,124 @@ section{
     background:
     linear-gradient(
         180deg,
-        #121b31,
-        #0d1527
+        #111b30,
+        #0c1425
     );
 
     border:
-    1px solid #253454;
+    1px solid
+    var(--border);
 
     transition:.3s;
+
 }
 
 .card:hover{
-    transform:translateY(-7px);
 
-    border-color:#18c5eb;
+    transform:
+    translateY(-7px);
+
+    border-color:
+    var(--primary);
 
     box-shadow:
     0 20px 50px
     rgba(0,0,0,.35);
+
 }
 
 .cover{
+
     height:210px;
+
+    position:relative;
+
+    overflow:hidden;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
-    overflow:hidden;
+    font-size:80px;
+
 }
 
 .cover img{
+
     width:100%;
+
     height:100%;
 
     object-fit:cover;
 
-    transition:.3s;
+    transition:.4s;
+
 }
 
 .card:hover .cover img{
-    transform:scale(1.06);
+
+    transform:
+    scale(1.06);
+
 }
 
-.content{
+.cover-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        transparent 45%,
+        rgba(0,0,0,.65)
+    );
+
+}
+
+.card-content{
+
     padding:20px;
+
 }
 
-.content h3{
+.card-content h3{
+
     font-size:22px;
-    margin-bottom:5px;
+
+    margin-bottom:4px;
+
 }
 
 .category{
-    color:#61e7ff;
+
+    color:
+    var(--primary-light);
+
     font-size:13px;
+
+    font-weight:bold;
+
 }
 
-.content p{
-    color:#94a3bd;
+.card-content p{
+
+    color:
+    var(--muted);
 
     font-size:14px;
 
-    margin:12px 0;
+    margin:
+    12px 0;
 
-    min-height:70px;
+    min-height:68px;
+
 }
 
-.info{
+.game-info{
+
     display:flex;
 
     justify-content:space-between;
@@ -365,9 +686,11 @@ section{
     font-size:13px;
 
     margin-bottom:15px;
+
 }
 
-.download{
+.download-button{
+
     display:block;
 
     text-align:center;
@@ -376,92 +699,284 @@ section{
 
     border-radius:11px;
 
-    background:#18c5eb;
+    background:
+    var(--primary);
 
     color:#03111b;
 
     font-weight:900;
 
     transition:.2s;
+
 }
 
-.download:hover{
-    background:#61e7ff;
+.download-button:hover{
+
+    background:
+    var(--primary-light);
+
 }
 
-/* ABOUT */
 
-.about{
-    background:#0b1222;
+/* =========================
+   BROWSER GAMES
+========================= */
+
+.browser-section{
+
+    background:#0a1120;
 
     border-top:
-    1px solid rgba(255,255,255,.05);
+    1px solid
+    rgba(255,255,255,.05);
 
     border-bottom:
-    1px solid rgba(255,255,255,.05);
+    1px solid
+    rgba(255,255,255,.05);
+
+}
+
+.browser-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+.browser-card{
+
+    text-align:center;
+
+    padding:27px 20px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #111c33,
+        #0d1425
+    );
+
+    border:
+    1px solid
+    var(--border);
+
+    transition:.3s;
+
+}
+
+.browser-card:hover{
+
+    transform:
+    translateY(-5px);
+
+    border-color:
+    var(--primary);
+
+}
+
+.browser-icon{
+
+    font-size:55px;
+
+    margin-bottom:10px;
+
+}
+
+.browser-card h3{
+
+    margin-bottom:6px;
+
+}
+
+.browser-card p{
+
+    color:
+    var(--muted);
+
+    font-size:14px;
+
+    margin-bottom:15px;
+
+}
+
+.play-button{
+
+    display:block;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    background:
+    rgba(24,197,235,.12);
+
+    border:
+    1px solid
+    rgba(24,197,235,.25);
+
+    color:
+    var(--primary-light);
+
+    font-weight:bold;
+
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+
+    background:#0a1120;
+
+}
+
+.about-box{
+
+    max-width:850px;
+
 }
 
 .about p{
-    max-width:800px;
 
     color:#aebbd0;
 
     margin-bottom:15px;
+
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    background:#050914;
 
-    padding:40px 0;
+    background:#040711;
+
+    padding:45px 0;
 
     text-align:center;
 
     color:#66748b;
+
 }
 
 footer strong{
-    color:#61e7ff;
+
+    color:
+    var(--primary-light);
+
+    font-size:20px;
+
 }
 
-/* MOBILE */
 
-@media(max-width:900px){
+/* =========================
+   NO RESULTS
+========================= */
+
+.no-results{
+
+    display:none;
+
+    text-align:center;
+
+    padding:40px;
+
+    color:var(--muted);
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1000px){
 
     .games{
+
         grid-template-columns:
         repeat(2,1fr);
+
+    }
+
+    .browser-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
     }
 
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
 
-    .nav{
+    .nav-links{
+
         display:none;
+
     }
 
     .games{
+
         grid-template-columns:1fr;
+
+    }
+
+    .browser-grid{
+
+        grid-template-columns:1fr;
+
     }
 
     .hero{
-        padding:75px 15px;
+
+        padding:
+        75px 15px
+        90px;
+
     }
 
     .hero h1{
+
         font-size:40px;
+
+    }
+
+    .section-title{
+
+        font-size:29px;
+
+    }
+
+    .section-header{
+
+        display:block;
+
     }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -469,11 +984,16 @@ footer strong{
 
 <nav class="navbar">
 
-<a href="#" class="logo">
-🎮 تكنومسار
+<a
+href="#home"
+class="logo">
+
+🎮 <span>تكنو</span>مسار
+
 </a>
 
-<div class="nav">
+
+<div class="nav-links">
 
 <a href="#home">
 الرئيسية
@@ -481,6 +1001,10 @@ footer strong{
 
 <a href="#games">
 الألعاب
+</a>
+
+<a href="#browser">
+ألعاب المتصفح
 </a>
 
 <a href="#about">
@@ -498,62 +1022,113 @@ footer strong{
 
 <main>
 
-<!-- HERO -->
 
-<section class="hero" id="home">
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+class="hero"
+id="home">
 
 <div class="container">
 
 <div class="badge">
-🔥 ألعاب مجانية للكمبيوتر
+
+🔥 ألعاب مجانية ومفتوحة المصدر
+
 </div>
 
+
 <h1>
-حمّل
-<span>ألعابك المفضلة</span>
-بسهولة
+
+اكتشف
+
+<span>
+أفضل الألعاب
+</span>
+
+للكمبيوتر
+
 </h1>
 
+
 <p>
-اكتشف مجموعة من الألعاب المجانية
-والمفتوحة المصدر للكمبيوتر،
-وتعرف على معلومات اللعبة ومتطلبات التشغيل.
+
+تكنومسار يساعدك على اكتشاف
+الألعاب المجانية والمفتوحة المصدر،
+مع معلومات عن اللعبة ومتطلبات التشغيل
+وروابط التحميل.
+
 </p>
 
-<a href="#games"
+
+<div class="hero-buttons">
+
+<a
+href="#games"
 class="hero-button">
 
 🎮 تصفح الألعاب
 
 </a>
 
+
+<a
+href="#browser"
+class="hero-button secondary">
+
+🕹️ العب أونلاين
+
+</a>
+
+</div>
+
 </div>
 
 </section>
 
 
-<!-- GAMES -->
+<!-- =========================
+     GAMES
+========================= -->
 
 <section id="games">
 
 <div class="container">
 
-<h2 class="title">
+
+<div class="section-header">
+
+<div>
+
+<h2 class="section-title">
+
 🎮 ألعاب الكمبيوتر
+
 </h2>
 
-<p class="description">
-اختر اللعبة واضغط على زر التحميل.
+<p class="section-description">
+
+اكتشف ألعابًا مجانية يمكنك تحميلها.
+
 </p>
 
+</div>
+
+</div>
+
+
+<div class="search-box">
 
 <input
-type="search"
 id="search"
 class="search"
-placeholder="🔎 ابحث عن لعبة..."
-autocomplete="off"
->
+type="search"
+placeholder="🔎 ابحث عن اسم اللعبة..."
+autocomplete="off">
+
+</div>
 
 
 <div class="filters">
@@ -601,7 +1176,9 @@ data-category="فضاء">
 </div>
 
 
-<div class="games" id="gamesList">
+<div
+class="games"
+id="gameList">
 
 
 <!-- GAME 1 -->
@@ -615,12 +1192,15 @@ data-name="SuperTuxKart">
 
 <img
 src="images/supertuxkart.jpg"
-alt="SuperTuxKart"
+alt="تحميل لعبة SuperTuxKart"
 loading="lazy">
+
+<div class="cover-overlay"></div>
 
 </div>
 
-<div class="content">
+
+<div class="card-content">
 
 <h3>
 SuperTuxKart
@@ -631,11 +1211,15 @@ SuperTuxKart
 </span>
 
 <p>
+
 لعبة سباق كارت مجانية
-ومفتوحة المصدر.
+ومفتوحة المصدر تحتوي على
+حلبات وأنماط لعب متعددة.
+
 </p>
 
-<div class="info">
+
+<div class="game-info">
 
 <span>
 💾 1.5 GB
@@ -647,12 +1231,12 @@ SuperTuxKart
 
 </div>
 
-<a
-href="downloads/supertuxkart.zip"
-download
-class="download">
 
-⬇️ تحميل اللعبة
+<a
+href="games/supertuxkart.html"
+class="download-button">
+
+🎮 تفاصيل وتحميل
 
 </a>
 
@@ -672,12 +1256,15 @@ data-name="0 A.D.">
 
 <img
 src="images/0ad.jpg"
-alt="0 A.D."
+alt="تحميل لعبة 0 A.D."
 loading="lazy">
+
+<div class="cover-overlay"></div>
 
 </div>
 
-<div class="content">
+
+<div class="card-content">
 
 <h3>
 0 A.D.
@@ -688,11 +1275,15 @@ loading="lazy">
 </span>
 
 <p>
+
 لعبة استراتيجية تاريخية
-مجانية ومفتوحة المصدر.
+مجانية ومفتوحة المصدر
+تدور حول الحضارات القديمة.
+
 </p>
 
-<div class="info">
+
+<div class="game-info">
 
 <span>
 💾 2 GB
@@ -704,12 +1295,12 @@ loading="lazy">
 
 </div>
 
-<a
-href="downloads/0ad.zip"
-download
-class="download">
 
-⬇️ تحميل اللعبة
+<a
+href="games/0ad.html"
+class="download-button">
+
+🎮 تفاصيل وتحميل
 
 </a>
 
@@ -729,12 +1320,15 @@ data-name="SuperTux">
 
 <img
 src="images/supertux.jpg"
-alt="SuperTux"
+alt="تحميل لعبة SuperTux"
 loading="lazy">
+
+<div class="cover-overlay"></div>
 
 </div>
 
-<div class="content">
+
+<div class="card-content">
 
 <h3>
 SuperTux
@@ -745,11 +1339,15 @@ SuperTux
 </span>
 
 <p>
+
 لعبة منصات مجانية
-ومفتوحة المصدر.
+ومفتوحة المصدر
+بطابع ممتع ومغامرات متنوعة.
+
 </p>
 
-<div class="info">
+
+<div class="game-info">
 
 <span>
 💾 300 MB
@@ -761,12 +1359,12 @@ SuperTux
 
 </div>
 
-<a
-href="downloads/supertux.zip"
-download
-class="download">
 
-⬇️ تحميل اللعبة
+<a
+href="games/supertux.html"
+class="download-button">
+
+🎮 تفاصيل وتحميل
 
 </a>
 
@@ -786,12 +1384,15 @@ data-name="Endless Sky">
 
 <img
 src="images/endless-sky.jpg"
-alt="Endless Sky"
+alt="تحميل لعبة Endless Sky"
 loading="lazy">
+
+<div class="cover-overlay"></div>
 
 </div>
 
-<div class="content">
+
+<div class="card-content">
 
 <h3>
 Endless Sky
@@ -802,11 +1403,15 @@ Endless Sky
 </span>
 
 <p>
-استكشف الفضاء وخض المعارك
-وتاجر بين الكواكب.
+
+استكشف الفضاء وتاجر
+وخض المعارك في لعبة
+مجانية ومفتوحة المصدر.
+
 </p>
 
-<div class="info">
+
+<div class="game-info">
 
 <span>
 💾 600 MB
@@ -818,12 +1423,12 @@ Endless Sky
 
 </div>
 
-<a
-href="downloads/endless-sky.zip"
-download
-class="download">
 
-⬇️ تحميل اللعبة
+<a
+href="games/endless-sky.html"
+class="download-button">
+
+🎮 تفاصيل وتحميل
 
 </a>
 
@@ -835,25 +1440,165 @@ class="download">
 </div>
 
 
-<p
+<div
 id="noResults"
-style="
-display:none;
-text-align:center;
-padding:40px;
-color:#94a3bd;
-">
+class="no-results">
 
-😔 لم نجد لعبة مطابقة للبحث.
+😔 لم نجد لعبة مطابقة لبحثك.
 
-</p>
+</div>
+
 
 </div>
 
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     BROWSER
+========================= -->
+
+<section
+class="browser-section"
+id="browser">
+
+<div class="container">
+
+
+<div class="section-header">
+
+<div>
+
+<h2 class="section-title">
+
+🕹️ ألعاب المتصفح
+
+</h2>
+
+<p class="section-description">
+
+ألعاب بسيطة يمكنك لعبها مباشرة داخل الموقع.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="browser-grid">
+
+
+<div class="browser-card">
+
+<div class="browser-icon">
+🎯
+</div>
+
+<h3>
+تصويب الهدف
+</h3>
+
+<p>
+اختبر سرعة رد فعلك.
+</p>
+
+<a
+href="games/target.html"
+class="play-button">
+
+▶️ العب الآن
+
+</a>
+
+</div>
+
+
+<div class="browser-card">
+
+<div class="browser-icon">
+🐍
+</div>
+
+<h3>
+Snake
+</h3>
+
+<p>
+اجمع الطعام وتجنب الاصطدام.
+</p>
+
+<a
+href="games/snake.html"
+class="play-button">
+
+▶️ العب الآن
+
+</a>
+
+</div>
+
+
+<div class="browser-card">
+
+<div class="browser-icon">
+❌
+</div>
+
+<h3>
+XO
+</h3>
+
+<p>
+العب إكس أو ضد الكمبيوتر.
+</p>
+
+<a
+href="games/xo.html"
+class="play-button">
+
+▶️ العب الآن
+
+</a>
+
+</div>
+
+
+<div class="browser-card">
+
+<div class="browser-icon">
+🧠
+</div>
+
+<h3>
+لعبة الذاكرة
+</h3>
+
+<p>
+اختبر قوة ذاكرتك.
+</p>
+
+<a
+href="games/memory.html"
+class="play-button">
+
+▶️ العب الآن
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section
 class="about"
@@ -861,32 +1606,56 @@ id="about">
 
 <div class="container">
 
-<h2 class="title">
+<div class="about-box">
+
+<h2 class="section-title">
+
 🚀 عن تكنومسار
+
 </h2>
 
+<br>
+
 <p>
-تكنومسار موقع عربي لاكتشاف
-الألعاب المجانية والمفتوحة المصدر
-للكمبيوتر.
+
+تكنومسار موقع عربي يساعد
+المستخدمين على اكتشاف الألعاب
+المجانية والمفتوحة المصدر.
+
 </p>
 
 <p>
-نحرص على توفير معلومات واضحة
-عن الألعاب وروابط تحميل قانونية
-للمحتوى الذي نملك حق توزيعه.
+
+نهدف إلى تقديم معلومات واضحة
+عن الألعاب ومتطلبات التشغيل
+ومصادر التحميل المسموح بها.
+
 </p>
+
+<p>
+
+لا نقوم بتوزيع الألعاب التجارية
+أو الملفات التي لا نملك حق توزيعها.
+
+</p>
+
+</div>
 
 </div>
 
 </section>
 
+
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
+
+<div class="container">
 
 <strong>
 🎮 تكنومسار
@@ -894,11 +1663,13 @@ id="about">
 
 <br><br>
 
-تحت إشراف محمد حامد
+موقع عربي لاكتشاف الألعاب المجانية
 
 <br><br>
 
-© 2026 جميع الحقوق محفوظة
+© 2026 تكنومسار - جميع الحقوق محفوظة
+
+</div>
 
 </footer>
 
@@ -906,7 +1677,7 @@ id="about">
 <script>
 
 /* =========================
-   SEARCH
+   SEARCH & FILTER
 ========================= */
 
 const search =
@@ -921,7 +1692,7 @@ document.querySelectorAll(".filter");
 const noResults =
 document.getElementById("noResults");
 
-let currentCategory="all";
+let currentCategory = "all";
 
 
 function filterGames(){
@@ -931,9 +1702,10 @@ function filterGames(){
     .toLowerCase()
     .trim();
 
-    let visible=0;
+    let visible = 0;
 
-    cards.forEach(card=>{
+
+    cards.forEach(card => {
 
         const name =
         card.dataset.name
@@ -942,25 +1714,28 @@ function filterGames(){
         const category =
         card.dataset.category;
 
+
         const textMatch =
         name.includes(text);
 
+
         const categoryMatch =
-        currentCategory==="all" ||
-        category===currentCategory;
+        currentCategory === "all" ||
+        category === currentCategory;
+
 
         if(
             textMatch &&
             categoryMatch
         ){
 
-            card.style.display="";
+            card.style.display = "";
 
             visible++;
 
         }else{
 
-            card.style.display="none";
+            card.style.display = "none";
 
         }
 
@@ -968,9 +1743,10 @@ function filterGames(){
 
 
     noResults.style.display =
-    visible===0
+    visible === 0
     ? "block"
     : "none";
+
 }
 
 
@@ -980,20 +1756,24 @@ search.addEventListener(
 );
 
 
-filters.forEach(button=>{
+filters.forEach(button => {
 
     button.addEventListener(
         "click",
-        ()=>{
+        () => {
 
             filters.forEach(
-                b=>b.classList.remove("active")
+                b =>
+                b.classList.remove("active")
             );
+
 
             button.classList.add("active");
 
+
             currentCategory =
             button.dataset.category;
+
 
             filterGames();
 
@@ -1004,5 +1784,7 @@ filters.forEach(button=>{
 
 </script>
 
+
 </body>
+
 </html>
