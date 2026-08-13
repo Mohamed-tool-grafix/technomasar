@@ -2,1704 +2,202 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Mohamed Hamed | 3D Battle Arena</title>
+<title>تكنومسار | تحميل الألعاب</title>
 
 <meta name="description"
-content="لعبة حرب ثلاثية الأبعاد من تطوير Mohamed Hamed مع خريطة وأعداء وتصويب بالماوس.">
+content="تكنومسار - اكتشف ألعاب الكمبيوتر المجانية وتحميل الألعاب بشكل منظم.">
 
-<style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html,body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    font-family:Arial,"Segoe UI",sans-serif;
-    background:#05070c;
-}
-
-body{
-    color:white;
-}
-
-#game{
-    position:fixed;
-    inset:0;
-}
-
-canvas{
-    display:block;
-}
-
-#hud{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:10;
-}
-
-.top{
-    position:absolute;
-    top:15px;
-    left:15px;
-    right:15px;
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-}
-
-.box{
-    background:rgba(5,10,20,.78);
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:12px;
-    padding:10px 15px;
-    backdrop-filter:blur(8px);
-}
-
-.health{
-    color:#4ade80;
-    font-weight:bold;
-}
-
-.ammo{
-    color:#61e7ff;
-    font-weight:bold;
-}
-
-#crosshair{
-    position:absolute;
-    left:50%;
-    top:50%;
-    width:25px;
-    height:25px;
-    transform:translate(-50%,-50%);
-}
-
-#crosshair:before,
-#crosshair:after{
-    content:"";
-    position:absolute;
-    background:white;
-    box-shadow:0 0 4px #000;
-}
-
-#crosshair:before{
-    width:2px;
-    height:25px;
-    left:11px;
-    top:0;
-}
-
-#crosshair:after{
-    width:25px;
-    height:2px;
-    left:0;
-    top:11px;
-}
-
-#message{
-    position:absolute;
-    left:50%;
-    bottom:70px;
-    transform:translateX(-50%);
-    background:rgba(0,0,0,.75);
-    padding:12px 20px;
-    border-radius:12px;
-    color:#fff;
-    text-align:center;
-}
-
-#startScreen{
-    position:fixed;
-    inset:0;
-    z-index:30;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:
-        radial-gradient(circle at 50% 30%,#123c55,#05070c 65%);
-}
-
-.startBox{
-    width:min(520px,90%);
-    text-align:center;
-    background:rgba(7,13,25,.92);
-    border:1px solid #29405f;
-    border-radius:25px;
-    padding:35px;
-    box-shadow:0 25px 80px #000;
-}
-
-.startBox h1{
-    font-size:42px;
-    color:#61e7ff;
-    margin-bottom:12px;
-}
-
-.startBox p{
-    color:#aab7ca;
-    line-height:1.9;
-    margin-bottom:25px;
-}
-
-#startButton{
-    border:0;
-    padding:15px 30px;
-    border-radius:12px;
-    background:#18c5eb;
-    color:#031018;
-    font-weight:bold;
-    font-size:17px;
-    cursor:pointer;
-}
-
-#startButton:hover{
-    background:#61e7ff;
-}
-
-#gameOver{
-    display:none;
-    position:fixed;
-    inset:0;
-    z-index:40;
-    align-items:center;
-    justify-content:center;
-    background:rgba(0,0,0,.75);
-}
-
-.overBox{
-    background:#0b1222;
-    border:1px solid #30415e;
-    border-radius:20px;
-    padding:35px;
-    text-align:center;
-}
-
-.overBox h2{
-    color:#ef4444;
-    font-size:35px;
-    margin-bottom:15px;
-}
-
-#restart{
-    margin-top:20px;
-    border:0;
-    background:#18c5eb;
-    padding:13px 25px;
-    border-radius:10px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-@media(max-width:600px){
-    .top{
-        font-size:13px;
-    }
-
-    .startBox h1{
-        font-size:32px;
-    }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="game"></div>
+<header>
+    <div class="container navbar">
 
-<div id="hud">
+        <a class="logo" href="index.html">
+            🎮 تكنومسار
+        </a>
 
-    <div class="top">
-
-        <div class="box">
-            ❤️ الصحة:
-            <span id="health" class="health">100</span>
-        </div>
-
-        <div class="box">
-            🎯 النقاط:
-            <span id="score">0</span>
-        </div>
-
-        <div class="box">
-            🔫 الذخيرة:
-            <span id="ammo" class="ammo">30</span>
-        </div>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="#games">الألعاب</a>
+            <a href="#categories">التصنيفات</a>
+        </nav>
 
     </div>
+</header>
 
-    <div id="crosshair"></div>
+<main>
 
-    <div id="message">
-        WASD للحركة • الماوس للتصويب • اضغط بالزر الأيسر للإطلاق
-    </div>
+<section class="hero">
+    <div class="container">
 
-</div>
+        <span>🔥 مكتبة ألعاب تكنومسار</span>
 
-
-<div id="startScreen">
-
-    <div class="startBox">
-
-        <h1>⚔️ 3D Battle Arena</h1>
+        <h1>
+            حمل ألعابك المفضلة
+        </h1>
 
         <p>
-            لعبة حرب ثلاثية الأبعاد أصلية.
-            تحكم باللاعب من خلال لوحة المفاتيح،
-            وصوّب وأطلق بالماوس.
-            واجه شخصيات أعداء مختلفة داخل الخريطة.
+            اكتشف أحدث الألعاب وتصفح الألعاب حسب التصنيف.
         </p>
 
-        <button id="startButton">
-            🎮 ابدأ المعركة
-        </button>
-
-        <p style="margin-top:20px;font-size:13px;">
-            W A S D للحركة • Shift للجري • R لإعادة التلقيم
-        </p>
+        <input
+            id="search"
+            type="search"
+            placeholder="🔎 ابحث عن لعبة..."
+        >
 
     </div>
+</section>
+
+
+<section id="games">
+
+<div class="container">
+
+<h2>🎮 أحدث الألعاب</h2>
+
+<div class="games" id="gameList">
+
+
+<article class="game-card">
+
+<img src="images/game1.jpg"
+     alt="لعبة حرب">
+
+<div class="game-info">
+
+<span class="category">
+⚔️ حرب
+</span>
+
+<h3>
+لعبة الحرب 3D
+</h3>
+
+<p>
+لعبة حرب ثلاثية الأبعاد مليئة بالمغامرات والمعارك.
+</p>
+
+<a class="download"
+   href="games/game1.html">
+   🎮 تفاصيل اللعبة
+</a>
 
 </div>
 
+</article>
 
-<div id="gameOver">
 
-    <div class="overBox">
+<article class="game-card">
 
-        <h2>💀 انتهت المعركة</h2>
+<img src="images/game2.jpg"
+     alt="لعبة سباق">
 
-        <p>
-            نتيجتك:
-            <strong id="finalScore">0</strong>
-        </p>
+<div class="game-info">
 
-        <button id="restart">
-            🔄 العب مرة أخرى
-        </button>
+<span class="category">
+🏎️ سباق
+</span>
 
-    </div>
+<h3>
+لعبة سباق السيارات
+</h3>
+
+<p>
+استمتع بسباقات السيارات والسرعة على مجموعة من الحلبات.
+</p>
+
+<a class="download"
+   href="games/game2.html">
+   🎮 تفاصيل اللعبة
+</a>
 
 </div>
 
-
-<script type="module">
-
-import * as THREE from
-"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
+</article>
 
 
-/* ==================================================
-   BASIC SETUP
-================================================== */
+</div>
 
-const container =
-document.getElementById("game");
+</div>
 
-const scene =
-new THREE.Scene();
-
-scene.background =
-new THREE.Color(0x87b7d5);
-
-scene.fog =
-new THREE.Fog(
-    0x87b7d5,
-    45,
-    180
-);
+</section>
 
 
-const camera =
-new THREE.PerspectiveCamera(
-    65,
-    window.innerWidth/window.innerHeight,
-    0.1,
-    300
-);
+<section id="categories" class="categories">
+
+<div class="container">
+
+<h2>📂 التصنيفات</h2>
+
+<div class="category-grid">
+
+<div>⚔️ ألعاب الحرب</div>
+<div>🏎️ ألعاب السباق</div>
+<div>👻 ألعاب الرعب</div>
+<div>🎯 ألعاب التصويب</div>
+<div>🗺️ ألعاب المغامرات</div>
+<div>🧟 ألعاب النجاة</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
 
 
-const renderer =
-new THREE.WebGLRenderer({
-    antialias:true
-});
+<footer>
 
-renderer.setPixelRatio(
-    Math.min(window.devicePixelRatio,2)
-);
+<strong>🎮 تكنومسار</strong>
 
-renderer.setSize(
-    window.innerWidth,
-    window.innerHeight
-);
+<p>
+Mohamed Hamed
+</p>
 
-renderer.shadowMap.enabled = true;
+<p>
+للتواصل: 01207799214
+</p>
 
-renderer.shadowMap.type =
-THREE.PCFSoftShadowMap;
+<p>
+© 2026 تكنومسار
+</p>
 
-container.appendChild(renderer.domElement);
+</footer>
 
 
-/* ==================================================
-   LIGHTING
-================================================== */
+<script>
 
-const hemi =
-new THREE.HemisphereLight(
-    0xbfe8ff,
-    0x334422,
-    2
-);
+const search =
+document.getElementById("search");
 
-scene.add(hemi);
+const cards =
+document.querySelectorAll(".game-card");
 
+search.addEventListener("input", function(){
 
-const sun =
-new THREE.DirectionalLight(
-    0xffffff,
-    3
-);
+    const text =
+    this.value.toLowerCase().trim();
 
-sun.position.set(
-    40,
-    80,
-    30
-);
+    cards.forEach(card => {
 
-sun.castShadow = true;
+        const content =
+        card.innerText.toLowerCase();
 
-sun.shadow.mapSize.width = 2048;
-sun.shadow.mapSize.height = 2048;
+        card.style.display =
+        content.includes(text)
+        ? ""
+        : "none";
 
-sun.shadow.camera.left = -100;
-sun.shadow.camera.right = 100;
-sun.shadow.camera.top = 100;
-sun.shadow.camera.bottom = -100;
-
-scene.add(sun);
-
-
-/* ==================================================
-   WORLD
-================================================== */
-
-const worldSize = 180;
-
-
-/* الأرض */
-
-const ground =
-new THREE.Mesh(
-    new THREE.PlaneGeometry(
-        worldSize,
-        worldSize
-    ),
-    new THREE.MeshStandardMaterial({
-        color:0x405d38,
-        roughness:1
-    })
-);
-
-ground.rotation.x =
--Math.PI/2;
-
-ground.receiveShadow = true;
-
-scene.add(ground);
-
-
-/* ==================================================
-   ROAD
-================================================== */
-
-function createRoad(
-    x,
-    z,
-    width,
-    length,
-    rotation=0
-){
-
-    const road =
-    new THREE.Mesh(
-        new THREE.BoxGeometry(
-            width,
-            .05,
-            length
-        ),
-        new THREE.MeshStandardMaterial({
-            color:0x252a2e
-        })
-    );
-
-    road.position.set(
-        x,
-        .03,
-        z
-    );
-
-    road.rotation.y =
-    rotation;
-
-    road.receiveShadow = true;
-
-    scene.add(road);
-
-}
-
-
-createRoad(
-    0,
-    0,
-    18,
-    170
-);
-
-createRoad(
-    0,
-    0,
-    170,
-    18
-);
-
-
-/* ==================================================
-   BUILDINGS
-================================================== */
-
-const obstacles = [];
-
-
-function createBuilding(
-    x,
-    z,
-    w,
-    h,
-    d,
-    color
-){
-
-    const building =
-    new THREE.Mesh(
-        new THREE.BoxGeometry(
-            w,
-            h,
-            d
-        ),
-        new THREE.MeshStandardMaterial({
-            color:color,
-            roughness:.8
-        })
-    );
-
-    building.position.set(
-        x,
-        h/2,
-        z
-    );
-
-    building.castShadow = true;
-    building.receiveShadow = true;
-
-    scene.add(building);
-
-    obstacles.push({
-        x:x,
-        z:z,
-        w:w,
-        d:d
     });
 
-
-    /* نوافذ */
-
-    const windowMaterial =
-    new THREE.MeshStandardMaterial({
-        color:0x77d7ff,
-        emissive:0x153c55,
-        emissiveIntensity:.4
-    });
-
-    for(
-        let y=3;
-        y<h-1;
-        y+=3
-    ){
-
-        for(
-            let xx=-w/2+1.5;
-            xx<w/2;
-            xx+=3
-        ){
-
-            const win =
-            new THREE.Mesh(
-                new THREE.BoxGeometry(
-                    .8,
-                    1.2,
-                    .08
-                ),
-                windowMaterial
-            );
-
-            win.position.set(
-                x+xx,
-                y,
-                z-d/2-.05
-            );
-
-            scene.add(win);
-
-        }
-
-    }
-
-}
-
-
-createBuilding(
-    -38,
-    -35,
-    20,
-    18,
-    18,
-    0x4a5568
-);
-
-createBuilding(
-    38,
-    -35,
-    24,
-    25,
-    18,
-    0x475569
-);
-
-createBuilding(
-    -40,
-    40,
-    25,
-    22,
-    20,
-    0x374151
-);
-
-createBuilding(
-    40,
-    40,
-    18,
-    15,
-    22,
-    0x52525b
-);
-
-createBuilding(
-    -65,
-    5,
-    16,
-    12,
-    16,
-    0x334155
-);
-
-createBuilding(
-    65,
-    8,
-    18,
-    16,
-    16,
-    0x475569
-);
-
-
-/* ==================================================
-   TREES
-================================================== */
-
-function createTree(x,z){
-
-    const trunk =
-    new THREE.Mesh(
-        new THREE.CylinderGeometry(
-            .6,
-            .8,
-            5,
-            8
-        ),
-        new THREE.MeshStandardMaterial({
-            color:0x6b4226
-        })
-    );
-
-    trunk.position.set(
-        x,
-        2.5,
-        z
-    );
-
-    trunk.castShadow = true;
-
-    scene.add(trunk);
-
-
-    const crown =
-    new THREE.Mesh(
-        new THREE.SphereGeometry(
-            3.5,
-            10,
-            10
-        ),
-        new THREE.MeshStandardMaterial({
-            color:0x176b35
-        })
-    );
-
-    crown.position.set(
-        x,
-        7,
-        z
-    );
-
-    crown.castShadow = true;
-
-    scene.add(crown);
-
-}
-
-
-for(
-    let i=0;
-    i<45;
-    i++
-){
-
-    const x =
-    (Math.random()-.5)*160;
-
-    const z =
-    (Math.random()-.5)*160;
-
-    if(
-        Math.abs(x)<25 ||
-        Math.abs(z)<25
-    ){
-        continue;
-    }
-
-    createTree(x,z);
-
-}
-
-
-/* ==================================================
-   PLAYER
-================================================== */
-
-const player =
-new THREE.Group();
-
-scene.add(player);
-
-player.position.set(
-    0,
-    0,
-    30
-);
-
-
-/* جسم */
-
-const body =
-new THREE.Mesh(
-    new THREE.CapsuleGeometry(
-        .7,
-        1.4,
-        6,
-        10
-    ),
-    new THREE.MeshStandardMaterial({
-        color:0x1e88e5
-    })
-);
-
-body.position.y=1.7;
-
-body.castShadow=true;
-
-player.add(body);
-
-
-/* رأس */
-
-const head =
-new THREE.Mesh(
-    new THREE.SphereGeometry(
-        .48,
-        16,
-        12
-    ),
-    new THREE.MeshStandardMaterial({
-        color:0xf1c7a5
-    })
-);
-
-head.position.y=3;
-
-head.castShadow=true;
-
-player.add(head);
-
-
-/* خوذة */
-
-const helmet =
-new THREE.Mesh(
-    new THREE.SphereGeometry(
-        .53,
-        16,
-        8
-    ),
-    new THREE.MeshStandardMaterial({
-        color:0x17202a
-    })
-);
-
-helmet.scale.y=.55;
-
-helmet.position.y=3.3;
-
-player.add(helmet);
-
-
-/* ==================================================
-   WEAPON
-================================================== */
-
-const weapon =
-new THREE.Group();
-
-weapon.position.set(
-    .75,
-    1.9,
-    -.8
-);
-
-player.add(weapon);
-
-
-const gunBody =
-new THREE.Mesh(
-    new THREE.BoxGeometry(
-        .25,
-        .25,
-        1.7
-    ),
-    new THREE.MeshStandardMaterial({
-        color:0x111827,
-        metalness:.6,
-        roughness:.4
-    })
-);
-
-weapon.add(gunBody);
-
-
-const barrel =
-new THREE.Mesh(
-    new THREE.CylinderGeometry(
-        .07,
-        .07,
-        .7,
-        10
-    ),
-    new THREE.MeshStandardMaterial({
-        color:0x050505,
-        metalness:.8
-    })
-);
-
-barrel.rotation.x =
-Math.PI/2;
-
-barrel.position.z=-1.15;
-
-weapon.add(barrel);
-
-
-/* ==================================================
-   ENEMY TYPES
-================================================== */
-
-const enemies = [];
-
-
-const enemyTypes = [
-
-    {
-        color:0xd62828,
-        speed:2.2,
-        hp:60,
-        scale:1
-    },
-
-    {
-        color:0xf59e0b,
-        speed:3,
-        hp:40,
-        scale:.85
-    },
-
-    {
-        color:0x9333ea,
-        speed:1.4,
-        hp:120,
-        scale:1.25
-    }
-
-];
-
-
-function createEnemy(){
-
-    const type =
-    enemyTypes[
-        Math.floor(
-            Math.random()*
-            enemyTypes.length
-        )
-    ];
-
-
-    const enemy =
-    new THREE.Group();
-
-
-    const angle =
-    Math.random()*
-    Math.PI*2;
-
-
-    const distance =
-    45+
-    Math.random()*50;
-
-
-    enemy.position.set(
-        Math.cos(angle)*distance,
-        0,
-        player.position.z+
-        Math.sin(angle)*distance
-    );
-
-
-    /* الجسم */
-
-    const eBody =
-    new THREE.Mesh(
-        new THREE.CapsuleGeometry(
-            .65,
-            1.3,
-            6,
-            10
-        ),
-        new THREE.MeshStandardMaterial({
-            color:type.color
-        })
-    );
-
-    eBody.position.y=1.6;
-
-    eBody.castShadow=true;
-
-    enemy.add(eBody);
-
-
-    /* الرأس */
-
-    const eHead =
-    new THREE.Mesh(
-        new THREE.SphereGeometry(
-            .48,
-            14,
-            10
-        ),
-        new THREE.MeshStandardMaterial({
-            color:0xe0ac88
-        })
-    );
-
-    eHead.position.y=2.9;
-
-    eHead.castShadow=true;
-
-    enemy.add(eHead);
-
-
-    /* سلاح */
-
-    const eGun =
-    new THREE.Mesh(
-        new THREE.BoxGeometry(
-            .2,
-            .2,
-            1.4
-        ),
-        new THREE.MeshStandardMaterial({
-            color:0x111111
-        })
-    );
-
-    eGun.position.set(
-        .65,
-        1.8,
-        -.5
-    );
-
-    enemy.add(eGun);
-
-
-    enemy.userData = {
-
-        hp:type.hp,
-
-        maxHp:type.hp,
-
-        speed:type.speed,
-
-        type:type
-
-    };
-
-
-    scene.add(enemy);
-
-    enemies.push(enemy);
-
-}
-
-
-/* ==================================================
-   BULLETS
-================================================== */
-
-const bullets=[];
-
-
-function shoot(){
-
-    if(!running)
-        return;
-
-    if(ammo<=0){
-
-        reload();
-
-        return;
-
-    }
-
-
-    ammo--;
-
-    updateHUD();
-
-
-    const direction =
-    new THREE.Vector3(
-        0,
-        0,
-        -1
-    );
-
-
-    direction.applyQuaternion(
-        player.quaternion
-    );
-
-
-    const bullet =
-    new THREE.Mesh(
-        new THREE.SphereGeometry(
-            .12,
-            8,
-            8
-        ),
-        new THREE.MeshBasicMaterial({
-            color:0xffee55
-        })
-    );
-
-
-    bullet.position.copy(
-        player.position
-    );
-
-    bullet.position.y+=2;
-
-
-    bullet.userData.velocity =
-    direction.multiplyScalar(65);
-
-    bullet.userData.life=2;
-
-
-    scene.add(bullet);
-
-    bullets.push(bullet);
-
-}
-
-
-/* ==================================================
-   INPUT
-================================================== */
-
-const keys={};
-
-let mouseX=0;
-let mouseY=0;
-
-let mouseDown=false;
-
-let running=false;
-
-let health=100;
-
-let score=0;
-
-let ammo=30;
-
-let maxAmmo=30;
-
-
-window.addEventListener(
-"keydown",
-e=>{
-
-    keys[e.key.toLowerCase()]=true;
-
-    if(
-        e.key.toLowerCase()==="r"
-    ){
-
-        reload();
-
-    }
-
 });
-
-
-window.addEventListener(
-"keyup",
-e=>{
-
-    keys[e.key.toLowerCase()]=false;
-
-});
-
-
-renderer.domElement.addEventListener(
-"mousemove",
-e=>{
-
-    if(
-        document.pointerLockElement ===
-        renderer.domElement
-    ){
-
-        mouseX -= e.movementX*.0025;
-
-        mouseY -= e.movementY*.0025;
-
-        mouseY =
-        Math.max(
-            -.5,
-            Math.min(
-                .7,
-                mouseY
-            )
-        );
-
-    }
-
-});
-
-
-renderer.domElement.addEventListener(
-"mousedown",
-e=>{
-
-    if(
-        e.button===0
-    ){
-
-        if(
-            document.pointerLockElement !==
-            renderer.domElement
-        ){
-
-            renderer.domElement.requestPointerLock();
-
-        }else{
-
-            mouseDown=true;
-
-        }
-
-    }
-
-});
-
-
-window.addEventListener(
-"mouseup",
-e=>{
-
-    if(e.button===0)
-        mouseDown=false;
-
-});
-
-
-/* ==================================================
-   MOVEMENT
-================================================== */
-
-function updatePlayer(delta){
-
-    if(!running)
-        return;
-
-
-    let forward=0;
-    let side=0;
-
-
-    if(keys["w"])
-        forward++;
-
-    if(keys["s"])
-        forward--;
-
-    if(keys["a"])
-        side++;
-
-    if(keys["d"])
-        side--;
-
-
-    const speed =
-    keys["shift"] ? 9 : 5;
-
-
-    if(forward || side){
-
-        const length =
-        Math.hypot(
-            forward,
-            side
-        );
-
-        forward/=length;
-        side/=length;
-
-
-        player.rotation.y =
-        mouseX;
-
-
-        const dx =
-        Math.sin(mouseX)*
-        forward+
-        Math.cos(mouseX)*
-        side;
-
-
-        const dz =
-        Math.cos(mouseX)*
-        forward-
-        Math.sin(mouseX)*
-        side;
-
-
-        player.position.x +=
-        dx*speed*delta;
-
-
-        player.position.z +=
-        dz*speed*delta;
-
-    }
-
-    player.position.x =
-    THREE.MathUtils.clamp(
-        player.position.x,
-        -82,
-        82
-    );
-
-    player.position.z =
-    THREE.MathUtils.clamp(
-        player.position.z,
-        -82,
-        82
-    );
-
-
-    if(mouseDown){
-
-        shootCooldown-=delta;
-
-        if(shootCooldown<=0){
-
-            shoot();
-
-            shootCooldown=.14;
-
-        }
-
-    }
-
-}
-
-
-/* ==================================================
-   RELOAD
-================================================== */
-
-function reload(){
-
-    ammo=maxAmmo;
-
-    updateHUD();
-
-}
-
-
-/* ==================================================
-   BULLETS UPDATE
-================================================== */
-
-function updateBullets(delta){
-
-    for(
-        let i=bullets.length-1;
-        i>=0;
-        i--
-    ){
-
-        const bullet =
-        bullets[i];
-
-
-        bullet.position.add(
-            bullet.userData.velocity
-            .clone()
-            .multiplyScalar(delta)
-        );
-
-
-        bullet.userData.life -=
-        delta;
-
-
-        let hit=false;
-
-
-        for(
-            let j=enemies.length-1;
-            j>=0;
-            j--
-        ){
-
-            const enemy =
-            enemies[j];
-
-
-            const distance =
-            bullet.position.distanceTo(
-                enemy.position
-            );
-
-
-            if(distance<1.6){
-
-                enemy.userData.hp-=30;
-
-                scene.remove(bullet);
-
-                bullets.splice(i,1);
-
-                hit=true;
-
-
-                if(
-                    enemy.userData.hp<=0
-                ){
-
-                    scene.remove(enemy);
-
-                    enemies.splice(j,1);
-
-                    score+=10;
-
-                    updateHUD();
-
-                }
-
-                break;
-
-            }
-
-        }
-
-
-        if(
-            !hit &&
-            bullet.userData.life<=0
-        ){
-
-            scene.remove(bullet);
-
-            bullets.splice(i,1);
-
-        }
-
-    }
-
-}
-
-
-/* ==================================================
-   ENEMY AI
-================================================== */
-
-function updateEnemies(delta){
-
-    enemies.forEach(
-        enemy=>{
-
-            const direction =
-            new THREE.Vector3()
-            .subVectors(
-                player.position,
-                enemy.position
-            );
-
-            direction.y=0;
-
-
-            const distance =
-            direction.length();
-
-
-            if(distance>3){
-
-                direction.normalize();
-
-                enemy.position.add(
-                    direction.multiplyScalar(
-                        enemy.userData.speed*
-                        delta
-                    )
-                );
-
-            }else{
-
-                health -=
-                12*delta;
-
-                updateHUD();
-
-                if(health<=0){
-
-                    endGame();
-
-                }
-
-            }
-
-
-            enemy.lookAt(
-                player.position.x,
-                enemy.position.y,
-                player.position.z
-            );
-
-        }
-    );
-
-}
-
-
-/* ==================================================
-   CAMERA
-================================================== */
-
-function updateCamera(){
-
-    const offset =
-    new THREE.Vector3(
-        0,
-        5,
-        8
-    );
-
-
-    offset.applyAxisAngle(
-        new THREE.Vector3(0,1,0),
-        mouseX
-    );
-
-
-    const desired =
-    player.position
-    .clone()
-    .add(offset);
-
-
-    camera.position.lerp(
-        desired,
-        .12
-    );
-
-
-    camera.lookAt(
-        player.position.x,
-        player.position.y+2,
-        player.position.z
-    );
-
-}
-
-
-/* ==================================================
-   HUD
-================================================== */
-
-function updateHUD(){
-
-    document.getElementById(
-        "health"
-    ).textContent =
-    Math.max(
-        0,
-        Math.floor(health)
-    );
-
-
-    document.getElementById(
-        "score"
-    ).textContent =
-    score;
-
-
-    document.getElementById(
-        "ammo"
-    ).textContent =
-    ammo;
-
-}
-
-
-/* ==================================================
-   GAME
-================================================== */
-
-let shootCooldown=0;
-
-let lastTime=performance.now();
-
-
-function animate(){
-
-    requestAnimationFrame(
-        animate
-    );
-
-
-    const now =
-    performance.now();
-
-
-    const delta =
-    Math.min(
-        (now-lastTime)/1000,
-        .05
-    );
-
-
-    lastTime=now;
-
-
-    if(running){
-
-        updatePlayer(delta);
-
-        updateBullets(delta);
-
-        updateEnemies(delta);
-
-        updateCamera();
-
-        if(
-            enemies.length<8 &&
-            Math.random()<.015
-        ){
-
-            createEnemy();
-
-        }
-
-    }
-
-
-    renderer.render(
-        scene,
-        camera
-    );
-
-}
-
-
-function endGame(){
-
-    if(!running)
-        return;
-
-    running=false;
-
-    document.exitPointerLock();
-
-    document.getElementById(
-        "finalScore"
-    ).textContent =
-    score;
-
-    document.getElementById(
-        "gameOver"
-    ).style.display =
-    "flex";
-
-}
-
-
-/* ==================================================
-   START
-================================================== */
-
-function startGame(){
-
-    document.getElementById(
-        "startScreen"
-    ).style.display =
-    "none";
-
-
-    running=true;
-
-    health=100;
-
-    score=0;
-
-    ammo=30;
-
-    mouseX=0;
-
-    mouseY=0;
-
-
-    player.position.set(
-        0,
-        0,
-        30
-    );
-
-
-    enemies.forEach(
-        e=>scene.remove(e)
-    );
-
-    enemies.length=0;
-
-
-    bullets.forEach(
-        b=>scene.remove(b)
-    );
-
-    bullets.length=0;
-
-
-    for(
-        let i=0;
-        i<5;
-        i++
-    ){
-
-        createEnemy();
-
-    }
-
-
-    updateHUD();
-
-
-    renderer.domElement.requestPointerLock();
-
-}
-
-
-document.getElementById(
-    "startButton"
-).onclick =
-startGame;
-
-
-document.getElementById(
-    "restart"
-).onclick =
-()=>{
-
-    document.getElementById(
-        "gameOver"
-    ).style.display =
-    "none";
-
-    startGame();
-
-};
-
-
-/* ==================================================
-   RESIZE
-================================================== */
-
-window.addEventListener(
-"resize",
-()=>{
-
-    camera.aspect =
-    window.innerWidth/
-    window.innerHeight;
-
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(
-        window.innerWidth,
-        window.innerHeight
-    );
-
-});
-
-
-animate();
 
 </script>
 
