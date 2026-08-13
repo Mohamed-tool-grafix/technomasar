@@ -1,57 +1,78 @@
-  font-weight:bold;
-  margin-top:15px;
-}
-
-section{
-  padding:45px 0;
-}
-
-h2{
-  font-size:30px;
-}
-
-.search{<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>تكنومسار | ألعاب مجانية وألعاب للكمبيوتر</title>
+<title>تكنومسار | ألعاب مجانية للكمبيوتر وألعاب ممتعة</title>
 
-<meta name="description" content="تكنومسار موقع عربي لنشر الألعاب المجانية للكمبيوتر ومشاركتها. اكتشف ألعاب السباق والمغامرات والألغاز وألعاب متنوعة مجانًا.">
+<meta name="description" content="تكنومسار موقع عربي لاكتشاف الألعاب المجانية للكمبيوتر، ألعاب السباق والمغامرات والألغاز وألعاب متنوعة.">
 
-<meta name="robots" content="index, follow">
+<meta name="keywords" content="ألعاب مجانية, ألعاب كمبيوتر, ألعاب مجانية للكمبيوتر, ألعاب سباق, ألعاب مغامرات, ألعاب ألغاز, تكنومسار">
+
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<meta name="author" content="تكنومسار">
 
 <link rel="canonical" href="https://mohamed-tool-grafix.github.io/technomasar/">
 
 <!-- Google Search Console -->
 <meta name="google-site-verification" content="FlOy-3QifviLX5ZdoIXDZsgyGPv04atgiO4YSowvuME">
 
+
 <!-- Open Graph -->
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="تكنومسار | ألعاب مجانية وألعاب للكمبيوتر">
-<meta property="og:description" content="اكتشف ألعابًا مجانية للكمبيوتر على موقع تكنومسار. ألعاب سباق ومغامرات وألغاز وأكثر.">
+
+<meta property="og:title" content="تكنومسار | ألعاب مجانية للكمبيوتر">
+
+<meta property="og:description" content="اكتشف ألعابًا مجانية للكمبيوتر على تكنومسار، بما في ذلك ألعاب السباق والمغامرات والألغاز.">
+
 <meta property="og:url" content="https://mohamed-tool-grafix.github.io/technomasar/">
+
 <meta property="og:site_name" content="تكنومسار">
+
 <meta property="og:locale" content="ar_AR">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="تكنومسار | ألعاب مجانية">
-<meta name="twitter:description" content="اكتشف ألعابًا مجانية وألعاب كمبيوتر على تكنومسار.">
 
-<!-- Structured Data -->
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title" content="تكنومسار | ألعاب مجانية للكمبيوتر">
+
+<meta name="twitter:description" content="اكتشف ألعابًا مجانية وألعاب كمبيوتر متنوعة على موقع تكنومسار.">
+
+
+<!-- Structured Data: Website -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "تكنومسار",
+  "alternateName": "TechnoMasar",
   "url": "https://mohamed-tool-grafix.github.io/technomasar/",
-  "description": "موقع عربي لنشر الألعاب المجانية للكمبيوتر ومشاركتها.",
+  "description": "موقع عربي لاكتشاف الألعاب المجانية للكمبيوتر.",
   "inLanguage": "ar"
 }
 </script>
+
+
+<!-- Structured Data: Organization -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "تكنومسار",
+  "url": "https://mohamed-tool-grafix.github.io/technomasar/"
+}
+</script>
+
 
 <style>
 
@@ -75,6 +96,9 @@ header{
   background:#11182b;
   padding:18px;
   border-bottom:1px solid #293550;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 .container{
@@ -99,6 +123,7 @@ nav a{
   color:white;
   text-decoration:none;
   margin-right:18px;
+  font-weight:bold;
 }
 
 nav a:hover{
@@ -106,22 +131,22 @@ nav a:hover{
 }
 
 .hero{
-  padding:70px 20px;
+  padding:75px 20px;
   text-align:center;
   background:linear-gradient(135deg,#12294b,#29184c);
 }
 
 .hero h1{
-  font-size:55px;
+  font-size:52px;
   margin:10px;
-  line-height:1.3;
+  line-height:1.4;
 }
 
 .hero p{
   color:#c4cede;
   font-size:18px;
-  line-height:1.9;
-  max-width:750px;
+  line-height:2;
+  max-width:800px;
   margin:20px auto;
 }
 
@@ -141,12 +166,18 @@ nav a:hover{
 }
 
 section{
-  padding:45px 0;
+  padding:50px 0;
 }
 
 h2{
   font-size:30px;
+  margin-bottom:20px;
+}
+
+.games-intro{
+  color:#c4cede;
   margin-bottom:25px;
+  font-size:17px;
 }
 
 .search{
@@ -240,6 +271,10 @@ footer{
   background:#0b1020;
 }
 
+footer strong{
+  color:#5ee7ff;
+}
+
 @media(max-width:700px){
 
   .games{
@@ -247,7 +282,7 @@ footer{
   }
 
   .hero h1{
-    font-size:42px;
+    font-size:38px;
   }
 
   nav a{
@@ -258,13 +293,21 @@ footer{
     font-size:23px;
   }
 
+  .hero{
+    padding:55px 15px;
+  }
+
 }
 
 </style>
 
 </head>
 
+
 <body>
+
+
+<!-- Header -->
 
 <header>
 
@@ -272,12 +315,18 @@ footer{
 
 <nav>
 
-<div class="logo">🎮 تكنومسار</div>
+<div class="logo">
+🎮 تكنومسار
+</div>
 
 <div>
+
 <a href="#home">الرئيسية</a>
+
 <a href="#games">الألعاب</a>
+
 <a href="#about">عن الموقع</a>
+
 </div>
 
 </nav>
@@ -287,25 +336,30 @@ footer{
 </header>
 
 
+
 <main>
 
-<!-- الرئيسية -->
+
+<!-- Hero -->
 
 <section class="hero" id="home">
 
 <div class="container">
 
-<h1>🎮 تكنومسار - ألعاب مجانية للكمبيوتر</h1>
+<h1>
+🎮 تكنومسار - ألعاب مجانية للكمبيوتر
+</h1>
 
 <p>
 مرحبًا بك في تكنومسار 🚀
 <br>
 موقع عربي لاكتشاف الألعاب المجانية للكمبيوتر،
-بما في ذلك ألعاب السباق والمغامرات والألغاز وألعاب متنوعة.
+بما في ذلك ألعاب السباق والمغامرات والألغاز
+وألعاب متنوعة لجميع محبي الألعاب.
 </p>
 
 <a class="button" href="#games">
-استكشف الألعاب
+🎮 استكشف الألعاب
 </a>
 
 </div>
@@ -313,18 +367,22 @@ footer{
 </section>
 
 
-<!-- الألعاب -->
+
+<!-- Games -->
 
 <section id="games">
 
 <div class="container">
 
-<h2>🎮 ألعاب مجانية</h2>
+<h2>
+🎮 ألعاب مجانية للكمبيوتر
+</h2>
 
-<p>
-اكتشف مجموعة من الألعاب المجانية المتنوعة على تكنومسار،
-واختر اللعبة التي تناسبك.
+<p class="games-intro">
+اكتشف مجموعة من الألعاب المجانية المتنوعة على تكنومسار.
+يمكنك البحث عن اللعبة التي تريدها من خلال مربع البحث.
 </p>
+
 
 <input
 class="search"
@@ -339,24 +397,34 @@ autocomplete="off"
 <div class="games" id="gameList">
 
 
-<!-- لعبة السباق -->
+<!-- Racing Game -->
 
 <article class="card">
 
-<div class="cover" aria-label="لعبة سباق">
+<div
+class="cover"
+role="img"
+aria-label="لعبة سباق سيارات"
+>
 🚗
 </div>
 
 <div class="card-content">
 
-<h3>لعبة السباق</h3>
+<h3>
+لعبة السباق
+</h3>
 
 <p>
 لعبة سباق ممتعة لمحبي السيارات والسرعة.
 استمتع بتجربة سباق وتحديات متنوعة.
 </p>
 
-<a class="download" href="#" aria-label="تحميل لعبة السباق">
+<a
+class="download"
+href="#"
+aria-label="تحميل لعبة السباق مجانًا"
+>
 📥 تحميل مجاني
 </a>
 
@@ -365,24 +433,35 @@ autocomplete="off"
 </article>
 
 
-<!-- مغامرة الأبطال -->
+
+<!-- Adventure Game -->
 
 <article class="card">
 
-<div class="cover" aria-label="لعبة مغامرات">
+<div
+class="cover"
+role="img"
+aria-label="لعبة مغامرات وأكشن"
+>
 ⚔️
 </div>
 
 <div class="card-content">
 
-<h3>مغامرة الأبطال</h3>
+<h3>
+مغامرة الأبطال
+</h3>
 
 <p>
 لعبة أكشن ومغامرات تحتوي على تحديات
 ومراحل ممتعة لمحبي ألعاب المغامرات.
 </p>
 
-<a class="download" href="#" aria-label="تحميل مغامرة الأبطال">
+<a
+class="download"
+href="#"
+aria-label="تحميل لعبة مغامرة الأبطال مجانًا"
+>
 📥 تحميل مجاني
 </a>
 
@@ -391,24 +470,35 @@ autocomplete="off"
 </article>
 
 
-<!-- تحدي العقل -->
+
+<!-- Puzzle Game -->
 
 <article class="card">
 
-<div class="cover" aria-label="لعبة ألغاز">
+<div
+class="cover"
+role="img"
+aria-label="لعبة ألغاز وتحديات"
+>
 🧩
 </div>
 
 <div class="card-content">
 
-<h3>تحدي العقل</h3>
+<h3>
+تحدي العقل
+</h3>
 
 <p>
 لعبة ألغاز وتحديات تساعدك على اختبار
-التركيز والتفكير وحل الألغاز.
+التركيز والتفكير وحل الألغاز الممتعة.
 </p>
 
-<a class="download" href="#" aria-label="تحميل تحدي العقل">
+<a
+class="download"
+href="#"
+aria-label="تحميل لعبة تحدي العقل مجانًا"
+>
 📥 تحميل مجاني
 </a>
 
@@ -424,38 +514,59 @@ autocomplete="off"
 </section>
 
 
-<!-- عن الموقع -->
+
+<!-- About -->
 
 <section class="about" id="about">
 
 <div class="container">
 
-<h2>ℹ️ عن موقع تكنومسار</h2>
+<h2>
+ℹ️ عن موقع تكنومسار
+</h2>
 
 <p>
 تكنومسار هو موقع عربي متخصص في نشر الألعاب المجانية
-ومشاركتها مع المستخدمين. نعمل على توفير ألعاب متنوعة
-تشمل ألعاب السباق والمغامرات والألغاز وغيرها من الألعاب
-الممتعة للكمبيوتر.
+ومشاركتها مع المستخدمين. نوفر محتوى متعلق بالألعاب
+التي تشمل ألعاب السباق والمغامرات والألغاز وغيرها من
+الألعاب الممتعة للكمبيوتر.
+</p>
+
+<p>
+هدفنا هو توفير طريقة سهلة لاكتشاف الألعاب والتعرف عليها
+والوصول إلى الألعاب المناسبة للمستخدمين.
 </p>
 
 </div>
 
 </section>
 
+
 </main>
 
 
+
+<!-- Footer -->
+
 <footer>
 
-تكنومسار<br>
-تحت إشراف محمد حامد<br>
+<strong>🎮 تكنومسار</strong>
+
+<br>
+
+تحت إشراف محمد حامد
+
+<br>
+
 © 2026 جميع الحقوق محفوظة
 
 </footer>
 
 
+
 <script>
+
+/* البحث عن الألعاب */
 
 const search = document.getElementById("search");
 
@@ -487,238 +598,5 @@ card.style.display = "none";
 
 
 </body>
-</html>
 
-  width:100%;
-  padding:15px;
-  border-radius:12px;
-  border:1px solid #33425f;
-  background:#111a2c;
-  color:white;
-  font-size:16px;
-  margin-bottom:25px;
-}
-
-.games{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.card{
-  background:#111a2c;
-  border:1px solid #293853;
-  border-radius:18px;
-  overflow:hidden;
-}
-
-.cover{
-  height:160px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:60px;
-  background:linear-gradient(135deg,#1d4d68,#40226b);
-}
-
-.card-content{
-  padding:18px;
-}
-
-.card h3{
-  margin-top:0;
-}
-
-.card p{
-  color:#aebbd0;
-  line-height:1.7;
-}
-
-.download{
-  display:block;
-  text-align:center;
-  background:#19c7ee;
-  color:#06111d;
-  padding:12px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  margin-top:15px;
-}
-
-.about{
-  background:#0f1728;
-}
-
-footer{
-  text-align:center;
-  padding:30px;
-  color:#8491a8;
-}
-
-@media(max-width:700px){
-  .games{
-    grid-template-columns:1fr;
-  }
-
-  .hero h1{
-    font-size:42px;
-  }
-
-  nav a{
-    display:none;
-  }
-}
-</style>
-</head>
-<meta name="google-site-verification" content="FlOy-3QifviLX5ZdoIXDZsgyGPv04atgiO4YSowvuME" />
-<body>
-
-<header>
-<div class="container">
-<nav>
-<div class="logo">🎮 تكنومسار</div>
-
-<div>
-<a href="#home">الرئيسية</a>
-<a href="#games">الألعاب</a>
-<a href="#about">عن الموقع</a>
-</div>
-
-</nav>
-</div>
-</header>
-
-<section class="hero" id="home">
-<div class="container">
-
-<h1>🎮 تكنومسار</h1>
-
-<p>
-مرحبًا بك في تكنومسار 🚀<br>
-مكان لنشر الألعاب ومشاركتها مع الجميع مجانًا.
-</p>
-
-<a class="button" href="#games">استكشف الألعاب</a>
-
-</div>
-</section>
-
-<section id="games">
-<div class="container">
-
-<h2>🎮 الألعاب</h2>
-
-<input
-class="search"
-id="search"
-type="text"
-placeholder="🔎 ابحث عن لعبة..."
->
-
-<div class="games" id="gameList">
-
-<div class="card">
-<div class="cover">🚗</div>
-
-<div class="card-content">
-<h3>لعبة السباق</h3>
-
-<p>
-لعبة سباق ممتعة. سيتم وضع لعبتك الحقيقية هنا.
-</p>
-
-<a class="download" href="#">
-📥 تحميل مجاني
-</a>
-
-</div>
-</div>
-
-
-<div class="card">
-<div class="cover">⚔️</div>
-
-<div class="card-content">
-<h3>مغامرة الأبطال</h3>
-
-<p>
-لعبة أكشن ومغامرات.
-</p>
-
-<a class="download" href="#">
-📥 تحميل مجاني
-</a>
-
-</div>
-</div>
-
-
-<div class="card">
-<div class="cover">🧩</div>
-
-<div class="card-content">
-<h3>تحدي العقل</h3>
-
-<p>
-لعبة ألغاز وتحديات.
-</p>
-
-<a class="download" href="#">
-📥 تحميل مجاني
-</a>
-
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<section class="about" id="about">
-<div class="container">
-
-<h2>ℹ️ عن تكنومسار</h2>
-
-<p>
-تكنومسار هو موقع لنشر الألعاب ومشاركتها مجانًا.
-</p>
-
-</div>
-</section>
-
-تكنومسار<br>
-تحت إشراف محمد حامد<br>
-© 2026 جميع الحقوق محفوظة
-
-
-<script>
-
-const search = document.getElementById("search");
-
-const cards = document.querySelectorAll(".card");
-
-search.addEventListener("input",function(){
-
-let text = search.value.toLowerCase();
-
-cards.forEach(function(card){
-
-if(card.innerText.toLowerCase().includes(text)){
-
-card.style.display="block";
-
-}else{
-
-card.style.display="none";
-
-}
-
-});
-
-});
-
-</script>
-
-</body>
 </html>
