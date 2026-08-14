@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,6 +10,8 @@
 
 <meta name="description"
 content="تكنومسار - اكتشف ألعاب الكمبيوتر والموبايل المجانية والمفتوحة المصدر.">
+
+<meta name="robots" content="index, follow">
 
 <style>
 
@@ -25,22 +28,34 @@ body{
     font-family:Arial,"Segoe UI",sans-serif;
     background:#070b18;
     color:white;
+    line-height:1.7;
 }
 
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
 header{
-    background:rgba(13,21,40,.95);
-    padding:22px;
+    background:rgba(7,11,24,.96);
+    padding:20px;
     text-align:center;
     border-bottom:1px solid #263653;
     position:sticky;
     top:0;
     z-index:1000;
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(15px);
 }
 
 header h1{
     color:#61e7ff;
-    margin:0 0 8px;
+    margin:0 0 5px;
     font-size:30px;
 }
 
@@ -50,39 +65,134 @@ header p{
 }
 
 nav{
-    margin-top:18px;
+    margin-top:17px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:7px;
 }
 
 nav a{
     display:inline-block;
     color:#cbd5e1;
-    text-decoration:none;
-    margin:5px;
     padding:9px 14px;
     border-radius:10px;
     background:#111b30;
     border:1px solid #263653;
     font-weight:bold;
+    transition:.25s;
 }
 
 nav a:hover{
     color:#61e7ff;
     border-color:#18c5eb;
+    transform:translateY(-2px);
 }
 
-.container{
-    width:min(1150px,92%);
-    margin:auto;
+/* ================= HERO ================= */
+
+.hero{
+    padding:65px 0 45px;
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(24,197,235,.16),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 80% 20%,
+        rgba(117,87,255,.18),
+        transparent 35%
+    );
 }
+
+.badge{
+    display:inline-block;
+    padding:7px 15px;
+    border-radius:50px;
+    background:rgba(24,197,235,.1);
+    color:#61e7ff;
+    border:1px solid rgba(24,197,235,.3);
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+.hero h2{
+    font-size:clamp(32px,6vw,55px);
+    margin:5px 0 10px;
+}
+
+.hero h2 span{
+    color:#61e7ff;
+}
+
+.hero p{
+    color:#94a3bd;
+    max-width:700px;
+    margin:auto;
+    font-size:17px;
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+    max-width:700px;
+    margin:30px auto 0;
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    padding:17px 22px;
+    border-radius:15px;
+    border:1px solid #263653;
+    background:#111b30;
+    color:white;
+    outline:none;
+    font-size:16px;
+    text-align:right;
+}
+
+.search-box input::placeholder{
+    color:#71809a;
+}
+
+.search-box input:focus{
+    border-color:#18c5eb;
+    box-shadow:0 0 20px rgba(24,197,235,.12);
+}
+
+/* ================= COUNTER ================= */
+
+.counter{
+    text-align:center;
+    margin:25px 0 0;
+    color:#94a3bd;
+}
+
+.counter strong{
+    color:#61e7ff;
+    font-size:22px;
+}
+
+/* ================= SECTION ================= */
 
 .section{
-    padding:60px 0;
+    padding:65px 0;
+}
+
+.mobile-section{
+    background:#0b1222;
+    border-top:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.05);
 }
 
 .section-title{
     font-size:34px;
     color:#61e7ff;
-    margin-bottom:8px;
+    margin:0 0 7px;
 }
 
 .section-description{
@@ -90,10 +200,12 @@ nav a:hover{
     margin-bottom:30px;
 }
 
+/* ================= GAMES ================= */
+
 .games{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+    gap:22px;
 }
 
 .game-page{
@@ -103,29 +215,37 @@ nav a:hover{
     padding:22px;
     text-align:center;
     transition:.3s;
+    overflow:hidden;
 }
 
 .game-page:hover{
-    transform:translateY(-6px);
+    transform:translateY(-7px);
     border-color:#18c5eb;
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    box-shadow:0 18px 40px rgba(0,0,0,.38);
 }
 
 .game-icon{
     font-size:70px;
-    padding:28px;
+    padding:30px 20px;
     border-radius:18px;
     background:linear-gradient(135deg,#075985,#312e81);
+    margin-bottom:18px;
+}
+
+.mobile-icon{
+    background:linear-gradient(135deg,#166534,#075985);
 }
 
 .game-page h2{
     color:#61e7ff;
     font-size:25px;
+    margin:8px 0;
 }
 
 .description{
     color:#b7c3d7;
     line-height:1.8;
+    min-height:88px;
 }
 
 .info{
@@ -152,6 +272,7 @@ nav a:hover{
     border-radius:12px;
     font-weight:900;
     margin:10px auto;
+    transition:.25s;
 }
 
 .download{
@@ -161,6 +282,7 @@ nav a:hover{
 
 .download:hover{
     background:#61e7ff;
+    transform:translateY(-2px);
 }
 
 .official{
@@ -170,57 +292,78 @@ nav a:hover{
 
 .official:hover{
     background:#17243d;
+    border-color:#18c5eb;
 }
 
-/* MOBILE SECTION */
+/* ================= NO RESULTS ================= */
 
-.mobile-section{
-    background:#0b1222;
-    border-top:1px solid rgba(255,255,255,.05);
-    border-bottom:1px solid rgba(255,255,255,.05);
+.no-results{
+    display:none;
+    text-align:center;
+    padding:35px;
+    color:#94a3bd;
+    background:#111b30;
+    border:1px solid #263653;
+    border-radius:18px;
+    margin-top:20px;
 }
 
-.mobile-icon{
-    background:linear-gradient(135deg,#166534,#075985);
-}
-
-/* BADGE */
-
-.badge{
-    display:inline-block;
-    padding:7px 13px;
-    border-radius:50px;
-    background:rgba(24,197,235,.1);
+.no-results strong{
+    display:block;
     color:#61e7ff;
-    border:1px solid rgba(24,197,235,.3);
-    margin-bottom:20px;
+    font-size:22px;
+    margin-bottom:5px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     text-align:center;
     background:#050914;
-    padding:35px;
+    padding:40px 20px;
     color:#66748b;
 }
 
 footer strong{
     color:#61e7ff;
+    font-size:20px;
 }
 
-@media(max-width:600px){
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    header{
+        padding:16px 10px;
+    }
 
     header h1{
         font-size:25px;
     }
 
+    nav a{
+        font-size:13px;
+        padding:8px 10px;
+    }
+
+    .hero{
+        padding:50px 0 35px;
+    }
+
+    .hero h2{
+        font-size:34px;
+    }
+
     .section{
-        padding:45px 0;
+        padding:50px 0;
     }
 
     .section-title{
         font-size:28px;
+    }
+
+    .games{
+        grid-template-columns:1fr;
     }
 
     .game-icon{
@@ -235,7 +378,12 @@ footer strong{
 
 <body>
 
+
+<!-- ================= HEADER ================= -->
+
 <header>
+
+<div class="container">
 
 <h1>🎮 تكنومسار</h1>
 
@@ -243,23 +391,76 @@ footer strong{
 
 <nav>
 
+<a href="index.html">
+🏠 الرئيسية
+</a>
+
 <a href="#computer">
-🖥️ ألعاب الكمبيوتر
+🖥️ الكمبيوتر
 </a>
 
 <a href="#mobile">
-📱 ألعاب الموبايل
+📱 الموبايل
 </a>
 
 </nav>
 
+</div>
+
 </header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="container">
+
+<span class="badge">
+🔥 مكتبة ألعاب تكنومسار
+</span>
+
+<h2>
+اكتشف <span>ألعابك المفضلة</span>
+</h2>
+
+<p>
+مجموعة من الألعاب المجانية والمفتوحة المصدر
+للكمبيوتر والموبايل، مع روابط التحميل الرسمية.
+</p>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="gameSearch"
+placeholder="🔎 ابحث عن لعبة مثل SuperTuxKart..."
+autocomplete="off">
+
+</div>
+
+
+<div class="counter">
+
+عدد الألعاب:
+<strong id="gameCount">11</strong>
+
+</div>
+
+</div>
+
+</section>
 
 
 <main>
 
 
-<!-- ================= الكمبيوتر ================= -->
+<!-- ================================================== -->
+<!-- ================= الكمبيوتر ====================== -->
+<!-- ================================================== -->
 
 <section class="section" id="computer">
 
@@ -282,15 +483,13 @@ footer strong{
 
 <!-- SuperTuxKart -->
 
-<div class="game-page">
+<div class="game-page" data-game="SuperTuxKart">
 
 <div class="game-icon">
 🏎️
 </div>
 
-<h2>
-SuperTuxKart
-</h2>
+<h2>SuperTuxKart</h2>
 
 <p class="description">
 لعبة سباق كارت ثلاثية الأبعاد مجانية
@@ -299,12 +498,10 @@ SuperTuxKart
 </p>
 
 <div class="info">
-
 <span>🏎️ سباق</span>
 <span>💾 مجانية</span>
 <span>🖥️ Windows</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -332,15 +529,13 @@ rel="noopener noreferrer">
 
 <!-- OpenTTD -->
 
-<div class="game-page">
+<div class="game-page" data-game="OpenTTD">
 
 <div class="game-icon">
 🚂
 </div>
 
-<h2>
-OpenTTD
-</h2>
+<h2>OpenTTD</h2>
 
 <p class="description">
 لعبة إدارة واستراتيجية رائعة تقوم فيها
@@ -348,12 +543,10 @@ OpenTTD
 </p>
 
 <div class="info">
-
 <span>🚂 استراتيجية</span>
 <span>💾 مجانية</span>
 <span>🖥️ Windows</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -381,15 +574,13 @@ rel="noopener noreferrer">
 
 <!-- 0 A.D. -->
 
-<div class="game-page">
+<div class="game-page" data-game="0 A.D.">
 
 <div class="game-icon">
 ⚔️
 </div>
 
-<h2>
-0 A.D.
-</h2>
+<h2>0 A.D.</h2>
 
 <p class="description">
 لعبة استراتيجية تاريخية مجانية ومفتوحة
@@ -397,12 +588,10 @@ rel="noopener noreferrer">
 </p>
 
 <div class="info">
-
 <span>⚔️ استراتيجية</span>
 <span>💾 مجانية</span>
 <span>🖥️ Windows</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -430,15 +619,13 @@ rel="noopener noreferrer">
 
 <!-- Endless Sky -->
 
-<div class="game-page">
+<div class="game-page" data-game="Endless Sky">
 
 <div class="game-icon">
 🚀
 </div>
 
-<h2>
-Endless Sky
-</h2>
+<h2>Endless Sky</h2>
 
 <p class="description">
 استكشف الفضاء وتاجر وخض المغامرات
@@ -446,12 +633,10 @@ Endless Sky
 </p>
 
 <div class="info">
-
 <span>🚀 فضاء</span>
 <span>💾 مجانية</span>
 <span>🖥️ Windows</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -479,15 +664,13 @@ rel="noopener noreferrer">
 
 <!-- SuperTux -->
 
-<div class="game-page">
+<div class="game-page" data-game="SuperTux">
 
 <div class="game-icon">
 🐧
 </div>
 
-<h2>
-SuperTux
-</h2>
+<h2>SuperTux</h2>
 
 <p class="description">
 لعبة منصات ومغامرات مجانية ومفتوحة المصدر
@@ -495,12 +678,10 @@ SuperTux
 </p>
 
 <div class="info">
-
 <span>🕹️ منصات</span>
 <span>💾 مجانية</span>
 <span>🖥️ Windows</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -528,12 +709,21 @@ rel="noopener noreferrer">
 
 </div>
 
+<div class="no-results" id="computerNoResults">
+
+<strong>😕 لم نجد اللعبة</strong>
+جرب البحث باسم لعبة أخرى.
+
+</div>
+
 </div>
 
 </section>
 
 
-<!-- ================= الموبايل ================= -->
+<!-- ================================================== -->
+<!-- ================= الموبايل ======================= -->
+<!-- ================================================== -->
 
 <section class="section mobile-section" id="mobile">
 
@@ -556,15 +746,13 @@ rel="noopener noreferrer">
 
 <!-- SuperTuxKart Android -->
 
-<div class="game-page">
+<div class="game-page" data-game="SuperTuxKart Android">
 
 <div class="game-icon mobile-icon">
 🏎️
 </div>
 
-<h2>
-SuperTuxKart
-</h2>
+<h2>SuperTuxKart</h2>
 
 <p class="description">
 نسخة الموبايل من لعبة السباق ثلاثية الأبعاد
@@ -572,12 +760,10 @@ SuperTuxKart
 </p>
 
 <div class="info">
-
 <span>🏎️ سباق</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -605,15 +791,13 @@ rel="noopener noreferrer">
 
 <!-- Endless Sky -->
 
-<div class="game-page">
+<div class="game-page" data-game="Endless Sky Android">
 
 <div class="game-icon mobile-icon">
 🚀
 </div>
 
-<h2>
-Endless Sky
-</h2>
+<h2>Endless Sky</h2>
 
 <p class="description">
 مغامرة فضائية وتجارة واستكشاف.
@@ -621,12 +805,10 @@ Endless Sky
 </p>
 
 <div class="info">
-
 <span>🚀 فضاء</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -654,15 +836,13 @@ rel="noopener noreferrer">
 
 <!-- Unciv -->
 
-<div class="game-page">
+<div class="game-page" data-game="Unciv">
 
 <div class="game-icon mobile-icon">
 🏛️
 </div>
 
-<h2>
-Unciv
-</h2>
+<h2>Unciv</h2>
 
 <p class="description">
 لعبة استراتيجية لبناء الحضارات وإدارة المدن
@@ -670,12 +850,10 @@ Unciv
 </p>
 
 <div class="info">
-
 <span>🏛️ استراتيجية</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -703,15 +881,13 @@ rel="noopener noreferrer">
 
 <!-- Shattered Pixel Dungeon -->
 
-<div class="game-page">
+<div class="game-page" data-game="Shattered Pixel Dungeon">
 
 <div class="game-icon mobile-icon">
 💎
 </div>
 
-<h2>
-Shattered Pixel Dungeon
-</h2>
+<h2>Shattered Pixel Dungeon</h2>
 
 <p class="description">
 لعبة مغامرات وألغاز داخل زنزانات،
@@ -719,12 +895,10 @@ Shattered Pixel Dungeon
 </p>
 
 <div class="info">
-
 <span>🧙 مغامرات</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -752,15 +926,13 @@ rel="noopener noreferrer">
 
 <!-- Mindustry -->
 
-<div class="game-page">
+<div class="game-page" data-game="Mindustry">
 
 <div class="game-icon mobile-icon">
 🏭
 </div>
 
-<h2>
-Mindustry
-</h2>
+<h2>Mindustry</h2>
 
 <p class="description">
 ابنِ المصانع ودافع عن قاعدتك وأدر الموارد
@@ -768,12 +940,10 @@ Mindustry
 </p>
 
 <div class="info">
-
 <span>🏭 استراتيجية</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -801,15 +971,13 @@ rel="noopener noreferrer">
 
 <!-- OpenTTD Android -->
 
-<div class="game-page">
+<div class="game-page" data-game="OpenTTD Android">
 
 <div class="game-icon mobile-icon">
 🚂
 </div>
 
-<h2>
-OpenTTD
-</h2>
+<h2>OpenTTD</h2>
 
 <p class="description">
 إدارة شركات النقل والقطارات والطرق
@@ -817,12 +985,10 @@ OpenTTD
 </p>
 
 <div class="info">
-
 <span>🚂 إدارة</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
-
 </div>
 
 <a
@@ -850,19 +1016,25 @@ rel="noopener noreferrer">
 
 </div>
 
+<div class="no-results" id="mobileNoResults">
+
+<strong>😕 لم نجد اللعبة</strong>
+جرب البحث باسم لعبة أخرى.
+
+</div>
+
 </div>
 
 </section>
 
-
 </main>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-<strong>
-🎮 تكنومسار
-</strong>
+<strong>🎮 تكنومسار</strong>
 
 <br><br>
 
@@ -873,6 +1045,105 @@ rel="noopener noreferrer">
 © 2026 جميع الحقوق محفوظة
 
 </footer>
+
+
+<!-- ================= SEARCH SCRIPT ================= -->
+
+<script>
+
+const searchInput = document.getElementById("gameSearch");
+
+const gameCards = document.querySelectorAll(".game-page");
+
+const gameCount = document.getElementById("gameCount");
+
+const computerNoResults =
+document.getElementById("computerNoResults");
+
+const mobileNoResults =
+document.getElementById("mobileNoResults");
+
+
+function searchGames(){
+
+    const search =
+    searchInput.value.trim().toLowerCase();
+
+    let visibleCount = 0;
+
+    gameCards.forEach(function(card){
+
+        const name =
+        card.getAttribute("data-game").toLowerCase();
+
+        const text =
+        card.innerText.toLowerCase();
+
+        if(
+            search === "" ||
+            name.includes(search) ||
+            text.includes(search)
+        ){
+
+            card.style.display = "";
+
+            visibleCount++;
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    gameCount.textContent = visibleCount;
+
+
+    let computerVisible = 0;
+    let mobileVisible = 0;
+
+
+    document
+    .querySelectorAll("#computer .game-page")
+    .forEach(function(card){
+
+        if(card.style.display !== "none"){
+            computerVisible++;
+        }
+
+    });
+
+
+    document
+    .querySelectorAll("#mobile .game-page")
+    .forEach(function(card){
+
+        if(card.style.display !== "none"){
+            mobileVisible++;
+        }
+
+    });
+
+
+    computerNoResults.style.display =
+    computerVisible === 0 ? "block" : "none";
+
+
+    mobileNoResults.style.display =
+    mobileVisible === 0 ? "block" : "none";
+
+}
+
+
+searchInput.addEventListener(
+    "input",
+    searchGames
+);
+
+</script>
+
 
 </body>
 
