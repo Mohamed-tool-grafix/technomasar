@@ -6,16 +6,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ألعاب مجانية | تكنومسار</title>
+<title>تكنومسار | ألعاب مجانية للكمبيوتر والموبايل</title>
 
 <meta name="description"
-content="تكنومسار - اكتشف أفضل الألعاب المجانية للكمبيوتر والموبايل.">
+content="تكنومسار - اكتشف ألعاب مجانية للكمبيوتر والموبايل وألعاب المتصفح في مكان واحد.">
 
 <meta name="robots" content="index, follow">
+
+<meta name="author" content="تكنومسار">
+
+<link rel="canonical"
+href="https://mohamed-tool-grafix.github.io/technomasar/">
+
+<meta name="theme-color" content="#070b18">
+
+<meta property="og:type" content="website">
+<meta property="og:title"
+content="تكنومسار | ألعاب مجانية للكمبيوتر والموبايل">
+<meta property="og:description"
+content="اكتشف ألعاب مجانية للكمبيوتر والموبايل وألعاب المتصفح مع تكنومسار.">
+<meta property="og:url"
+content="https://mohamed-tool-grafix.github.io/technomasar/">
+<meta property="og:site_name" content="تكنومسار">
+<meta property="og:locale" content="ar_AR">
 
 <style>
 
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
@@ -24,10 +43,9 @@ html{
 }
 
 body{
-    margin:0;
-    font-family:"Segoe UI",Arial,sans-serif;
+    font-family:"Segoe UI",Tahoma,Arial,sans-serif;
     background:#070b18;
-    color:white;
+    color:#fff;
     line-height:1.7;
 }
 
@@ -47,38 +65,38 @@ header{
     top:0;
     z-index:9999;
     background:rgba(7,11,24,.96);
-    backdrop-filter:blur(15px);
     border-bottom:1px solid #263653;
+    backdrop-filter:blur(15px);
 }
 
-.header-content{
+.navbar{
     min-height:75px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:15px;
+    gap:20px;
 }
 
 .logo{
     color:#61e7ff;
-    font-size:25px;
+    font-size:26px;
     font-weight:900;
 }
 
-.nav{
+.nav-links{
     display:flex;
-    gap:8px;
+    gap:6px;
     flex-wrap:wrap;
 }
 
-.nav a{
+.nav-links a{
     color:#cbd5e1;
     padding:9px 13px;
     border-radius:10px;
     font-weight:bold;
 }
 
-.nav a:hover{
+.nav-links a:hover{
     color:#61e7ff;
     background:#111b30;
 }
@@ -86,25 +104,49 @@ header{
 /* ================= HERO ================= */
 
 .hero{
-    padding:80px 0;
+    min-height:650px;
+    display:flex;
+    align-items:center;
     text-align:center;
+    padding:80px 20px;
 
     background:
     radial-gradient(
-        circle at 20% 20%,
-        rgba(24,197,235,.16),
+        circle at 15% 20%,
+        rgba(24,197,235,.18),
         transparent 30%
     ),
     radial-gradient(
-        circle at 80% 20%,
-        rgba(117,87,255,.18),
+        circle at 85% 20%,
+        rgba(117,87,255,.20),
         transparent 35%
+    ),
+    linear-gradient(
+        135deg,
+        #0b1933,
+        #211340
     );
 }
 
+.hero-content{
+    width:100%;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 17px;
+    border-radius:50px;
+    background:rgba(24,197,235,.10);
+    border:1px solid rgba(24,197,235,.30);
+    color:#61e7ff;
+    margin-bottom:22px;
+    font-weight:bold;
+}
+
 .hero h1{
-    font-size:clamp(40px,7vw,65px);
-    margin:0 0 15px;
+    font-size:clamp(42px,7vw,76px);
+    line-height:1.2;
+    margin-bottom:25px;
 }
 
 .hero h1 span{
@@ -112,224 +154,346 @@ header{
 }
 
 .hero p{
-    max-width:750px;
+    max-width:780px;
     margin:auto;
-    color:#94a3bd;
-    font-size:18px;
+    color:#b7c3d7;
+    font-size:19px;
 }
 
 .hero-buttons{
-    margin-top:30px;
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
-.hero-button{
+.button{
     display:inline-block;
+    padding:14px 27px;
+    border-radius:13px;
     background:#18c5eb;
     color:#03111b;
-    padding:13px 22px;
-    border-radius:12px;
     font-weight:900;
-    margin:5px;
+    transition:.25s;
 }
 
-.hero-button:hover{
+.button:hover{
+    transform:translateY(-3px);
     background:#61e7ff;
 }
 
-/* ================= SECTIONS ================= */
-
-.section{
-    padding:70px 0;
+.button.secondary{
+    background:#17243d;
+    color:white;
+    border:1px solid #304463;
 }
 
-.mobile-section{
+.button.secondary:hover{
+    background:#223657;
+    border-color:#18c5eb;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    padding:35px 0;
     background:#0b1222;
-    border-top:1px solid rgba(255,255,255,.06);
     border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-.section-head{
-    margin-bottom:30px;
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.badge{
-    display:inline-block;
-    padding:7px 13px;
-    border-radius:50px;
-    background:rgba(24,197,235,.1);
-    border:1px solid rgba(24,197,235,.3);
+.stat{
+    text-align:center;
+    padding:20px;
+}
+
+.stat-icon{
+    font-size:35px;
+}
+
+.stat strong{
+    display:block;
+    font-size:28px;
     color:#61e7ff;
-    font-weight:bold;
-    margin-bottom:12px;
+}
+
+.stat span{
+    color:#94a3bd;
+}
+
+/* ================= GENERAL SECTIONS ================= */
+
+section{
+    padding:80px 0;
 }
 
 .section-title{
-    margin:0;
-    color:#61e7ff;
-    font-size:35px;
+    font-size:36px;
+    margin-bottom:8px;
 }
 
 .section-description{
     color:#94a3bd;
-    margin:5px 0 0;
+    margin-bottom:30px;
 }
 
-/* ================= GAMES ================= */
+/* ================= CATEGORIES ================= */
 
-.games{
+.categories{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:22px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.game-card{
-    background:linear-gradient(145deg,#111b30,#0d1528);
-    border:1px solid #263653;
+.category-card{
+    background:linear-gradient(145deg,#121b31,#0d1527);
+    border:1px solid #253454;
     border-radius:20px;
-    padding:22px;
+    padding:30px;
     text-align:center;
     transition:.3s;
 }
 
-.game-card:hover{
+.category-card:hover{
     transform:translateY(-7px);
     border-color:#18c5eb;
-    box-shadow:0 18px 40px rgba(0,0,0,.35);
+    box-shadow:0 20px 45px rgba(0,0,0,.30);
 }
 
-.game-icon{
-    height:170px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:75px;
-    border-radius:17px;
-    background:linear-gradient(135deg,#075985,#312e81);
+.category-icon{
+    font-size:65px;
+    margin-bottom:10px;
 }
 
-.mobile-icon{
-    background:linear-gradient(135deg,#166534,#075985);
+.category-card h3{
+    font-size:23px;
+    margin-bottom:8px;
 }
 
-.game-card h3{
-    color:#61e7ff;
-    font-size:25px;
-    margin:18px 0 8px;
+.category-card p{
+    color:#94a3bd;
+    margin-bottom:20px;
 }
 
-.description{
-    color:#b7c3d7;
-    min-height:90px;
-}
-
-.tags{
-    display:flex;
-    justify-content:center;
-    gap:7px;
-    flex-wrap:wrap;
-    margin:18px 0;
-}
-
-.tags span{
-    background:#17243d;
-    color:#cbd5e1;
-    padding:5px 9px;
-    border-radius:8px;
-    font-size:12px;
-}
-
-.download{
-    display:block;
+.category-button{
+    display:inline-block;
+    padding:11px 20px;
     background:#18c5eb;
     color:#03111b;
-    padding:13px;
-    border-radius:11px;
+    border-radius:10px;
     font-weight:900;
-    margin-top:12px;
 }
 
-.download:hover{
+.category-button:hover{
     background:#61e7ff;
 }
 
-.official{
-    display:block;
-    color:#61e7ff;
-    border:1px solid #263653;
-    padding:11px;
-    border-radius:11px;
-    margin-top:10px;
+/* ================= FEATURED ================= */
+
+.featured{
+    background:#0b1222;
+    border-top:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.05);
 }
 
-.official:hover{
-    background:#17243d;
+.featured-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-/* ================= TOP BUTTON ================= */
-
-.top-button{
-    text-align:center;
-    margin-top:35px;
-}
-
-.top-button a{
-    display:inline-block;
-    color:#61e7ff;
-    border:1px solid #263653;
-    padding:10px 18px;
-    border-radius:10px;
-}
-
-.top-button a:hover{
+.feature-card{
+    overflow:hidden;
     background:#111b30;
+    border:1px solid #263653;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-7px);
+    border-color:#18c5eb;
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
+}
+
+.feature-cover{
+    height:180px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:78px;
+}
+
+.cover1{
+    background:linear-gradient(135deg,#075985,#312e81);
+}
+
+.cover2{
+    background:linear-gradient(135deg,#431407,#581c87);
+}
+
+.cover3{
+    background:linear-gradient(135deg,#14532d,#164e63);
+}
+
+.feature-content{
+    padding:22px;
+}
+
+.feature-content h3{
+    font-size:22px;
+    margin-bottom:6px;
+    color:white;
+}
+
+.feature-content p{
+    color:#94a3bd;
+    font-size:14px;
+}
+
+.feature-tag{
+    color:#61e7ff;
+    font-size:13px;
+}
+
+/* ================= VIDEO ================= */
+
+.video-section{
+    text-align:center;
+}
+
+.video-box{
+    max-width:850px;
+    margin:30px auto 0;
+    padding:10px;
+    background:#111b30;
+    border:1px solid #263653;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.video-box iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border:0;
+    border-radius:14px;
+    display:block;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:#0b1222;
+    border-top:1px solid rgba(255,255,255,.05);
+}
+
+.about-box{
+    max-width:850px;
+}
+
+.about p{
+    color:#aebbd0;
+    margin-bottom:15px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    text-align:center;
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(24,197,235,.12),
+        transparent 50%
+    );
+}
+
+.cta h2{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.cta p{
+    color:#94a3bd;
+    margin-bottom:25px;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
     background:#050914;
+    padding:40px 0;
     text-align:center;
-    padding:40px 15px;
     color:#66748b;
 }
 
 footer strong{
     color:#61e7ff;
-    font-size:20px;
+    font-size:21px;
 }
 
 /* ================= MOBILE ================= */
 
-@media(max-width:700px){
+@media(max-width:850px){
 
-    .header-content{
-        justify-content:center;
-        flex-direction:column;
-        padding:15px 0;
+    .categories{
+        grid-template-columns:1fr;
     }
 
-    .nav{
+    .featured-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .navbar{
+        min-height:70px;
         justify-content:center;
+        flex-direction:column;
+        padding:12px 0;
+    }
+
+    .nav-links{
+        justify-content:center;
+    }
+
+    .nav-links a{
+        font-size:13px;
+        padding:7px 9px;
     }
 
     .hero{
-        padding:60px 0;
+        min-height:570px;
+        padding:70px 15px;
     }
 
     .hero h1{
-        font-size:40px;
+        font-size:42px;
     }
 
     .hero p{
         font-size:16px;
     }
 
-    .section{
-        padding:55px 0;
+    .section-title{
+        font-size:30px;
     }
 
-    .section-title{
-        font-size:29px;
+    section{
+        padding:60px 0;
     }
 
 }
@@ -340,30 +504,45 @@ footer strong{
 
 <body>
 
-
 <!-- ================= HEADER ================= -->
 
 <header>
 
-<div class="container header-content">
+<div class="container">
+
+<nav class="navbar">
 
 <a href="index.html" class="logo">
 🎮 تكنومسار
 </a>
 
-<nav class="nav">
+<div class="nav-links">
 
 <a href="index.html">
-🏠 الرئيسية
+الرئيسية
 </a>
 
-<a href="#computer">
+<a href="games.html">
+🎮 الألعاب
+</a>
+
+<a href="games.html#computer">
 🖥️ الكمبيوتر
 </a>
 
-<a href="#mobile">
+<a href="games.html#mobile">
 📱 الموبايل
 </a>
+
+<a href="#video">
+🎬 فيديو
+</a>
+
+<a href="#about">
+عن الموقع
+</a>
+
+</div>
 
 </nav>
 
@@ -374,27 +553,37 @@ footer strong{
 
 <!-- ================= HERO ================= -->
 
+<main>
+
 <section class="hero">
 
-<div class="container">
+<div class="container hero-content">
+
+<div class="badge">
+🔥 عالم الألعاب في مكان واحد
+</div>
 
 <h1>
-🎮 ألعاب <span>تكنومسار</span>
+اكتشف
+<span>ألعابك المفضلة</span>
+<br>
+مع تكنومسار
 </h1>
 
 <p>
-اكتشف مجموعة من الألعاب المجانية والمفتوحة المصدر
-للكمبيوتر والموبايل.
+موقع عربي لاكتشاف الألعاب المجانية
+للكمبيوتر والموبايل، مع تنظيم الألعاب
+بطريقة سهلة وسريعة.
 </p>
 
 <div class="hero-buttons">
 
-<a href="#computer" class="hero-button">
-🖥️ ألعاب الكمبيوتر
+<a href="games.html" class="button">
+🎮 استكشف الألعاب
 </a>
 
-<a href="#mobile" class="hero-button">
-📱 ألعاب الموبايل
+<a href="#categories" class="button secondary">
+🚀 تصفح الأقسام
 </a>
 
 </div>
@@ -404,283 +593,303 @@ footer strong{
 </section>
 
 
-<main>
+<!-- ================= STATS ================= -->
 
-
-<!-- ================================================= -->
-<!-- ================= COMPUTER ====================== -->
-<!-- ================================================= -->
-
-<section class="section" id="computer">
+<section class="stats">
 
 <div class="container">
 
-<div class="section-head">
+<div class="stats-grid">
 
-<span class="badge">
-🖥️ قسم الكمبيوتر
+<div class="stat">
+
+<div class="stat-icon">
+🎮
+</div>
+
+<strong>مجانية</strong>
+
+<span>
+ألعاب مجانية للاكتشاف
 </span>
-
-<h2 class="section-title">
-🎮 ألعاب الكمبيوتر
-</h2>
-
-<p class="section-description">
-ألعاب مجانية ومفتوحة المصدر للكمبيوتر.
-</p>
 
 </div>
 
 
-<div class="games">
+<div class="stat">
+
+<div class="stat-icon">
+💻
+</div>
+
+<strong>PC</strong>
+
+<span>
+ألعاب للكمبيوتر
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-icon">
+📱
+</div>
+
+<strong>Mobile</strong>
+
+<span>
+ألعاب للموبايل
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section id="categories">
+
+<div class="container">
+
+<h2 class="section-title">
+🎯 تصفح الألعاب
+</h2>
+
+<p class="section-description">
+اختر القسم الذي تريد استكشافه.
+</p>
+
+<div class="categories">
+
+
+<!-- COMPUTER -->
+
+<div class="category-card">
+
+<div class="category-icon">
+💻
+</div>
+
+<h3>
+ألعاب الكمبيوتر
+</h3>
+
+<p>
+اكتشف ألعاب PC المجانية
+والمفتوحة المصدر الموجودة على الموقع.
+</p>
+
+<a href="games.html#computer"
+class="category-button">
+
+🎮 ألعاب الكمبيوتر
+
+</a>
+
+</div>
+
+
+<!-- MOBILE -->
+
+<div class="category-card">
+
+<div class="category-icon">
+📱
+</div>
+
+<h3>
+ألعاب الموبايل
+</h3>
+
+<p>
+اكتشف ألعاب Android المجانية
+والمفتوحة المصدر.
+</p>
+
+<a href="games.html#mobile"
+class="category-button">
+
+📱 ألعاب الموبايل
+
+</a>
+
+</div>
+
+
+<!-- ALL GAMES -->
+
+<div class="category-card">
+
+<div class="category-icon">
+🔥
+</div>
+
+<h3>
+كل الألعاب
+</h3>
+
+<p>
+شاهد جميع الألعاب الموجودة
+في مكتبة تكنومسار.
+</p>
+
+<a href="games.html"
+class="category-button">
+
+🚀 عرض كل الألعاب
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FEATURED ================= -->
+
+<section class="featured">
+
+<div class="container">
+
+<h2 class="section-title">
+🔥 ألعاب مميزة
+</h2>
+
+<p class="section-description">
+بعض الألعاب الموجودة بالفعل في موقعك.
+</p>
+
+<div class="featured-grid">
 
 
 <!-- SuperTuxKart -->
 
-<article class="game-card">
+<div class="feature-card">
 
-<div class="game-icon">
+<div class="feature-cover cover1">
 🏎️
 </div>
+
+<div class="feature-content">
+
+<span class="feature-tag">
+🏎️ سباق
+</span>
 
 <h3>
 SuperTuxKart
 </h3>
 
-<p class="description">
-لعبة سباق كارت ثلاثية الأبعاد مجانية
-ومفتوحة المصدر، تحتوي على حلبات
-وشخصيات وأنماط لعب مختلفة.
+<p>
+لعبة سباق كارت مجانية ومفتوحة المصدر.
 </p>
 
-<div class="tags">
-<span>🏎️ سباق</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
+<br>
+
+<a href="games.html#computer"
+class="button">
+
+🎮 شاهد اللعبة
+
+</a>
+
 </div>
 
-<a
-class="download"
-href="https://supertuxkart.github.io/stk-website/Download"
-target="_blank"
-rel="noopener noreferrer">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-<a
-class="official"
-href="https://supertuxkart.github.io/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
+</div>
 
 
 <!-- OpenTTD -->
 
-<article class="game-card">
+<div class="feature-card">
 
-<div class="game-icon">
+<div class="feature-cover cover2">
 🚂
 </div>
+
+<div class="feature-content">
+
+<span class="feature-tag">
+🚂 استراتيجية
+</span>
 
 <h3>
 OpenTTD
 </h3>
 
-<p class="description">
-لعبة إدارة واستراتيجية تقوم فيها
-بإدارة شركات النقل والقطارات
-والطرق والمواصلات.
+<p>
+لعبة إدارة واستراتيجية وشركات نقل.
 </p>
 
-<div class="tags">
-<span>🚂 إدارة</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
+<br>
+
+<a href="games.html#computer"
+class="button">
+
+🎮 شاهد اللعبة
+
+</a>
+
 </div>
 
-<a
-class="download"
-href="https://www.openttd.org/downloads/openttd-releases/latest.html"
-target="_blank"
-rel="noopener noreferrer">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-<a
-class="official"
-href="https://www.openttd.org/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
+</div>
 
 
 <!-- 0 A.D. -->
 
-<article class="game-card">
+<div class="feature-card">
 
-<div class="game-icon">
+<div class="feature-cover cover3">
 ⚔️
 </div>
+
+<div class="feature-content">
+
+<span class="feature-tag">
+⚔️ استراتيجية
+</span>
 
 <h3>
 0 A.D.
 </h3>
 
-<p class="description">
-لعبة استراتيجية تاريخية مجانية
-ومفتوحة المصدر تدور أحداثها
-في العصور القديمة.
+<p>
+لعبة استراتيجية تاريخية مجانية ومفتوحة المصدر.
 </p>
 
-<div class="tags">
-<span>⚔️ استراتيجية</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
+<br>
+
+<a href="games.html#computer"
+class="button">
+
+🎮 شاهد اللعبة
+
+</a>
+
 </div>
-
-<a
-class="download"
-href="https://play0ad.com/download/"
-target="_blank"
-rel="noopener noreferrer">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-<a
-class="official"
-href="https://play0ad.com/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-<!-- Endless Sky -->
-
-<article class="game-card">
-
-<div class="game-icon">
-🚀
-</div>
-
-<h3>
-Endless Sky
-</h3>
-
-<p class="description">
-استكشف الفضاء وتاجر وخض المعارك
-في لعبة فضاء مجانية ومفتوحة المصدر.
-</p>
-
-<div class="tags">
-<span>🚀 فضاء</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://endless-sky.github.io/"
-target="_blank"
-rel="noopener noreferrer">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-<a
-class="official"
-href="https://endless-sky.github.io/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-<!-- SuperTux -->
-
-<article class="game-card">
-
-<div class="game-icon">
-🐧
-</div>
-
-<h3>
-SuperTux
-</h3>
-
-<p class="description">
-لعبة منصات ومغامرات مجانية
-ومفتوحة المصدر بطابع كلاسيكي
-وشخصية Tux الشهيرة.
-</p>
-
-<div class="tags">
-<span>🕹️ منصات</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://www.supertux.org/download.html"
-target="_blank"
-rel="noopener noreferrer">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-<a
-class="official"
-href="https://www.supertux.org/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
 
 </div>
 
 
-<div class="top-button">
+</div>
 
-<a href="#">
-⬆️ العودة للأعلى
+<br>
+
+<div style="text-align:center;">
+
+<a href="games.html" class="button">
+🎮 شاهد كل الألعاب
 </a>
 
 </div>
@@ -690,277 +899,28 @@ rel="noopener noreferrer">
 </section>
 
 
-<!-- ================================================= -->
-<!-- ================= MOBILE ======================== -->
-<!-- ================================================= -->
+<!-- ================= VIDEO ================= -->
 
-<section class="section mobile-section" id="mobile">
+<section class="video-section" id="video">
 
 <div class="container">
 
-<div class="section-head">
-
-<span class="badge">
-📱 قسم الموبايل
-</span>
-
 <h2 class="section-title">
-📱 ألعاب الموبايل
+🎬 فيديو مميز
 </h2>
 
 <p class="section-description">
-ألعاب مجانية ومفتوحة المصدر لأجهزة Android.
+شاهد الفيديو واكتشف المزيد من المحتوى.
 </p>
 
-</div>
-
-
-<div class="games">
-
-
-<!-- SuperTuxKart Android -->
-
-<article class="game-card">
-
-<div class="game-icon mobile-icon">
-🏎️
-</div>
-
-<h3>
-SuperTuxKart
-</h3>
-
-<p class="description">
-لعبة سباق ثلاثية الأبعاد مفتوحة المصدر
-ومتوفرة لأجهزة Android.
-</p>
-
-<div class="tags">
-<span>🏎️ سباق</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://f-droid.org/packages/org.supertuxkart.stk/"
-target="_blank"
-rel="noopener noreferrer">
-
-📱 تحميل Android
-
-</a>
-
-<a
-class="official"
-href="https://supertuxkart.github.io/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-<!-- Unciv -->
-
-<article class="game-card">
-
-<div class="game-icon mobile-icon">
-🏛️
-</div>
-
-<h3>
-Unciv
-</h3>
-
-<p class="description">
-لعبة استراتيجية لبناء الحضارات
-وإدارة المدن والتوسع.
-</p>
-
-<div class="tags">
-<span>🏛️ استراتيجية</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://f-droid.org/en/packages/com.unciv.app/"
-target="_blank"
-rel="noopener noreferrer">
-
-📱 تحميل Android
-
-</a>
-
-<a
-class="official"
-href="https://github.com/yairm210/Unciv"
-target="_blank"
-rel="noopener noreferrer">
-
-📄 المصدر على GitHub
-
-</a>
-
-</article>
-
-
-<!-- Shattered Pixel Dungeon -->
-
-<article class="game-card">
-
-<div class="game-icon mobile-icon">
-💎
-</div>
-
-<h3>
-Shattered Pixel Dungeon
-</h3>
-
-<p class="description">
-لعبة مغامرات وألغاز داخل زنزانات
-مع تحديات وأسلوب لعب ممتع.
-</p>
-
-<div class="tags">
-<span>🧙 مغامرات</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://f-droid.org/en/packages/com.shatteredpixel.shatteredpixeldungeon/"
-target="_blank"
-rel="noopener noreferrer">
-
-📱 تحميل Android
-
-</a>
-
-<a
-class="official"
-href="https://github.com/00-Evan/shattered-pixel-dungeon"
-target="_blank"
-rel="noopener noreferrer">
-
-📄 المصدر على GitHub
-
-</a>
-
-</article>
-
-
-<!-- Mindustry -->
-
-<article class="game-card">
-
-<div class="game-icon mobile-icon">
-🏭
-</div>
-
-<h3>
-Mindustry
-</h3>
-
-<p class="description">
-ابنِ المصانع ودافع عن قاعدتك
-وأدر الموارد في لعبة استراتيجية وصناعة.
-</p>
-
-<div class="tags">
-<span>🏭 استراتيجية</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://f-droid.org/en/packages/io.anuke.mindustry/"
-target="_blank"
-rel="noopener noreferrer">
-
-📱 تحميل Android
-
-</a>
-
-<a
-class="official"
-href="https://github.com/Anuken/Mindustry"
-target="_blank"
-rel="noopener noreferrer">
-
-📄 المصدر على GitHub
-
-</a>
-
-</article>
-
-
-<!-- OpenTTD Android -->
-
-<article class="game-card">
-
-<div class="game-icon mobile-icon">
-🚂
-</div>
-
-<h3>
-OpenTTD
-</h3>
-
-<p class="description">
-إدارة شركات النقل والقطارات
-والطرق في نسخة Android.
-</p>
-
-<div class="tags">
-<span>🚂 إدارة</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://f-droid.org/en/packages/org.openttd.sdl/"
-target="_blank"
-rel="noopener noreferrer">
-
-📱 تحميل Android
-
-</a>
-
-<a
-class="official"
-href="https://www.openttd.org/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-</div>
-
-
-<div class="top-button">
-
-<a href="#">
-⬆️ العودة للأعلى
-</a>
+<div class="video-box">
+
+<iframe
+src="https://www.youtube.com/embed/f2ix6C7gGNo"
+title="فيديو تكنومسار من YouTube"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
 
 </div>
 
@@ -968,6 +928,64 @@ rel="noopener noreferrer">
 
 </section>
 
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="about-box">
+
+<h2 class="section-title">
+🚀 عن تكنومسار
+</h2>
+
+<p>
+تكنومسار موقع عربي يهتم بالألعاب
+والتقنية ويساعدك على اكتشاف ألعاب
+مجانية وممتعة لمختلف الأجهزة.
+</p>
+
+<p>
+تم تنظيم الألعاب داخل أقسام واضحة
+لألعاب الكمبيوتر والموبايل حتى تصل
+إلى اللعبة التي تريدها بسهولة.
+</p>
+
+<p>
+نهدف إلى تطوير الموقع باستمرار وإضافة
+المزيد من الألعاب والمحتوى المفيد.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+🎮 مستعد تبدأ؟
+</h2>
+
+<p>
+ادخل إلى قسم الألعاب واكتشف مكتبة تكنومسار.
+</p>
+
+<a href="games.html" class="button">
+🚀 ابدأ استكشاف الألعاب
+</a>
+
+</div>
+
+</section>
 
 </main>
 
@@ -993,7 +1011,6 @@ rel="noopener noreferrer">
 </div>
 
 </footer>
-
 
 </body>
 
