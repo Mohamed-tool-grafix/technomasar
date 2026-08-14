@@ -2,28 +2,20 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>تكنومسار | ألعاب مجانية للكمبيوتر</title>
+<title>الألعاب | تكنومسار</title>
 
 <meta name="description"
-content="تكنومسار - اكتشف ألعاب الكمبيوتر المجانية والمفتوحة المصدر، وتعرف على تفاصيل الألعاب وروابط التحميل الرسمية.">
-
-<meta name="robots" content="index,follow">
-
-<link rel="canonical"
-href="https://mohamed-tool-grafix.github.io/technomasar/">
-
-<meta name="theme-color" content="#111827">
+content="تكنومسار - اكتشف أفضل ألعاب الكمبيوتر والموبايل المجانية.">
 
 <style>
 
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
@@ -31,570 +23,398 @@ html{
 }
 
 body{
-    font-family:
-    Arial,
-    "Segoe UI",
-    Tahoma,
-    sans-serif;
-
-    background:#eef1f5;
-    color:#222;
-    line-height:1.6;
+    font-family:Arial,"Segoe UI",sans-serif;
+    background:#070b18;
+    color:white;
+    line-height:1.7;
 }
 
 a{
     text-decoration:none;
-    color:inherit;
 }
-
-.container{
-    width:min(1200px,94%);
-    margin:auto;
-}
-
-
-/* ================= HEADER ================= */
 
 header{
-    background:#111827;
-    color:white;
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(7,11,24,.94);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #263653;
 }
 
-.topbar{
-    min-height:72px;
-
+.navbar{
+    width:min(1150px,92%);
+    margin:auto;
+    min-height:75px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-
-    gap:20px;
+    align-items:center;
 }
 
 .logo{
-    font-size:27px;
+    color:#61e7ff;
+    font-size:25px;
     font-weight:900;
-    color:#19c8ee;
-    white-space:nowrap;
 }
 
-.nav{
+.nav-links{
     display:flex;
     gap:8px;
 }
 
-.nav a{
-    color:#dbeafe;
+.nav-links a{
+    color:#cbd5e1;
     padding:10px 15px;
-    border-radius:7px;
+    border-radius:10px;
     font-weight:bold;
 }
 
-.nav a:hover{
-    background:#1f2937;
-    color:#19c8ee;
+.nav-links a:hover{
+    color:#61e7ff;
+    background:#10243a;
 }
-
-
-/* ================= SEARCH ================= */
-
-.search-area{
-    background:#1e293b;
-    padding:25px 0;
-}
-
-.search-box{
-    display:flex;
-    max-width:800px;
-    margin:auto;
-}
-
-.search-box input{
-    width:100%;
-    padding:16px 20px;
-
-    border:0;
-    outline:0;
-
-    border-radius:0 8px 8px 0;
-
-    font-size:17px;
-}
-
-.search-box button{
-    width:100px;
-
-    border:0;
-    border-radius:8px 0 0 8px;
-
-    background:#19c8ee;
-    color:#06121a;
-
-    font-size:18px;
-    font-weight:900;
-
-    cursor:pointer;
-}
-
-
-/* ================= HERO ================= */
 
 .hero{
-    background:
-    linear-gradient(
-        135deg,
-        #0f172a,
-        #172554
-    );
-
-    color:white;
-    padding:70px 20px;
-
+    padding:80px 20px;
     text-align:center;
+
+    background:
+    radial-gradient(circle at 20% 20%,rgba(24,197,235,.18),transparent 30%),
+    radial-gradient(circle at 80% 20%,rgba(117,87,255,.20),transparent 35%),
+    linear-gradient(135deg,#0b1933,#211340);
 }
 
 .hero h1{
-    font-size:
-    clamp(35px,5vw,58px);
-
-    margin-bottom:12px;
+    font-size:clamp(40px,7vw,65px);
+    margin-bottom:15px;
 }
 
 .hero h1 span{
-    color:#19c8ee;
+    color:#61e7ff;
 }
 
 .hero p{
-    color:#cbd5e1;
+    max-width:700px;
+    margin:auto;
+    color:#b7c3d7;
     font-size:18px;
 }
 
-
-/* ================= MAIN ================= */
-
-main{
-    padding:35px 0;
+.container{
+    width:min(1150px,92%);
+    margin:auto;
 }
 
-.section{
-    background:white;
-
-    border-radius:10px;
-
-    padding:25px;
-
-    margin-bottom:30px;
-
-    box-shadow:
-    0 2px 10px
-    rgba(0,0,0,.05);
+section{
+    padding:70px 0;
 }
 
 .section-title{
-    display:flex;
-    align-items:center;
+    font-size:35px;
+    color:white;
+    margin-bottom:8px;
+}
 
-    border-right:
-    5px solid #19c8ee;
-
-    padding-right:12px;
-
+.section-description{
+    color:#94a3bd;
     margin-bottom:25px;
 }
 
-.section-title h2{
-    font-size:27px;
+/* البحث */
+
+.search{
+    width:100%;
+    padding:16px 20px;
+    border-radius:14px;
+    border:1px solid #263653;
+    background:#0d1528;
+    color:white;
+    outline:none;
+    font-size:16px;
+    margin-bottom:25px;
 }
 
+.search:focus{
+    border-color:#18c5eb;
+}
 
-/* ================= GAMES ================= */
+/* التبويبات */
+
+.tabs{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.tab{
+    border:1px solid #263653;
+    background:#0d1528;
+    color:#cbd5e1;
+    padding:11px 20px;
+    border-radius:100px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.tab:hover,
+.tab.active{
+    color:#06131c;
+    background:#18c5eb;
+    border-color:#18c5eb;
+}
+
+/* الألعاب */
 
 .games{
     display:grid;
-
-    grid-template-columns:
-    repeat(4,minmax(0,1fr));
-
-    gap:20px;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
 .game-card{
-    background:#fff;
-
-    border:1px solid #e1e6ed;
-
-    border-radius:12px;
-
+    background:linear-gradient(180deg,#121b31,#0d1527);
+    border:1px solid #253454;
+    border-radius:20px;
     overflow:hidden;
-
-    transition:.25s;
+    transition:.3s;
 }
 
 .game-card:hover{
-    transform:translateY(-5px);
-
-    box-shadow:
-    0 12px 25px
-    rgba(0,0,0,.12);
-
-    border-color:#19c8ee;
+    transform:translateY(-8px);
+    border-color:#18c5eb;
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
 
-.game-image{
-    width:100%;
-    height:190px;
-
+.game-cover{
+    height:180px;
     display:flex;
     align-items:center;
     justify-content:center;
-
     font-size:75px;
-
-    background:
-    linear-gradient(
-        135deg,
-        #172554,
-        #0891b2
-    );
 }
 
-.game-info{
-    padding:16px;
+.cover-blue{
+    background:linear-gradient(135deg,#075985,#312e81);
 }
 
-.game-title{
-    font-size:20px;
-    font-weight:900;
+.cover-purple{
+    background:linear-gradient(135deg,#431407,#581c87);
+}
 
+.cover-green{
+    background:linear-gradient(135deg,#14532d,#164e63);
+}
+
+.cover-space{
+    background:linear-gradient(135deg,#172554,#581c87);
+}
+
+.cover-red{
+    background:linear-gradient(135deg,#7f1d1d,#451a03);
+}
+
+.cover-orange{
+    background:linear-gradient(135deg,#7c2d12,#713f12);
+}
+
+.game-content{
+    padding:22px;
+}
+
+.game-content h2{
+    color:#61e7ff;
     margin-bottom:5px;
-}
-
-.game-category{
-    color:#0891b2;
-    font-size:13px;
-    font-weight:bold;
-}
-
-.game-description{
-    color:#64748b;
-
-    font-size:14px;
-
-    margin:
-    10px 0 15px;
-
-    min-height:55px;
-}
-
-.game-meta{
-    display:flex;
-    justify-content:space-between;
-
-    color:#64748b;
-
-    font-size:13px;
-
-    margin-bottom:12px;
-}
-
-.game-button{
-    display:block;
-
-    text-align:center;
-
-    background:#19c8ee;
-
-    color:#04131b;
-
-    padding:11px;
-
-    border-radius:7px;
-
-    font-weight:900;
-}
-
-.game-button:hover{
-    background:#08b5dc;
-}
-
-
-/* ================= CATEGORIES ================= */
-
-.categories{
-    display:grid;
-
-    grid-template-columns:
-    repeat(6,1fr);
-
-    gap:12px;
+    font-size:24px;
 }
 
 .category{
-    padding:18px 10px;
+    color:#61e7ff;
+    font-size:13px;
+}
 
+.description{
+    color:#aebbd0;
+    min-height:85px;
+    margin:12px 0;
+}
+
+.info{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+    margin:15px 0;
+}
+
+.info span{
+    background:#17243d;
+    padding:5px 9px;
+    border-radius:8px;
+    color:#cbd5e1;
+    font-size:12px;
+}
+
+.download{
+    display:block;
+    background:#18c5eb;
+    color:#03111b;
+    padding:13px;
+    border-radius:11px;
     text-align:center;
+    font-weight:900;
+    margin-top:15px;
+}
 
-    background:#f1f5f9;
+.download:hover{
+    background:#61e7ff;
+}
 
-    border:1px solid #e2e8f0;
+.official{
+    display:block;
+    text-align:center;
+    color:#61e7ff;
+    margin-top:12px;
+}
 
-    border-radius:7px;
+/* الموبايل */
 
+.mobile-section{
+    background:#0b1222;
+    border-top:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+/* زر الرجوع */
+
+.back{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 22px;
+    background:#17243d;
+    color:#61e7ff;
+    border-radius:11px;
     font-weight:bold;
-
-    transition:.2s;
 }
 
-.category:hover{
-    background:#e0faff;
-
-    border-color:#19c8ee;
-
-    color:#078aa7;
+.back:hover{
+    background:#18c5eb;
+    color:#03111b;
 }
 
-
-/* ================= NOTICE ================= */
-
-.notice{
-    background:#ecfeff;
-
-    border:
-    1px solid #a5f3fc;
-
-    color:#155e75;
-
-    padding:18px;
-
-    border-radius:10px;
-
-    margin-bottom:30px;
-
-    line-height:1.9;
-}
-
-.notice strong{
-    color:#0369a1;
-}
-
-
-/* ================= EMPTY ================= */
+/* لا توجد نتائج */
 
 .no-results{
     display:none;
-
     text-align:center;
-
-    padding:50px;
-
-    color:#64748b;
+    color:#94a3bd;
+    padding:40px;
+    font-size:18px;
 }
 
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-    background:#111827;
-
-    color:#94a3b8;
-
-    padding:45px 20px;
-
+    background:#050914;
+    padding:40px 0;
     text-align:center;
-
-    margin-top:20px;
+    color:#66748b;
 }
 
-.footer-logo{
-    color:#19c8ee;
-
-    font-size:24px;
-
-    font-weight:900;
-
-    margin-bottom:10px;
+footer strong{
+    color:#61e7ff;
 }
 
-.footer-name{
-    color:white;
+/* MOBILE */
 
-    font-weight:bold;
-
-    margin-top:10px;
-}
-
-
-/* ================= MOBILE ================= */
-
-@media(max-width:1050px){
+@media(max-width:850px){
 
     .games{
-        grid-template-columns:
-        repeat(3,1fr);
-    }
-
-    .categories{
-        grid-template-columns:
-        repeat(3,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
 
+@media(max-width:600px){
 
-@media(max-width:750px){
-
-    .topbar{
-        flex-direction:column;
-
-        padding:15px 0;
-    }
-
-    .nav{
-        width:100%;
-
+    .navbar{
         justify-content:center;
-
-        flex-wrap:wrap;
     }
 
-    .games{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-    .categories{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-}
-
-
-@media(max-width:500px){
-
-    .container{
-        width:94%;
+    .nav-links{
+        display:none;
     }
 
     .hero{
-        padding:45px 15px;
+        padding:65px 15px;
     }
 
     .hero h1{
-        font-size:36px;
-    }
-
-    .section{
-        padding:15px;
+        font-size:40px;
     }
 
     .games{
         grid-template-columns:1fr;
     }
 
-    .categories{
-        grid-template-columns:1fr 1fr;
+    .game-cover{
+        height:160px;
     }
 
-    .game-image{
-        height:210px;
-    }
-
-    .search-box button{
-        width:75px;
+    section{
+        padding:55px 0;
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <header>
 
-<div class="container topbar">
+<nav class="navbar">
 
-<a href="index.html" class="logo">
+<a href="../index.html" class="logo">
 🎮 تكنومسار
 </a>
 
-<nav class="nav">
+<div class="nav-links">
 
-<a href="index.html">
+<a href="../index.html">
 الرئيسية
 </a>
 
-<a href="#latest">
-أحدث الألعاب
+<a href="#computer">
+🖥️ الكمبيوتر
 </a>
 
-<a href="#categories">
-التصنيفات
+<a href="#mobile">
+📱 الموبايل
 </a>
-
-<a href="games/games.html">
-صفحة الألعاب
-</a>
-
-</nav>
 
 </div>
+
+</nav>
 
 </header>
 
 
-<!-- ================= SEARCH ================= -->
-
-<div class="search-area">
-
-<div class="container">
-
-<form class="search-box"
-onsubmit="return false;">
-
-<input
-id="search"
-type="search"
-placeholder="🔎 ابحث عن اسم اللعبة..."
-autocomplete="off">
-
-<button type="submit">
-بحث
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero">
 
 <div class="container">
 
 <h1>
-
-مرحبًا بك في
-
-<span>
-تكنومسار
-</span>
-
+🎮 عالم <span>الألعاب</span>
 </h1>
 
 <p>
-اكتشف ألعاب الكمبيوتر المجانية
-والمفتوحة المصدر وتعرف على طريقة تحميلها
-من مصادرها الرسمية.
+اكتشف ألعابًا مجانية للكمبيوتر والموبايل
+واختر لعبتك المفضلة.
 </p>
 
 </div>
@@ -602,86 +422,78 @@ autocomplete="off">
 </section>
 
 
-<main>
+<!-- COMPUTER -->
+
+<section id="computer">
 
 <div class="container">
 
-
-<!-- ================= NOTICE ================= -->
-
-<div class="notice">
-
-<strong>🎮 مرحبًا بك في تكنومسار</strong>
-
-<br>
-
-نحن نساعدك على اكتشاف الألعاب المجانية
-والمفتوحة المصدر والوصول إلى مصادرها الرسمية.
-لا نستضيف ملفات الألعاب التجارية المحمية بحقوق النشر.
-
-</div>
-
-
-<!-- ================= FEATURED ================= -->
-
-<section class="section">
-
-<div class="section-title">
-
-<h2>
-🔥 ألعاب مميزة
+<h2 class="section-title">
+🖥️ ألعاب الكمبيوتر
 </h2>
 
-</div>
+<p class="section-description">
+ألعاب مجانية ومفتوحة المصدر للكمبيوتر.
+</p>
 
+<input
+type="search"
+id="searchComputer"
+class="search"
+placeholder="🔎 ابحث عن لعبة كمبيوتر..."
+autocomplete="off"
+>
 
-<div class="games">
+<div class="games" id="computerGames">
 
 
 <!-- SuperTuxKart -->
 
-<article class="game-card"
-data-game="supertuxkart سوبرتكس كارت سباق">
+<article class="game-card">
 
-<div class="game-image">
+<div class="game-cover cover-blue">
 🏎️
 </div>
 
-<div class="game-info">
+<div class="game-content">
 
-<div class="game-title">
-SuperTuxKart
-</div>
+<h2>SuperTuxKart</h2>
 
-<div class="game-category">
+<span class="category">
 🏎️ سباق
-</div>
+</span>
 
-<p class="game-description">
-
-لعبة سباق كارت مجانية
-ومفتوحة المصدر تحتوي على حلبات
-وأنماط لعب متعددة.
-
+<p class="description">
+لعبة سباق كارت مجانية ومفتوحة المصدر،
+تحتوي على حلبات وشخصيات وأنماط لعب متعددة.
 </p>
 
-<div class="game-meta">
+<div class="info">
 
-<span>
-⭐ مجانية
-</span>
-
-<span>
-💻 Windows
-</span>
+<span>🏎️ سباق</span>
+<span>💾 مجانية</span>
+<span>🖥️ Windows</span>
+<span>🌐 مفتوحة المصدر</span>
 
 </div>
 
 <a
-href="games/games.html"
-class="game-button">
+class="download"
+href="https://supertuxkart.github.io/stk-website/Download"
+target="_blank"
+rel="noopener noreferrer">
 
-🎮 تفاصيل وتحميل
+⬇️ تحميل SuperTuxKart
+
+</a>
+
+<a
+class="official"
+href="https://supertuxkart.github.io/"
+target="_blank"
+rel="noopener noreferrer">
+
+🔗 الموقع الرسمي
 
 </a>
 
@@ -690,50 +502,108 @@ class="game-button">
 </article>
 
 
-<!-- 0 A.D. -->
+<!-- OpenTTD -->
 
-<article class="game-card"
-data-game="0 ad استراتيجية حرب تاريخية">
+<article class="game-card">
 
-<div class="game-image">
-⚔️
+<div class="game-cover cover-orange">
+🚂
 </div>
 
-<div class="game-info">
+<div class="game-content">
 
-<div class="game-title">
-0 A.D.
-</div>
+<h2>OpenTTD</h2>
 
-<div class="game-category">
-⚔️ استراتيجية
-</div>
+<span class="category">
+🚂 استراتيجية وإدارة
+</span>
 
-<p class="game-description">
-
-لعبة استراتيجية تاريخية
-مجانية ومفتوحة المصدر
-تدور أحداثها في العصور القديمة.
-
+<p class="description">
+لعبة استراتيجية وإدارة شركات النقل والقطارات.
+مجانية ومفتوحة المصدر.
 </p>
 
-<div class="game-meta">
+<div class="info">
 
-<span>
-⭐ مجانية
-</span>
-
-<span>
-💻 Windows
-</span>
+<span>🚂 إدارة</span>
+<span>💾 مجانية</span>
+<span>🖥️ Windows</span>
+<span>🌐 مفتوحة المصدر</span>
 
 </div>
 
 <a
-href="games/games.html"
-class="game-button">
+class="download"
+href="https://www.openttd.org/downloads/openttd-releases/latest.html"
+target="_blank"
+rel="noopener noreferrer">
 
-🎮 تفاصيل وتحميل
+⬇️ تحميل OpenTTD
+
+</a>
+
+<a
+class="official"
+href="https://www.openttd.org/"
+target="_blank"
+rel="noopener noreferrer">
+
+🔗 الموقع الرسمي
+
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 0 AD -->
+
+<article class="game-card">
+
+<div class="game-cover cover-purple">
+⚔️
+</div>
+
+<div class="game-content">
+
+<h2>0 A.D.</h2>
+
+<span class="category">
+⚔️ استراتيجية
+</span>
+
+<p class="description">
+لعبة استراتيجية تاريخية مجانية ومفتوحة المصدر
+تدور أحداثها في العصور القديمة.
+</p>
+
+<div class="info">
+
+<span>⚔️ استراتيجية</span>
+<span>💾 مجانية</span>
+<span>🖥️ Windows</span>
+<span>🌐 مفتوحة المصدر</span>
+
+</div>
+
+<a
+class="download"
+href="https://play0ad.com/download/"
+target="_blank"
+rel="noopener noreferrer">
+
+⬇️ تحميل 0 A.D.
+
+</a>
+
+<a
+class="official"
+href="https://play0ad.com/"
+target="_blank"
+rel="noopener noreferrer">
+
+🔗 الموقع الرسمي
 
 </a>
 
@@ -744,48 +614,51 @@ class="game-button">
 
 <!-- Endless Sky -->
 
-<article class="game-card"
-data-game="endless sky فضاء سفن">
+<article class="game-card">
 
-<div class="game-image">
+<div class="game-cover cover-space">
 🚀
 </div>
 
-<div class="game-info">
+<div class="game-content">
 
-<div class="game-title">
-Endless Sky
-</div>
+<h2>Endless Sky</h2>
 
-<div class="game-category">
+<span class="category">
 🚀 فضاء
-</div>
+</span>
 
-<p class="game-description">
-
-استكشف الفضاء وتاجر
-وخض المعارك في لعبة
-مجانية ومفتوحة المصدر.
-
+<p class="description">
+استكشف الفضاء وتاجر وخض المعارك
+في لعبة مجانية ومفتوحة المصدر.
 </p>
 
-<div class="game-meta">
+<div class="info">
 
-<span>
-⭐ مجانية
-</span>
-
-<span>
-💻 Windows
-</span>
+<span>🚀 فضاء</span>
+<span>💾 مجانية</span>
+<span>🖥️ Windows</span>
+<span>🌐 مفتوحة المصدر</span>
 
 </div>
 
 <a
-href="games/games.html"
-class="game-button">
+class="download"
+href="https://endless-sky.github.io/"
+target="_blank"
+rel="noopener noreferrer">
 
-🎮 تفاصيل وتحميل
+⬇️ تحميل Endless Sky
+
+</a>
+
+<a
+class="official"
+href="https://endless-sky.github.io/"
+target="_blank"
+rel="noopener noreferrer">
+
+🔗 الموقع الرسمي
 
 </a>
 
@@ -796,121 +669,51 @@ class="game-button">
 
 <!-- SuperTux -->
 
-<article class="game-card"
-data-game="supertux سوبرتكس منصات">
+<article class="game-card">
 
-<div class="game-image">
+<div class="game-cover cover-green">
 🐧
 </div>
 
-<div class="game-info">
+<div class="game-content">
 
-<div class="game-title">
-SuperTux
-</div>
+<h2>SuperTux</h2>
 
-<div class="game-category">
+<span class="category">
 🕹️ منصات
-</div>
+</span>
 
-<p class="game-description">
-
-لعبة منصات مجانية
-ومفتوحة المصدر بطابع
-ممتع ومغامرات متنوعة.
-
+<p class="description">
+لعبة منصات مجانية ومفتوحة المصدر
+بطابع ممتع ومغامرات متنوعة.
 </p>
 
-<div class="game-meta">
+<div class="info">
 
-<span>
-⭐ مجانية
-</span>
-
-<span>
-💻 Windows
-</span>
+<span>🕹️ منصات</span>
+<span>💾 مجانية</span>
+<span>🖥️ Windows</span>
+<span>🌐 مفتوحة المصدر</span>
 
 </div>
 
 <a
-href="games/games.html"
-class="game-button">
+class="download"
+href="https://www.supertux.org/download.html"
+target="_blank"
+rel="noopener noreferrer">
 
-🎮 تفاصيل وتحميل
+⬇️ تحميل SuperTux
 
 </a>
 
-</div>
-
-</article>
-
-
-</div>
-
-</section>
-
-
-<!-- ================= LATEST ================= -->
-
-<section class="section"
-id="latest">
-
-<div class="section-title">
-
-<h2>
-🆕 أحدث الألعاب
-</h2>
-
-</div>
-
-
-<div class="games">
-
-
-<!-- OpenTTD -->
-
-<article class="game-card"
-data-game="openttd قطارات استراتيجية">
-
-<div class="game-image">
-🚂
-</div>
-
-<div class="game-info">
-
-<div class="game-title">
-OpenTTD
-</div>
-
-<div class="game-category">
-🚂 محاكاة واستراتيجية
-</div>
-
-<p class="game-description">
-
-لعبة إدارة ونقل ومحاكاة
-مجانية ومفتوحة المصدر.
-
-</p>
-
-<div class="game-meta">
-
-<span>
-⭐ مجانية
-</span>
-
-<span>
-💻 Windows
-</span>
-
-</div>
-
 <a
-href="games/games.html"
-class="game-button">
+class="official"
+href="https://www.supertux.org/"
+target="_blank"
+rel="noopener noreferrer">
 
-🎮 تفاصيل وتحميل
+🔗 الموقع الرسمي
 
 </a>
 
@@ -921,149 +724,51 @@ class="game-button">
 
 <!-- Minetest -->
 
-<article class="game-card"
-data-game="luanti minetest بناء">
+<article class="game-card">
 
-<div class="game-image">
+<div class="game-cover cover-red">
 🧱
 </div>
 
-<div class="game-info">
+<div class="game-content">
 
-<div class="game-title">
-Luanti
-</div>
+<h2>Luanti</h2>
 
-<div class="game-category">
-🧱 بناء واستكشاف
-</div>
+<span class="category">
+🧱 مغامرات وبناء
+</span>
 
-<p class="game-description">
-
-منصة ألعاب مفتوحة المصدر
-للبناء والاستكشاف.
-
+<p class="description">
+منصة ألعاب مفتوحة المصدر تتيح لك استكشاف
+عالم مفتوح والبناء واللعب مع الآخرين.
 </p>
 
-<div class="game-meta">
+<div class="info">
 
-<span>
-⭐ مجانية
-</span>
-
-<span>
-💻 Windows
-</span>
+<span>🧱 بناء</span>
+<span>💾 مجانية</span>
+<span>🖥️ Windows</span>
+<span>🌐 مفتوحة المصدر</span>
 
 </div>
 
 <a
-href="games/games.html"
-class="game-button">
+class="download"
+href="https://www.luanti.org/downloads/"
+target="_blank"
+rel="noopener noreferrer">
 
-🎮 تفاصيل وتحميل
+⬇️ تحميل Luanti
 
 </a>
 
-</div>
-
-</article>
-
-
-<!-- Warzone 2100 -->
-
-<article class="game-card"
-data-game="warzone 2100 استراتيجية">
-
-<div class="game-image">
-💥
-</div>
-
-<div class="game-info">
-
-<div class="game-title">
-Warzone 2100
-</div>
-
-<div class="game-category">
-💥 استراتيجية
-</div>
-
-<p class="game-description">
-
-لعبة استراتيجية عسكرية
-مجانية ومفتوحة المصدر.
-
-</p>
-
-<div class="game-meta">
-
-<span>
-⭐ مجانية
-</span>
-
-<span>
-💻 Windows
-</span>
-
-</div>
-
 <a
-href="games/games.html"
-class="game-button">
+class="official"
+href="https://www.luanti.org/"
+target="_blank"
+rel="noopener noreferrer">
 
-🎮 تفاصيل وتحميل
-
-</a>
-
-</div>
-
-</article>
-
-
-<!-- OpenRA -->
-
-<article class="game-card"
-data-game="openra استراتيجية حرب">
-
-<div class="game-image">
-🏰
-</div>
-
-<div class="game-info">
-
-<div class="game-title">
-OpenRA
-</div>
-
-<div class="game-category">
-🏰 استراتيجية
-</div>
-
-<p class="game-description">
-
-مشروع مجاني ومفتوح المصدر
-لألعاب الاستراتيجية الكلاسيكية.
-
-</p>
-
-<div class="game-meta">
-
-<span>
-⭐ مجانية
-</span>
-
-<span>
-💻 Windows
-</span>
-
-</div>
-
-<a
-href="games/games.html"
-class="game-button">
-
-🎮 تفاصيل وتحميل
+🔗 الموقع الرسمي
 
 </a>
 
@@ -1074,199 +779,426 @@ class="game-button">
 
 </div>
 
-
-<div class="no-results"
-id="noResults">
-
-😔 لم يتم العثور على لعبة بهذا الاسم.
+<p class="no-results" id="computerNoResults">
+😔 لم نجد لعبة كمبيوتر مطابقة للبحث.
+</p>
 
 </div>
 
 </section>
 
 
-<!-- ================= CATEGORIES ================= -->
+<!-- MOBILE -->
 
-<section class="section"
-id="categories">
+<section id="mobile" class="mobile-section">
 
-<div class="section-title">
+<div class="container">
 
-<h2>
-📂 تصنيفات الألعاب
+<h2 class="section-title">
+📱 ألعاب الموبايل
 </h2>
 
+<p class="section-description">
+ألعاب يمكنك العثور عليها وتحميلها للموبايل.
+</p>
+
+<input
+type="search"
+id="searchMobile"
+class="search"
+placeholder="🔎 ابحث عن لعبة موبايل..."
+autocomplete="off"
+>
+
+<div class="games" id="mobileGames">
+
+
+<!-- Minecraft -->
+
+<article class="game-card">
+
+<div class="game-cover cover-green">
+⛏️
 </div>
 
+<div class="game-content">
 
-<div class="categories">
+<h2>Minecraft</h2>
 
-<a
-class="category"
-href="games/games.html">
-🏎️ ألعاب السباق
-</a>
+<span class="category">
+⛏️ مغامرات وبناء
+</span>
 
-<a
-class="category"
-href="games/games.html">
-⚔️ ألعاب الاستراتيجية
-</a>
+<p class="description">
+استكشف العوالم وابنِ ما تريد
+وخض مغامرات متنوعة.
+</p>
 
-<a
-class="category"
-href="games/games.html">
-🕹️ ألعاب المنصات
-</a>
+<div class="info">
 
-<a
-class="category"
-href="games/games.html">
-🚀 ألعاب الفضاء
-</a>
+<span>⛏️ بناء</span>
+<span>📱 Android</span>
+<span>🎮 مغامرات</span>
+
+</div>
 
 <a
-class="category"
-href="games/games.html">
-🧱 ألعاب البناء
+class="download"
+href="https://play.google.com/store/apps/details?id=com.mojang.minecraftpe"
+target="_blank"
+rel="noopener noreferrer">
+
+📱 صفحة اللعبة
+
 </a>
 
-<a
-class="category"
-href="games/games.html">
-🚂 ألعاب المحاكاة
-</a>
+</div>
+
+</article>
+
+
+<!-- Asphalt -->
+
+<article class="game-card">
+
+<div class="game-cover cover-orange">
+🏎️
+</div>
+
+<div class="game-content">
+
+<h2>Asphalt Legends</h2>
+
+<span class="category">
+🏎️ سباق
+</span>
+
+<p class="description">
+سباقات سيارات سريعة ومنافسات
+على حلبات متنوعة.
+</p>
+
+<div class="info">
+
+<span>🏎️ سباق</span>
+<span>📱 Android</span>
+<span>🎮 سيارات</span>
+
+</div>
 
 <a
-class="category"
-href="games/games.html">
-🎯 ألعاب الأكشن
+class="download"
+href="https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA9HM"
+target="_blank"
+rel="noopener noreferrer">
+
+📱 صفحة اللعبة
+
 </a>
 
-<a
-class="category"
-href="games/games.html">
-🧩 ألعاب الألغاز
-</a>
+</div>
+
+</article>
+
+
+<!-- Subway Surfers -->
+
+<article class="game-card">
+
+<div class="game-cover cover-blue">
+🚆
+</div>
+
+<div class="game-content">
+
+<h2>Subway Surfers</h2>
+
+<span class="category">
+🏃 جري
+</span>
+
+<p class="description">
+اركض وتجنب العقبات واجمع العملات
+في لعبة الجري الشهيرة.
+</p>
+
+<div class="info">
+
+<span>🏃 جري</span>
+<span>📱 Android</span>
+<span>🎮 أركيد</span>
+
+</div>
 
 <a
-class="category"
-href="games/games.html">
-⚽ ألعاب الرياضة
+class="download"
+href="https://play.google.com/store/apps/details?id=com.kiloo.subwaysurf"
+target="_blank"
+rel="noopener noreferrer">
+
+📱 صفحة اللعبة
+
 </a>
 
-<a
-class="category"
-href="games/games.html">
-👾 ألعاب مجانية
-</a>
+</div>
+
+</article>
+
+
+<!-- Shadow Fight -->
+
+<article class="game-card">
+
+<div class="game-cover cover-purple">
+🥷
+</div>
+
+<div class="game-content">
+
+<h2>Shadow Fight 4</h2>
+
+<span class="category">
+🥷 قتال
+</span>
+
+<p class="description">
+قاتل خصومك واستخدم مهارات مختلفة
+في معارك مليئة بالحماس.
+</p>
+
+<div class="info">
+
+<span>🥷 قتال</span>
+<span>📱 Android</span>
+<span>⚔️ أكشن</span>
+
+</div>
 
 <a
-class="category"
-href="games/games.html">
-🌐 مفتوحة المصدر
+class="download"
+href="https://play.google.com/store/apps/details?id=com.nekki.shadowfightarena"
+target="_blank"
+rel="noopener noreferrer">
+
+📱 صفحة اللعبة
+
 </a>
 
+</div>
+
+</article>
+
+
+<!-- Roblox -->
+
+<article class="game-card">
+
+<div class="game-cover cover-red">
+🎮
+</div>
+
+<div class="game-content">
+
+<h2>Roblox</h2>
+
+<span class="category">
+🎮 ألعاب متنوعة
+</span>
+
+<p class="description">
+اكتشف ملايين التجارب والألعاب
+والعب مع أصدقائك.
+</p>
+
+<div class="info">
+
+<span>🎮 متنوع</span>
+<span>📱 Android</span>
+<span>🌐 أونلاين</span>
+
+</div>
+
 <a
-class="category"
-href="games/games.html">
-💻 ألعاب الكمبيوتر
+class="download"
+href="https://play.google.com/store/apps/details?id=com.roblox.client"
+target="_blank"
+rel="noopener noreferrer">
+
+📱 صفحة اللعبة
+
 </a>
+
+</div>
+
+</article>
+
+
+<!-- Brawl Stars -->
+
+<article class="game-card">
+
+<div class="game-cover cover-space">
+⭐
+</div>
+
+<div class="game-content">
+
+<h2>Brawl Stars</h2>
+
+<span class="category">
+⚔️ أكشن
+</span>
+
+<p class="description">
+معارك سريعة وأنماط لعب متعددة
+مع لاعبين آخرين.
+</p>
+
+<div class="info">
+
+<span>⚔️ أكشن</span>
+<span>📱 Android</span>
+<span>🌐 أونلاين</span>
+
+</div>
+
+<a
+class="download"
+href="https://play.google.com/store/apps/details?id=com.supercell.brawlstars"
+target="_blank"
+rel="noopener noreferrer">
+
+📱 صفحة اللعبة
+
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+<p class="no-results" id="mobileNoResults">
+😔 لم نجد لعبة موبايل مطابقة للبحث.
+</p>
 
 </div>
 
 </section>
 
 
-</div>
-
-</main>
-
-
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
-<div class="footer-logo">
+<strong>
 🎮 تكنومسار
-</div>
+</strong>
 
-<p>
-موقع لاكتشاف الألعاب المجانية
-والمفتوحة المصدر ومعلوماتها
-وروابط مصادرها الرسمية.
-</p>
+<br><br>
 
-<p class="footer-name">
-Mohamed Hamed
-</p>
+تحت إشراف محمد حامد
 
-<p>
-© 2026 تكنومسار - جميع الحقوق محفوظة
-</p>
+<br><br>
+
+© 2026 جميع الحقوق محفوظة
+
+<br><br>
+
+<a
+href="../index.html"
+style="color:#61e7ff;">
+
+🏠 العودة للرئيسية
+
+</a>
 
 </footer>
 
 
-<!-- ================= SEARCH SCRIPT ================= -->
-
 <script>
 
-const search =
-document.getElementById("search");
+/* =========================
+   بحث ألعاب الكمبيوتر
+========================= */
 
-const cards =
-document.querySelectorAll(".game-card");
+function setupSearch(inputId, cardsId, noResultsId){
 
-const noResults =
-document.getElementById("noResults");
+    const input =
+    document.getElementById(inputId);
+
+    const cards =
+    document.querySelectorAll(
+        "#" + cardsId + " .game-card"
+    );
+
+    const noResults =
+    document.getElementById(noResultsId);
+
+    input.addEventListener("input",function(){
+
+        const text =
+        input.value.toLowerCase().trim();
+
+        let visible = 0;
+
+        cards.forEach(card => {
+
+            const content =
+            card.innerText.toLowerCase();
+
+            if(content.includes(text)){
+
+                card.style.display = "";
+
+                visible++;
+
+            }else{
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+        noResults.style.display =
+        visible === 0 ? "block" : "none";
+
+    });
+
+}
+
+setupSearch(
+    "searchComputer",
+    "computerGames",
+    "computerNoResults"
+);
+
+setupSearch(
+    "searchMobile",
+    "mobileGames",
+    "mobileNoResults"
+);
 
 
-search.addEventListener(
-"input",
-function(){
+/* منع الضغط بالخطأ على روابط */
 
-    const value =
-    this.value
-    .toLowerCase()
-    .trim();
+document.querySelectorAll("a").forEach(link => {
 
-    let found = 0;
+    link.addEventListener("click",function(){
 
-    cards.forEach(card => {
+        if(this.getAttribute("href") === "#"){
 
-        const name =
-        card.dataset.game
-        .toLowerCase();
-
-        if(
-            name.includes(value)
-        ){
-
-            card.style.display = "";
-
-            found++;
-
-        }else{
-
-            card.style.display = "none";
+            event.preventDefault();
 
         }
 
     });
 
-
-    noResults.style.display =
-    found === 0
-    ? "block"
-    : "none";
-
 });
-
 
 </script>
 
-
 </body>
-
 </html>
