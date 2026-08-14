@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ألعاب مجانية | تكنومسار</title>
+<title>ألعاب مجانية للكمبيوتر والموبايل | تكنومسار</title>
 
 <meta name="description"
-content="تكنومسار - اكتشف أفضل الألعاب المجانية للكمبيوتر والموبايل.">
+content="تكنومسار - اكتشف ألعاب مجانية ومفتوحة المصدر للكمبيوتر والموبايل.">
 
 <meta name="robots" content="index, follow">
 
@@ -86,7 +86,7 @@ header{
 /* ================= HERO ================= */
 
 .hero{
-    padding:80px 0;
+    padding:80px 0 65px;
     text-align:center;
 
     background:
@@ -102,6 +102,17 @@ header{
     );
 }
 
+.badge{
+    display:inline-block;
+    padding:7px 15px;
+    border-radius:50px;
+    background:rgba(24,197,235,.1);
+    border:1px solid rgba(24,197,235,.3);
+    color:#61e7ff;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
 .hero h1{
     font-size:clamp(40px,7vw,65px);
     margin:0 0 15px;
@@ -112,28 +123,77 @@ header{
 }
 
 .hero p{
-    max-width:750px;
+    max-width:760px;
     margin:auto;
     color:#94a3bd;
     font-size:18px;
 }
 
-.hero-buttons{
-    margin-top:30px;
+/* ================= SEARCH ================= */
+
+.search-area{
+    margin:30px auto 0;
+    max-width:750px;
 }
 
-.hero-button{
-    display:inline-block;
+.search-box{
+    width:100%;
+    padding:16px 20px;
+    border-radius:15px;
+    border:1px solid #263653;
+    outline:none;
+    background:#111b30;
+    color:white;
+    font-size:16px;
+    text-align:right;
+}
+
+.search-box:focus{
+    border-color:#18c5eb;
+    box-shadow:0 0 20px rgba(24,197,235,.12);
+}
+
+.search-box::placeholder{
+    color:#718096;
+}
+
+/* ================= FILTERS ================= */
+
+.filters{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.filter-btn{
+    border:1px solid #263653;
+    background:#111b30;
+    color:#cbd5e1;
+    padding:9px 15px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
     background:#18c5eb;
     color:#03111b;
-    padding:13px 22px;
-    border-radius:12px;
-    font-weight:900;
-    margin:5px;
+    border-color:#18c5eb;
 }
 
-.hero-button:hover{
-    background:#61e7ff;
+/* ================= COUNTER ================= */
+
+.counter{
+    margin-top:20px;
+    color:#94a3bd;
+}
+
+.counter strong{
+    color:#61e7ff;
 }
 
 /* ================= SECTIONS ================= */
@@ -150,17 +210,6 @@ header{
 
 .section-head{
     margin-bottom:30px;
-}
-
-.badge{
-    display:inline-block;
-    padding:7px 13px;
-    border-radius:50px;
-    background:rgba(24,197,235,.1);
-    border:1px solid rgba(24,197,235,.3);
-    color:#61e7ff;
-    font-weight:bold;
-    margin-bottom:12px;
 }
 
 .section-title{
@@ -244,757 +293,4 @@ header{
     color:#03111b;
     padding:13px;
     border-radius:11px;
-    font-weight:900;
-    margin-top:12px;
-}
-
-.download:hover{
-    background:#61e7ff;
-}
-
-.official{
-    display:block;
-    color:#61e7ff;
-    border:1px solid #263653;
-    padding:11px;
-    border-radius:11px;
-    margin-top:10px;
-}
-
-.official:hover{
-    background:#17243d;
-}
-
-/* ================= TOP BUTTON ================= */
-
-.top-button{
-    text-align:center;
-    margin-top:35px;
-}
-
-.top-button a{
-    display:inline-block;
-    color:#61e7ff;
-    border:1px solid #263653;
-    padding:10px 18px;
-    border-radius:10px;
-}
-
-.top-button a:hover{
-    background:#111b30;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#050914;
-    text-align:center;
-    padding:40px 15px;
-    color:#66748b;
-}
-
-footer strong{
-    color:#61e7ff;
-    font-size:20px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:700px){
-
-    .header-content{
-        justify-content:center;
-        flex-direction:column;
-        padding:15px 0;
-    }
-
-    .nav{
-        justify-content:center;
-    }
-
-    .hero{
-        padding:60px 0;
-    }
-
-    .hero h1{
-        font-size:40px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .section{
-        padding:55px 0;
-    }
-
-    .section-title{
-        font-size:29px;
-    }
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-
-<!-- ================= HEADER ================= -->
-
-<header>
-
-<div class="container header-content">
-
-<a href="index.html" class="logo">
-🎮 تكنومسار
-</a>
-
-<nav class="nav">
-
-<a href="index.html">
-🏠 الرئيسية
-</a>
-
-<a href="#computer">
-🖥️ الكمبيوتر
-</a>
-
-<a href="#mobile">
-📱 الموبايل
-</a>
-
-</nav>
-
-</div>
-
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-<div class="container">
-
-<h1>
-🎮 ألعاب <span>تكنومسار</span>
-</h1>
-
-<p>
-اكتشف مجموعة من الألعاب المجانية والمفتوحة المصدر
-للكمبيوتر والموبايل.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#computer" class="hero-button">
-🖥️ ألعاب الكمبيوتر
-</a>
-
-<a href="#mobile" class="hero-button">
-📱 ألعاب الموبايل
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<main>
-
-
-<!-- ================================================= -->
-<!-- ================= COMPUTER ====================== -->
-<!-- ================================================= -->
-
-<section class="section" id="computer">
-
-<div class="container">
-
-<div class="section-head">
-
-<span class="badge">
-🖥️ قسم الكمبيوتر
-</span>
-
-<h2 class="section-title">
-🎮 ألعاب الكمبيوتر
-</h2>
-
-<p class="section-description">
-ألعاب مجانية ومفتوحة المصدر للكمبيوتر.
-</p>
-
-</div>
-
-
-<div class="games">
-
-
-<!-- SuperTuxKart -->
-
-<article class="game-card">
-
-<div class="game-icon">
-🏎️
-</div>
-
-<h3>
-SuperTuxKart
-</h3>
-
-<p class="description">
-لعبة سباق كارت ثلاثية الأبعاد مجانية
-ومفتوحة المصدر، تحتوي على حلبات
-وشخصيات وأنماط لعب مختلفة.
-</p>
-
-<div class="tags">
-<span>🏎️ سباق</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://supertuxkart.github.io/stk-website/Download"
-target="_blank"
-rel="noopener noreferrer">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-<a
-class="official"
-href="https://supertuxkart.github.io/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-<!-- OpenTTD -->
-
-<article class="game-card">
-
-<div class="game-icon">
-🚂
-</div>
-
-<h3>
-OpenTTD
-</h3>
-
-<p class="description">
-لعبة إدارة واستراتيجية تقوم فيها
-بإدارة شركات النقل والقطارات
-والطرق والمواصلات.
-</p>
-
-<div class="tags">
-<span>🚂 إدارة</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://www.openttd.org/downloads/openttd-releases/latest.html"
-target="_blank"
-rel="noopener noreferrer">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-<a
-class="official"
-href="https://www.openttd.org/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-<!-- 0 A.D. -->
-
-<article class="game-card">
-
-<div class="game-icon">
-⚔️
-</div>
-
-<h3>
-0 A.D.
-</h3>
-
-<p class="description">
-لعبة استراتيجية تاريخية مجانية
-ومفتوحة المصدر تدور أحداثها
-في العصور القديمة.
-</p>
-
-<div class="tags">
-<span>⚔️ استراتيجية</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://play0ad.com/download/"
-target="_blank"
-rel="noopener noreferrer">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-<a
-class="official"
-href="https://play0ad.com/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-<!-- Endless Sky -->
-
-<article class="game-card">
-
-<div class="game-icon">
-🚀
-</div>
-
-<h3>
-Endless Sky
-</h3>
-
-<p class="description">
-استكشف الفضاء وتاجر وخض المعارك
-في لعبة فضاء مجانية ومفتوحة المصدر.
-</p>
-
-<div class="tags">
-<span>🚀 فضاء</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://endless-sky.github.io/"
-target="_blank"
-rel="noopener noreferrer">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-<a
-class="official"
-href="https://endless-sky.github.io/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-<!-- SuperTux -->
-
-<article class="game-card">
-
-<div class="game-icon">
-🐧
-</div>
-
-<h3>
-SuperTux
-</h3>
-
-<p class="description">
-لعبة منصات ومغامرات مجانية
-ومفتوحة المصدر بطابع كلاسيكي
-وشخصية Tux الشهيرة.
-</p>
-
-<div class="tags">
-<span>🕹️ منصات</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://www.supertux.org/download.html"
-target="_blank"
-rel="noopener noreferrer">
-
-⬇️ تحميل اللعبة
-
-</a>
-
-<a
-class="official"
-href="https://www.supertux.org/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-</div>
-
-
-<div class="top-button">
-
-<a href="#">
-⬆️ العودة للأعلى
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================================================= -->
-<!-- ================= MOBILE ======================== -->
-<!-- ================================================= -->
-
-<section class="section mobile-section" id="mobile">
-
-<div class="container">
-
-<div class="section-head">
-
-<span class="badge">
-📱 قسم الموبايل
-</span>
-
-<h2 class="section-title">
-📱 ألعاب الموبايل
-</h2>
-
-<p class="section-description">
-ألعاب مجانية ومفتوحة المصدر لأجهزة Android.
-</p>
-
-</div>
-
-
-<div class="games">
-
-
-<!-- SuperTuxKart Android -->
-
-<article class="game-card">
-
-<div class="game-icon mobile-icon">
-🏎️
-</div>
-
-<h3>
-SuperTuxKart
-</h3>
-
-<p class="description">
-لعبة سباق ثلاثية الأبعاد مفتوحة المصدر
-ومتوفرة لأجهزة Android.
-</p>
-
-<div class="tags">
-<span>🏎️ سباق</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://f-droid.org/packages/org.supertuxkart.stk/"
-target="_blank"
-rel="noopener noreferrer">
-
-📱 تحميل Android
-
-</a>
-
-<a
-class="official"
-href="https://supertuxkart.github.io/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-<!-- Unciv -->
-
-<article class="game-card">
-
-<div class="game-icon mobile-icon">
-🏛️
-</div>
-
-<h3>
-Unciv
-</h3>
-
-<p class="description">
-لعبة استراتيجية لبناء الحضارات
-وإدارة المدن والتوسع.
-</p>
-
-<div class="tags">
-<span>🏛️ استراتيجية</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://f-droid.org/en/packages/com.unciv.app/"
-target="_blank"
-rel="noopener noreferrer">
-
-📱 تحميل Android
-
-</a>
-
-<a
-class="official"
-href="https://github.com/yairm210/Unciv"
-target="_blank"
-rel="noopener noreferrer">
-
-📄 المصدر على GitHub
-
-</a>
-
-</article>
-
-
-<!-- Shattered Pixel Dungeon -->
-
-<article class="game-card">
-
-<div class="game-icon mobile-icon">
-💎
-</div>
-
-<h3>
-Shattered Pixel Dungeon
-</h3>
-
-<p class="description">
-لعبة مغامرات وألغاز داخل زنزانات
-مع تحديات وأسلوب لعب ممتع.
-</p>
-
-<div class="tags">
-<span>🧙 مغامرات</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://f-droid.org/en/packages/com.shatteredpixel.shatteredpixeldungeon/"
-target="_blank"
-rel="noopener noreferrer">
-
-📱 تحميل Android
-
-</a>
-
-<a
-class="official"
-href="https://github.com/00-Evan/shattered-pixel-dungeon"
-target="_blank"
-rel="noopener noreferrer">
-
-📄 المصدر على GitHub
-
-</a>
-
-</article>
-
-
-<!-- Mindustry -->
-
-<article class="game-card">
-
-<div class="game-icon mobile-icon">
-🏭
-</div>
-
-<h3>
-Mindustry
-</h3>
-
-<p class="description">
-ابنِ المصانع ودافع عن قاعدتك
-وأدر الموارد في لعبة استراتيجية وصناعة.
-</p>
-
-<div class="tags">
-<span>🏭 استراتيجية</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://f-droid.org/en/packages/io.anuke.mindustry/"
-target="_blank"
-rel="noopener noreferrer">
-
-📱 تحميل Android
-
-</a>
-
-<a
-class="official"
-href="https://github.com/Anuken/Mindustry"
-target="_blank"
-rel="noopener noreferrer">
-
-📄 المصدر على GitHub
-
-</a>
-
-</article>
-
-
-<!-- OpenTTD Android -->
-
-<article class="game-card">
-
-<div class="game-icon mobile-icon">
-🚂
-</div>
-
-<h3>
-OpenTTD
-</h3>
-
-<p class="description">
-إدارة شركات النقل والقطارات
-والطرق في نسخة Android.
-</p>
-
-<div class="tags">
-<span>🚂 إدارة</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-
-<a
-class="download"
-href="https://f-droid.org/en/packages/org.openttd.sdl/"
-target="_blank"
-rel="noopener noreferrer">
-
-📱 تحميل Android
-
-</a>
-
-<a
-class="official"
-href="https://www.openttd.org/"
-target="_blank"
-rel="noopener noreferrer">
-
-🔗 الموقع الرسمي
-
-</a>
-
-</article>
-
-
-</div>
-
-
-<div class="top-button">
-
-<a href="#">
-⬆️ العودة للأعلى
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-</main>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="container">
-
-<strong>
-🎮 تكنومسار
-</strong>
-
-<br><br>
-
-تحت إشراف محمد حامد
-
-<br><br>
-
-© 2026 جميع الحقوق محفوظة
-
-</div>
-
-</footer>
-
-
-</body>
-
-</html>
+    font
