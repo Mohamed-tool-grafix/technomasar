@@ -265,6 +265,69 @@ header{
     background:#17243d;
 }
 
+/* ================= VIDEO ================= */
+
+.video-section{
+    background:#070b18;
+    padding:75px 0;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+.video-box{
+    max-width:850px;
+    margin:30px auto 25px;
+    padding:8px;
+    background:#111b30;
+    border:1px solid #263653;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+.video-box iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border:0;
+    border-radius:14px;
+    display:block;
+}
+
+.youtube-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:20px;
+}
+
+.youtube-button{
+    display:inline-block;
+    padding:13px 22px;
+    border-radius:12px;
+    font-weight:900;
+    background:#ff0000;
+    color:white;
+}
+
+.youtube-button:hover{
+    opacity:.85;
+}
+
+.youtube-channel{
+    display:inline-block;
+    padding:13px 22px;
+    border-radius:12px;
+    font-weight:900;
+    background:#17243d;
+    color:#61e7ff;
+    border:1px solid #263653;
+}
+
+.youtube-channel:hover{
+    background:#223657;
+    border-color:#18c5eb;
+}
+
 /* ================= TOP BUTTON ================= */
 
 .top-button{
@@ -332,12 +395,17 @@ footer strong{
         font-size:29px;
     }
 
+    .game-icon{
+        height:150px;
+    }
+
 }
 
 </style>
 
 </head>
-<meta name="google-site-verification" content="VQ_-0NAmsQ_7Bn0ZjDUoJ2o-JxskJyqqHZjjha_UUWE" />
+
+
 <body>
 
 
@@ -363,6 +431,10 @@ footer strong{
 
 <a href="#mobile">
 📱 الموبايل
+</a>
+
+<a href="#youtube">
+🎬 الفيديو
 </a>
 
 </nav>
@@ -395,6 +467,10 @@ footer strong{
 
 <a href="#mobile" class="hero-button">
 📱 ألعاب الموبايل
+</a>
+
+<a href="#youtube" class="hero-button">
+🎬 فيديوهات تكنومسار
 </a>
 
 </div>
@@ -960,6 +1036,69 @@ rel="noopener noreferrer">
 
 <a href="#">
 ⬆️ العودة للأعلى
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- ================= YOUTUBE ======================= -->
+<!-- ================================================= -->
+
+<section class="video-section" id="youtube">
+
+<div class="container">
+
+<span class="badge">
+🎬 قناة تكنومسار
+</span>
+
+<h2 class="section-title">
+🎥 أحدث فيديو من تكنومسار
+</h2>
+
+<p class="section-description">
+شاهد الفيديو وتابع قناة تكنومسار لمشاهدة المزيد من المحتوى.
+</p>
+
+
+<div class="video-box">
+
+<iframe
+src="https://www.youtube.com/embed/f2ix6C7gGNo"
+title="فيديو من قناة تكنومسار"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+
+
+<div class="youtube-buttons">
+
+<a
+class="youtube-button"
+href="https://youtu.be/f2ix6C7gGNo?si=74Qya62oOuMuAtaP"
+target="_blank"
+rel="noopener noreferrer">
+
+▶️ مشاهدة الفيديو على YouTube
+
+</a>
+
+
+<a
+class="youtube-channel"
+href="https://youtube.com/@technopath-b3q?si=wI5XmpWlA3vFkPAY"
+target="_blank"
+rel="noopener noreferrer">
+
+📺 زيارة قناة تكنومسار
+
 </a>
 
 </div>
