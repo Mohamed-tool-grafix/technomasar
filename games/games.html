@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -40,6 +41,39 @@ header p{
     width:min(1100px,92%);
     margin:auto;
 }
+
+/* VIDEO */
+
+.video-section{
+    padding:40px 0 10px;
+    text-align:center;
+}
+
+.video-section h2{
+    color:#61e7ff;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.video-box{
+    width:100%;
+    max-width:850px;
+    margin:auto;
+    aspect-ratio:16/9;
+    background:#050914;
+    border:1px solid #263653;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.video-box iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+/* GAMES */
 
 .games{
     display:grid;
@@ -118,6 +152,51 @@ h2{
     margin-top:10px;
 }
 
+/* OPEN TTD */
+
+.game-card{
+    max-width:600px;
+    margin:25px auto;
+    padding:25px;
+    text-align:center;
+    background:#111827;
+    color:white;
+    border-radius:18px;
+    border:1px solid #00d9ff;
+    box-shadow:0 8px 25px rgba(0,0,0,.3);
+}
+
+.game-card h2{
+    color:#00d9ff;
+}
+
+.game-card p{
+    line-height:1.8;
+    color:#ddd;
+}
+
+.download-btn,
+.source-btn{
+    display:inline-block;
+    padding:12px 20px;
+    margin:7px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.download-btn{
+    background:#00c853;
+    color:white;
+}
+
+.source-btn{
+    background:#374151;
+    color:white;
+}
+
+/* FOOTER */
+
 footer{
     text-align:center;
     background:#050914;
@@ -129,7 +208,26 @@ footer strong{
     color:#61e7ff;
 }
 
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .video-section{
+        padding-top:30px;
+    }
+
+    .video-box{
+        border-radius:12px;
+    }
+
+    .games{
+        grid-template-columns:1fr;
+    }
+
+}
+
 </style>
+
 </head>
 
 <body>
@@ -142,7 +240,33 @@ footer strong{
 
 </header>
 
+
 <main class="container">
+
+
+<!-- VIDEO -->
+
+<section class="video-section">
+
+<h2>
+🎬 فيديو تكنومسار
+</h2>
+
+<div class="video-box">
+
+<iframe
+src="https://www.youtube.com/embed/f2ix6C7gGNo"
+title="فيديو تكنومسار"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+
+<!-- GAMES -->
 
 <div class="games">
 
@@ -160,9 +284,11 @@ SuperTuxKart
 </h2>
 
 <p class="description">
+
 لعبة سباق كارت مجانية ومفتوحة المصدر.
 استمتع بالسباقات والحلبات والشخصيات
 وأنماط اللعب المختلفة.
+
 </p>
 
 <div class="info">
@@ -193,73 +319,48 @@ rel="noopener">
 🔗 الموقع الرسمي
 
 </a>
-<div class="game-card">
-    <h2>🚂 OpenTTD</h2>
 
-    <p>
-        لعبة استراتيجية وإدارة شركات النقل والقطارات.
-        مجانية ومفتوحة المصدر.
-    </p>
-
-    <p><strong>الترخيص:</strong> GPLv2</p>
-
-    <a href="https://www.openttd.org/downloads/openttd-releases/latest.html"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="download-btn">
-        ⬇️ تحميل OpenTTD
-    </a>
-
-    <a href="https://github.com/OpenTTD/OpenTTD"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="source-btn">
-        📄 المصدر والترخيص
-    </a>
 </div>
 
-<style>
-.game-card {
-    max-width: 600px;
-    margin: 25px auto;
-    padding: 25px;
-    text-align: center;
-    background: #111827;
-    color: white;
-    border-radius: 18px;
-    border: 1px solid #00d9ff;
-    box-shadow: 0 8px 25px rgba(0,0,0,.3);
-}
 
-.game-card h2 {
-    color: #00d9ff;
-}
+<!-- OpenTTD -->
 
-.game-card p {
-    line-height: 1.8;
-    color: #ddd;
-}
+<div class="game-card">
 
-.download-btn,
-.source-btn {
-    display: inline-block;
-    padding: 12px 20px;
-    margin: 7px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
+<h2>
+🚂 OpenTTD
+</h2>
 
-.download-btn {
-    background: #00c853;
-    color: white;
-}
+<p>
 
-.source-btn {
-    background: #374151;
-    color: white;
-}
-</style>
+لعبة استراتيجية وإدارة شركات النقل والقطارات.
+مجانية ومفتوحة المصدر.
+
+</p>
+
+<p>
+<strong>الترخيص:</strong> GPLv2
+</p>
+
+<a
+href="https://www.openttd.org/downloads/openttd-releases/latest.html"
+target="_blank"
+rel="noopener noreferrer"
+class="download-btn">
+
+⬇️ تحميل OpenTTD
+
+</a>
+
+<a
+href="https://github.com/OpenTTD/OpenTTD"
+target="_blank"
+rel="noopener noreferrer"
+class="source-btn">
+
+📄 المصدر والترخيص
+
+</a>
 
 </div>
 
@@ -277,9 +378,11 @@ rel="noopener">
 </h2>
 
 <p class="description">
+
 لعبة استراتيجية تاريخية مجانية
 ومفتوحة المصدر تدور أحداثها
 في العصور القديمة.
+
 </p>
 
 <div class="info">
@@ -327,8 +430,10 @@ Endless Sky
 </h2>
 
 <p class="description">
+
 استكشف الفضاء وتاجر وخض المعارك
 في لعبة مجانية ومفتوحة المصدر.
+
 </p>
 
 <div class="info">
@@ -370,7 +475,9 @@ rel="noopener">
 
 <footer>
 
-<strong>🎮 تكنومسار</strong>
+<strong>
+🎮 تكنومسار
+</strong>
 
 <br><br>
 
