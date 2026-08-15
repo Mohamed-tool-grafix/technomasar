@@ -531,6 +531,359 @@ footer strong{
 
 </style>
 
+
+<style id="game-details-style">
+/* ===== صفحة تفاصيل اللعبة ===== */
+
+.game-card{
+  position:relative;
+}
+
+.details-btn{
+  width:100%;
+  margin-top:10px;
+  border:1px solid #245070;
+  background:#101d31;
+  color:#8feaff;
+  padding:11px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:900;
+  font-size:14px;
+  transition:.2s;
+}
+.details-btn:hover{
+  background:#15314b;
+  border-color:#18c5eb;
+  transform:translateY(-1px);
+}
+
+.game-details-overlay{
+  position:fixed;
+  inset:0;
+  z-index:100000;
+  background:#050b14;
+  overflow-y:auto;
+  display:none;
+}
+.game-details-overlay.show{
+  display:block;
+}
+
+.game-details-page{
+  min-height:100vh;
+  color:#f8fafc;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(24,197,235,.12),transparent 28%),
+    radial-gradient(circle at 85% 15%,rgba(70,95,255,.12),transparent 30%),
+    #06101c;
+}
+
+.details-topbar{
+  position:sticky;
+  top:0;
+  z-index:3;
+  min-height:62px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:0 4%;
+  background:rgba(5,12,22,.96);
+  border-bottom:1px solid #203650;
+  backdrop-filter:blur(14px);
+}
+
+.details-breadcrumb{
+  color:#8ea2b8;
+  font-size:14px;
+}
+.details-breadcrumb span{
+  color:#61e7ff;
+}
+
+.close-details{
+  width:42px;
+  height:42px;
+  border:1px solid #29445f;
+  border-radius:10px;
+  background:#0d1b2c;
+  color:#fff;
+  cursor:pointer;
+  font-size:20px;
+}
+.close-details:hover{
+  background:#18c5eb;
+  color:#00131c;
+}
+
+.details-main{
+  width:min(1200px,94%);
+  margin:0 auto;
+  padding:35px 0 110px;
+}
+
+.details-hero{
+  display:grid;
+  grid-template-columns:minmax(280px,38%) 1fr;
+  gap:30px;
+  align-items:stretch;
+}
+
+.details-cover{
+  min-height:300px;
+  border:1px solid #2a4761;
+  border-radius:18px;
+  background:
+    linear-gradient(145deg,rgba(24,197,235,.2),rgba(49,46,129,.3)),
+    #0b1929;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:120px;
+  box-shadow:0 20px 55px rgba(0,0,0,.35);
+  overflow:hidden;
+}
+.details-cover span{
+  filter:drop-shadow(0 10px 15px rgba(0,0,0,.4));
+}
+
+.details-summary{
+  padding:8px 0;
+}
+.details-summary h1{
+  margin:0 0 12px;
+  font-size:clamp(30px,5vw,48px);
+  color:#fff;
+}
+
+.details-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:20px;
+}
+.details-tag{
+  display:inline-flex;
+  padding:6px 11px;
+  border-radius:7px;
+  background:#10283c;
+  border:1px solid #274b67;
+  color:#aeefff;
+  font-size:13px;
+  font-weight:800;
+}
+.details-tag.free{
+  background:#0d3c2c;
+  border-color:#16865f;
+  color:#6df0bb;
+}
+
+.details-meta{
+  display:grid;
+  gap:11px;
+  color:#b7c5d4;
+  font-size:16px;
+  margin:20px 0 25px;
+}
+.details-meta b{
+  color:#e7eef5;
+}
+.details-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.details-actions a{
+  flex:1;
+  min-width:190px;
+  text-align:center;
+  padding:13px 18px;
+  border-radius:9px;
+  font-weight:900;
+}
+.detail-download{
+  background:#10a957;
+  color:white;
+  border:1px solid #22d477;
+}
+.detail-download:hover{
+  background:#0d8c48;
+}
+.detail-official{
+  background:#0b1a2c;
+  color:#8feaff;
+  border:1px solid #0879c9;
+}
+
+.details-grid{
+  display:grid;
+  grid-template-columns:310px 1fr;
+  gap:18px;
+  margin-top:28px;
+}
+
+.requirements-box,
+.details-box{
+  border:1px solid #203b54;
+  background:linear-gradient(145deg,#081726,#0a1b2d);
+  border-radius:14px;
+  padding:22px;
+}
+.requirements-box h2,
+.details-box h2{
+  margin:0 0 16px;
+  color:#fff;
+  font-size:22px;
+}
+.requirements-box h3{
+  color:#ffbf3d;
+  margin:16px 0 8px;
+  font-size:16px;
+}
+.requirements-box ul{
+  margin:0;
+  padding-right:20px;
+  color:#b8c6d5;
+}
+.requirements-box li{
+  margin:7px 0;
+}
+.recommended-title{
+  border-top:1px solid #203b54;
+  padding-top:16px;
+}
+
+.details-content{
+  display:grid;
+  gap:18px;
+}
+.details-box p{
+  margin:0;
+  color:#bac7d4;
+  line-height:2;
+}
+.features-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+.features-list li{
+  color:#c7d4df;
+}
+.features-list li::before{
+  content:"✓";
+  display:inline-flex;
+  width:22px;
+  height:22px;
+  align-items:center;
+  justify-content:center;
+  margin-left:8px;
+  border-radius:50%;
+  background:#0d4b35;
+  color:#55efac;
+  font-weight:900;
+}
+
+.rating-preview-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.detail-rating-stars{
+  color:#ffc400;
+  letter-spacing:3px;
+  font-size:25px;
+  margin-top:5px;
+}
+.detail-rating-number{
+  font-size:38px;
+  font-weight:900;
+  color:#fff;
+}
+
+.details-bottom-download{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:5;
+  padding:10px 3%;
+  background:rgba(4,11,19,.92);
+  border-top:1px solid #203b54;
+  backdrop-filter:blur(12px);
+}
+.details-bottom-download a{
+  max-width:1140px;
+  margin:auto;
+  min-height:58px;
+  display:grid;
+  grid-template-columns:55px 1fr 170px;
+  align-items:center;
+  gap:10px;
+  padding:9px 18px;
+  border-radius:9px;
+  background:#0ca54f;
+  color:#fff;
+  border:1px solid #2bd879;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+.details-bottom-download a:hover{
+  background:#0d8e47;
+}
+.details-bottom-download span{
+  font-size:30px;
+  text-align:center;
+}
+.details-bottom-download strong{
+  font-size:18px;
+}
+.details-bottom-download small{
+  text-align:left;
+  color:#d9ffe9;
+}
+
+@media(max-width:800px){
+  .details-hero,
+  .details-grid{
+    grid-template-columns:1fr;
+  }
+  .details-cover{
+    min-height:220px;
+    font-size:90px;
+  }
+  .details-summary h1{
+    font-size:31px;
+  }
+  .details-bottom-download a{
+    grid-template-columns:40px 1fr;
+  }
+  .details-bottom-download small{
+    display:none;
+  }
+}
+@media(max-width:520px){
+  .details-main{
+    width:94%;
+    padding-top:20px;
+  }
+  .details-topbar{
+    padding:0 3%;
+  }
+  .details-breadcrumb{
+    font-size:12px;
+  }
+  .details-actions a{
+    min-width:100%;
+  }
+  .rating-preview-box{
+    align-items:flex-start;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -625,7 +978,7 @@ footer strong{
 <div class="games">
 
 
-<article class="game-card">
+<article class="game-card" data-game="SuperTuxKart">
 <div class="game-icon">🏎️</div>
 <h3>SuperTuxKart</h3>
 <p class="description">لعبة سباق كارت ثلاثية الأبعاد مليئة بالحلبات والشخصيات وأنماط اللعب.</p>
@@ -634,10 +987,13 @@ footer strong{
 </div>
 <a class="download" href="https://supertuxkart.github.io/stk-website/Download" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://supertuxkart.github.io/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="0 A.D.">
 <div class="game-icon">⚔️</div>
 <h3>0 A.D.</h3>
 <p class="description">استراتيجية تاريخية في العصور القديمة، مع بناء مدن وجيوش ومعارك واسعة.</p>
@@ -646,10 +1002,13 @@ footer strong{
 </div>
 <a class="download" href="https://play0ad.com/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://play0ad.com/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Endless Sky">
 <div class="game-icon">🚀</div>
 <h3>Endless Sky</h3>
 <p class="description">استكشف الفضاء، وتاجر، وطوّر سفينتك وخض معارك في مجرة واسعة.</p>
@@ -658,10 +1017,13 @@ footer strong{
 </div>
 <a class="download" href="https://endless-sky.github.io/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://endless-sky.github.io/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Luanti">
 <div class="game-icon">⛏️</div>
 <h3>Luanti</h3>
 <p class="description">عالم مفتوح للبناء والاستكشاف والبقاء، مع ألعاب ومحتويات كثيرة.</p>
@@ -670,10 +1032,13 @@ footer strong{
 </div>
 <a class="download" href="https://www.luanti.org/en/downloads/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://www.luanti.org/en/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Xonotic">
 <div class="game-icon">🎯</div>
 <h3>Xonotic</h3>
 <p class="description">لعبة تصويب سريعة من منظور الشخص الأول مع خرائط وأسلحة وأنماط لعب متعددة.</p>
@@ -682,10 +1047,13 @@ footer strong{
 </div>
 <a class="download" href="https://xonotic.org/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://xonotic.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="OpenSpades">
 <div class="game-icon">🪖</div>
 <h3>OpenSpades</h3>
 <p class="description">لعبة تصويب وبناء جماعية مستوحاة من أسلوب voxel السريع.</p>
@@ -694,10 +1062,13 @@ footer strong{
 </div>
 <a class="download" href="https://openspades.yvt.jp/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://openspades.yvt.jp/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Battle for Wesnoth">
 <div class="game-icon">🏹</div>
 <h3>Battle for Wesnoth</h3>
 <p class="description">استراتيجية تكتيكية بنظام الأدوار مع حملات فردية ومعارك جماعية.</p>
@@ -706,10 +1077,13 @@ footer strong{
 </div>
 <a class="download" href="https://www.wesnoth.org/downloads/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://www.wesnoth.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="OpenRCT2">
 <div class="game-icon">🎢</div>
 <h3>OpenRCT2</h3>
 <p class="description">ابنِ وأدر مدينة ملاهي، واهتم بالألعاب والزوار والمال.</p>
@@ -718,10 +1092,13 @@ footer strong{
 </div>
 <a class="download" href="https://openrct2.org/downloads" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://openrct2.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="OpenTTD">
 <div class="game-icon">🚂</div>
 <h3>OpenTTD</h3>
 <p class="description">أدر شركة نقل كاملة بالقطارات والشاحنات والطائرات والسفن.</p>
@@ -730,10 +1107,13 @@ footer strong{
 </div>
 <a class="download" href="https://www.openttd.org/downloads/openttd-releases/latest.html" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://www.openttd.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="FreeCiv">
 <div class="game-icon">🏰</div>
 <h3>FreeCiv</h3>
 <p class="description">استراتيجية حضارات تعتمد على التطور والتوسع والدبلوماسية عبر العصور.</p>
@@ -742,10 +1122,13 @@ footer strong{
 </div>
 <a class="download" href="https://www.freeciv.org/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://www.freeciv.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Endless Sky">
 <div class="game-icon">🌌</div>
 <h3>Endless Sky</h3>
 <p class="description">مغامرة فضائية تعتمد على الاستكشاف والتجارة والقتال وتطوير السفينة.</p>
@@ -754,10 +1137,13 @@ footer strong{
 </div>
 <a class="download" href="https://endless-sky.github.io/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://endless-sky.github.io/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="SuperTux">
 <div class="game-icon">🏃</div>
 <h3>SuperTux</h3>
 <p class="description">لعبة منصات ومغامرات كلاسيكية بشخصية Tux ومراحل متعددة.</p>
@@ -766,10 +1152,13 @@ footer strong{
 </div>
 <a class="download" href="https://www.supertux.org/download.html" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://www.supertux.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Secret Maryo Chronicles">
 <div class="game-icon">🧙</div>
 <h3>Secret Maryo Chronicles</h3>
 <p class="description">لعبة منصات ثنائية الأبعاد مليئة بالمراحل والأعداء والاستكشاف.</p>
@@ -778,10 +1167,13 @@ footer strong{
 </div>
 <a class="download" href="https://secretmaryo.org/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://secretmaryo.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Armagetron Advanced">
 <div class="game-icon">🛸</div>
 <h3>Armagetron Advanced</h3>
 <p class="description">سباق أركيد ثلاثي الأبعاد سريع مستوحى من الدراجات الضوئية.</p>
@@ -790,10 +1182,13 @@ footer strong{
 </div>
 <a class="download" href="https://armagetronad.org/downloads.php" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://armagetronad.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Extreme Tux Racer">
 <div class="game-icon">🏁</div>
 <h3>Extreme Tux Racer</h3>
 <p class="description">انزل المنحدرات الجليدية بأقصى سرعة وحاول تحقيق أفضل زمن.</p>
@@ -802,10 +1197,13 @@ footer strong{
 </div>
 <a class="download" href="https://extremetuxracer.com/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://extremetuxracer.com/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="StepMania">
 <div class="game-icon">🎵</div>
 <h3>StepMania</h3>
 <p class="description">لعبة إيقاع وموسيقى تعتمد على التوقيت والسرعة والتنسيق.</p>
@@ -814,10 +1212,13 @@ footer strong{
 </div>
 <a class="download" href="https://stepmania.com/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://stepmania.com/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Hedgewars">
 <div class="game-icon">🏹</div>
 <h3>Hedgewars</h3>
 <p class="description">لعبة استراتيجية جماعية مضحكة تعتمد على فرق من القنافذ والأسلحة.</p>
@@ -826,10 +1227,13 @@ footer strong{
 </div>
 <a class="download" href="https://www.hedgewars.org/download.html" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://www.hedgewars.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Warzone 2100">
 <div class="game-icon">🚀</div>
 <h3>Warzone 2100</h3>
 <p class="description">استراتيجية حربية في الزمن الحقيقي مع بناء قواعد وأبحاث ووحدات قتالية.</p>
@@ -838,10 +1242,13 @@ footer strong{
 </div>
 <a class="download" href="https://wz2100.net/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://wz2100.net/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="TORCS">
 <div class="game-icon">🏎️</div>
 <h3>TORCS</h3>
 <p class="description">محاكاة سباقات سيارات مفتوحة المصدر مع حلبات وسيارات متعددة.</p>
@@ -850,10 +1257,13 @@ footer strong{
 </div>
 <a class="download" href="https://sourceforge.net/projects/torcs/files/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://torcs.sourceforge.net/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Minetest Game">
 <div class="game-icon">🎮</div>
 <h3>Minetest Game</h3>
 <p class="description">تجربة بناء واستكشاف وبقاء داخل عالم مكعبات مفتوح.</p>
@@ -862,6 +1272,9 @@ footer strong{
 </div>
 <a class="download" href="https://www.luanti.org/en/downloads/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
 <a class="official" href="https://www.luanti.org/en/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
@@ -906,7 +1319,7 @@ footer strong{
 <div class="games">
 
 
-<article class="game-card">
+<article class="game-card" data-game="SuperTuxKart">
 
 <div class="game-icon mobile-icon">🏎️</div>
 
@@ -938,10 +1351,12 @@ rel="noopener noreferrer">
 🔗 الموقع الرسمي
 </a>
 
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Unciv">
 
 <div class="game-icon mobile-icon">🏛️</div>
 
@@ -973,10 +1388,12 @@ rel="noopener noreferrer">
 📄 المصدر على GitHub
 </a>
 
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Shattered Pixel Dungeon">
 
 <div class="game-icon mobile-icon">💎</div>
 
@@ -1008,10 +1425,12 @@ rel="noopener noreferrer">
 📄 المصدر على GitHub
 </a>
 
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="Mindustry">
 
 <div class="game-icon mobile-icon">🏭</div>
 
@@ -1043,10 +1462,12 @@ rel="noopener noreferrer">
 📄 المصدر على GitHub
 </a>
 
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
 
 
-<article class="game-card">
+<article class="game-card" data-game="OpenTTD">
 
 <div class="game-icon mobile-icon">🚂</div>
 
@@ -1077,6 +1498,8 @@ target="_blank"
 rel="noopener noreferrer">
 🔗 الموقع الرسمي
 </a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 
 </article>
 
@@ -1539,6 +1962,243 @@ if(alreadyRated){
 
 </script>
 
+
+
+<div id="gameDetailsOverlay" class="game-details-overlay" aria-hidden="true">
+  <div class="game-details-page" role="dialog" aria-modal="true" aria-labelledby="detailGameName">
+
+    <div class="details-topbar">
+      <button id="closeGameDetails" class="close-details" type="button" aria-label="إغلاق">✕</button>
+      <div class="details-breadcrumb">الرئيسية &nbsp;›&nbsp; الألعاب &nbsp;›&nbsp; <span id="detailBreadcrumb">تفاصيل اللعبة</span></div>
+    </div>
+
+    <div class="details-main">
+      <div class="details-hero">
+
+        <div class="details-cover" id="detailCover">
+          <span id="detailIcon">🎮</span>
+        </div>
+
+        <div class="details-summary">
+          <h1 id="detailGameName">اسم اللعبة</h1>
+
+          <div class="details-tags" id="detailTags"></div>
+
+          <div class="details-meta">
+            <div>💾 <b>حجم اللعبة:</b> <span id="detailSize">غير محدد</span></div>
+            <div>🖥️ <b>المنصة:</b> <span id="detailPlatform">Windows</span></div>
+            <div>📅 <b>الإصدار:</b> <span id="detailVersion">متاح حاليًا</span></div>
+            <div>🌐 <b>اللغة:</b> <span id="detailLanguage">حسب اللعبة</span></div>
+            <div>🎮 <b>النوع:</b> <span id="detailGenre">ألعاب كمبيوتر</span></div>
+          </div>
+
+          <div class="details-actions">
+            <a id="detailDownload" class="detail-download" href="#" target="_blank" rel="noopener noreferrer">
+              ⬇️ صفحة التحميل
+            </a>
+            <a id="detailOfficial" class="detail-official" href="#" target="_blank" rel="noopener noreferrer">
+              🔗 الموقع الرسمي
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="details-grid">
+
+        <aside class="requirements-box">
+          <h2>⚙️ متطلبات التشغيل</h2>
+
+          <h3>الحد الأدنى</h3>
+          <ul id="detailMinimum">
+            <li>نظام تشغيل Windows حديث</li>
+            <li>معالج ثنائي النواة</li>
+            <li>ذاكرة RAM: 2 GB</li>
+            <li>بطاقة رسومية تدعم OpenGL</li>
+            <li>مساحة تخزين حسب حجم اللعبة</li>
+          </ul>
+
+          <h3 class="recommended-title">الموصى بها</h3>
+          <ul id="detailRecommended">
+            <li>Windows 10/11</li>
+            <li>معالج رباعي النواة</li>
+            <li>ذاكرة RAM: 4 GB أو أكثر</li>
+            <li>بطاقة رسومية حديثة</li>
+            <li>مساحة تخزين إضافية للتحديثات</li>
+          </ul>
+        </aside>
+
+        <section class="details-content">
+
+          <div class="details-box">
+            <h2>📖 نبذة عن اللعبة</h2>
+            <p id="detailDescription">
+              معلومات اللعبة ستظهر هنا.
+            </p>
+          </div>
+
+          <div class="details-box">
+            <h2>✨ مميزات اللعبة</h2>
+            <ul id="detailFeatures" class="features-list"></ul>
+          </div>
+
+          <div class="details-box rating-preview-box">
+            <div>
+              <strong>⭐ تقييم الموقع</strong>
+              <div class="detail-rating-stars">★★★★★</div>
+            </div>
+            <div class="detail-rating-number">4.5/5</div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+
+    <div class="details-bottom-download">
+      <a id="detailBottomDownload" href="#" target="_blank" rel="noopener noreferrer">
+        <span>⬇️</span>
+        <strong id="detailBottomName">تحميل اللعبة</strong>
+        <small id="detailBottomSize">صفحة التحميل الرسمية</small>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+<script id="game-details-script">
+(function(){
+  const details = {"SuperTuxKart": {"icon": "🏎️", "genre": "سباق", "size": "حوالي 1.5 GB", "platform": "Windows / Linux / macOS", "description": "لعبة سباق كارت ثلاثية الأبعاد تحتوي على حلبات وشخصيات وأنماط لعب متعددة.", "features": ["سباقات ممتعة وسريعة", "حلبات وشخصيات متعددة", "اللعب الفردي والجماعي"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL", "مساحة: 2 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "0 A.D.": {"icon": "⚔️", "genre": "استراتيجية", "size": "حوالي 1.5 GB", "platform": "Windows / Linux / macOS", "description": "لعبة استراتيجية تاريخية تركز على بناء المدن وإدارة الموارد وتكوين الجيوش وخوض المعارك.", "features": ["بناء مدن وجيوش", "خرائط ومعارك واسعة", "لعب جماعي"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة 2 GHz", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL 2.0", "مساحة: 3 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Endless Sky": {"icon": "🚀", "genre": "فضاء", "size": "أقل من 1 GB", "platform": "Windows / Linux / macOS", "description": "استكشف الفضاء وتاجر وطوّر سفينتك وخض المعارك في مجرة واسعة مليئة بالمهام.", "features": ["استكشاف الفضاء", "تجارة وتطوير السفن", "قصة ومهام متعددة"], "minimum": ["Windows 7 أو أحدث", "معالج 2 GHz", "RAM: 2 GB", "بطاقة رسومية بسيطة", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Luanti": {"icon": "⛏️", "genre": "بناء / بقاء", "size": "يختلف حسب المحتوى", "platform": "Windows / Linux / macOS", "description": "منصة ألعاب مفتوحة المصدر للبناء والاستكشاف والبقاء، مع عوالم ومحتويات كثيرة.", "features": ["بناء واستكشاف", "عوالم مفتوحة", "محتوى وإضافات كثيرة"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية OpenGL 2.1+", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Xonotic": {"icon": "🎯", "genre": "تصويب FPS", "size": "حوالي 1 GB", "platform": "Windows / Linux / macOS", "description": "لعبة تصويب سريعة من منظور الشخص الأول مع أسلحة وخرائط وأنماط لعب متعددة.", "features": ["قتال سريع", "أسلحة وخرائط متعددة", "لعب جماعي"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL", "مساحة: 1.5 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "OpenSpades": {"icon": "🪖", "genre": "تصويب / بناء", "size": "أقل من 500 MB", "platform": "Windows / Linux", "description": "لعبة تصويب جماعية تجمع بين القتال والبناء داخل بيئات مكعبة.", "features": ["تصويب جماعي", "بناء وتدمير", "خرائط متعددة"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Battle for Wesnoth": {"icon": "🏹", "genre": "استراتيجية", "size": "حوالي 500 MB", "platform": "Windows / Linux / macOS", "description": "لعبة استراتيجية تكتيكية بنظام الأدوار مع حملات فردية ومعارك جماعية.", "features": ["حملات فردية", "معارك تكتيكية", "إضافات ومحتوى متنوع"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "OpenRCT2": {"icon": "🎢", "genre": "محاكاة / إدارة", "size": "حوالي 200 MB + ملفات اللعبة", "platform": "Windows / Linux / macOS", "description": "أنشئ مدينة ملاهي وأدر الألعاب والزوار والموارد وحاول تطوير حديقتك.", "features": ["بناء وإدارة الملاهي", "ألعاب ومرافق كثيرة", "سيناريوهات متعددة"], "minimum": ["Windows 7 أو أحدث", "معالج 2 GHz", "RAM: 2 GB", "بطاقة رسومية بسيطة", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "OpenTTD": {"icon": "🚂", "genre": "محاكاة / إدارة", "size": "حوالي 50 MB + ملفات اللعبة", "platform": "Windows / Linux / macOS", "description": "أدر شركة نقل باستخدام القطارات والشاحنات والطائرات والسفن ووسّع شبكة النقل.", "features": ["إدارة شركة نقل", "قطارات وطائرات وسفن", "خرائط واسعة"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية بسيطة", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "FreeCiv": {"icon": "🏰", "genre": "استراتيجية / حضارات", "size": "أقل من 200 MB", "platform": "Windows / Linux / macOS", "description": "ابنِ حضارتك وطوّرها عبر العصور باستخدام الاستراتيجية والتوسع والدبلوماسية.", "features": ["تطور عبر العصور", "دبلوماسية وتجارة", "خرائط كبيرة"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "SuperTux": {"icon": "🏃", "genre": "منصات / مغامرة", "size": "أقل من 200 MB", "platform": "Windows / Linux / macOS", "description": "لعبة منصات كلاسيكية بشخصية Tux ومراحل مليئة بالأعداء والعقبات.", "features": ["مراحل متنوعة", "أعداء وعقبات", "أسلوب منصات كلاسيكي"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 300 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Secret Maryo Chronicles": {"icon": "🧙", "genre": "منصات", "size": "حوالي 300 MB", "platform": "Windows / Linux", "description": "لعبة منصات ثنائية الأبعاد مليئة بالمراحل والأعداء والاستكشاف.", "features": ["مراحل كثيرة", "أعداء وعناصر متنوعة", "مغامرة ثنائية الأبعاد"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Armagetron Advanced": {"icon": "🛸", "genre": "أركيد / سباق", "size": "أقل من 100 MB", "platform": "Windows / Linux / macOS", "description": "سباق أركيد ثلاثي الأبعاد سريع مستوحى من الدراجات الضوئية.", "features": ["سرعة ومنافسة", "لعب جماعي", "خرائط وأنماط متعددة"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية OpenGL", "مساحة: 200 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Extreme Tux Racer": {"icon": "🏁", "genre": "سباق", "size": "أقل من 200 MB", "platform": "Windows / Linux / macOS", "description": "انزل المنحدرات الجليدية بأقصى سرعة واجمع العناصر وحاول تسجيل أفضل زمن.", "features": ["منحدرات ومراحل متعددة", "سباقات سريعة", "تحكم بسيط"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 300 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "StepMania": {"icon": "🎵", "genre": "موسيقى / إيقاع", "size": "حوالي 1 GB حسب الأغاني", "platform": "Windows / Linux / macOS", "description": "لعبة إيقاع وموسيقى تعتمد على توقيت الخطوات والتنسيق والسرعة.", "features": ["أغاني ومراحل متعددة", "تخصيص المحتوى", "تحديات إيقاعية"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية بسيطة", "مساحة: 2 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Hedgewars": {"icon": "🏹", "genre": "استراتيجية / أركيد", "size": "حوالي 200 MB", "platform": "Windows / Linux / macOS", "description": "لعبة استراتيجية مرحة تعتمد على فرق من القنافذ والأسلحة والمعارك القائمة على الأدوار.", "features": ["أسلحة متنوعة", "معارك تكتيكية", "لعب جماعي"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Warzone 2100": {"icon": "🚀", "genre": "استراتيجية حربية", "size": "حوالي 1 GB", "platform": "Windows / Linux / macOS", "description": "استراتيجية حربية في الزمن الحقيقي مع بناء قواعد وأبحاث ووحدات قتالية.", "features": ["بناء قواعد", "أبحاث وتطوير", "معارك في الزمن الحقيقي"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL", "مساحة: 2 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "TORCS": {"icon": "🏎️", "genre": "محاكاة سباق", "size": "حوالي 500 MB", "platform": "Windows / Linux", "description": "محاكاة سباقات سيارات مفتوحة المصدر مع سيارات وحلبات متعددة.", "features": ["سيارات وحلبات متعددة", "محاكاة قيادة", "سباقات متنوعة"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Minetest Game": {"icon": "🎮", "genre": "بقاء / بناء", "size": "يختلف حسب المحتوى", "platform": "Windows / Linux / macOS", "description": "تجربة بناء واستكشاف وبقاء داخل عالم مكعبات مفتوح.", "features": ["بناء واستكشاف", "عالم مفتوح", "إضافات ومحتوى"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية OpenGL 2.1+", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Unciv": {"icon": "🏛️", "genre": "استراتيجية", "size": "أقل من 200 MB", "platform": "Android / Windows / Linux", "description": "لعبة استراتيجية حضارات خفيفة تعتمد على التوسع والتقنية والدبلوماسية.", "features": ["إدارة حضارة", "تقنية ودبلوماسية", "مباريات طويلة"], "minimum": ["Android 8+ أو Windows/Linux", "RAM: 2 GB", "مساحة: 300 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Shattered Pixel Dungeon": {"icon": "⚔️", "genre": "Roguelike / مغامرة", "size": "أقل من 100 MB", "platform": "Android / Windows / Linux", "description": "مغامرة بنظام roguelike داخل زنزانات تتغير مع كل محاولة.", "features": ["مراحل متغيرة", "شخصيات وقدرات", "تحدي واستكشاف"], "minimum": ["Android 7+ أو Windows/Linux", "RAM: 1 GB", "مساحة: 200 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Mindustry": {"icon": "🏭", "genre": "استراتيجية / بناء", "size": "أقل من 200 MB", "platform": "Android / Windows / Linux", "description": "ابنِ خطوط إنتاج وقواعد دفاعية وأدر الموارد في عالم مليء بالتحديات.", "features": ["بناء المصانع", "إدارة الموارد", "دفاع واستراتيجية"], "minimum": ["Android 5+ أو Windows/Linux", "RAM: 2 GB", "بطاقة رسومية بسيطة", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}};
+
+  const overlay = document.getElementById("gameDetailsOverlay");
+  const closeBtn = document.getElementById("closeGameDetails");
+
+  if(!overlay) return;
+
+  const $ = id => document.getElementById(id);
+
+  function escapeText(value){
+    return String(value ?? "");
+  }
+
+  function findCard(name){
+    return [...document.querySelectorAll(".game-card")]
+      .find(card => (card.dataset.game || "").trim() === name);
+  }
+
+  function getCardData(card){
+    const name = card?.dataset.game || card?.querySelector("h3")?.textContent?.trim() || "لعبة";
+    const icon = card?.querySelector(".game-icon")?.textContent?.trim() || "🎮";
+    const desc = card?.querySelector(".description")?.textContent?.trim() || "معلومات عن اللعبة.";
+    const tags = [...(card?.querySelectorAll(".tags span") || [])].map(x => x.textContent.trim()).filter(Boolean);
+    const links = [...(card?.querySelectorAll("a") || [])];
+
+    return {
+      name, icon, desc, tags,
+      download: links.find(a => a.classList.contains("download"))?.href || "#",
+      official: links.find(a => a.classList.contains("official"))?.href || "#"
+    };
+  }
+
+  function openDetails(name){
+    const card = findCard(name);
+    if(!card) return;
+
+    const base = getCardData(card);
+    const extra = details[name] || {};
+    const icon = extra.icon || base.icon;
+    const genre = extra.genre || base.tags[0] || "ألعاب كمبيوتر";
+    const size = extra.size || "حسب النسخة";
+    const platform = extra.platform || "Windows";
+    const version = extra.version || "متاح حاليًا";
+    const language = extra.language || "حسب اللعبة";
+    const description = extra.description || base.desc;
+    const features = extra.features || ["محتوى متنوع","تجربة لعب ممتعة","متاحة عبر رابط رسمي"];
+    const minimum = extra.minimum || [
+      "Windows 10 أو أحدث",
+      "معالج ثنائي النواة",
+      "RAM: 2 GB",
+      "بطاقة رسومية تدعم OpenGL",
+      "مساحة تخزين حسب حجم اللعبة"
+    ];
+    const recommended = extra.recommended || [
+      "Windows 10/11",
+      "معالج رباعي النواة",
+      "RAM: 4 GB أو أكثر",
+      "بطاقة رسومية حديثة",
+      "مساحة إضافية للتحديثات"
+    ];
+
+    $("detailGameName").textContent = name;
+    $("detailBreadcrumb").textContent = name;
+    $("detailIcon").textContent = icon;
+    $("detailSize").textContent = size;
+    $("detailPlatform").textContent = platform;
+    $("detailVersion").textContent = version;
+    $("detailLanguage").textContent = language;
+    $("detailGenre").textContent = genre;
+    $("detailDescription").textContent = description;
+    $("detailDownload").href = base.download;
+    $("detailOfficial").href = base.official;
+    $("detailBottomDownload").href = base.download;
+    $("detailBottomName").textContent = "تحميل " + name;
+    $("detailBottomSize").textContent = size;
+
+    const tags = [...new Set([...(base.tags || []), "مجانية"])].slice(0,6);
+    $("detailTags").innerHTML = tags.map(tag =>
+      `<span class="details-tag ${tag.includes("مجانية") ? "free" : ""}">${escapeText(tag)}</span>`
+    ).join("");
+
+    $("detailFeatures").innerHTML = features.map(x => `<li>${escapeText(x)}</li>`).join("");
+    $("detailMinimum").innerHTML = minimum.map(x => `<li>${escapeText(x)}</li>`).join("");
+    $("detailRecommended").innerHTML = recommended.map(x => `<li>${escapeText(x)}</li>`).join("");
+
+    overlay.classList.add("show");
+    overlay.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+    history.replaceState(null, "", "#" + encodeURIComponent(name));
+    overlay.scrollTop = 0;
+  }
+
+  function closeDetails(){
+    overlay.classList.remove("show");
+    overlay.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+    if(location.hash) history.replaceState(null, "", location.pathname + location.search);
+  }
+
+  document.addEventListener("click", function(e){
+    const btn = e.target.closest(".details-btn");
+    if(btn){
+      const card = btn.closest(".game-card");
+      if(card) openDetails(card.dataset.game || card.querySelector("h3")?.textContent.trim());
+    }
+  });
+
+  closeBtn?.addEventListener("click", closeDetails);
+
+  overlay.addEventListener("click", function(e){
+    if(e.target === overlay) closeDetails();
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && overlay.classList.contains("show")) closeDetails();
+  });
+
+  // Open a game directly from a hash when the page is loaded.
+  function openFromHash(){
+    const raw = location.hash.replace(/^#/, "");
+    if(!raw) return;
+    let name = raw;
+    try { name = decodeURIComponent(raw); } catch(e){}
+    const card = findCard(name);
+    if(card) setTimeout(() => openDetails(name), 50);
+  }
+
+  window.addEventListener("hashchange", openFromHash);
+  openFromHash();
+})();
+</script>
 
 </body>
 
