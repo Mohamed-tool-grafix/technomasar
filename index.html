@@ -1,25 +1,52 @@
 <!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
-<html dir="rtl" lang="ar">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>تكنومسار | ألعاب مجانية للكمبيوتر والموبايل</title>
-<meta content="تكنومسار موقع عربي لاكتشاف ألعاب مجانية للكمبيوتر والموبايل، مع ألعاب مفتوحة المصدر وروابط التحميل الرسمية." name="description"/>
-<meta content="index, follow" name="robots"/>
-<meta content="تكنومسار" name="author"/>
-<meta content="ar" name="language"/>
-<link href="https://mohamed-tool-grafix.github.io/technomasar/" rel="canonical"/>
-<meta content="index, follow" name="googlebot"/>
-<meta content="website" property="og:type"/>
-<meta content="تكنومسار | ألعاب مجانية للكمبيوتر والموبايل" property="og:title"/>
-<meta content="اكتشف ألعابًا مجانية ومفتوحة المصدر للكمبيوتر والموبايل مع روابط التحميل الرسمية." property="og:description"/>
-<meta content="https://mohamed-tool-grafix.github.io/technomasar/" property="og:url"/>
-<meta content="تكنومسار" property="og:site_name"/>
-<meta content="ar_EG" property="og:locale"/>
-<meta content="summary" name="twitter:card"/>
-<meta content="تكنومسار | ألعاب مجانية للكمبيوتر والموبايل" name="twitter:title"/>
-<meta content="اكتشف ألعابًا مجانية ومفتوحة المصدر للكمبيوتر والموبايل مع روابط التحميل الرسمية." name="twitter:description"/>
+
+<meta name="description"
+content="تكنومسار موقع عربي لاكتشاف ألعاب مجانية للكمبيوتر والموبايل، مع ألعاب مفتوحة المصدر وروابط التحميل الرسمية.">
+
+<meta name="robots" content="index, follow">
+
+<meta name="author" content="تكنومسار">
+
+<meta name="language" content="ar">
+
+<link rel="canonical"
+href="https://mohamed-tool-grafix.github.io/technomasar/">
+
+<meta name="googlebot" content="index, follow">
+
+<meta property="og:type" content="website">
+
+<meta property="og:title"
+content="تكنومسار | ألعاب مجانية للكمبيوتر والموبايل">
+
+<meta property="og:description"
+content="اكتشف ألعابًا مجانية ومفتوحة المصدر للكمبيوتر والموبايل مع روابط التحميل الرسمية.">
+
+<meta property="og:url"
+content="https://mohamed-tool-grafix.github.io/technomasar/">
+
+<meta property="og:site_name"
+content="تكنومسار">
+
+<meta property="og:locale" content="ar_EG">
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:title"
+content="تكنومسار | ألعاب مجانية للكمبيوتر والموبايل">
+
+<meta name="twitter:description"
+content="اكتشف ألعابًا مجانية ومفتوحة المصدر للكمبيوتر والموبايل مع روابط التحميل الرسمية.">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,6 +57,7 @@
   "inLanguage": "ar"
 }
 </script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -45,6 +73,7 @@
   }
 }
 </script>
+
 <style>
 
 *{
@@ -501,1366 +530,2078 @@ footer strong{
 }
 
 </style>
-<style id="tm-search-css">.tm-search{width:min(1150px,92%);margin:25px auto 0;padding:18px;background:#0d1528;border:1px solid #263653;border-radius:18px}.tm-search-title{font-size:20px;font-weight:900;color:#61e7ff;margin-bottom:10px}.tm-search-row{display:flex;gap:8px}.tm-search input{flex:1;padding:13px 15px;border-radius:10px;border:1px solid #263653;background:#070b18;color:#fff;font-size:16px;outline:none}.tm-search button{border:0;border-radius:10px;padding:0 18px;background:#18c5eb;color:#03111b;font-weight:900}.tm-search #tmCount{margin-top:8px;color:#94a3bd;font-size:13px}</style>
+
+
+<style id="game-details-style">
+/* ===== صفحة تفاصيل اللعبة ===== */
+
+.game-card{
+  position:relative;
+}
+
+.details-btn{
+  width:100%;
+  margin-top:10px;
+  border:1px solid #245070;
+  background:#101d31;
+  color:#8feaff;
+  padding:11px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:900;
+  font-size:14px;
+  transition:.2s;
+}
+.details-btn:hover{
+  background:#15314b;
+  border-color:#18c5eb;
+  transform:translateY(-1px);
+}
+
+.game-details-overlay{
+  position:fixed;
+  inset:0;
+  z-index:100000;
+  background:#050b14;
+  overflow-y:auto;
+  display:none;
+}
+.game-details-overlay.show{
+  display:block;
+}
+
+.game-details-page{
+  min-height:100vh;
+  color:#f8fafc;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(24,197,235,.12),transparent 28%),
+    radial-gradient(circle at 85% 15%,rgba(70,95,255,.12),transparent 30%),
+    #06101c;
+}
+
+.details-topbar{
+  position:sticky;
+  top:0;
+  z-index:3;
+  min-height:62px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:0 4%;
+  background:rgba(5,12,22,.96);
+  border-bottom:1px solid #203650;
+  backdrop-filter:blur(14px);
+}
+
+.details-breadcrumb{
+  color:#8ea2b8;
+  font-size:14px;
+}
+.details-breadcrumb span{
+  color:#61e7ff;
+}
+
+.close-details{
+  width:42px;
+  height:42px;
+  border:1px solid #29445f;
+  border-radius:10px;
+  background:#0d1b2c;
+  color:#fff;
+  cursor:pointer;
+  font-size:20px;
+}
+.close-details:hover{
+  background:#18c5eb;
+  color:#00131c;
+}
+
+.details-main{
+  width:min(1200px,94%);
+  margin:0 auto;
+  padding:35px 0 110px;
+}
+
+.details-hero{
+  display:grid;
+  grid-template-columns:minmax(280px,38%) 1fr;
+  gap:30px;
+  align-items:stretch;
+}
+
+.details-cover{
+  min-height:300px;
+  border:1px solid #2a4761;
+  border-radius:18px;
+  background:
+    linear-gradient(145deg,rgba(24,197,235,.2),rgba(49,46,129,.3)),
+    #0b1929;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:120px;
+  box-shadow:0 20px 55px rgba(0,0,0,.35);
+  overflow:hidden;
+}
+.details-cover span{
+  filter:drop-shadow(0 10px 15px rgba(0,0,0,.4));
+}
+
+.details-summary{
+  padding:8px 0;
+}
+.details-summary h1{
+  margin:0 0 12px;
+  font-size:clamp(30px,5vw,48px);
+  color:#fff;
+}
+
+.details-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:20px;
+}
+.details-tag{
+  display:inline-flex;
+  padding:6px 11px;
+  border-radius:7px;
+  background:#10283c;
+  border:1px solid #274b67;
+  color:#aeefff;
+  font-size:13px;
+  font-weight:800;
+}
+.details-tag.free{
+  background:#0d3c2c;
+  border-color:#16865f;
+  color:#6df0bb;
+}
+
+.details-meta{
+  display:grid;
+  gap:11px;
+  color:#b7c5d4;
+  font-size:16px;
+  margin:20px 0 25px;
+}
+.details-meta b{
+  color:#e7eef5;
+}
+.details-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.details-actions a{
+  flex:1;
+  min-width:190px;
+  text-align:center;
+  padding:13px 18px;
+  border-radius:9px;
+  font-weight:900;
+}
+.detail-download{
+  background:#10a957;
+  color:white;
+  border:1px solid #22d477;
+}
+.detail-download:hover{
+  background:#0d8c48;
+}
+.detail-official{
+  background:#0b1a2c;
+  color:#8feaff;
+  border:1px solid #0879c9;
+}
+
+.details-grid{
+  display:grid;
+  grid-template-columns:310px 1fr;
+  gap:18px;
+  margin-top:28px;
+}
+
+.requirements-box,
+.details-box{
+  border:1px solid #203b54;
+  background:linear-gradient(145deg,#081726,#0a1b2d);
+  border-radius:14px;
+  padding:22px;
+}
+.requirements-box h2,
+.details-box h2{
+  margin:0 0 16px;
+  color:#fff;
+  font-size:22px;
+}
+.requirements-box h3{
+  color:#ffbf3d;
+  margin:16px 0 8px;
+  font-size:16px;
+}
+.requirements-box ul{
+  margin:0;
+  padding-right:20px;
+  color:#b8c6d5;
+}
+.requirements-box li{
+  margin:7px 0;
+}
+.recommended-title{
+  border-top:1px solid #203b54;
+  padding-top:16px;
+}
+
+.details-content{
+  display:grid;
+  gap:18px;
+}
+.details-box p{
+  margin:0;
+  color:#bac7d4;
+  line-height:2;
+}
+.features-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+.features-list li{
+  color:#c7d4df;
+}
+.features-list li::before{
+  content:"✓";
+  display:inline-flex;
+  width:22px;
+  height:22px;
+  align-items:center;
+  justify-content:center;
+  margin-left:8px;
+  border-radius:50%;
+  background:#0d4b35;
+  color:#55efac;
+  font-weight:900;
+}
+
+.rating-preview-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.detail-rating-stars{
+  color:#ffc400;
+  letter-spacing:3px;
+  font-size:25px;
+  margin-top:5px;
+}
+.detail-rating-number{
+  font-size:38px;
+  font-weight:900;
+  color:#fff;
+}
+
+.details-bottom-download{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:5;
+  padding:10px 3%;
+  background:rgba(4,11,19,.92);
+  border-top:1px solid #203b54;
+  backdrop-filter:blur(12px);
+}
+.details-bottom-download a{
+  max-width:1140px;
+  margin:auto;
+  min-height:58px;
+  display:grid;
+  grid-template-columns:55px 1fr 170px;
+  align-items:center;
+  gap:10px;
+  padding:9px 18px;
+  border-radius:9px;
+  background:#0ca54f;
+  color:#fff;
+  border:1px solid #2bd879;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+.details-bottom-download a:hover{
+  background:#0d8e47;
+}
+.details-bottom-download span{
+  font-size:30px;
+  text-align:center;
+}
+.details-bottom-download strong{
+  font-size:18px;
+}
+.details-bottom-download small{
+  text-align:left;
+  color:#d9ffe9;
+}
+
+@media(max-width:800px){
+  .details-hero,
+  .details-grid{
+    grid-template-columns:1fr;
+  }
+  .details-cover{
+    min-height:220px;
+    font-size:90px;
+  }
+  .details-summary h1{
+    font-size:31px;
+  }
+  .details-bottom-download a{
+    grid-template-columns:40px 1fr;
+  }
+  .details-bottom-download small{
+    display:none;
+  }
+}
+@media(max-width:520px){
+  .details-main{
+    width:94%;
+    padding-top:20px;
+  }
+  .details-topbar{
+    padding:0 3%;
+  }
+  .details-breadcrumb{
+    font-size:12px;
+  }
+  .details-actions a{
+    min-width:100%;
+  }
+  .rating-preview-box{
+    align-items:flex-start;
+  }
+}
+</style>
+
+
+<style id="tm-search-style">
+.tm-game-search{
+  width:min(1100px,94%);
+  margin:22px auto 10px;
+  padding:18px;
+  background:#fff;
+  border:1px solid #dfe7ed;
+  border-radius:12px;
+  box-shadow:0 4px 16px rgba(20,45,65,.08);
+}
+.tm-search-title{
+  font-size:20px;
+  font-weight:900;
+  color:#075c99;
+  margin-bottom:10px;
+}
+.tm-search-row{
+  display:flex;
+  gap:9px;
+}
+#tmSearchInput{
+  flex:1;
+  min-width:0;
+  box-sizing:border-box;
+  border:1px solid #cfdbe4;
+  border-radius:8px;
+  padding:13px 15px;
+  font-size:16px;
+  outline:none;
+  direction:rtl;
+  background:#fafdff;
+}
+#tmSearchInput:focus{
+  border-color:#0879c9;
+  box-shadow:0 0 0 3px rgba(8,121,201,.10);
+}
+#tmSearchClear{
+  border:0;
+  border-radius:8px;
+  padding:0 18px;
+  background:#0879c9;
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+#tmSearchClear:hover{background:#075c99}
+.tm-search-count{
+  margin-top:9px;
+  color:#6b7785;
+  font-size:13px;
+}
+.tm-no-results{
+  display:none;
+  text-align:center;
+  padding:35px 15px;
+  color:#6b7785;
+  font-size:17px;
+  grid-column:1/-1;
+}
+@media(max-width:520px){
+  .tm-search-row{gap:6px}
+  #tmSearchClear{padding:0 13px}
+  .tm-game-search{padding:14px}
+}
+</style>
+
+
+<style id="tm-50-games-style">
+.tm-adventure-label{
+  width:min(1100px,94%);
+  margin:18px auto 12px;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#071b2b,#0b3550);
+  border:1px solid #1e597d;
+  color:#fff;
+  box-shadow:0 6px 18px rgba(0,0,0,.10);
+}
+.tm-adventure-label>span{font-size:34px}
+.tm-adventure-label strong{display:block;font-size:19px}
+.tm-adventure-label small{display:block;color:#9eddf1;margin-top:3px}
+</style>
+
 </head>
+
 <body>
+
 <header>
+
 <div class="container header-content">
-<a class="logo" href="index.html">
+
+<a href="index.html" class="logo">
 🎮 تكنومسار
 </a>
+
 <nav class="nav">
+
 <a href="index.html">🏠 الرئيسية</a>
+
 <a href="#computer">🖥️ الكمبيوتر</a>
-<a href="#mobile">📱 المو<section class="section" id="computer">
+
+<a href="#mobile">📱 الموبايل</a>
+
+<a href="#youtube">🎬 الفيديو</a>
+
+<a href="#rating">⭐ التقييم</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
 <div class="container">
+
+<h1>
+🎮 ألعاب <span>تكنومسار</span>
+</h1>
+
+<p>
+اكتشف مجموعة من الألعاب المجانية والمفتوحة المصدر
+للكمبيوتر والموبايل.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#computer" class="hero-button">
+🖥️ ألعاب الكمبيوتر
+</a>
+
+<a href="#mobile" class="hero-button">
+📱 ألعاب الموبايل
+</a>
+
+<a href="#youtube" class="hero-button">
+🎬 فيديوهات تكنومسار
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<main>
+
+
+<!-- ================= ألعاب الكمبيوتر ================= -->
+
+
+<div id="tmGameSearch" class="tm-game-search">
+  <div class="tm-search-title">🔎 ابحث عن لعبة</div>
+  <div class="tm-search-row">
+    <input id="tmSearchInput" type="search" placeholder="اكتب اسم اللعبة..." autocomplete="off">
+    <button id="tmSearchClear" type="button">مسح</button>
+  </div>
+  <div id="tmSearchCount" class="tm-search-count"></div>
+</div>
+
+<section class="section" id="computer">
+
+<div class="container">
+
 <div class="section-head">
+
 <span class="badge">
 🖥️ قسم الكمبيوتر
 </span>
+
 <h2 class="section-title">
 🎮 ألعاب الكمبيوتر
 </h2>
+
 <p class="section-description">
 ألعاب مجانية ومفتوحة المصدر للكمبيوتر.
 </p>
+
+</div>
+
+
+
+<div class="tm-adventure-label">
+  <span>🧭</span>
+  <div>
+    <strong>50 لعبة مغامرات جديدة</strong>
+    <small>استكشاف • منصات • ألغاز • بقاء • عوالم مفتوحة</small>
+  </div>
 </div>
 <div class="games">
-<article class="game-card">
+
+
+<article class="game-card" data-game="SuperTuxKart">
 <div class="game-icon">🏎️
-<article class="game-card">
-<div class="game-icon">🌲</div>
-<h3>Veloren</h3>
-<p class="description">RPG ثلاثية الأبعاد في عالم مفتوح مع استكشاف ومهام.</p>
-<div class="tags"><span>🧙 RPG</span><span>🌍 عالم مفتوح</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://veloren.net/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://veloren.net/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+<article class="game-card" data-game="Veloren">
+  <div class="game-icon">🌲
+
+<article class="game-card" data-game="Fish Fillets - Next Generation">
+  <div class="game-icon">🐟
+
+<article class="game-card" data-game="Xye">
+  <div class="game-icon">💎</div>
+  <h3>Xye</h3>
+  <p class="description">مغامرة ألغاز تجمع بين جمع الجواهر وفتح الطرق والتعامل مع العقبات داخل مراحل متنوعة.</p>
+  <div class="tags">
+    <span>💎 مغامرة</span>
+    <span>🧩 ألغاز</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/Xye" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/Xye" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🏰</div>
-<h3>Stendhal</h3>
-<p class="description">RPG جماعية مع مدن وكهوف ومهام واستكشاف.</p>
-<div class="tags"><span>🧙 RPG</span><span>🌍 استكشاف</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://stendhalgame.org/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://stendhalgame.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+</div>
+  <h3>Fish Fillets - Next Generation</h3>
+  <p class="description">ألغاز ومغامرة خفيفة تتحكم فيها بشخصيتين من الأسماك لحل المراحل.</p>
+  <div class="tags">
+    <span>🐟 مغامرة</span>
+    <span>🧩 ألغاز</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="http://fillets.sourceforge.net" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="http://fillets.sourceforge.net" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🌎</div>
-<h3>The Mana World</h3>
-<p class="description">عالم RPG مجاني متعدد اللاعبين مع مهام واستكشاف.</p>
-<div class="tags"><span>🧙 RPG</span><span>🌍 عالم مفتوح</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://themanaworld.org/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://themanaworld.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Fish Fillets Remake">
+  <div class="game-icon">🐟</div>
+  <h3>Fish Fillets Remake</h3>
+  <p class="description">نسخة حديثة مجانية من لعبة الألغاز الكلاسيكية مع مراحل وتحديات جديدة.</p>
+  <div class="tags">
+    <span>🐟 ألغاز</span>
+    <span>🧩 مغامرة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://glitchapp.codeberg.page/#about" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://glitchapp.codeberg.page/#about" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🏕️</div>
-<h3>Into the Wild</h3>
-<p class="description">مغامرة بقاء واستكشاف في البرية مع جمع وصناعة وبناء.</p>
-<div class="tags"><span>🏕️ بقاء</span><span>🌲 استكشاف</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://intothewild.dev/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://intothewild.dev/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Blip &#x27;n Blup">
+  <div class="game-icon">🐟</div>
+  <h3>Blip &#x27;n Blup</h3>
+  <p class="description">مغامرة منصات ثلاثية الأبعاد تحت الماء مع طور قصة ومراحل متعددة.</p>
+  <div class="tags">
+    <span>🐠 منصات 3D</span>
+    <span>🌊 مغامرة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://luckey.games/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://luckey.games/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🧩</div>
-<h3>Session Seven</h3>
-<p class="description">مغامرة ألغاز بنظام point-and-click وقصة ومراحل.</p>
-<div class="tags"><span>🧩 ألغاز</span><span>📖 قصة</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.sessionseven.com/en" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://www.sessionseven.com/en" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Blackvoxel">
+  <div class="game-icon">⛏️</div>
+  <h3>Blackvoxel</h3>
+  <p class="description">عالم sandbox ثلاثي الأبعاد للبناء والاستكشاف والتجربة.</p>
+  <div class="tags">
+    <span>⛏️ Sandbox</span>
+    <span>🌍 استكشاف</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://blackvoxel.com/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://blackvoxel.com/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">📜</div>
-<h3>Open Adventure</h3>
-<p class="description">مغامرة استكشاف نصية كلاسيكية تعتمد على التفكير.</p>
-<div class="tags"><span>📜 قصة</span><span>🧩 استكشاف</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="http://www.catb.org/~esr/open-adventure/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="http://www.catb.org/~esr/open-adventure/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Marble Marcher">
+  <div class="game-icon">🪐</div>
+  <h3>Marble Marcher</h3>
+  <p class="description">تجربة استكشاف ثلاثية الأبعاد تعتمد على التضاريس والفيزياء ومسارات الحركة.</p>
+  <div class="tags">
+    <span>🪐 استكشاف</span>
+    <span>⚙️ فيزياء</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://marblemarcher.github.io/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://marblemarcher.github.io/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🧱</div>
-<h3>Mineclonia</h3>
-<p class="description">عالم بقاء وبناء واستكشاف مفتوح.</p>
-<div class="tags"><span>⛏️ بناء</span><span>🌍 استكشاف</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://content.luanti.org/packages/ryvnf/mineclonia/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://content.luanti.org/packages/ryvnf/mineclonia/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Kiki the Nanobot">
+  <div class="game-icon">🤖</div>
+  <h3>Kiki the Nanobot</h3>
+  <p class="description">مغامرة ألغاز صغيرة داخل مستويات تعتمد على الحركة والتفكير.</p>
+  <div class="tags">
+    <span>🤖 مغامرة</span>
+    <span>🧩 ألغاز</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/Kiki_the_Nanobot" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/Kiki_the_Nanobot" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🏗️</div>
-<h3>Minetest Game</h3>
-<p class="description">عالم مفتوح للبناء والاستكشاف وجمع الموارد.</p>
-<div class="tags"><span>⛏️ بناء</span><span>🌍 استكشاف</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.luanti.org/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://www.luanti.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Hex-a-hop">
+  <div class="game-icon">🔷</div>
+  <h3>Hex-a-hop</h3>
+  <p class="description">ألغاز مراحل تعتمد على الحركة والتخطيط للوصول إلى نهاية كل مستوى.</p>
+  <div class="tags">
+    <span>🔷 ألغاز</span>
+    <span>🧩 تحديات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/Hex-a-hop" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/Hex-a-hop" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🪵</div>
-<h3>Craft</h3>
-<p class="description">Sandbox خفيفة لاستكشاف عالم مكعبات وبناء الأشياء.</p>
-<div class="tags"><span>⛏️ Sandbox</span><span>🌍 استكشاف</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.michaelfogleman.com/projects/craft/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://www.michaelfogleman.com/projects/craft/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="LevelHead">
+  <div class="game-icon">🧠</div>
+  <h3>LevelHead</h3>
+  <p class="description">مغامرة منصات وألغاز تعتمد على بناء واستكشاف مراحل مختلفة.</p>
+  <div class="tags">
+    <span>🧠 ألغاز</span>
+    <span>🏃 منصات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/LevelHead" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/LevelHead" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🏃</div>
-<h3>The Secret Chronicles of Dr. M.</h3>
-<p class="description">مغامرة منصات ثنائية الأبعاد بمراحل وعقبات.</p>
-<div class="tags"><span>🏃 منصات</span><span>🗺️ مغامرة</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://secretchronicles.org/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://secretchronicles.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Lix">
+  <div class="game-icon">🐇</div>
+  <h3>Lix</h3>
+  <p class="description">مراحل وألغاز تعتمد على توجيه الشخصيات عبر العقبات للوصول إلى الهدف.</p>
+  <div class="tags">
+    <span>🐇 ألغاز</span>
+    <span>🧩 تحديات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/Lix" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/Lix" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🧑‍🚀</div>
-<h3>ReTux</h3>
-<p class="description">مغامرة منصات مجانية بعشرات المراحل والعوالم.</p>
-<div class="tags"><span>🏃 منصات</span><span>🗺️ مغامرة</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://retux-game.github.io/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://retux-game.github.io/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="FreeMazes3D">
+  <div class="game-icon">🗺️</div>
+  <h3>FreeMazes3D</h3>
+  <p class="description">استكشاف متاهات ثلاثية الأبعاد والبحث عن الطريق الصحيح للخروج.</p>
+  <div class="tags">
+    <span>🗺️ متاهات</span>
+    <span>🌍 استكشاف</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/FreeMazes3D" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/FreeMazes3D" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🚪</div>
-<h3>Gilbert and the doors</h3>
-<p class="description">منصات ومغامرة بمستويات متعددة وتحديات متدرجة.</p>
-<div class="tags"><span>🏃 منصات</span><span>🧩 تحديات</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://sites.google.com/view/gilbert-and-the-doors" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://sites.google.com/view/gilbert-and-the-doors" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="CuteMaze">
+  <div class="game-icon">🧩</div>
+  <h3>CuteMaze</h3>
+  <p class="description">متاهات وألغاز خفيفة مع مراحل متنوعة مناسبة للعب السريع.</p>
+  <div class="tags">
+    <span>🧩 ألغاز</span>
+    <span>🗺️ متاهات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/CuteMaze" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/CuteMaze" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🌑</div>
-<h3>Me and My Shadow</h3>
-<p class="description">منصات وألغاز تعتمد على التعاون مع ظلك.</p>
-<div class="tags"><span>🧩 ألغاز</span><span>🏃 منصات</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="http://meandmyshadow.sourceforge.net/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="http://meandmyshadow.sourceforge.net/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="CavePacker">
+  <div class="game-icon">📦</div>
+  <h3>CavePacker</h3>
+  <p class="description">ألغاز ومراحل تعتمد على دفع العناصر وترتيبها للوصول إلى الحل.</p>
+  <div class="tags">
+    <span>📦 ألغاز</span>
+    <span>🧩 تحديات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/CavePacker" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/CavePacker" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🏰</div>
-<h3>L’Abbaye des Morts</h3>
-<p class="description">مغامرة منصات كلاسيكية تعتمد على الاستكشاف.</p>
-<div class="tags"><span>🏃 منصات</span><span>🗺️ مغامرة</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://libregamewiki.org/L%27Abbaye_des_Morts" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://libregamewiki.org/L%27Abbaye_des_Morts" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+</div>
+  <h3>Veloren</h3>
+  <p class="description">مغامرة RPG ثلاثية الأبعاد في عالم مفتوح مع استكشاف ومهام وتطوير للشخصية.</p>
+  <div class="tags">
+    <span>🌍 عالم مفتوح</span>
+    <span>🧙 RPG</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://veloren.net/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://veloren.net/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🍄</div>
-<h3>Secret Maryo Chronicles</h3>
-<p class="description">منصات ثنائية الأبعاد بمراحل وأسرار واستكشاف.</p>
-<div class="tags"><span>🏃 منصات</span><span>🗺️ مغامرة</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="http://www.secretmaryo.org/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="http://www.secretmaryo.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Stendhal">
+  <div class="game-icon">🏰</div>
+  <h3>Stendhal</h3>
+  <p class="description">مغامرة RPG جماعية بعالم واسع ومدن وكهوف ومهام واستكشاف.</p>
+  <div class="tags">
+    <span>🧙 RPG</span>
+    <span>🌍 استكشاف</span>
+    <span>💾 مجانية</span>
+    <span>🌐 Multiplayer</span>
+  </div>
+  <a class="download" href="https://stendhalgame.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://stendhalgame.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🌀</div>
-<h3>Infinite Tux</h3>
-<p class="description">مغامرة منصات بمراحل تتغير في كل تجربة.</p>
-<div class="tags"><span>🏃 منصات</span><span>🎲 مراحل متغيرة</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://libregamewiki.org/Infinite_Tux" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://libregamewiki.org/Infinite_Tux" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="The Mana World">
+  <div class="game-icon">🌎</div>
+  <h3>The Mana World</h3>
+  <p class="description">عالم RPG مجاني متعدد اللاعبين مع استكشاف ومهام وشخصيات كثيرة.</p>
+  <div class="tags">
+    <span>🧙 RPG</span>
+    <span>🌍 عالم مفتوح</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://themanaworld.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://themanaworld.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🐔</div>
-<h3>Pekka Kana 2</h3>
-<p class="description">مغامرة منصات مرحة بمراحل وأعداء.</p>
-<div class="tags"><span>🐔 منصات</span><span>🗺️ مغامرة</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://pistegamez.net/game_pk2.html" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://pistegamez.net/game_pk2.html" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Into the Wild">
+  <div class="game-icon">🏕️</div>
+  <h3>Into the Wild</h3>
+  <p class="description">مغامرة بقاء واستكشاف في برية تتغير مع كل تجربة، مع جمع وصناعة وبناء.</p>
+  <div class="tags">
+    <span>🏕️ بقاء</span>
+    <span>🌲 استكشاف</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://intothewild.dev/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://intothewild.dev/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🎱</div>
-<h3>Neverball</h3>
-<p class="description">مراحل ثلاثية الأبعاد تعتمد على التوازن والوصول للهدف.</p>
-<div class="tags"><span>🎱 أركيد</span><span>🧩 تحديات</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="http://neverball.org/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="http://neverball.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="The Veil of Aether">
+  <div class="game-icon">✨</div>
+  <h3>The Veil of Aether</h3>
+  <p class="description">مغامرة RPG خيالية مجانية ومفتوحة المصدر بعالم وعناصر وقصص ومهام.</p>
+  <div class="tags">
+    <span>🧙 RPG</span>
+    <span>✨ فانتازيا</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://veil-of-aether.github.io/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://veil-of-aether.github.io/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🐧</div>
-<h3>Pingus</h3>
-<p class="description">ألغاز ومراحل لإنقاذ البطاريق وتجاوز العقبات.</p>
-<div class="tags"><span>🐧 ألغاز</span><span>🗺️ مغامرة</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://pingus.seul.org/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://pingus.seul.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Session Seven">
+  <div class="game-icon">🧩</div>
+  <h3>Session Seven</h3>
+  <p class="description">مغامرة point-and-click بقصة وألغاز ومراحل قصيرة.</p>
+  <div class="tags">
+    <span>🧩 ألغاز</span>
+    <span>📖 قصة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://www.sessionseven.com/en" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://www.sessionseven.com/en" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🧊</div>
-<h3>Frozen Bubble</h3>
-<p class="description">أركيد وألغاز سريعة بمراحل كثيرة.</p>
-<div class="tags"><span>🧊 ألغاز</span><span>🎯 أركيد</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="http://www.frozen-bubble.org/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="http://www.frozen-bubble.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Open Adventure">
+  <div class="game-icon">📜</div>
+  <h3>Open Adventure</h3>
+  <p class="description">مغامرة تفاعلية كلاسيكية تعتمد على الاستكشاف وحل الألغاز بالنص.</p>
+  <div class="tags">
+    <span>📜 قصة</span>
+    <span>🧩 ألغاز</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Linux</span>
+  </div>
+  <a class="download" href="http://www.catb.org/~esr/open-adventure/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="http://www.catb.org/~esr/open-adventure/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🎯</div>
-<h3>Enigma</h3>
-<p class="description">ألغاز ومراحل تعتمد على التفكير والفيزياء.</p>
-<div class="tags"><span>🧩 ألغاز</span><span>⚙️ فيزياء</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="http://www.nongnu.org/enigma/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="http://www.nongnu.org/enigma/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Adventure (Colossal Cave)">
+  <div class="game-icon">🏛️</div>
+  <h3>Adventure (Colossal Cave)</h3>
+  <p class="description">واحدة من أشهر مغامرات الاستكشاف النصية الكلاسيكية.</p>
+  <div class="tags">
+    <span>📜 مغامرة نصية</span>
+    <span>🧩 استكشاف</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ PC</span>
+  </div>
+  <a class="download" href="http://rickadams.org/adventure/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="http://rickadams.org/adventure/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
-<article class="game-card">
-<div class="game-icon">🏃</div>
-<h3>DDNet</h3>
-<p class="description">منصات جماعية تعتمد على الحركة والمهارة والتعاون.</p>
-<div class="tags"><span>🏃 منصات</span><span>🌐 Multiplayer</span><span>🖥️ Windows</span><span>💾 مجانية</span></div>
-<a class="download" href="https://ddnet.org/" rel="noopener noreferrer" target="_blank">⬇️ صفحة التحميل</a>
-<a class="official" href="https://ddnet.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
+
+
+<article class="game-card" data-game="Zork">
+  <div class="game-icon">🗺️</div>
+  <h3>Zork</h3>
+  <p class="description">مغامرة نصية كلاسيكية تعتمد على الاستكشاف والتفكير وحل الألغاز.</p>
+  <div class="tags">
+    <span>📜 مغامرة نصية</span>
+    <span>🧩 ألغاز</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ PC</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/Zork" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/Zork" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
 </article>
+
+
+<article class="game-card" data-game="Mineclonia">
+  <div class="game-icon">🧱</div>
+  <h3>Mineclonia</h3>
+  <p class="description">عالم بقاء وبناء واستكشاف مفتوح داخل عوالم مولدة عشوائيًا.</p>
+  <div class="tags">
+    <span>⛏️ بناء</span>
+    <span>🌍 استكشاف</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://content.luanti.org/packages/ryvnf/mineclonia/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://www.luanti.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="VoxeLibre">
+  <div class="game-icon">🌳</div>
+  <h3>VoxeLibre</h3>
+  <p class="description">مغامرة بقاء وبناء واستكشاف داخل عالم مكعبات مفتوح.</p>
+  <div class="tags">
+    <span>🌳 بقاء</span>
+    <span>⛏️ بناء</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://content.minetest.net/packages/Wuzzy/mineclone2/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://www.luanti.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Craft">
+  <div class="game-icon">🪵</div>
+  <h3>Craft</h3>
+  <p class="description">لعبة sandbox خفيفة لاستكشاف عالم مكعبات وبناء الأشياء.</p>
+  <div class="tags">
+    <span>⛏️ Sandbox</span>
+    <span>🌍 استكشاف</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://www.michaelfogleman.com/projects/craft/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://www.michaelfogleman.com/projects/craft/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Novora">
+  <div class="game-icon">🌍</div>
+  <h3>Novora</h3>
+  <p class="description">عالم مفتوح ثلاثي الأبعاد يركز على الاستكشاف والبناء والتعديل.</p>
+  <div class="tags">
+    <span>🌍 عالم مفتوح</span>
+    <span>🏗️ Sandbox</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://codeberg.org/Hacknique/Novora" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://codeberg.org/Hacknique/Novora" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="The Secret Chronicles of Dr. M.">
+  <div class="game-icon">🏃</div>
+  <h3>The Secret Chronicles of Dr. M.</h3>
+  <p class="description">مغامرة منصات ثنائية الأبعاد بمراحل متنوعة واستكشاف وعقبات.</p>
+  <div class="tags">
+    <span>🏃 منصات</span>
+    <span>🗺️ مغامرة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://secretchronicles.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://secretchronicles.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="ReTux">
+  <div class="game-icon">🧑‍🚀</div>
+  <h3>ReTux</h3>
+  <p class="description">مغامرة منصات مجانية تحتوي على عشرات المراحل وعوالم مختلفة.</p>
+  <div class="tags">
+    <span>🏃 منصات</span>
+    <span>🗺️ مغامرة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://retux-game.github.io/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://retux-game.github.io/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Gilbert and the doors">
+  <div class="game-icon">🚪</div>
+  <h3>Gilbert and the doors</h3>
+  <p class="description">لعبة منصات ثنائية الأبعاد فيها 22 مستوى واستكشاف وتحديات متدرجة.</p>
+  <div class="tags">
+    <span>🏃 منصات</span>
+    <span>🧩 تحديات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://sites.google.com/view/gilbert-and-the-doors" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://sites.google.com/view/gilbert-and-the-doors" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Me and My Shadow">
+  <div class="game-icon">🌑</div>
+  <h3>Me and My Shadow</h3>
+  <p class="description">منصات وألغاز تعتمد على تسجيل حركتك والتعاون مع ظلك للوصول للنهاية.</p>
+  <div class="tags">
+    <span>🧩 ألغاز</span>
+    <span>🏃 منصات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="http://meandmyshadow.sourceforge.net/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="http://meandmyshadow.sourceforge.net/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="L&#x27;Abbaye des Morts">
+  <div class="game-icon">🏰</div>
+  <h3>L&#x27;Abbaye des Morts</h3>
+  <p class="description">مغامرة منصات كلاسيكية تعتمد على الاستكشاف والوصول إلى نهاية المراحل.</p>
+  <div class="tags">
+    <span>🏃 منصات</span>
+    <span>🗺️ مغامرة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/L%27Abbaye_des_Morts" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/L%27Abbaye_des_Morts" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Infinite Tux">
+  <div class="game-icon">🧭</div>
+  <h3>Infinite Tux</h3>
+  <p class="description">مغامرة منصات بمراحل يتم توليدها بشكل مختلف في كل مرة.</p>
+  <div class="tags">
+    <span>🏃 منصات</span>
+    <span>🎲 مراحل متغيرة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/Infinite_Tux" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/Infinite_Tux" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Alex vs Bus: The Race">
+  <div class="game-icon">🏃</div>
+  <h3>Alex vs Bus: The Race</h3>
+  <p class="description">مغامرة منصات سريعة مع 13 مستوى وثلاث درجات صعوبة.</p>
+  <div class="tags">
+    <span>🏃 منصات</span>
+    <span>⚡ سرعة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://libregamewiki.org/Alex_vs_Bus:_The_Race" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://libregamewiki.org/Alex_vs_Bus:_The_Race" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Pekka Kana 2">
+  <div class="game-icon">🐔</div>
+  <h3>Pekka Kana 2</h3>
+  <p class="description">مغامرة منصات مرحة بمراحل وشخصيات وعناصر استكشاف.</p>
+  <div class="tags">
+    <span>🐔 منصات</span>
+    <span>🗺️ مغامرة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://pistegamez.net/game_pk2.html" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://pistegamez.net/game_pk2.html" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Tux!">
+  <div class="game-icon">🧙</div>
+  <h3>Tux!</h3>
+  <p class="description">مغامرة منصات ثلاثية الأبعاد بعوالم ومراحل للاستكشاف.</p>
+  <div class="tags">
+    <span>🏃 منصات 3D</span>
+    <span>🌍 استكشاف</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://luckey.games/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://luckey.games/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="X-Moto">
+  <div class="game-icon">🌀</div>
+  <h3>X-Moto</h3>
+  <p class="description">لعبة مهارة ومغامرة تعتمد على اجتياز حلبات مليئة بالعقبات الفيزيائية.</p>
+  <div class="tags">
+    <span>🏍️ مهارة</span>
+    <span>🧩 تحديات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://xmoto.tuxfamily.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://xmoto.tuxfamily.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Tux Racer">
+  <div class="game-icon">🏔️</div>
+  <h3>Tux Racer</h3>
+  <p class="description">سباق واستكشاف على منحدرات ثلجية بمراحل متعددة.</p>
+  <div class="tags">
+    <span>❄️ ثلج</span>
+    <span>🏁 سباق</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://tuxracer.sourceforge.net/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://tuxracer.sourceforge.net/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Neverball">
+  <div class="game-icon">🎱</div>
+  <h3>Neverball</h3>
+  <p class="description">لعبة ثلاثية الأبعاد مليئة بالمراحل والتحديات وجمع النقاط والوصول للنهاية.</p>
+  <div class="tags">
+    <span>🎱 أركيد</span>
+    <span>🧩 تحديات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="http://neverball.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="http://neverball.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Neverputt">
+  <div class="game-icon">🏌️</div>
+  <h3>Neverputt</h3>
+  <p class="description">مغامرة رياضية صغيرة في ملاعب 3D مليئة بالعوائق.</p>
+  <div class="tags">
+    <span>🏌️ رياضة</span>
+    <span>🧩 تحديات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="http://neverball.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="http://neverball.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Pingus">
+  <div class="game-icon">🐧</div>
+  <h3>Pingus</h3>
+  <p class="description">ألغاز ومغامرات جماعية صغيرة لإنقاذ البطاريق عبر مراحل مختلفة.</p>
+  <div class="tags">
+    <span>🐧 ألغاز</span>
+    <span>🗺️ مغامرة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://pingus.seul.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://pingus.seul.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Rabbit Escape">
+  <div class="game-icon">🐰</div>
+  <h3>Rabbit Escape</h3>
+  <p class="description">ألغاز لإنقاذ الأرانب عبر مراحل وعقبات مختلفة.</p>
+  <div class="tags">
+    <span>🐰 ألغاز</span>
+    <span>🧩 مغامرة</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://www.artificialworlds.net/rabbit-escape/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://www.artificialworlds.net/rabbit-escape/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Frozen Bubble">
+  <div class="game-icon">🧊</div>
+  <h3>Frozen Bubble</h3>
+  <p class="description">مراحل أركيد وألغاز سريعة بأجواء ثلجية ورسومات لطيفة.</p>
+  <div class="tags">
+    <span>🧊 ألغاز</span>
+    <span>🎯 أركيد</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="http://www.frozen-bubble.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="http://www.frozen-bubble.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="LBreakoutHD">
+  <div class="game-icon">🧱</div>
+  <h3>LBreakoutHD</h3>
+  <p class="description">مئات التحديات الكلاسيكية مع مؤثرات ومراحل متنوعة.</p>
+  <div class="tags">
+    <span>🧱 أركيد</span>
+    <span>🧩 تحديات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="http://lgames.sourceforge.net/LBreakoutHD/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="http://lgames.sourceforge.net/LBreakoutHD/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="LBreakout2">
+  <div class="game-icon">🧱</div>
+  <h3>LBreakout2</h3>
+  <p class="description">لعبة أركيد بمراحل كثيرة وتحديات متدرجة.</p>
+  <div class="tags">
+    <span>🧱 أركيد</span>
+    <span>🧩 تحديات</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="http://lgames.sourceforge.net/LBreakout2/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="http://lgames.sourceforge.net/LBreakout2/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Enigma">
+  <div class="game-icon">🎯</div>
+  <h3>Enigma</h3>
+  <p class="description">ألغاز ومراحل تعتمد على التفكير والفيزياء والاستكشاف.</p>
+  <div class="tags">
+    <span>🧩 ألغاز</span>
+    <span>⚙️ فيزياء</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="http://www.nongnu.org/enigma/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="http://www.nongnu.org/enigma/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="DDNet">
+  <div class="game-icon">🏃</div>
+  <h3>DDNet</h3>
+  <p class="description">مراحل منصات جماعية تعتمد على الحركة والمهارة والتعاون.</p>
+  <div class="tags">
+    <span>🏃 منصات</span>
+    <span>🌐 Multiplayer</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://ddnet.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://ddnet.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="The Powder Toy">
+  <div class="game-icon">🌲</div>
+  <h3>The Powder Toy</h3>
+  <p class="description">تجربة sandbox تفاعلية لبناء العوالم وتجربة الفيزياء والمواد.</p>
+  <div class="tags">
+    <span>🧪 Sandbox</span>
+    <span>⚙️ فيزياء</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://powdertoy.co.uk/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://powdertoy.co.uk/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="A Dark Room">
+  <div class="game-icon">🏕️</div>
+  <h3>A Dark Room</h3>
+  <p class="description">مغامرة بقاء تبدأ من غرفة صغيرة ثم تتوسع إلى عالم مليء بالاستكشاف.</p>
+  <div class="tags">
+    <span>🏕️ بقاء</span>
+    <span>🌍 استكشاف</span>
+    <span>💾 مجانية</span>
+    <span>🌐 Browser</span>
+  </div>
+  <a class="download" href="https://adarkroom.doublespeakgames.com/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://adarkroom.doublespeakgames.com/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Dungeon Crawl Stone Soup">
+  <div class="game-icon">🐉</div>
+  <h3>Dungeon Crawl Stone Soup</h3>
+  <p class="description">مغامرة استكشاف زنزانات بنظام roguelike ومراحل تتغير أثناء اللعب.</p>
+  <div class="tags">
+    <span>🗺️ زنزانات</span>
+    <span>🧙 RPG</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://crawl.develz.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://crawl.develz.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
+
+<article class="game-card" data-game="Widelands">
+  <div class="game-icon">🌾</div>
+  <h3>Widelands</h3>
+  <p class="description">بناء مستوطنة واستكشاف الخريطة وإدارة الموارد والاقتصاد.</p>
+  <div class="tags">
+    <span>🏘️ بناء</span>
+    <span>🌍 استكشاف</span>
+    <span>💾 مجانية</span>
+    <span>🖥️ Windows</span>
+  </div>
+  <a class="download" href="https://www.widelands.org/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+  <a class="official" href="https://www.widelands.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+  <button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+</article>
+
 </div>
 <h3>SuperTuxKart</h3>
-<p class="description">
-لعبة سباق كارت ثلاثية الأبعاد مجانية
-ومفتوحة المصدر، تحتوي على حلبات
-وشخصيات وأنماط لعب مختلفة.
-</p>
+<p class="description">لعبة سباق كارت ثلاثية الأبعاد مليئة بالحلبات والشخصيات وأنماط اللعب.</p>
 <div class="tags">
-<span>🏎️ سباق</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
+<span>🏎️ سباق</span><span>🖥️ Windows</span><span>💾 مجانية</span><span>🌐 مفتوحة المصدر</span>
 </div>
-<a class="download" href="https://supertuxkart.github.io/stk-website/Download" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://supertuxkart.github.io/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://supertuxkart.github.io/stk-website/Download" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://supertuxkart.github.io/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🚂</div>
-<h3>OpenTTD</h3>
-<p class="description">
-لعبة إدارة واستراتيجية تقوم فيها
-بإدارة شركات النقل والقطارات
-والطرق والمواصلات.
-</p>
-<div class="tags">
-<span>🚂 إدارة</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-<a class="download" href="https://www.openttd.org/downloads/openttd-releases/latest.html" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://www.openttd.org/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
-</article>
-<article class="game-card">
+
+
+<article class="game-card" data-game="0 A.D.">
 <div class="game-icon">⚔️</div>
 <h3>0 A.D.</h3>
-<p class="description">
-لعبة استراتيجية تاريخية مجانية
-ومفتوحة المصدر تدور أحداثها
-في العصور القديمة.
-</p>
+<p class="description">استراتيجية تاريخية في العصور القديمة، مع بناء مدن وجيوش ومعارك واسعة.</p>
 <div class="tags">
-<span>⚔️ استراتيجية</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
+<span>⚔️ استراتيجية</span><span>🏛️ تاريخية</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://play0ad.com/download/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://play0ad.com/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://play0ad.com/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://play0ad.com/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
+
+
+<article class="game-card" data-game="Endless Sky">
 <div class="game-icon">🚀</div>
 <h3>Endless Sky</h3>
-<p class="description">
-استكشف الفضاء وتاجر وخض المعارك
-في لعبة فضاء مجانية ومفتوحة المصدر.
-</p>
+<p class="description">استكشف الفضاء، وتاجر، وطوّر سفينتك وخض معارك في مجرة واسعة.</p>
 <div class="tags">
-<span>🚀 فضاء</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
+<span>🚀 فضاء</span><span>⚔️ قتال</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://endless-sky.github.io/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://endless-sky.github.io/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://endless-sky.github.io/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://endless-sky.github.io/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🐧</div>
-<h3>SuperTux</h3>
-<p class="description">
-لعبة منصات ومغامرات مجانية
-ومفتوحة المصدر بطابع كلاسيكي
-وشخصية Tux الشهيرة.
-</p>
-<div class="tags">
-<span>🕹️ منصات</span>
-<span>💾 مجانية</span>
-<span>🖥️ Windows</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-<a class="download" href="https://www.supertux.org/download.html" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://www.supertux.org/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
-</article>
-<article class="game-card">
-<div class="game-icon">🚘</div>
-<h3>GTA: San Andreas</h3>
-<p class="description">
-لعبة عالم مفتوح شهيرة تدور أحداثها
-في ولاية San Andreas، مع قصة ومهام
-واستكشاف وعالم واسع.
-</p>
-<div class="tags">
-<span>🚘 عالم مفتوح</span>
-<span>🎮 أكشن</span>
-<span>🖥️ PC</span>
-<span>💳 مدفوعة</span>
-</div>
-<a class="download" href="https://store.rockstargames.com/game/buy-grand-theft-auto-the-trilogy" rel="noopener noreferrer" target="_blank">
-🛒 الشراء الرسمي
-</a>
-<a class="official" href="https://www.rockstargames.com/games/sanandreas" rel="noopener noreferrer" target="_blank">
-🔗 صفحة اللعبة الرسمية
-</a>
-</article>
-<article class="game-card">
+
+
+<article class="game-card" data-game="Luanti">
 <div class="game-icon">⛏️</div>
 <h3>Luanti</h3>
-<p class="description">
-منصة ألعاب مكعبة مفتوحة المصدر، تتيح لك
-البناء والاستكشاف والبقاء واللعب الفردي
-أو الجماعي مع العديد من الألعاب والمحتويات.
-</p>
+<p class="description">عالم مفتوح للبناء والاستكشاف والبقاء، مع ألعاب ومحتويات كثيرة.</p>
 <div class="tags">
-<span>⛏️ بناء</span>
-<span>🌍 عالم مفتوح</span>
-<span>🖥️ Windows</span>
-<span>💾 مجانية</span>
+<span>⛏️ بناء</span><span>🌍 عالم مفتوح</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://www.luanti.org/en/downloads/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://www.luanti.org/en/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://www.luanti.org/en/downloads/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://www.luanti.org/en/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">⚔️</div>
+
+
+<article class="game-card" data-game="Xonotic">
+<div class="game-icon">🎯</div>
+<h3>Xonotic</h3>
+<p class="description">لعبة تصويب سريعة من منظور الشخص الأول مع خرائط وأسلحة وأنماط لعب متعددة.</p>
+<div class="tags">
+<span>🎯 تصويب</span><span>🔫 FPS</span><span>💾 مجانية</span><span>🖥️ Windows</span>
+</div>
+<a class="download" href="https://xonotic.org/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://xonotic.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
+</article>
+
+
+<article class="game-card" data-game="OpenSpades">
+<div class="game-icon">🪖</div>
+<h3>OpenSpades</h3>
+<p class="description">لعبة تصويب وبناء جماعية مستوحاة من أسلوب voxel السريع.</p>
+<div class="tags">
+<span>🪖 تصويب</span><span>🧱 بناء</span><span>💾 مجانية</span><span>🌐 Multiplayer</span>
+</div>
+<a class="download" href="https://openspades.yvt.jp/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://openspades.yvt.jp/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
+</article>
+
+
+<article class="game-card" data-game="Battle for Wesnoth">
+<div class="game-icon">🏹</div>
 <h3>Battle for Wesnoth</h3>
-<p class="description">
-لعبة استراتيجية تكتيكية بنظام الأدوار
-وفانتازيا عالية، تحتوي على حملات فردية
-ومعارك جماعية وإضافات كثيرة.
-</p>
+<p class="description">استراتيجية تكتيكية بنظام الأدوار مع حملات فردية ومعارك جماعية.</p>
 <div class="tags">
-<span>⚔️ استراتيجية</span>
-<span>🧙 فانتازيا</span>
-<span>🖥️ Windows</span>
-<span>💾 مجانية</span>
+<span>🏹 استراتيجية</span><span>⚔️ أدوار</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://wiki.wesnoth.org/Download" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://www.wesnoth.org/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://www.wesnoth.org/downloads/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://www.wesnoth.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-</div>
-<article class="game-card">
-<div class="game-icon">🎱</div>
-<h3>Neverball</h3>
-<p class="description">
-لعبة مهارات ثلاثية الأبعاد تتحكم فيها بكرة وتجمع النقاط للوصول إلى الهدف.
-</p>
-<div class="tags">
-<span>🎯 مهارات</span>
-<span>🧩 ألغاز</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
-</div>
-<a class="download" href="https://neverball.org/download" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://neverball.org/download" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
-</article>
-<article class="game-card">
-<div class="game-icon">⛳</div>
-<h3>Neverputt</h3>
-<p class="description">
-لعبة جولف صغيرة ممتعة مبنية على محرك Neverball وتحتوي على مراحل كثيرة.
-</p>
-<div class="tags">
-<span>⛳ جولف</span>
-<span>🎮 خفيفة</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
-</div>
-<a class="download" href="https://neverball.org/download" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://neverball.org/download" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
-</article>
-<article class="game-card">
-<div class="game-icon">🐧</div>
-<h3>Pingus</h3>
-<p class="description">
-لعبة ألغاز واستراتيجية خفيفة مستوحاة من ألعاب توجيه الشخصيات، مع مراحل كثيرة.
-</p>
-<div class="tags">
-<span>🧩 ألغاز</span>
-<span>🐧 مغامرة</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
-</div>
-<a class="download" href="https://pingus.seul.org/download.html" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://pingus.seul.org/download.html" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
-</article>
-<article class="game-card">
-<div class="game-icon">💃</div>
-<h3>StepMania</h3>
-<p class="description">
-لعبة إيقاع وموسيقى تعتمد على توقيت الخطوات، مع إمكانية إضافة أغاني ومراحل.
-</p>
-<div class="tags">
-<span>🎵 إيقاع</span>
-<span>💃 موسيقى</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
-</div>
-<a class="download" href="https://stepmania.com/download/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://stepmania.com/download/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
-</article>
-<article class="game-card">
-<div class="game-icon">🏎️</div>
-<h3>Armagetron Advanced</h3>
-<p class="description">
-لعبة سباق وأركيد ثلاثية الأبعاد مستوحاة من سباقات الدراجات الضوئية.
-</p>
-<div class="tags">
-<span>🏎️ سباق</span>
-<span>🌐 Multiplayer</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
-</div>
-<a class="download" href="https://armagetronad.org/downloads.php" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://armagetronad.org/downloads.php" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
-</article>
-<article class="game-card">
-<div class="game-icon">🐧</div>
-<h3>Extreme Tux Racer</h3>
-<p class="description">
-لعبة سباق سريعة تنزل فيها المنحدرات الجليدية مع Tux وتحاول تحقيق أفضل وقت.
-</p>
-<div class="tags">
-<span>🏁 سباق</span>
-<span>❄️ ثلج</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
-</div>
-<a class="download" href="https://extremetuxracer.com/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://extremetuxracer.com/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
-</article>
-<article class="game-card">
+
+
+<article class="game-card" data-game="OpenRCT2">
 <div class="game-icon">🎢</div>
 <h3>OpenRCT2</h3>
-<p class="description">
-محاكي إدارة مدن ملاهي؛ ابنِ الألعاب والحدائق وأدر الأموال والزوار.
-</p>
+<p class="description">ابنِ وأدر مدينة ملاهي، واهتم بالألعاب والزوار والمال.</p>
 <div class="tags">
-<span>🎢 إدارة</span>
-<span>🏗️ بناء</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🎢 محاكاة</span><span>🏗️ إدارة</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://openrct2.org/downloads" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://openrct2.org/downloads" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://openrct2.org/downloads" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://openrct2.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🏛️</div>
-<h3>FreeCol</h3>
-<p class="description">
-لعبة استراتيجية وإدارة مستعمرات مفتوحة المصدر مع خرائط كبيرة وأنظمة تجارة وتطوير.
-</p>
+
+
+<article class="game-card" data-game="OpenTTD">
+<div class="game-icon">🚂</div>
+<h3>OpenTTD</h3>
+<p class="description">أدر شركة نقل كاملة بالقطارات والشاحنات والطائرات والسفن.</p>
 <div class="tags">
-<span>🏛️ استراتيجية</span>
-<span>🗺️ إدارة</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🚂 إدارة</span><span>🏗️ محاكاة</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://www.freecol.org/download.html" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://www.freecol.org/download.html" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://www.openttd.org/downloads/openttd-releases/latest.html" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://www.openttd.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🧠</div>
-<h3>GCompris</h3>
-<p class="description">
-مجموعة كبيرة من الألعاب والأنشطة التعليمية للأطفال والطلاب في الرياضيات والمنطق واللغة وغيرها.
-</p>
+
+
+<article class="game-card" data-game="FreeCiv">
+<div class="game-icon">🏰</div>
+<h3>FreeCiv</h3>
+<p class="description">استراتيجية حضارات تعتمد على التطور والتوسع والدبلوماسية عبر العصور.</p>
 <div class="tags">
-<span>🧠 تعليم</span>
-<span>🧩 ألغاز</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🏰 استراتيجية</span><span>🌍 حضارات</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://gcompris.net/downloads-ar" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://gcompris.net/downloads-ar" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://www.freeciv.org/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://www.freeciv.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🧱</div>
-<h3>LBreakout2</h3>
-<p class="description">
-لعبة تكسير الطوب الكلاسيكية مع مراحل كثيرة ومؤثرات وعناصر إضافية.
-</p>
+
+
+<article class="game-card" data-game="Endless Sky">
+<div class="game-icon">🌌</div>
+<h3>Endless Sky</h3>
+<p class="description">مغامرة فضائية تعتمد على الاستكشاف والتجارة والقتال وتطوير السفينة.</p>
 <div class="tags">
-<span>🧱 أركيد</span>
-<span>🎯 مهارات</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🌌 مغامرة</span><span>🚀 فضاء</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://lbreakout2.sourceforge.net/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://lbreakout2.sourceforge.net/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://endless-sky.github.io/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://endless-sky.github.io/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🫧</div>
-<h3>Frozen Bubble</h3>
-<p class="description">
-لعبة ألغاز وأركيد ممتعة تعتمد على مطابقة الفقاعات وإزالة المجموعات.
-</p>
+
+
+<article class="game-card" data-game="SuperTux">
+<div class="game-icon">🏃</div>
+<h3>SuperTux</h3>
+<p class="description">لعبة منصات ومغامرات كلاسيكية بشخصية Tux ومراحل متعددة.</p>
 <div class="tags">
-<span>🫧 ألغاز</span>
-<span>🎯 أركيد</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🏃 منصات</span><span>🗺️ مغامرة</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://www.frozen-bubble.org/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://www.frozen-bubble.org/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://www.supertux.org/download.html" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://www.supertux.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">⌨️</div>
-<h3>Tux Typing</h3>
-<p class="description">
-لعبة تعليمية ممتعة لتعلم الكتابة على لوحة المفاتيح بطريقة تفاعلية.
-</p>
+
+
+<article class="game-card" data-game="Secret Maryo Chronicles">
+<div class="game-icon">🧙</div>
+<h3>Secret Maryo Chronicles</h3>
+<p class="description">لعبة منصات ثنائية الأبعاد مليئة بالمراحل والأعداء والاستكشاف.</p>
 <div class="tags">
-<span>⌨️ كتابة</span>
-<span>🧠 تعليم</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🧙 منصات</span><span>🎮 مغامرة</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://tux4kids.alioth.debian.org/tuxtype/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://tux4kids.alioth.debian.org/tuxtype/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://secretmaryo.org/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://secretmaryo.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">♟️</div>
-<h3>DreamChess</h3>
-<p class="description">
-لعبة شطرنج مجانية بواجهة سهلة ومستويات مناسبة للتدرب واللعب.
-</p>
+
+
+<article class="game-card" data-game="Armagetron Advanced">
+<div class="game-icon">🛸</div>
+<h3>Armagetron Advanced</h3>
+<p class="description">سباق أركيد ثلاثي الأبعاد سريع مستوحى من الدراجات الضوئية.</p>
 <div class="tags">
-<span>♟️ شطرنج</span>
-<span>🧠 تفكير</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🛸 أركيد</span><span>🏁 سباق</span><span>💾 مجانية</span><span>🌐 Multiplayer</span>
 </div>
-<a class="download" href="https://www.dreamchess.org/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://www.dreamchess.org/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://armagetronad.org/downloads.php" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://armagetronad.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">♟️</div>
-<h3>GNOME Chess</h3>
-<p class="description">
-لعبة شطرنج مفتوحة المصدر للعب والتدرب ضد الكمبيوتر.
-</p>
+
+
+<article class="game-card" data-game="Extreme Tux Racer">
+<div class="game-icon">🏁</div>
+<h3>Extreme Tux Racer</h3>
+<p class="description">انزل المنحدرات الجليدية بأقصى سرعة وحاول تحقيق أفضل زمن.</p>
 <div class="tags">
-<span>♟️ شطرنج</span>
-<span>🧠 ذكاء</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🏁 سباق</span><span>❄️ ثلج</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://apps.gnome.org/Chess/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://apps.gnome.org/Chess/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://extremetuxracer.com/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://extremetuxracer.com/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🔢</div>
-<h3>GNOME Sudoku</h3>
-<p class="description">
-لعبة سودوكو مجانية تحتوي على ألغاز بمستويات مختلفة للتفكير والتركيز.
-</p>
+
+
+<article class="game-card" data-game="StepMania">
+<div class="game-icon">🎵</div>
+<h3>StepMania</h3>
+<p class="description">لعبة إيقاع وموسيقى تعتمد على التوقيت والسرعة والتنسيق.</p>
 <div class="tags">
-<span>🔢 سودوكو</span>
-<span>🧠 ألغاز</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🎵 موسيقى</span><span>💃 إيقاع</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://apps.gnome.org/Sudoku/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://apps.gnome.org/Sudoku/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://stepmania.com/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://stepmania.com/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">⭕</div>
-<h3>GNOME Four-in-a-row</h3>
-<p class="description">
-لعبة أربعة في صف، مناسبة للعب السريع والتفكير في الخطوات القادمة.
-</p>
+
+
+<article class="game-card" data-game="Hedgewars">
+<div class="game-icon">🏹</div>
+<h3>Hedgewars</h3>
+<p class="description">لعبة استراتيجية جماعية مضحكة تعتمد على فرق من القنافذ والأسلحة.</p>
 <div class="tags">
-<span>⭕ أركيد</span>
-<span>🧠 تفكير</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🏹 استراتيجية</span><span>💥 أركيد</span><span>💾 مجانية</span><span>🌐 Multiplayer</span>
 </div>
-<a class="download" href="https://apps.gnome.org/Four-in-a-row/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://apps.gnome.org/Four-in-a-row/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://www.hedgewars.org/download.html" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://www.hedgewars.org/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🀄</div>
-<h3>GNOME Mahjongg</h3>
-<p class="description">
-لعبة مطابقة بلاطات تعتمد على التركيز والبحث عن الأزواج المتطابقة.
-</p>
+
+
+<article class="game-card" data-game="Warzone 2100">
+<div class="game-icon">🚀</div>
+<h3>Warzone 2100</h3>
+<p class="description">استراتيجية حربية في الزمن الحقيقي مع بناء قواعد وأبحاث ووحدات قتالية.</p>
 <div class="tags">
-<span>🀄 ألغاز</span>
-<span>🧠 تركيز</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🚀 استراتيجية</span><span>💥 حروب</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://apps.gnome.org/Mahjongg/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://apps.gnome.org/Mahjongg/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://wz2100.net/download/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://wz2100.net/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🐟</div>
-<h3>GNOME Nibbles</h3>
-<p class="description">
-لعبة أركيد كلاسيكية سريعة تعتمد على التحكم والتخطيط وتجنب الاصطدام.
-</p>
+
+
+<article class="game-card" data-game="TORCS">
+<div class="game-icon">🏎️</div>
+<h3>TORCS</h3>
+<p class="description">محاكاة سباقات سيارات مفتوحة المصدر مع حلبات وسيارات متعددة.</p>
 <div class="tags">
-<span>🐟 أركيد</span>
-<span>🎮 خفيفة</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🏎️ محاكاة</span><span>🚘 سيارات</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://apps.gnome.org/Nibbles/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://apps.gnome.org/Nibbles/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://sourceforge.net/projects/torcs/files/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://torcs.sourceforge.net/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🔺</div>
-<h3>GNOME Tetravex</h3>
-<p class="description">
-لعبة ألغاز تعتمد على ترتيب القطع بحيث تتطابق الحواف والأرقام.
-</p>
+
+
+<article class="game-card" data-game="Minetest Game">
+<div class="game-icon">🎮</div>
+<h3>Minetest Game</h3>
+<p class="description">تجربة بناء واستكشاف وبقاء داخل عالم مكعبات مفتوح.</p>
 <div class="tags">
-<span>🔺 ألغاز</span>
-<span>🧠 تفكير</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+<span>🎮 بقاء</span><span>⛏️ بناء</span><span>💾 مجانية</span><span>🖥️ Windows</span>
 </div>
-<a class="download" href="https://apps.gnome.org/Tetravex/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://apps.gnome.org/Tetravex/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
+<a class="download" href="https://www.luanti.org/en/downloads/" target="_blank" rel="noopener noreferrer">⬇️ تحميل اللعبة</a>
+<a class="official" href="https://www.luanti.org/en/" target="_blank" rel="noopener noreferrer">🔗 الموقع الرسمي</a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
-<div class="game-icon">🎲</div>
-<h3>GNOME Aisleriot</h3>
-<p class="description">
-مجموعة كبيرة من ألعاب السوليتير والورق المجانية داخل تطبيق واحد.
-</p>
-<div class="tags">
-<span>🎲 ورق</span>
-<span>🧠 تفكير</span>
-<span>🖥️ PC</span>
-<span>💾 مجانية</span>
+
+
 </div>
-<a class="download" href="https://apps.gnome.org/Aisleriot/" rel="noopener noreferrer" target="_blank">
-⬇️ تحميل اللعبة
-</a>
-<a class="official" href="https://apps.gnome.org/Aisleriot/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
-</article>
+
 <div class="top-button">
+
 <a href="#">
 ⬆️ العودة للأعلى
 </a>
+
 </div>
+
 </div>
+
 </section>
+
+
 <!-- ================= ألعاب الموبايل ================= -->
+
 <section class="section mobile-section" id="mobile">
+
 <div class="container">
+
 <div class="section-head">
+
 <span class="badge">
 📱 قسم الموبايل
 </span>
+
 <h2 class="section-title">
 📱 ألعاب الموبايل
 </h2>
+
 <p class="section-description">
 ألعاب مجانية ومفتوحة المصدر لأجهزة Android.
 </p>
+
 </div>
+
+
 <div class="games">
-<article class="game-card">
-<div class="game-icon mobile-icon">🏎️
-<article class="game-card">
-<div class="game-icon mobile-icon">🧩</div>
-<h3>2048</h3>
-<p class="description">لعبة ألغاز أرقام بسيطة وسريعة.</p>
-<div class="tags"><span>🧩 ألغاز</span><span>🧠 تفكير</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://f-droid.org/packages/com.uberspot.a2048/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://f-droid.org/packages/com.uberspot.a2048/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🐜</div>
-<h3>Antimine</h3>
-<p class="description">كاشف ألغام حديث بمراحل كثيرة.</p>
-<div class="tags"><span>🧩 ألغاز</span><span>💣 كاشف ألغام</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://f-droid.org/packages/dev.lucasnlm.antimine/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://f-droid.org/packages/dev.lucasnlm.antimine/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🛡️</div>
-<h3>Anuto TD</h3>
-<p class="description">دفاع أبراج مجاني بمراحل وأبراج وأعداء متنوعين.</p>
-<div class="tags"><span>🛡️ دفاع أبراج</span><span>🎯 استراتيجية</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://f-droid.org/packages/ch.logixisland.anuto/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://f-droid.org/packages/ch.logixisland.anuto/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🧠</div>
-<h3>Simon Tatham Puzzles</h3>
-<p class="description">مجموعة كبيرة من ألعاب الألغاز المنطقية.</p>
-<div class="tags"><span>🧩 ألغاز</span><span>🧠 ذكاء</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">♟️</div>
-<h3>lichess</h3>
-<p class="description">شطرنج مجاني مع ألغاز وتدريب ومباريات.</p>
-<div class="tags"><span>♟️ شطرنج</span><span>🧠 تفكير</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://lichess.org/mobile" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://lichess.org/mobile" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🧟</div>
-<h3>Cataclysm: DDA</h3>
-<p class="description">بقاء واستكشاف في عالم مفتوح مليء بالتحديات.</p>
-<div class="tags"><span>🧟 بقاء</span><span>🌍 استكشاف</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://cataclysmdda.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://cataclysmdda.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🧊</div>
-<h3>Frozen Bubble</h3>
-<p class="description">أركيد وألغاز سريعة بمراحل كثيرة.</p>
-<div class="tags"><span>🧊 أركيد</span><span>🧩 ألغاز</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="http://www.frozen-bubble.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="http://www.frozen-bubble.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏹</div>
-<h3>Hedgewars</h3>
-<p class="description">معارك استراتيجية مرحة بأسلحة ومراحل متنوعة.</p>
-<div class="tags"><span>🏹 استراتيجية</span><span>🎯 أركيد</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.hedgewars.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://www.hedgewars.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🚀</div>
-<h3>Endless Sky</h3>
-<p class="description">استكشاف الفضاء والتجارة والقتال وتطوير السفن.</p>
-<div class="tags"><span>🚀 فضاء</span><span>🌌 استكشاف</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://endless-sky.github.io/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://endless-sky.github.io/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
+
+
+<article class="game-card" data-game="SuperTuxKart">
+
 <div class="game-icon mobile-icon">🏎️</div>
-<h3>SuperTuxKart Mobile</h3>
-<p class="description">سباقات كارت ثلاثية الأبعاد بحلبات وشخصيات.</p>
-<div class="tags"><span>🏎️ سباق</span><span>🏁 أركيد</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://supertuxkart.net/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://supertuxkart.net/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🚂</div>
-<h3>OpenTTD Mobile</h3>
-<p class="description">إدارة النقل والقطارات والطائرات والسفن.</p>
-<div class="tags"><span>🚂 محاكاة</span><span>🌍 استكشاف</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.openttd.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://www.openttd.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏛️</div>
-<h3>Unciv</h3>
-<p class="description">بناء حضارة واستكشاف العالم وتطوير المدن.</p>
-<div class="tags"><span>🏛️ استراتيجية</span><span>🌍 استكشاف</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://github.com/yairm210/Unciv" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://github.com/yairm210/Unciv" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏭</div>
-<h3>Mindustry</h3>
-<p class="description">بناء مصانع ودفاعات وإدارة موارد.</p>
-<div class="tags"><span>🏭 بناء</span><span>🛡️ دفاع</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://mindustrygame.github.io/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://mindustrygame.github.io/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">⚔️</div>
-<h3>Shattered Pixel Dungeon</h3>
-<p class="description">Roguelike بمغامرات وزنزانات متغيرة.</p>
-<div class="tags"><span>⚔️ RPG</span><span>🗺️ زنزانات</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://shatteredpixel.com/shatteredpd/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://shatteredpixel.com/shatteredpd/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">💎</div>
-<h3>Pixel Dungeon</h3>
-<p class="description">Roguelike كلاسيكية مع كنوز وأعداء وأسرار.</p>
-<div class="tags"><span>⚔️ Roguelike</span><span>🗺️ مغامرة</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://github.com/watabou/pixel-dungeon" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://github.com/watabou/pixel-dungeon" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🧙</div>
-<h3>Andors Trail</h3>
-<p class="description">RPG كلاسيكية مع مهام وقتال واستكشاف.</p>
-<div class="tags"><span>🧙 RPG</span><span>🗺️ مغامرة</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://andorstrail.com/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://andorstrail.com/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🌍</div>
-<h3>Luanti</h3>
-<p class="description">منصة ألعاب للبقاء والبناء والاستكشاف.</p>
-<div class="tags"><span>⛏️ بناء</span><span>🌍 عالم مفتوح</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.luanti.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://www.luanti.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">⛏️</div>
-<h3>VoxeLibre</h3>
-<p class="description">بقاء وبناء واستكشاف في عالم مكعبات.</p>
-<div class="tags"><span>⛏️ بقاء</span><span>🌍 استكشاف</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://content.luanti.org/packages/Wuzzy/mineclone2/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://content.luanti.org/packages/Wuzzy/mineclone2/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏘️</div>
-<h3>Widelands</h3>
-<p class="description">بناء مستوطنة وإدارة الموارد واستكشاف الخريطة.</p>
-<div class="tags"><span>🏘️ بناء</span><span>🌍 استكشاف</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.widelands.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://www.widelands.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏰</div>
-<h3>FreeCiv</h3>
-<p class="description">بناء حضارة والتوسع واستكشاف العالم.</p>
-<div class="tags"><span>🏰 حضارات</span><span>🌍 استكشاف</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.freeciv.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://www.freeciv.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🚀</div>
-<h3>Warzone 2100</h3>
-<p class="description">استراتيجية مع قواعد وأبحاث ووحدات.</p>
-<div class="tags"><span>🚀 استراتيجية</span><span>🏗️ بناء</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://wz2100.net/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://wz2100.net/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏹</div>
-<h3>The Battle for Wesnoth</h3>
-<p class="description">حملات استراتيجية وقصص ومعارك.</p>
-<div class="tags"><span>🏹 استراتيجية</span><span>📖 قصة</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.wesnoth.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://www.wesnoth.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🎵</div>
-<h3>StepMania</h3>
-<p class="description">لعبة إيقاع وموسيقى مع مراحل وتحديات.</p>
-<div class="tags"><span>🎵 موسيقى</span><span>⚡ إيقاع</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.stepmania.com/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://www.stepmania.com/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏍️</div>
-<h3>X-Moto</h3>
-<p class="description">قيادة دراجة عبر مسارات مليئة بالعقبات.</p>
-<div class="tags"><span>🏍️ مهارة</span><span>🧩 تحديات</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://xmoto.tuxfamily.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://xmoto.tuxfamily.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🎱</div>
-<h3>Neverball</h3>
-<p class="description">مراحل 3D تعتمد على التوازن والوصول للهدف.</p>
-<div class="tags"><span>🎱 أركيد</span><span>🧩 تحديات</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="http://neverball.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="http://neverball.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏌️</div>
-<h3>Neverputt</h3>
-<p class="description">Mini Golf ثلاثي الأبعاد مع عوائق.</p>
-<div class="tags"><span>🏌️ رياضة</span><span>🧩 تحديات</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="http://neverball.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="http://neverball.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🧱</div>
-<h3>LBreakoutHD</h3>
-<p class="description">أركيد بمئات المراحل والمكافآت.</p>
-<div class="tags"><span>🧱 أركيد</span><span>🧩 تحديات</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="http://lgames.sourceforge.net/LBreakoutHD/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="http://lgames.sourceforge.net/LBreakoutHD/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🐇</div>
-<h3>Lix</h3>
-<p class="description">ألغاز لتوجيه الشخصيات إلى الهدف.</p>
-<div class="tags"><span>🐇 ألغاز</span><span>🧩 تفكير</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://github.com/SimonN/Lix" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://github.com/SimonN/Lix" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🔷</div>
-<h3>Hex-a-hop</h3>
-<p class="description">ألغاز حركة وتخطيط عبر مراحل متنوعة.</p>
-<div class="tags"><span>🔷 ألغاز</span><span>🧠 تفكير</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://libregamewiki.org/Hex-a-hop" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://libregamewiki.org/Hex-a-hop" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🤖</div>
-<h3>Kiki the Nanobot</h3>
-<p class="description">مغامرة ألغاز داخل مستويات مليئة بالعقبات.</p>
-<div class="tags"><span>🤖 ألغاز</span><span>🗺️ مغامرة</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://libregamewiki.org/Kiki_the_Nanobot" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://libregamewiki.org/Kiki_the_Nanobot" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">💎</div>
-<h3>Xye</h3>
-<p class="description">مغامرة ألغاز لجمع الجواهر وفتح الطرق.</p>
-<div class="tags"><span>💎 مغامرة</span><span>🧩 ألغاز</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://libregamewiki.org/Xye" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://libregamewiki.org/Xye" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🗺️</div>
-<h3>Dungeon Crawl Stone Soup</h3>
-<p class="description">استكشاف زنزانات بنظام Roguelike.</p>
-<div class="tags"><span>🗺️ زنزانات</span><span>⚔️ RPG</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://crawl.develz.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://crawl.develz.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🧙</div>
-<h3>The Mana World</h3>
-<p class="description">RPG جماعية مع مهام واستكشاف.</p>
-<div class="tags"><span>🧙 RPG</span><span>🌍 استكشاف</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://themanaworld.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://themanaworld.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏰</div>
-<h3>Stendhal</h3>
-<p class="description">RPG جماعية مع مدن وكهوف ومهام.</p>
-<div class="tags"><span>🧙 RPG</span><span>🌍 استكشاف</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://stendhalgame.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://stendhalgame.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🌲</div>
-<h3>Veloren Mobile</h3>
-<p class="description">RPG ثلاثية الأبعاد في عالم مفتوح.</p>
-<div class="tags"><span>🧙 RPG</span><span>🌍 عالم مفتوح</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://veloren.net/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://veloren.net/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏃</div>
-<h3>SuperTux Mobile</h3>
-<p class="description">مغامرة منصات كلاسيكية بشخصية Tux.</p>
-<div class="tags"><span>🏃 منصات</span><span>🗺️ مغامرة</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.supertux.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://www.supertux.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏔️</div>
-<h3>Extreme Tux Racer</h3>
-<p class="description">انزلاق سريع على منحدرات ثلجية.</p>
-<div class="tags"><span>❄️ سباق</span><span>🏁 أركيد</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://sourceforge.net/projects/extremetuxracer/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://sourceforge.net/projects/extremetuxracer/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🧪</div>
-<h3>The Powder Toy</h3>
-<p class="description">Sandbox لتجربة المواد والفيزياء.</p>
-<div class="tags"><span>🧪 Sandbox</span><span>⚙️ فيزياء</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://powdertoy.co.uk/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://powdertoy.co.uk/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🏕️</div>
-<h3>A Dark Room</h3>
-<p class="description">مغامرة بقاء تتوسع من غرفة صغيرة إلى عالم.</p>
-<div class="tags"><span>🏕️ بقاء</span><span>🌍 استكشاف</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://adarkroom.doublespeakgames.com/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://adarkroom.doublespeakgames.com/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🎮</div>
-<h3>Pixel Wheels</h3>
-<p class="description">سباقات سيارات سريعة برسومات Pixel.</p>
-<div class="tags"><span>🏎️ سباق</span><span>⚡ أركيد</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://github.com/agateau/pixelwheels" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://github.com/agateau/pixelwheels" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🧩</div>
-<h3>Me and My Shadow Mobile</h3>
-<p class="description">منصات وألغاز تعتمد على التعاون مع الظل.</p>
-<div class="tags"><span>🏃 منصات</span><span>🧩 ألغاز</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="http://meandmyshadow.sourceforge.net/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="http://meandmyshadow.sourceforge.net/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🐔</div>
-<h3>Pekka Kana 2 Mobile</h3>
-<p class="description">مغامرة منصات مرحة بمراحل وأعداء.</p>
-<div class="tags"><span>🐔 منصات</span><span>🗺️ مغامرة</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://pistegamez.net/game_pk2.html" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://pistegamez.net/game_pk2.html" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🛸</div>
-<h3>Armagetron Advanced</h3>
-<p class="description">سباق أركيد ثلاثي الأبعاد سريع.</p>
-<div class="tags"><span>🛸 أركيد</span><span>🏁 سباق</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://www.armagetronad.org/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://www.armagetronad.org/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-<article class="game-card">
-<div class="game-icon mobile-icon">🎯</div>
-<h3>KPatience</h3>
-<p class="description">مجموعة ألعاب سوليتير مجانية وخفيفة.</p>
-<div class="tags"><span>🎯 كروت</span><span>🧩 أركيد</span><span>📱 Android</span><span>💾 مجانية</span></div>
-<a class="download" href="https://apps.kde.org/kpat/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a>
-<a class="official" href="https://apps.kde.org/kpat/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a>
-</article>
-</div>
+
 <h3>SuperTuxKart</h3>
+
 <p class="description">
 لعبة سباق ثلاثية الأبعاد مفتوحة المصدر
 ومتوفرة لأجهزة Android.
 </p>
+
 <div class="tags">
 <span>🏎️ سباق</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
 </div>
-<a class="download" href="https://f-droid.org/packages/org.supertuxkart.stk/" rel="noopener noreferrer" target="_blank">
+
+<a class="download"
+href="https://f-droid.org/packages/org.supertuxkart.stk/"
+target="_blank"
+rel="noopener noreferrer">
 📱 تحميل Android
 </a>
-<a class="official" href="https://supertuxkart.github.io/" rel="noopener noreferrer" target="_blank">
+
+<a class="official"
+href="https://supertuxkart.github.io/"
+target="_blank"
+rel="noopener noreferrer">
 🔗 الموقع الرسمي
 </a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
+
+
+<article class="game-card" data-game="Unciv">
+
 <div class="game-icon mobile-icon">🏛️</div>
+
 <h3>Unciv</h3>
+
 <p class="description">
 لعبة استراتيجية لبناء الحضارات
 وإدارة المدن والتوسع.
 </p>
+
 <div class="tags">
 <span>🏛️ استراتيجية</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
 </div>
-<a class="download" href="https://f-droid.org/en/packages/com.unciv.app/" rel="noopener noreferrer" target="_blank">
+
+<a class="download"
+href="https://f-droid.org/en/packages/com.unciv.app/"
+target="_blank"
+rel="noopener noreferrer">
 📱 تحميل Android
 </a>
-<a class="official" href="https://github.com/yairm210/Unciv" rel="noopener noreferrer" target="_blank">
+
+<a class="official"
+href="https://github.com/yairm210/Unciv"
+target="_blank"
+rel="noopener noreferrer">
 📄 المصدر على GitHub
 </a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
+
+
+<article class="game-card" data-game="Shattered Pixel Dungeon">
+
 <div class="game-icon mobile-icon">💎</div>
+
 <h3>Shattered Pixel Dungeon</h3>
+
 <p class="description">
 لعبة مغامرات وألغاز داخل زنزانات
 مع تحديات وأسلوب لعب ممتع.
 </p>
+
 <div class="tags">
 <span>🧙 مغامرات</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
 </div>
-<a class="download" href="https://f-droid.org/en/packages/com.shatteredpixel.shatteredpixeldungeon/" rel="noopener noreferrer" target="_blank">
+
+<a class="download"
+href="https://f-droid.org/en/packages/com.shatteredpixel.shatteredpixeldungeon/"
+target="_blank"
+rel="noopener noreferrer">
 📱 تحميل Android
 </a>
-<a class="official" href="https://github.com/00-Evan/shattered-pixel-dungeon" rel="noopener noreferrer" target="_blank">
+
+<a class="official"
+href="https://github.com/00-Evan/shattered-pixel-dungeon"
+target="_blank"
+rel="noopener noreferrer">
 📄 المصدر على GitHub
 </a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
+
+
+<article class="game-card" data-game="Mindustry">
+
 <div class="game-icon mobile-icon">🏭</div>
+
 <h3>Mindustry</h3>
+
 <p class="description">
 ابنِ المصانع ودافع عن قاعدتك
 وأدر الموارد في لعبة استراتيجية وصناعة.
 </p>
+
 <div class="tags">
 <span>🏭 استراتيجية</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
 </div>
-<a class="download" href="https://f-droid.org/en/packages/io.anuke.mindustry/" rel="noopener noreferrer" target="_blank">
+
+<a class="download"
+href="https://f-droid.org/en/packages/io.anuke.mindustry/"
+target="_blank"
+rel="noopener noreferrer">
 📱 تحميل Android
 </a>
-<a class="official" href="https://github.com/Anuken/Mindustry" rel="noopener noreferrer" target="_blank">
+
+<a class="official"
+href="https://github.com/Anuken/Mindustry"
+target="_blank"
+rel="noopener noreferrer">
 📄 المصدر على GitHub
 </a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card">
+
+
+<article class="game-card" data-game="OpenTTD">
+
 <div class="game-icon mobile-icon">🚂</div>
+
 <h3>OpenTTD</h3>
+
 <p class="description">
 إدارة شركات النقل والقطارات
 والطرق في نسخة Android.
 </p>
+
 <div class="tags">
 <span>🚂 إدارة</span>
 <span>📱 Android</span>
 <span>💾 مجانية</span>
 <span>🌐 مفتوحة المصدر</span>
 </div>
-<a class="download" href="https://f-droid.org/en/packages/org.openttd.sdl/" rel="noopener noreferrer" target="_blank">
+
+<a class="download"
+href="https://f-droid.org/en/packages/org.openttd.sdl/"
+target="_blank"
+rel="noopener noreferrer">
 📱 تحميل Android
 </a>
-<a class="official" href="https://www.openttd.org/" rel="noopener noreferrer" target="_blank">
+
+<a class="official"
+href="https://www.openttd.org/"
+target="_blank"
+rel="noopener noreferrer">
 🔗 الموقع الرسمي
 </a>
+
+<button class="details-btn" type="button">📄 عرض تفاصيل اللعبة</button>
+
 </article>
-<article class="game-card"><div class="game-icon mobile-icon">🧠</div><h3>Open Sudoku</h3><p class="description">لعبة سودوكو مجانية للتدريب على التفكير وحل الألغاز على الموبايل.</p><div class="tags"><span>🧩 ألغاز</span><span>🧠 تفكير</span><span>📱 Android</span><span>💾 مجانية</span></div><a class="download" href="https://f-droid.org/categories/games/" rel="noopener noreferrer" target="_blank">📱 صفحة التحميل</a><a class="official" href="https://f-droid.org/categories/games/" rel="noopener noreferrer" target="_blank">🔗 المصدر الرسمي</a></article></div>
+
+
+</div>
+
+
 <div class="top-button">
+
 <a href="#">
 ⬆️ العودة للأعلى
 </a>
+
 </div>
+
 </div>
+
 </section>
-<!-- ================= YOUTUBE ================= -->
-
-/a&gt;
-
-<a class="official" href="https://github.com/Anuken/Mindustry" rel="noopener noreferrer" target="_blank">
-📄 المصدر على GitHub
-</a>
-
-<article class="game-card">
-<div class="game-icon mobile-icon">🚂</div>
-<h3>OpenTTD</h3>
-<p class="description">
-إدارة شركات النقل والقطارات
-والطرق في نسخة Android.
-</p>
-<div class="tags">
-<span>🚂 إدارة</span>
-<span>📱 Android</span>
-<span>💾 مجانية</span>
-<span>🌐 مفتوحة المصدر</span>
-</div>
-<a class="download" href="https://f-droid.org/en/packages/org.openttd.sdl/" rel="noopener noreferrer" target="_blank">
-📱 تحميل Android
-</a>
-<a class="official" href="https://www.openttd.org/" rel="noopener noreferrer" target="_blank">
-🔗 الموقع الرسمي
-</a>
-</article>
-</a></nav></div>
-<div class="top-button">
-<a href="#">
-⬆️ العودة للأعلى
-</a>
-</div>
 
 
 <!-- ================= YOUTUBE ================= -->
+
 <section class="video-section" id="youtube">
+
 <div class="container">
+
 <span class="badge">
 🎬 قناة تكنومسار
 </span>
+
 <h2 class="section-title">
 🎥 أحدث فيديو من تكنومسار
 </h2>
+
 <p class="section-description">
 شاهد الفيديو وتابع قناة تكنومسار لمشاهدة المزيد من المحتوى.
 </p>
+
+
 <div class="video-box">
-<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" src="https://www.youtube.com/embed/f2ix6C7gGNo" title="فيديو من قناة تكنومسار">
+
+<iframe
+src="https://www.youtube.com/embed/f2ix6C7gGNo"
+title="فيديو من قناة تكنومسار"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
 </iframe>
+
 </div>
+
+
 <div class="youtube-buttons">
-<a class="youtube-button" href="https://youtu.be/f2ix6C7gGNo?si=74Qya62oOuMuAtaP" rel="noopener noreferrer" target="_blank">
+
+<a
+class="youtube-button"
+href="https://youtu.be/f2ix6C7gGNo?si=74Qya62oOuMuAtaP"
+target="_blank"
+rel="noopener noreferrer">
 ▶️ مشاهدة الفيديو على YouTube
 </a>
-<a class="youtube-channel" href="https://youtube.com/@technopath-b3q?si=wI5XmpWlA3vFkPAY" rel="noopener noreferrer" target="_blank">
+
+
+<a
+class="youtube-channel"
+href="https://youtube.com/@technopath-b3q?si=wI5XmpWlA3vFkPAY"
+target="_blank"
+rel="noopener noreferrer">
 📺 زيارة قناة تكنومسار
 </a>
+
 </div>
+
 </div>
+
 </section>
+
+
 <!-- ================= التقييم ================= -->
+
 <section class="rating-section" id="rating">
+
 <div class="container">
+
 <div class="rating-box">
+
 <span class="badge">
 ⭐ رأيك يهمنا
 </span>
+
 <h2>
 قيّم موقع تكنومسار
 </h2>
+
 <p>
 اختر عدد النجوم التي تعبر عن رأيك في الموقع ❤️
 </p>
+
+
 <div class="stars">
-<button aria-label="تقييم نجمة واحدة" class="star" data-rating="1">
+
+<button
+class="star"
+data-rating="1"
+aria-label="تقييم نجمة واحدة">
 ★
 </button>
-<button aria-label="تقييم نجمتين" class="star" data-rating="2">
+
+<button
+class="star"
+data-rating="2"
+aria-label="تقييم نجمتين">
 ★
 </button>
-<button aria-label="تقييم ثلاث نجوم" class="star" data-rating="3">
+
+<button
+class="star"
+data-rating="3"
+aria-label="تقييم ثلاث نجوم">
 ★
 </button>
-<button aria-label="تقييم أربع نجوم" class="star" data-rating="4">
+
+<button
+class="star"
+data-rating="4"
+aria-label="تقييم أربع نجوم">
 ★
 </button>
-<button aria-label="تقييم خمس نجوم" class="star" data-rating="5">
+
+<button
+class="star"
+data-rating="5"
+aria-label="تقييم خمس نجوم">
 ★
 </button>
+
 </div>
+
+
 <p class="rating-result">
 ⭐ المتوسط:
 <span id="average-rating">0.0</span>
 / 5
 </p>
+
+
 <p class="rating-result">
 👥 عدد التقييمات:
 <span id="rating-count">0</span>
 </p>
-<p class="rating-message" id="rating-message">
+
+
+<p
+class="rating-message"
+id="rating-message">
 
 اختر تقييمك من النجوم بالأعلى
 
 </p>
+
 </div>
+
 </div>
+
 </section>
 
+
+</main>
+
+
 <!-- ================= FOOTER ================= -->
+
 <footer>
+
 <div class="container">
+
 <strong>
 🎮 تكنومسار
 </strong>
-<br/><br/>
+
+<br><br>
 
 تحت إشراف محمد حامد
 
-<br/><br/>
+<br><br>
 
 © 2026 جميع الحقوق محفوظة
 
 </div>
+
 </footer>
+
+
 <!-- ================= FIREBASE ================= -->
+
 <script type="module">
 
 import { initializeApp }
@@ -2128,6 +2869,313 @@ if(alreadyRated){
 }
 
 </script>
-<script id="tm-search-js">(()=>{const i=document.getElementById('tmSearch'),c=document.getElementById('tmClear'),n=document.getElementById('tmCount');if(!i)return;const cards=[...document.querySelectorAll('#computer .game-card,#mobile .game-card')];function go(){let q=i.value.trim().toLowerCase(),v=0;cards.forEach(x=>{let ok=!q||x.innerText.toLowerCase().includes(q);x.style.display=ok?'':'none';if(ok)v++});n.textContent=q?'🔎 تم العثور على '+v+' لعبة':'🎮 إجمالي الألعاب: '+cards.length}i.addEventListener('input',go);c.onclick=()=>{i.value='';i.focus();go()};go()})();</script>
-</header></body>
-</html>
+
+
+
+<div id="gameDetailsOverlay" class="game-details-overlay" aria-hidden="true">
+  <div class="game-details-page" role="dialog" aria-modal="true" aria-labelledby="detailGameName">
+
+    <div class="details-topbar">
+      <button id="closeGameDetails" class="close-details" type="button" aria-label="إغلاق">✕</button>
+      <div class="details-breadcrumb">الرئيسية &nbsp;›&nbsp; الألعاب &nbsp;›&nbsp; <span id="detailBreadcrumb">تفاصيل اللعبة</span></div>
+    </div>
+
+    <div class="details-main">
+      <div class="details-hero">
+
+        <div class="details-cover" id="detailCover">
+          <span id="detailIcon">🎮</span>
+        </div>
+
+        <div class="details-summary">
+          <h1 id="detailGameName">اسم اللعبة</h1>
+
+          <div class="details-tags" id="detailTags"></div>
+
+          <div class="details-meta">
+            <div>💾 <b>حجم اللعبة:</b> <span id="detailSize">غير محدد</span></div>
+            <div>🖥️ <b>المنصة:</b> <span id="detailPlatform">Windows</span></div>
+            <div>📅 <b>الإصدار:</b> <span id="detailVersion">متاح حاليًا</span></div>
+            <div>🌐 <b>اللغة:</b> <span id="detailLanguage">حسب اللعبة</span></div>
+            <div>🎮 <b>النوع:</b> <span id="detailGenre">ألعاب كمبيوتر</span></div>
+          </div>
+
+          <div class="details-actions">
+            <a id="detailDownload" class="detail-download" href="#" target="_blank" rel="noopener noreferrer">
+              ⬇️ صفحة التحميل
+            </a>
+            <a id="detailOfficial" class="detail-official" href="#" target="_blank" rel="noopener noreferrer">
+              🔗 الموقع الرسمي
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="details-grid">
+
+        <aside class="requirements-box">
+          <h2>⚙️ متطلبات التشغيل</h2>
+
+          <h3>الحد الأدنى</h3>
+          <ul id="detailMinimum">
+            <li>نظام تشغيل Windows حديث</li>
+            <li>معالج ثنائي النواة</li>
+            <li>ذاكرة RAM: 2 GB</li>
+            <li>بطاقة رسومية تدعم OpenGL</li>
+            <li>مساحة تخزين حسب حجم اللعبة</li>
+          </ul>
+
+          <h3 class="recommended-title">الموصى بها</h3>
+          <ul id="detailRecommended">
+            <li>Windows 10/11</li>
+            <li>معالج رباعي النواة</li>
+            <li>ذاكرة RAM: 4 GB أو أكثر</li>
+            <li>بطاقة رسومية حديثة</li>
+            <li>مساحة تخزين إضافية للتحديثات</li>
+          </ul>
+        </aside>
+
+        <section class="details-content">
+
+          <div class="details-box">
+            <h2>📖 نبذة عن اللعبة</h2>
+            <p id="detailDescription">
+              معلومات اللعبة ستظهر هنا.
+            </p>
+          </div>
+
+          <div class="details-box">
+            <h2>✨ مميزات اللعبة</h2>
+            <ul id="detailFeatures" class="features-list"></ul>
+          </div>
+
+          <div class="details-box rating-preview-box">
+            <div>
+              <strong>⭐ تقييم الموقع</strong>
+              <div class="detail-rating-stars">★★★★★</div>
+            </div>
+            <div class="detail-rating-number">4.5/5</div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+
+    <div class="details-bottom-download">
+      <a id="detailBottomDownload" href="#" target="_blank" rel="noopener noreferrer">
+        <span>⬇️</span>
+        <strong id="detailBottomName">تحميل اللعبة</strong>
+        <small id="detailBottomSize">صفحة التحميل الرسمية</small>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+<script id="game-details-script">
+(function(){
+  const details = {"SuperTuxKart": {"icon": "🏎️", "genre": "سباق", "size": "حوالي 1.5 GB", "platform": "Windows / Linux / macOS", "description": "لعبة سباق كارت ثلاثية الأبعاد تحتوي على حلبات وشخصيات وأنماط لعب متعددة.", "features": ["سباقات ممتعة وسريعة", "حلبات وشخصيات متعددة", "اللعب الفردي والجماعي"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL", "مساحة: 2 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "0 A.D.": {"icon": "⚔️", "genre": "استراتيجية", "size": "حوالي 1.5 GB", "platform": "Windows / Linux / macOS", "description": "لعبة استراتيجية تاريخية تركز على بناء المدن وإدارة الموارد وتكوين الجيوش وخوض المعارك.", "features": ["بناء مدن وجيوش", "خرائط ومعارك واسعة", "لعب جماعي"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة 2 GHz", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL 2.0", "مساحة: 3 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Endless Sky": {"icon": "🚀", "genre": "فضاء", "size": "أقل من 1 GB", "platform": "Windows / Linux / macOS", "description": "استكشف الفضاء وتاجر وطوّر سفينتك وخض المعارك في مجرة واسعة مليئة بالمهام.", "features": ["استكشاف الفضاء", "تجارة وتطوير السفن", "قصة ومهام متعددة"], "minimum": ["Windows 7 أو أحدث", "معالج 2 GHz", "RAM: 2 GB", "بطاقة رسومية بسيطة", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Luanti": {"icon": "⛏️", "genre": "بناء / بقاء", "size": "يختلف حسب المحتوى", "platform": "Windows / Linux / macOS", "description": "منصة ألعاب مفتوحة المصدر للبناء والاستكشاف والبقاء، مع عوالم ومحتويات كثيرة.", "features": ["بناء واستكشاف", "عوالم مفتوحة", "محتوى وإضافات كثيرة"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية OpenGL 2.1+", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Xonotic": {"icon": "🎯", "genre": "تصويب FPS", "size": "حوالي 1 GB", "platform": "Windows / Linux / macOS", "description": "لعبة تصويب سريعة من منظور الشخص الأول مع أسلحة وخرائط وأنماط لعب متعددة.", "features": ["قتال سريع", "أسلحة وخرائط متعددة", "لعب جماعي"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL", "مساحة: 1.5 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "OpenSpades": {"icon": "🪖", "genre": "تصويب / بناء", "size": "أقل من 500 MB", "platform": "Windows / Linux", "description": "لعبة تصويب جماعية تجمع بين القتال والبناء داخل بيئات مكعبة.", "features": ["تصويب جماعي", "بناء وتدمير", "خرائط متعددة"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Battle for Wesnoth": {"icon": "🏹", "genre": "استراتيجية", "size": "حوالي 500 MB", "platform": "Windows / Linux / macOS", "description": "لعبة استراتيجية تكتيكية بنظام الأدوار مع حملات فردية ومعارك جماعية.", "features": ["حملات فردية", "معارك تكتيكية", "إضافات ومحتوى متنوع"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "OpenRCT2": {"icon": "🎢", "genre": "محاكاة / إدارة", "size": "حوالي 200 MB + ملفات اللعبة", "platform": "Windows / Linux / macOS", "description": "أنشئ مدينة ملاهي وأدر الألعاب والزوار والموارد وحاول تطوير حديقتك.", "features": ["بناء وإدارة الملاهي", "ألعاب ومرافق كثيرة", "سيناريوهات متعددة"], "minimum": ["Windows 7 أو أحدث", "معالج 2 GHz", "RAM: 2 GB", "بطاقة رسومية بسيطة", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "OpenTTD": {"icon": "🚂", "genre": "محاكاة / إدارة", "size": "حوالي 50 MB + ملفات اللعبة", "platform": "Windows / Linux / macOS", "description": "أدر شركة نقل باستخدام القطارات والشاحنات والطائرات والسفن ووسّع شبكة النقل.", "features": ["إدارة شركة نقل", "قطارات وطائرات وسفن", "خرائط واسعة"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية بسيطة", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "FreeCiv": {"icon": "🏰", "genre": "استراتيجية / حضارات", "size": "أقل من 200 MB", "platform": "Windows / Linux / macOS", "description": "ابنِ حضارتك وطوّرها عبر العصور باستخدام الاستراتيجية والتوسع والدبلوماسية.", "features": ["تطور عبر العصور", "دبلوماسية وتجارة", "خرائط كبيرة"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "SuperTux": {"icon": "🏃", "genre": "منصات / مغامرة", "size": "أقل من 200 MB", "platform": "Windows / Linux / macOS", "description": "لعبة منصات كلاسيكية بشخصية Tux ومراحل مليئة بالأعداء والعقبات.", "features": ["مراحل متنوعة", "أعداء وعقبات", "أسلوب منصات كلاسيكي"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 300 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Secret Maryo Chronicles": {"icon": "🧙", "genre": "منصات", "size": "حوالي 300 MB", "platform": "Windows / Linux", "description": "لعبة منصات ثنائية الأبعاد مليئة بالمراحل والأعداء والاستكشاف.", "features": ["مراحل كثيرة", "أعداء وعناصر متنوعة", "مغامرة ثنائية الأبعاد"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Armagetron Advanced": {"icon": "🛸", "genre": "أركيد / سباق", "size": "أقل من 100 MB", "platform": "Windows / Linux / macOS", "description": "سباق أركيد ثلاثي الأبعاد سريع مستوحى من الدراجات الضوئية.", "features": ["سرعة ومنافسة", "لعب جماعي", "خرائط وأنماط متعددة"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية OpenGL", "مساحة: 200 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Extreme Tux Racer": {"icon": "🏁", "genre": "سباق", "size": "أقل من 200 MB", "platform": "Windows / Linux / macOS", "description": "انزل المنحدرات الجليدية بأقصى سرعة واجمع العناصر وحاول تسجيل أفضل زمن.", "features": ["منحدرات ومراحل متعددة", "سباقات سريعة", "تحكم بسيط"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 300 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "StepMania": {"icon": "🎵", "genre": "موسيقى / إيقاع", "size": "حوالي 1 GB حسب الأغاني", "platform": "Windows / Linux / macOS", "description": "لعبة إيقاع وموسيقى تعتمد على توقيت الخطوات والتنسيق والسرعة.", "features": ["أغاني ومراحل متعددة", "تخصيص المحتوى", "تحديات إيقاعية"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية بسيطة", "مساحة: 2 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Hedgewars": {"icon": "🏹", "genre": "استراتيجية / أركيد", "size": "حوالي 200 MB", "platform": "Windows / Linux / macOS", "description": "لعبة استراتيجية مرحة تعتمد على فرق من القنافذ والأسلحة والمعارك القائمة على الأدوار.", "features": ["أسلحة متنوعة", "معارك تكتيكية", "لعب جماعي"], "minimum": ["Windows 7 أو أحدث", "معالج 1 GHz", "RAM: 1 GB", "بطاقة رسومية بسيطة", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Warzone 2100": {"icon": "🚀", "genre": "استراتيجية حربية", "size": "حوالي 1 GB", "platform": "Windows / Linux / macOS", "description": "استراتيجية حربية في الزمن الحقيقي مع بناء قواعد وأبحاث ووحدات قتالية.", "features": ["بناء قواعد", "أبحاث وتطوير", "معارك في الزمن الحقيقي"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL", "مساحة: 2 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "TORCS": {"icon": "🏎️", "genre": "محاكاة سباق", "size": "حوالي 500 MB", "platform": "Windows / Linux", "description": "محاكاة سباقات سيارات مفتوحة المصدر مع سيارات وحلبات متعددة.", "features": ["سيارات وحلبات متعددة", "محاكاة قيادة", "سباقات متنوعة"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية تدعم OpenGL", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Minetest Game": {"icon": "🎮", "genre": "بقاء / بناء", "size": "يختلف حسب المحتوى", "platform": "Windows / Linux / macOS", "description": "تجربة بناء واستكشاف وبقاء داخل عالم مكعبات مفتوح.", "features": ["بناء واستكشاف", "عالم مفتوح", "إضافات ومحتوى"], "minimum": ["Windows 7 أو أحدث", "معالج ثنائي النواة", "RAM: 2 GB", "بطاقة رسومية OpenGL 2.1+", "مساحة: 1 GB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Unciv": {"icon": "🏛️", "genre": "استراتيجية", "size": "أقل من 200 MB", "platform": "Android / Windows / Linux", "description": "لعبة استراتيجية حضارات خفيفة تعتمد على التوسع والتقنية والدبلوماسية.", "features": ["إدارة حضارة", "تقنية ودبلوماسية", "مباريات طويلة"], "minimum": ["Android 8+ أو Windows/Linux", "RAM: 2 GB", "مساحة: 300 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Shattered Pixel Dungeon": {"icon": "⚔️", "genre": "Roguelike / مغامرة", "size": "أقل من 100 MB", "platform": "Android / Windows / Linux", "description": "مغامرة بنظام roguelike داخل زنزانات تتغير مع كل محاولة.", "features": ["مراحل متغيرة", "شخصيات وقدرات", "تحدي واستكشاف"], "minimum": ["Android 7+ أو Windows/Linux", "RAM: 1 GB", "مساحة: 200 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}, "Mindustry": {"icon": "🏭", "genre": "استراتيجية / بناء", "size": "أقل من 200 MB", "platform": "Android / Windows / Linux", "description": "ابنِ خطوط إنتاج وقواعد دفاعية وأدر الموارد في عالم مليء بالتحديات.", "features": ["بناء المصانع", "إدارة الموارد", "دفاع واستراتيجية"], "minimum": ["Android 5+ أو Windows/Linux", "RAM: 2 GB", "بطاقة رسومية بسيطة", "مساحة: 500 MB"], "recommended": ["Windows 10/11 أو نظام حديث مناسب للعبة", "معالج رباعي النواة", "RAM: 4 GB أو أكثر", "بطاقة رسومية حديثة تدعم OpenGL", "مساحة إضافية للتحديثات والمحتوى"]}};
+
+  const overlay = document.getElementById("gameDetailsOverlay");
+  const closeBtn = document.getElementById("closeGameDetails");
+
+  if(!overlay) return;
+
+  const $ = id => document.getElementById(id);
+
+  function escapeText(value){
+    return String(value ?? "");
+  }
+
+  function findCard(name){
+    return [...document.querySelectorAll(".game-card")]
+      .find(card => (card.dataset.game || "").trim() === name);
+  }
+
+  function getCardData(card){
+    const name = card?.dataset.game || card?.querySelector("h3")?.textContent?.trim() || "لعبة";
+    const icon = card?.querySelector(".game-icon")?.textContent?.trim() || "🎮";
+    const desc = card?.querySelector(".description")?.textContent?.trim() || "معلومات عن اللعبة.";
+    const tags = [...(card?.querySelectorAll(".tags span") || [])].map(x => x.textContent.trim()).filter(Boolean);
+    const links = [...(card?.querySelectorAll("a") || [])];
+
+    return {
+      name, icon, desc, tags,
+      download: links.find(a => a.classList.contains("download"))?.href || "#",
+      official: links.find(a => a.classList.contains("official"))?.href || "#"
+    };
+  }
+
+  function openDetails(name){
+    const card = findCard(name);
+    if(!card) return;
+
+    const base = getCardData(card);
+    const extra = details[name] || {};
+    const icon = extra.icon || base.icon;
+    const genre = extra.genre || base.tags[0] || "ألعاب كمبيوتر";
+    const size = extra.size || "حسب النسخة";
+    const platform = extra.platform || "Windows";
+    const version = extra.version || "متاح حاليًا";
+    const language = extra.language || "حسب اللعبة";
+    const description = extra.description || base.desc;
+    const features = extra.features || ["محتوى متنوع","تجربة لعب ممتعة","متاحة عبر رابط رسمي"];
+    const minimum = extra.minimum || [
+      "Windows 10 أو أحدث",
+      "معالج ثنائي النواة",
+      "RAM: 2 GB",
+      "بطاقة رسومية تدعم OpenGL",
+      "مساحة تخزين حسب حجم اللعبة"
+    ];
+    const recommended = extra.recommended || [
+      "Windows 10/11",
+      "معالج رباعي النواة",
+      "RAM: 4 GB أو أكثر",
+      "بطاقة رسومية حديثة",
+      "مساحة إضافية للتحديثات"
+    ];
+
+    $("detailGameName").textContent = name;
+    $("detailBreadcrumb").textContent = name;
+    $("detailIcon").textContent = icon;
+    $("detailSize").textContent = size;
+    $("detailPlatform").textContent = platform;
+    $("detailVersion").textContent = version;
+    $("detailLanguage").textContent = language;
+    $("detailGenre").textContent = genre;
+    $("detailDescription").textContent = description;
+    $("detailDownload").href = base.download;
+    $("detailOfficial").href = base.official;
+    $("detailBottomDownload").href = base.download;
+    $("detailBottomName").textContent = "تحميل " + name;
+    $("detailBottomSize").textContent = size;
+
+    const tags = [...new Set([...(base.tags || []), "مجانية"])].slice(0,6);
+    $("detailTags").innerHTML = tags.map(tag =>
+      `<span class="details-tag ${tag.includes("مجانية") ? "free" : ""}">${escapeText(tag)}</span>`
+    ).join("");
+
+    $("detailFeatures").innerHTML = features.map(x => `<li>${escapeText(x)}</li>`).join("");
+    $("detailMinimum").innerHTML = minimum.map(x => `<li>${escapeText(x)}</li>`).join("");
+    $("detailRecommended").innerHTML = recommended.map(x => `<li>${escapeText(x)}</li>`).join("");
+
+    overlay.classList.add("show");
+    overlay.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+    history.replaceState(null, "", "#" + encodeURIComponent(name));
+    overlay.scrollTop = 0;
+  }
+
+  function closeDetails(){
+    overlay.classList.remove("show");
+    overlay.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+    if(location.hash) history.replaceState(null, "", location.pathname + location.search);
+  }
+
+  document.addEventListener("click", function(e){
+    const btn = e.target.closest(".details-btn");
+    if(btn){
+      const card = btn.closest(".game-card");
+      if(card) openDetails(card.dataset.game || card.querySelector("h3")?.textContent.trim());
+    }
+  });
+
+  closeBtn?.addEventListener("click", closeDetails);
+
+  overlay.addEventListener("click", function(e){
+    if(e.target === overlay) closeDetails();
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && overlay.classList.contains("show")) closeDetails();
+  });
+
+  // Open a game directly from a hash when the page is loaded.
+  function openFromHash(){
+    const raw = location.hash.replace(/^#/, "");
+    if(!raw) return;
+    let name = raw;
+    try { name = decodeURIComponent(raw); } catch(e){}
+    const card = findCard(name);
+    if(card) setTimeout(() => openDetails(name), 50);
+  }
+
+  window.addEventListener("hashchange", openFromHash);
+  openFromHash();
+})();
+</script>
+
+
+<script id="tm-search-script">
+(function(){
+  function initGameSearch(){
+    const input = document.getElementById("tmSearchInput");
+    const clear = document.getElementById("tmSearchClear");
+    const count = document.getElementById("tmSearchCount");
+    if(!input) return;
+
+    const cards = Array.from(document.querySelectorAll(".game-card"));
+    const grid = cards[0]?.parentElement;
+    if(!grid) return;
+
+    let empty = document.getElementById("tmNoResults");
+    if(!empty){
+      empty = document.createElement("div");
+      empty.id = "tmNoResults";
+      empty.className = "tm-no-results";
+      empty.textContent = "😕 مش لاقي اللعبة دي. جرّب اسم تاني.";
+      grid.appendChild(empty);
+    }
+
+    function runSearch(){
+      const q = input.value.trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const match = !q || text.includes(q);
+        card.style.display = match ? "" : "block";
+        if(match) visible++;
+      });
+
+      empty.style.display = visible ? "none" : "block";
+
+      if(!q){
+        count.textContent = "🎮 عدد الألعاب: " + cards.length;
+      }else{
+        count.textContent = "🔎 تم العثور على " + visible + " لعبة";
+      }
+    }
+
+    input.addEventListener("input", runSearch);
+    clear.addEventListener("click", function(){
+      input.value = "";
+      input.focus();
+      runSearch();
+    });
+
+    // Support Enter without reloading the page.
+    input.addEventListener("keydown", function(e){
+      if(e.key === "Enter"){
+        e.preventDefault();
+        runSearch();
+      }
+    });
+
+    runSearch();
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", initGameSearch);
+  }else{
+    initGameSearch();
+  }
+})();
+</script>
+
+</body>
+
+  </html>
