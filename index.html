@@ -561,6 +561,7 @@ footer strong{
 
 </header>
 
+
 <section class="hero">
 
 <div class="container">
@@ -594,7 +595,11 @@ footer strong{
 
 </section>
 
+
 <main>
+
+
+<!-- ================= ألعاب الكمبيوتر ================= -->
 
 <section class="section" id="computer">
 
@@ -616,7 +621,9 @@ footer strong{
 
 </div>
 
+
 <div class="games">
+
 
 <article class="game-card">
 
@@ -653,6 +660,7 @@ rel="noopener noreferrer">
 
 </article>
 
+
 <article class="game-card">
 
 <div class="game-icon">🚂</div>
@@ -687,6 +695,7 @@ rel="noopener noreferrer">
 </a>
 
 </article>
+
 
 <article class="game-card">
 
@@ -723,6 +732,7 @@ rel="noopener noreferrer">
 
 </article>
 
+
 <article class="game-card">
 
 <div class="game-icon">🚀</div>
@@ -756,6 +766,7 @@ rel="noopener noreferrer">
 </a>
 
 </article>
+
 
 <article class="game-card">
 
@@ -792,20 +803,24 @@ rel="noopener noreferrer">
 
 </article>
 
+
 </div>
+
 
 <div class="top-button">
 
-<a href="#">⬆️ العودة للأعلى</a>
+<a href="#">
+⬆️ العودة للأعلى
+</a>
 
 </div>
 
 </div>
 
 </section>
-</div>
 
-</section>
+
+<!-- ================= ألعاب الموبايل ================= -->
 
 <section class="section mobile-section" id="mobile">
 
@@ -827,7 +842,9 @@ rel="noopener noreferrer">
 
 </div>
 
+
 <div class="games">
+
 
 <article class="game-card">
 
@@ -1003,6 +1020,7 @@ rel="noopener noreferrer">
 
 </article>
 
+
 </div>
 
 
@@ -1057,9 +1075,7 @@ class="youtube-button"
 href="https://youtu.be/f2ix6C7gGNo?si=74Qya62oOuMuAtaP"
 target="_blank"
 rel="noopener noreferrer">
-
 ▶️ مشاهدة الفيديو على YouTube
-
 </a>
 
 
@@ -1068,9 +1084,7 @@ class="youtube-channel"
 href="https://youtube.com/@technopath-b3q?si=wI5XmpWlA3vFkPAY"
 target="_blank"
 rel="noopener noreferrer">
-
 📺 زيارة قناة تكنومسار
-
 </a>
 
 </div>
@@ -1167,6 +1181,7 @@ id="rating-message">
 </div>
 
 </section>
+
 
 </main>
 
@@ -1291,7 +1306,7 @@ function showStars(rating){
 }
 
 
-/* ================= قراءة التقييمات ================= */
+/* ================= قراءة التقييمات من Firebase ================= */
 
 const ratingsRef =
 ref(database, "ratings");
