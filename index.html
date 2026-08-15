@@ -21,10 +21,8 @@ content="تكنومسار موقع عربي لاكتشاف ألعاب مجاني
 <link rel="canonical"
 href="https://mohamed-tool-grafix.github.io/technomasar/">
 
-<!-- Google / Search -->
 <meta name="googlebot" content="index, follow">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 
 <meta property="og:title"
@@ -41,7 +39,6 @@ content="تكنومسار">
 
 <meta property="og:locale" content="ar_EG">
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary">
 
 <meta name="twitter:title"
@@ -50,7 +47,6 @@ content="تكنومسار | ألعاب مجانية للكمبيوتر والم�
 <meta name="twitter:description"
 content="اكتشف ألعابًا مجانية ومفتوحة المصدر للكمبيوتر والموبايل مع روابط التحميل الرسمية.">
 
-<!-- Website structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,7 +58,6 @@ content="اكتشف ألعابًا مجانية ومفتوحة المصدر لل
 }
 </script>
 
-<!-- WebPage structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -106,8 +101,6 @@ a{
     margin:auto;
 }
 
-/* ================= HEADER ================= */
-
 header{
     position:sticky;
     top:0;
@@ -148,8 +141,6 @@ header{
     color:#61e7ff;
     background:#111b30;
 }
-
-/* ================= HERO ================= */
 
 .hero{
     padding:80px 0;
@@ -202,8 +193,6 @@ header{
     background:#61e7ff;
 }
 
-/* ================= SECTIONS ================= */
-
 .section{
     padding:70px 0;
 }
@@ -239,8 +228,6 @@ header{
     color:#94a3bd;
     margin:5px 0 0;
 }
-
-/* ================= GAMES ================= */
 
 .games{
     display:grid;
@@ -331,8 +318,6 @@ header{
     background:#17243d;
 }
 
-/* ================= VIDEO ================= */
-
 .video-section{
     background:#070b18;
     padding:75px 0;
@@ -394,7 +379,68 @@ header{
     border-color:#18c5eb;
 }
 
-/* ================= TOP BUTTON ================= */
+/* ================= التقييم ================= */
+
+.rating-section{
+    padding:70px 0;
+    background:#0b1222;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+.rating-box{
+    max-width:650px;
+    margin:auto;
+    padding:35px 20px;
+    text-align:center;
+    background:linear-gradient(145deg,#111b30,#0d1528);
+    border:1px solid #263653;
+    border-radius:22px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.rating-box h2{
+    color:#61e7ff;
+    margin-top:0;
+}
+
+.rating-box p{
+    color:#94a3bd;
+}
+
+.stars{
+    direction:ltr;
+    margin:20px 0;
+}
+
+.star{
+    border:0;
+    background:transparent;
+    color:#66748b;
+    font-size:48px;
+    cursor:pointer;
+    padding:2px;
+    transition:.2s;
+}
+
+.star:hover{
+    transform:scale(1.15);
+}
+
+.star.active{
+    color:#ffd700;
+}
+
+.rating-result{
+    font-size:20px;
+    font-weight:bold;
+    color:white !important;
+}
+
+.rating-message{
+    min-height:30px;
+    color:#61e7ff !important;
+    font-weight:bold;
+}
 
 .top-button{
     text-align:center;
@@ -413,8 +459,6 @@ header{
     background:#111b30;
 }
 
-/* ================= FOOTER ================= */
-
 footer{
     background:#050914;
     text-align:center;
@@ -426,8 +470,6 @@ footer strong{
     color:#61e7ff;
     font-size:20px;
 }
-
-/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
@@ -465,17 +507,17 @@ footer strong{
         height:150px;
     }
 
+    .star{
+        font-size:40px;
+    }
+
 }
 
 </style>
 
 </head>
 
-
 <body>
-
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -487,30 +529,21 @@ footer strong{
 
 <nav class="nav">
 
-<a href="index.html">
-🏠 الرئيسية
-</a>
+<a href="index.html">🏠 الرئيسية</a>
 
-<a href="#computer">
-🖥️ الكمبيوتر
-</a>
+<a href="#computer">🖥️ الكمبيوتر</a>
 
-<a href="#mobile">
-📱 الموبايل
-</a>
+<a href="#mobile">📱 الموبايل</a>
 
-<a href="#youtube">
-🎬 الفيديو
-</a>
+<a href="#youtube">🎬 الفيديو</a>
+
+<a href="#rating">⭐ التقييم</a>
 
 </nav>
 
 </div>
 
 </header>
-
-
-<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -545,13 +578,7 @@ footer strong{
 
 </section>
 
-
 <main>
-
-
-<!-- ================================================= -->
-<!-- ================= COMPUTER ====================== -->
-<!-- ================================================= -->
 
 <section class="section" id="computer">
 
@@ -573,21 +600,13 @@ footer strong{
 
 </div>
 
-
 <div class="games">
-
-
-<!-- SuperTuxKart -->
 
 <article class="game-card">
 
-<div class="game-icon">
-🏎️
-</div>
+<div class="game-icon">🏎️</div>
 
-<h3>
-SuperTuxKart
-</h3>
+<h3>SuperTuxKart</h3>
 
 <p class="description">
 لعبة سباق كارت ثلاثية الأبعاد مجانية
@@ -602,40 +621,27 @@ SuperTuxKart
 <span>🌐 مفتوحة المصدر</span>
 </div>
 
-<a
-class="download"
+<a class="download"
 href="https://supertuxkart.github.io/stk-website/Download"
 target="_blank"
 rel="noopener noreferrer">
-
 ⬇️ تحميل اللعبة
-
 </a>
 
-<a
-class="official"
+<a class="official"
 href="https://supertuxkart.github.io/"
 target="_blank"
 rel="noopener noreferrer">
-
 🔗 الموقع الرسمي
-
 </a>
 
 </article>
 
-
-<!-- OpenTTD -->
-
 <article class="game-card">
 
-<div class="game-icon">
-🚂
-</div>
+<div class="game-icon">🚂</div>
 
-<h3>
-OpenTTD
-</h3>
+<h3>OpenTTD</h3>
 
 <p class="description">
 لعبة إدارة واستراتيجية تقوم فيها
@@ -650,40 +656,27 @@ OpenTTD
 <span>🌐 مفتوحة المصدر</span>
 </div>
 
-<a
-class="download"
+<a class="download"
 href="https://www.openttd.org/downloads/openttd-releases/latest.html"
 target="_blank"
 rel="noopener noreferrer">
-
 ⬇️ تحميل اللعبة
-
 </a>
 
-<a
-class="official"
+<a class="official"
 href="https://www.openttd.org/"
 target="_blank"
 rel="noopener noreferrer">
-
 🔗 الموقع الرسمي
-
 </a>
 
 </article>
 
-
-<!-- 0 A.D. -->
-
 <article class="game-card">
 
-<div class="game-icon">
-⚔️
-</div>
+<div class="game-icon">⚔️</div>
 
-<h3>
-0 A.D.
-</h3>
+<h3>0 A.D.</h3>
 
 <p class="description">
 لعبة استراتيجية تاريخية مجانية
@@ -698,40 +691,27 @@ rel="noopener noreferrer">
 <span>🌐 مفتوحة المصدر</span>
 </div>
 
-<a
-class="download"
+<a class="download"
 href="https://play0ad.com/download/"
 target="_blank"
 rel="noopener noreferrer">
-
 ⬇️ تحميل اللعبة
-
 </a>
 
-<a
-class="official"
+<a class="official"
 href="https://play0ad.com/"
 target="_blank"
 rel="noopener noreferrer">
-
 🔗 الموقع الرسمي
-
 </a>
 
 </article>
 
-
-<!-- Endless Sky -->
-
 <article class="game-card">
 
-<div class="game-icon">
-🚀
-</div>
+<div class="game-icon">🚀</div>
 
-<h3>
-Endless Sky
-</h3>
+<h3>Endless Sky</h3>
 
 <p class="description">
 استكشف الفضاء وتاجر وخض المعارك
@@ -745,40 +725,27 @@ Endless Sky
 <span>🌐 مفتوحة المصدر</span>
 </div>
 
-<a
-class="download"
+<a class="download"
 href="https://endless-sky.github.io/"
 target="_blank"
 rel="noopener noreferrer">
-
 ⬇️ تحميل اللعبة
-
 </a>
 
-<a
-class="official"
+<a class="official"
 href="https://endless-sky.github.io/"
 target="_blank"
 rel="noopener noreferrer">
-
 🔗 الموقع الرسمي
-
 </a>
 
 </article>
 
-
-<!-- SuperTux -->
-
 <article class="game-card">
 
-<div class="game-icon">
-🐧
-</div>
+<div class="game-icon">🐧</div>
 
-<h3>
-SuperTux
-</h3>
+<h3>SuperTux</h3>
 
 <p class="description">
 لعبة منصات ومغامرات مجانية
@@ -793,48 +760,33 @@ SuperTux
 <span>🌐 مفتوحة المصدر</span>
 </div>
 
-<a
-class="download"
+<a class="download"
 href="https://www.supertux.org/download.html"
 target="_blank"
 rel="noopener noreferrer">
-
 ⬇️ تحميل اللعبة
-
 </a>
 
-<a
-class="official"
+<a class="official"
 href="https://www.supertux.org/"
 target="_blank"
 rel="noopener noreferrer">
-
 🔗 الموقع الرسمي
-
 </a>
 
 </article>
 
-
 </div>
-
 
 <div class="top-button">
 
-<a href="#">
-⬆️ العودة للأعلى
-</a>
+<a href="#">⬆️ العودة للأعلى</a>
 
 </div>
 
 </div>
 
 </section>
-
-
-<!-- ================================================= -->
-<!-- ================= MOBILE ======================== -->
-<!-- ================================================= -->
 
 <section class="section mobile-section" id="mobile">
 
@@ -856,21 +808,13 @@ rel="noopener noreferrer">
 
 </div>
 
-
 <div class="games">
-
-
-<!-- SuperTuxKart Android -->
 
 <article class="game-card">
 
-<div class="game-icon mobile-icon">
-🏎️
-</div>
+<div class="game-icon mobile-icon">🏎️</div>
 
-<h3>
-SuperTuxKart
-</h3>
+<h3>SuperTuxKart</h3>
 
 <p class="description">
 لعبة سباق ثلاثية الأبعاد مفتوحة المصدر
@@ -884,40 +828,27 @@ SuperTuxKart
 <span>🌐 مفتوحة المصدر</span>
 </div>
 
-<a
-class="download"
+<a class="download"
 href="https://f-droid.org/packages/org.supertuxkart.stk/"
 target="_blank"
 rel="noopener noreferrer">
-
 📱 تحميل Android
-
 </a>
 
-<a
-class="official"
+<a class="official"
 href="https://supertuxkart.github.io/"
 target="_blank"
 rel="noopener noreferrer">
-
 🔗 الموقع الرسمي
-
 </a>
 
 </article>
 
-
-<!-- Unciv -->
-
 <article class="game-card">
 
-<div class="game-icon mobile-icon">
-🏛️
-</div>
+<div class="game-icon mobile-icon">🏛️</div>
 
-<h3>
-Unciv
-</h3>
+<h3>Unciv</h3>
 
 <p class="description">
 لعبة استراتيجية لبناء الحضارات
@@ -931,40 +862,27 @@ Unciv
 <span>🌐 مفتوحة المصدر</span>
 </div>
 
-<a
-class="download"
+<a class="download"
 href="https://f-droid.org/en/packages/com.unciv.app/"
 target="_blank"
 rel="noopener noreferrer">
-
 📱 تحميل Android
-
 </a>
 
-<a
-class="official"
+<a class="official"
 href="https://github.com/yairm210/Unciv"
 target="_blank"
 rel="noopener noreferrer">
-
 📄 المصدر على GitHub
-
 </a>
 
 </article>
 
-
-<!-- Shattered Pixel Dungeon -->
-
 <article class="game-card">
 
-<div class="game-icon mobile-icon">
-💎
-</div>
+<div class="game-icon mobile-icon">💎</div>
 
-<h3>
-Shattered Pixel Dungeon
-</h3>
+<h3>Shattered Pixel Dungeon</h3>
 
 <p class="description">
 لعبة مغامرات وألغاز داخل زنزانات
@@ -978,40 +896,27 @@ Shattered Pixel Dungeon
 <span>🌐 مفتوحة المصدر</span>
 </div>
 
-<a
-class="download"
+<a class="download"
 href="https://f-droid.org/en/packages/com.shatteredpixel.shatteredpixeldungeon/"
 target="_blank"
 rel="noopener noreferrer">
-
 📱 تحميل Android
-
 </a>
 
-<a
-class="official"
+<a class="official"
 href="https://github.com/00-Evan/shattered-pixel-dungeon"
 target="_blank"
 rel="noopener noreferrer">
-
 📄 المصدر على GitHub
-
 </a>
 
 </article>
 
-
-<!-- Mindustry -->
-
 <article class="game-card">
 
-<div class="game-icon mobile-icon">
-🏭
-</div>
+<div class="game-icon mobile-icon">🏭</div>
 
-<h3>
-Mindustry
-</h3>
+<h3>Mindustry</h3>
 
 <p class="description">
 ابنِ المصانع ودافع عن قاعدتك
@@ -1025,40 +930,27 @@ Mindustry
 <span>🌐 مفتوحة المصدر</span>
 </div>
 
-<a
-class="download"
+<a class="download"
 href="https://f-droid.org/en/packages/io.anuke.mindustry/"
 target="_blank"
 rel="noopener noreferrer">
-
 📱 تحميل Android
-
 </a>
 
-<a
-class="official"
+<a class="official"
 href="https://github.com/Anuken/Mindustry"
 target="_blank"
 rel="noopener noreferrer">
-
 📄 المصدر على GitHub
-
 </a>
 
 </article>
 
-
-<!-- OpenTTD Android -->
-
 <article class="game-card">
 
-<div class="game-icon mobile-icon">
-🚂
-</div>
+<div class="game-icon mobile-icon">🚂</div>
 
-<h3>
-OpenTTD
-</h3>
+<h3>OpenTTD</h3>
 
 <p class="description">
 إدارة شركات النقل والقطارات
@@ -1072,48 +964,33 @@ OpenTTD
 <span>🌐 مفتوحة المصدر</span>
 </div>
 
-<a
-class="download"
+<a class="download"
 href="https://f-droid.org/en/packages/org.openttd.sdl/"
 target="_blank"
 rel="noopener noreferrer">
-
 📱 تحميل Android
-
 </a>
 
-<a
-class="official"
+<a class="official"
 href="https://www.openttd.org/"
 target="_blank"
 rel="noopener noreferrer">
-
 🔗 الموقع الرسمي
-
 </a>
 
 </article>
 
-
 </div>
-
 
 <div class="top-button">
 
-<a href="#">
-⬆️ العودة للأعلى
-</a>
+<a href="#">⬆️ العودة للأعلى</a>
 
 </div>
 
 </div>
 
 </section>
-
-
-<!-- ================================================= -->
-<!-- ================= YOUTUBE ======================= -->
-<!-- ================================================= -->
 
 <section class="video-section" id="youtube">
 
@@ -1131,7 +1008,6 @@ rel="noopener noreferrer">
 شاهد الفيديو وتابع قناة تكنومسار لمشاهدة المزيد من المحتوى.
 </p>
 
-
 <div class="video-box">
 
 <iframe
@@ -1143,7 +1019,6 @@ allowfullscreen>
 
 </div>
 
-
 <div class="youtube-buttons">
 
 <a
@@ -1151,20 +1026,15 @@ class="youtube-button"
 href="https://youtu.be/f2ix6C7gGNo?si=74Qya62oOuMuAtaP"
 target="_blank"
 rel="noopener noreferrer">
-
 ▶️ مشاهدة الفيديو على YouTube
-
 </a>
-
 
 <a
 class="youtube-channel"
 href="https://youtube.com/@technopath-b3q?si=wI5XmpWlA3vFkPAY"
 target="_blank"
 rel="noopener noreferrer">
-
 📺 زيارة قناة تكنومسار
-
 </a>
 
 </div>
@@ -1173,11 +1043,59 @@ rel="noopener noreferrer">
 
 </section>
 
+<!-- ================= التقييم ================= -->
+
+<section class="rating-section" id="rating">
+
+<div class="container">
+
+<div class="rating-box">
+
+<span class="badge">
+⭐ رأيك يهمنا
+</span>
+
+<h2>
+قيّم موقع تكنومسار
+</h2>
+
+<p>
+اختر عدد النجوم التي تعبر عن رأيك في الموقع ❤️
+</p>
+
+<div class="stars">
+
+<button class="star" data-rating="1" aria-label="تقييم نجمة واحدة">★</button>
+
+<button class="star" data-rating="2" aria-label="تقييم نجمتين">★</button>
+
+<button class="star" data-rating="3" aria-label="تقييم ثلاث نجوم">★</button>
+
+<button class="star" data-rating="4" aria-label="تقييم أربع نجوم">★</button>
+
+<button class="star" data-rating="5" aria-label="تقييم خمس نجوم">★</button>
+
+</div>
+
+<p class="rating-result">
+⭐ المتوسط: <span id="average-rating">0.0</span> / 5
+</p>
+
+<p class="rating-result">
+👥 عدد التقييمات: <span id="rating-count">0</span>
+</p>
+
+<p class="rating-message" id="rating-message">
+اختر تقييمك من النجوم بالأعلى
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 </main>
-
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1199,6 +1117,247 @@ rel="noopener noreferrer">
 
 </footer>
 
+<!-- ================= FIREBASE ================= -->
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    push,
+    onValue
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyC1qRudZyseV3ta5wSf3GZ8MdlPQhzPymE",
+
+    authDomain: "technomasar.firebaseapp.com",
+
+    databaseURL:
+    "https://technomasar-default-rtdb.europe-west1.firebasedatabase.app",
+
+    projectId: "technomasar",
+
+    storageBucket:
+    "technomasar.firebasestorage.app",
+
+    messagingSenderId: "854436803499",
+
+    appId:
+    "1:854436803499:web:14c6022b4f452651e798ee",
+
+    measurementId: "G-NSHEMNTVD4"
+
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const database = getDatabase(app);
+
+
+/* ================= عناصر التقييم ================= */
+
+const stars =
+document.querySelectorAll(".star");
+
+const averageElement =
+document.getElementById("average-rating");
+
+const countElement =
+document.getElementById("rating-count");
+
+const messageElement =
+document.getElementById("rating-message");
+
+
+/* ================= معرفة هل الزائر قيّم من قبل ================= */
+
+const alreadyRated =
+localStorage.getItem("technomasarRated");
+
+
+/* ================= عرض النجوم ================= */
+
+function showStars(rating){
+
+    stars.forEach(star => {
+
+        const value =
+        Number(star.dataset.rating);
+
+        if(value <= rating){
+
+            star.classList.add("active");
+
+        }else{
+
+            star.classList.remove("active");
+
+        }
+
+    });
+
+}
+
+
+/* ================= قراءة التقييمات من Firebase ================= */
+
+const ratingsRef =
+ref(database, "ratings");
+
+
+onValue(ratingsRef, snapshot => {
+
+    const data = snapshot.val();
+
+    let total = 0;
+
+    let count = 0;
+
+
+    if(data){
+
+        Object.values(data).forEach(item => {
+
+            if(item && item.rating){
+
+                total += Number(item.rating);
+
+                count++;
+
+            }
+
+        });
+
+    }
+
+
+    const average =
+    count > 0 ? total / count : 0;
+
+
+    averageElement.textContent =
+    average.toFixed(1);
+
+    countElement.textContent =
+    count;
+
+});
+
+
+/* ================= إرسال التقييم ================= */
+
+stars.forEach(star => {
+
+
+    star.addEventListener("mouseenter", () => {
+
+        showStars(
+            Number(star.dataset.rating)
+        );
+
+    });
+
+
+    star.addEventListener("click", async () => {
+
+        const rating =
+        Number(star.dataset.rating);
+
+
+        if(alreadyRated){
+
+            messageElement.textContent =
+            "❤️ لقد قيّمت الموقع من قبل، شكرًا لك!";
+
+            return;
+
+        }
+
+
+        if(rating < 1 || rating > 5){
+
+            return;
+
+        }
+
+
+        try{
+
+            await push(
+                ratingsRef,
+                {
+                    rating: rating,
+                    time: Date.now()
+                }
+            );
+
+
+            localStorage.setItem(
+                "technomasarRated",
+                "true"
+            );
+
+
+            showStars(rating);
+
+
+            messageElement.textContent =
+            "❤️ شكرًا لك! تم تسجيل تقييمك بنجاح.";
+
+
+        }catch(error){
+
+            console.error(error);
+
+            messageElement.textContent =
+            "حدث خطأ أثناء إرسال التقييم، حاول مرة أخرى.";
+
+        }
+
+    });
+
+});
+
+
+/* ================= منع تغيير الشكل بعد التقييم ================= */
+
+document
+.querySelector(".stars")
+.addEventListener("mouseleave", () => {
+
+    if(alreadyRated){
+
+        return;
+
+    }
+
+    stars.forEach(star => {
+
+        star.classList.remove("active");
+
+    });
+
+});
+
+
+/* ================= لو قيّم من قبل ================= */
+
+if(alreadyRated){
+
+    messageElement.textContent =
+    "❤️ لقد قيّمت الموقع من قبل، شكرًا لك!";
+
+}
+
+</script>
 
 </body>
 
