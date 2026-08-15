@@ -101,6 +101,8 @@ a{
     margin:auto;
 }
 
+/* HEADER */
+
 header{
     position:sticky;
     top:0;
@@ -141,6 +143,8 @@ header{
     color:#61e7ff;
     background:#111b30;
 }
+
+/* HERO */
 
 .hero{
     padding:80px 0;
@@ -193,6 +197,8 @@ header{
     background:#61e7ff;
 }
 
+/* SECTIONS */
+
 .section{
     padding:70px 0;
 }
@@ -228,6 +234,8 @@ header{
     color:#94a3bd;
     margin:5px 0 0;
 }
+
+/* GAMES */
 
 .games{
     display:grid;
@@ -318,6 +326,8 @@ header{
     background:#17243d;
 }
 
+/* VIDEO */
+
 .video-section{
     background:#070b18;
     padding:75px 0;
@@ -379,7 +389,7 @@ header{
     border-color:#18c5eb;
 }
 
-/* ================= التقييم ================= */
+/* التقييم */
 
 .rating-section{
     padding:70px 0;
@@ -442,6 +452,8 @@ header{
     font-weight:bold;
 }
 
+/* TOP */
+
 .top-button{
     text-align:center;
     margin-top:35px;
@@ -459,6 +471,8 @@ header{
     background:#111b30;
 }
 
+/* FOOTER */
+
 footer{
     background:#050914;
     text-align:center;
@@ -470,6 +484,8 @@ footer strong{
     color:#61e7ff;
     font-size:20px;
 }
+
+/* MOBILE */
 
 @media(max-width:700px){
 
@@ -787,6 +803,9 @@ rel="noopener noreferrer">
 </div>
 
 </section>
+</div>
+
+</section>
 
 <section class="section mobile-section" id="mobile">
 
@@ -844,6 +863,7 @@ rel="noopener noreferrer">
 
 </article>
 
+
 <article class="game-card">
 
 <div class="game-icon mobile-icon">🏛️</div>
@@ -877,6 +897,7 @@ rel="noopener noreferrer">
 </a>
 
 </article>
+
 
 <article class="game-card">
 
@@ -912,6 +933,7 @@ rel="noopener noreferrer">
 
 </article>
 
+
 <article class="game-card">
 
 <div class="game-icon mobile-icon">🏭</div>
@@ -945,6 +967,7 @@ rel="noopener noreferrer">
 </a>
 
 </article>
+
 
 <article class="game-card">
 
@@ -982,15 +1005,21 @@ rel="noopener noreferrer">
 
 </div>
 
+
 <div class="top-button">
 
-<a href="#">⬆️ العودة للأعلى</a>
+<a href="#">
+⬆️ العودة للأعلى
+</a>
 
 </div>
 
 </div>
 
 </section>
+
+
+<!-- ================= YOUTUBE ================= -->
 
 <section class="video-section" id="youtube">
 
@@ -1008,6 +1037,7 @@ rel="noopener noreferrer">
 شاهد الفيديو وتابع قناة تكنومسار لمشاهدة المزيد من المحتوى.
 </p>
 
+
 <div class="video-box">
 
 <iframe
@@ -1019,6 +1049,7 @@ allowfullscreen>
 
 </div>
 
+
 <div class="youtube-buttons">
 
 <a
@@ -1026,15 +1057,20 @@ class="youtube-button"
 href="https://youtu.be/f2ix6C7gGNo?si=74Qya62oOuMuAtaP"
 target="_blank"
 rel="noopener noreferrer">
+
 ▶️ مشاهدة الفيديو على YouTube
+
 </a>
+
 
 <a
 class="youtube-channel"
 href="https://youtube.com/@technopath-b3q?si=wI5XmpWlA3vFkPAY"
 target="_blank"
 rel="noopener noreferrer">
+
 📺 زيارة قناة تكنومسار
+
 </a>
 
 </div>
@@ -1042,6 +1078,7 @@ rel="noopener noreferrer">
 </div>
 
 </section>
+
 
 <!-- ================= التقييم ================= -->
 
@@ -1063,30 +1100,66 @@ rel="noopener noreferrer">
 اختر عدد النجوم التي تعبر عن رأيك في الموقع ❤️
 </p>
 
+
 <div class="stars">
 
-<button class="star" data-rating="1" aria-label="تقييم نجمة واحدة">★</button>
+<button
+class="star"
+data-rating="1"
+aria-label="تقييم نجمة واحدة">
+★
+</button>
 
-<button class="star" data-rating="2" aria-label="تقييم نجمتين">★</button>
+<button
+class="star"
+data-rating="2"
+aria-label="تقييم نجمتين">
+★
+</button>
 
-<button class="star" data-rating="3" aria-label="تقييم ثلاث نجوم">★</button>
+<button
+class="star"
+data-rating="3"
+aria-label="تقييم ثلاث نجوم">
+★
+</button>
 
-<button class="star" data-rating="4" aria-label="تقييم أربع نجوم">★</button>
+<button
+class="star"
+data-rating="4"
+aria-label="تقييم أربع نجوم">
+★
+</button>
 
-<button class="star" data-rating="5" aria-label="تقييم خمس نجوم">★</button>
+<button
+class="star"
+data-rating="5"
+aria-label="تقييم خمس نجوم">
+★
+</button>
 
 </div>
 
-<p class="rating-result">
-⭐ المتوسط: <span id="average-rating">0.0</span> / 5
-</p>
 
 <p class="rating-result">
-👥 عدد التقييمات: <span id="rating-count">0</span>
+⭐ المتوسط:
+<span id="average-rating">0.0</span>
+/ 5
 </p>
 
-<p class="rating-message" id="rating-message">
+
+<p class="rating-result">
+👥 عدد التقييمات:
+<span id="rating-count">0</span>
+</p>
+
+
+<p
+class="rating-message"
+id="rating-message">
+
 اختر تقييمك من النجوم بالأعلى
+
 </p>
 
 </div>
@@ -1096,6 +1169,9 @@ rel="noopener noreferrer">
 </section>
 
 </main>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1117,6 +1193,7 @@ rel="noopener noreferrer">
 
 </footer>
 
+
 <!-- ================= FIREBASE ================= -->
 
 <script type="module">
@@ -1135,31 +1212,38 @@ from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyC1qRudZyseV3ta5wSf3GZ8MdlPQhzPymE",
+    apiKey:
+    "AIzaSyC1qRudZyseV3ta5wSf3GZ8MdlPQhzPymE",
 
-    authDomain: "technomasar.firebaseapp.com",
+    authDomain:
+    "technomasar.firebaseapp.com",
 
     databaseURL:
     "https://technomasar-default-rtdb.europe-west1.firebasedatabase.app",
 
-    projectId: "technomasar",
+    projectId:
+    "technomasar",
 
     storageBucket:
     "technomasar.firebasestorage.app",
 
-    messagingSenderId: "854436803499",
+    messagingSenderId:
+    "854436803499",
 
     appId:
     "1:854436803499:web:14c6022b4f452651e798ee",
 
-    measurementId: "G-NSHEMNTVD4"
+    measurementId:
+    "G-NSHEMNTVD4"
 
 };
 
 
-const app = initializeApp(firebaseConfig);
+const app =
+initializeApp(firebaseConfig);
 
-const database = getDatabase(app);
+const database =
+getDatabase(app);
 
 
 /* ================= عناصر التقييم ================= */
@@ -1177,9 +1261,9 @@ const messageElement =
 document.getElementById("rating-message");
 
 
-/* ================= معرفة هل الزائر قيّم من قبل ================= */
+/* ================= منع التقييم المتكرر ================= */
 
-const alreadyRated =
+let alreadyRated =
 localStorage.getItem("technomasarRated");
 
 
@@ -1207,7 +1291,7 @@ function showStars(rating){
 }
 
 
-/* ================= قراءة التقييمات من Firebase ================= */
+/* ================= قراءة التقييمات ================= */
 
 const ratingsRef =
 ref(database, "ratings");
@@ -1215,10 +1299,10 @@ ref(database, "ratings");
 
 onValue(ratingsRef, snapshot => {
 
-    const data = snapshot.val();
+    const data =
+    snapshot.val();
 
     let total = 0;
-
     let count = 0;
 
 
@@ -1226,9 +1310,14 @@ onValue(ratingsRef, snapshot => {
 
         Object.values(data).forEach(item => {
 
-            if(item && item.rating){
+            if(
+                item &&
+                Number(item.rating) >= 1 &&
+                Number(item.rating) <= 5
+            ){
 
-                total += Number(item.rating);
+                total +=
+                Number(item.rating);
 
                 count++;
 
@@ -1240,7 +1329,9 @@ onValue(ratingsRef, snapshot => {
 
 
     const average =
-    count > 0 ? total / count : 0;
+    count > 0
+    ? total / count
+    : 0;
 
 
     averageElement.textContent =
@@ -1257,98 +1348,112 @@ onValue(ratingsRef, snapshot => {
 stars.forEach(star => {
 
 
-    star.addEventListener("mouseenter", () => {
+    star.addEventListener(
+        "mouseenter",
+        () => {
 
-        showStars(
-            Number(star.dataset.rating)
-        );
-
-    });
-
-
-    star.addEventListener("click", async () => {
-
-        const rating =
-        Number(star.dataset.rating);
-
-
-        if(alreadyRated){
-
-            messageElement.textContent =
-            "❤️ لقد قيّمت الموقع من قبل، شكرًا لك!";
-
-            return;
-
-        }
-
-
-        if(rating < 1 || rating > 5){
-
-            return;
-
-        }
-
-
-        try{
-
-            await push(
-                ratingsRef,
-                {
-                    rating: rating,
-                    time: Date.now()
-                }
+            showStars(
+                Number(star.dataset.rating)
             );
 
-
-            localStorage.setItem(
-                "technomasarRated",
-                "true"
-            );
+        }
+    );
 
 
-            showStars(rating);
+    star.addEventListener(
+        "click",
+        async () => {
+
+            const rating =
+            Number(star.dataset.rating);
 
 
-            messageElement.textContent =
-            "❤️ شكرًا لك! تم تسجيل تقييمك بنجاح.";
+            if(alreadyRated){
+
+                messageElement.textContent =
+                "❤️ لقد قيّمت الموقع من قبل، شكرًا لك!";
+
+                return;
+
+            }
 
 
-        }catch(error){
+            if(
+                rating < 1 ||
+                rating > 5
+            ){
 
-            console.error(error);
+                return;
 
-            messageElement.textContent =
-            "حدث خطأ أثناء إرسال التقييم، حاول مرة أخرى.";
+            }
+
+
+            try{
+
+                await push(
+                    ratingsRef,
+                    {
+                        rating: rating,
+                        time: Date.now()
+                    }
+                );
+
+
+                localStorage.setItem(
+                    "technomasarRated",
+                    "true"
+                );
+
+                alreadyRated = true;
+
+
+                showStars(rating);
+
+
+                messageElement.textContent =
+                "❤️ شكرًا لك! تم تسجيل تقييمك بنجاح.";
+
+
+            }catch(error){
+
+                console.error(error);
+
+                messageElement.textContent =
+                "حدث خطأ أثناء إرسال التقييم، حاول مرة أخرى.";
+
+            }
 
         }
-
-    });
+    );
 
 });
 
 
-/* ================= منع تغيير الشكل بعد التقييم ================= */
+/* ================= شكل النجوم ================= */
 
 document
 .querySelector(".stars")
-.addEventListener("mouseleave", () => {
+.addEventListener(
+    "mouseleave",
+    () => {
 
-    if(alreadyRated){
+        if(alreadyRated){
 
-        return;
+            return;
+
+        }
+
+        stars.forEach(star => {
+
+            star.classList.remove("active");
+
+        });
 
     }
-
-    stars.forEach(star => {
-
-        star.classList.remove("active");
-
-    });
-
-});
+);
 
 
-/* ================= لو قيّم من قبل ================= */
+/* ================= إذا قيّم من قبل ================= */
 
 if(alreadyRated){
 
@@ -1359,6 +1464,7 @@ if(alreadyRated){
 
 </script>
 
+
 </body>
 
-</html>
+  </html>
