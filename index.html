@@ -884,6 +884,73 @@ footer strong{
 }
 </style>
 
+
+<style id="tm-search-style">
+.tm-game-search{
+  width:min(1100px,94%);
+  margin:22px auto 10px;
+  padding:18px;
+  background:#fff;
+  border:1px solid #dfe7ed;
+  border-radius:12px;
+  box-shadow:0 4px 16px rgba(20,45,65,.08);
+}
+.tm-search-title{
+  font-size:20px;
+  font-weight:900;
+  color:#075c99;
+  margin-bottom:10px;
+}
+.tm-search-row{
+  display:flex;
+  gap:9px;
+}
+#tmSearchInput{
+  flex:1;
+  min-width:0;
+  box-sizing:border-box;
+  border:1px solid #cfdbe4;
+  border-radius:8px;
+  padding:13px 15px;
+  font-size:16px;
+  outline:none;
+  direction:rtl;
+  background:#fafdff;
+}
+#tmSearchInput:focus{
+  border-color:#0879c9;
+  box-shadow:0 0 0 3px rgba(8,121,201,.10);
+}
+#tmSearchClear{
+  border:0;
+  border-radius:8px;
+  padding:0 18px;
+  background:#0879c9;
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+#tmSearchClear:hover{background:#075c99}
+.tm-search-count{
+  margin-top:9px;
+  color:#6b7785;
+  font-size:13px;
+}
+.tm-no-results{
+  display:none;
+  text-align:center;
+  padding:35px 15px;
+  color:#6b7785;
+  font-size:17px;
+  grid-column:1/-1;
+}
+@media(max-width:520px){
+  .tm-search-row{gap:6px}
+  #tmSearchClear{padding:0 13px}
+  .tm-game-search{padding:14px}
+}
+</style>
+
 </head>
 
 <body>
@@ -953,6 +1020,16 @@ footer strong{
 
 
 <!-- ================= ألعاب الكمبيوتر ================= -->
+
+
+<div id="tmGameSearch" class="tm-game-search">
+  <div class="tm-search-title">🔎 ابحث عن لعبة</div>
+  <div class="tm-search-row">
+    <input id="tmSearchInput" type="search" placeholder="اكتب اسم اللعبة..." autocomplete="off">
+    <button id="tmSearchClear" type="button">مسح</button>
+  </div>
+  <div id="tmSearchCount" class="tm-search-count"></div>
+</div>
 
 <section class="section" id="computer">
 
@@ -2197,6 +2274,74 @@ if(alreadyRated){
 
   window.addEventListener("hashchange", openFromHash);
   openFromHash();
+})();
+</script>
+
+
+<script id="tm-search-script">
+(function(){
+  function initGameSearch(){
+    const input = document.getElementById("tmSearchInput");
+    const clear = document.getElementById("tmSearchClear");
+    const count = document.getElementById("tmSearchCount");
+    if(!input) return;
+
+    const cards = Array.from(document.querySelectorAll(".game-card"));
+    const grid = cards[0]?.parentElement;
+    if(!grid) return;
+
+    let empty = document.getElementById("tmNoResults");
+    if(!empty){
+      empty = document.createElement("div");
+      empty.id = "tmNoResults";
+      empty.className = "tm-no-results";
+      empty.textContent = "😕 مش لاقي اللعبة دي. جرّب اسم تاني.";
+      grid.appendChild(empty);
+    }
+
+    function runSearch(){
+      const q = input.value.trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const match = !q || text.includes(q);
+        card.style.display = match ? "" : "block";
+        if(match) visible++;
+      });
+
+      empty.style.display = visible ? "none" : "block";
+
+      if(!q){
+        count.textContent = "🎮 عدد الألعاب: " + cards.length;
+      }else{
+        count.textContent = "🔎 تم العثور على " + visible + " لعبة";
+      }
+    }
+
+    input.addEventListener("input", runSearch);
+    clear.addEventListener("click", function(){
+      input.value = "";
+      input.focus();
+      runSearch();
+    });
+
+    // Support Enter without reloading the page.
+    input.addEventListener("keydown", function(e){
+      if(e.key === "Enter"){
+        e.preventDefault();
+        runSearch();
+      }
+    });
+
+    runSearch();
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", initGameSearch);
+  }else{
+    initGameSearch();
+  }
 })();
 </script>
 
