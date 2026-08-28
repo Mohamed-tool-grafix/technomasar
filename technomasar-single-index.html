@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تكنومسار | متجر الألعاب</title>
+<meta name="description" content="تكنومسار — متجر ألعاب عربي بواجهة احترافية.">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#070b14;color:#eef5ff;font-family:"Segoe UI",Tahoma,Arial,sans-serif}
+a{text-decoration:none;color:inherit}button,input{font:inherit}.wrap{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:100;background:rgba(7,11,20,.86);backdrop-filter:blur(18px);border-bottom:1px solid #1f2b40}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.logo{font-weight:950;font-size:24px;color:#61e7ff}.logo small{color:#fff;font-size:11px;display:block;letter-spacing:2px}
+.links{display:flex;gap:8px;flex-wrap:wrap}.links a{padding:9px 12px;border-radius:10px;color:#aebbd0}.links a:hover{background:#121d2d;color:#fff}
+.hero{position:relative;min-height:470px;display:flex;align-items:center;overflow:hidden;background:radial-gradient(circle at 15% 30%,rgba(24,197,235,.18),transparent 32%),radial-gradient(circle at 85% 20%,rgba(112,73,255,.2),transparent 35%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,11,20,.95),rgba(7,11,20,.55),rgba(7,11,20,.92));pointer-events:none}
+.hero-art{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.38;transition:opacity .4s,background-image .4s}
+.hero-content{position:relative;z-index:2;padding:70px 0;max-width:760px}.eyebrow{color:#61e7ff;font-weight:900;letter-spacing:1px}.hero h1{font-size:clamp(42px,7vw,72px);line-height:1.05;margin:12px 0}.hero p{font-size:18px;color:#b7c4d7;line-height:1.9}.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:12px;border:1px solid #2a3b55;background:#121c2b;font-weight:900}.btn.primary{background:#19c7ee;color:#03111b;border-color:#19c7ee}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.dots{display:flex;gap:7px;margin-top:25px}.dot{width:9px;height:9px;border:0;border-radius:50%;background:#526278;cursor:pointer}.dot.active{background:#61e7ff;transform:scale(1.3)}
+.section{padding:65px 0}.head{margin-bottom:28px}.head h2{font-size:34px;margin:8px 0;color:#61e7ff}.head p{color:#8fa0b7}
+.search{display:flex;gap:10px;margin:0 0 25px}.search input{flex:1;padding:14px 16px;border-radius:12px;border:1px solid #28374f;background:#0d1522;color:white;outline:none}.search input:focus{border-color:#18c5eb}.search button{padding:0 18px;border-radius:12px;border:1px solid #28374f;background:#172235;color:#c8d5e5;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:20px}.card{background:linear-gradient(145deg,#111b2b,#0c1421);border:1px solid #24344b;border-radius:18px;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-6px);border-color:#18c5eb;box-shadow:0 18px 45px #0008}.cover{height:175px;display:flex;align-items:center;justify-content:center;font-size:72px;background:linear-gradient(135deg,#075985,#312e81);background-size:cover;background-position:center}.body{padding:18px}.body h3{margin:0 0 8px;color:#e9f8ff;font-size:22px}.body p{color:#a9b7c9;min-height:58px;line-height:1.7}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.tag{font-size:12px;color:#b9d5e9;background:#17253a;border:1px solid #263b56;padding:5px 8px;border-radius:8px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.actions button,.actions a{padding:11px;border-radius:10px;text-align:center;font-weight:900;border:1px solid #29415b;cursor:pointer}.details{background:#16263b;color:#8feaff}.download{background:#16a45a;color:#fff;border-color:#22d477!important}
+.hidden{display:none!important}.empty{text-align:center;padding:40px;color:#8fa0b7}
+footer{padding:40px 0;text-align:center;color:#718197;border-top:1px solid #1d293c}
+#gamePage{position:fixed;inset:0;z-index:1000;display:none;background:#06101a;overflow:auto}
+#gamePage.show{display:block}.gamebar{position:sticky;top:0;z-index:3;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 4%;background:rgba(5,12,21,.94);backdrop-filter:blur(14px);border-bottom:1px solid #233951}.back{border:1px solid #29445f;background:#0d1b2c;color:#fff;padding:9px 14px;border-radius:10px;cursor:pointer}.game-main{width:min(1180px,92%);margin:auto;padding:35px 0 100px}.game-hero{display:grid;grid-template-columns:38% 1fr;gap:28px;align-items:stretch}.game-cover{min-height:330px;border-radius:20px;border:1px solid #2a4761;background:linear-gradient(135deg,#075985,#312e81);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-size:120px;overflow:hidden}.game-info h1{font-size:clamp(34px,5vw,58px);margin:0 0 12px}.game-info p{color:#b7c5d5;font-size:18px;line-height:2}.big-tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.big-tag{padding:7px 11px;border-radius:8px;background:#10283c;border:1px solid #274b67;color:#aeefff;font-size:13px;font-weight:800}.game-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.game-actions a{padding:14px 22px;border-radius:11px;font-weight:900;min-width:190px;text-align:center}.game-download{background:#10a957;border:1px solid #22d477}.game-official{background:#0b1a2c;border:1px solid #0879c9;color:#8feaff}.panels{display:grid;grid-template-columns:1fr 310px;gap:18px;margin-top:25px}.panel{background:linear-gradient(145deg,#081726,#0a1b2d);border:1px solid #203b54;border-radius:16px;padding:24px}.panel h2{margin-top:0;color:#fff}.panel p{color:#bac7d4;line-height:2}.recommend{display:grid;gap:8px}.rec{padding:10px;border:1px solid #243b52;border-radius:10px;color:#bcd0e2;cursor:pointer}.rec:hover{border-color:#18c5eb}
+@media(max-width:800px){.links{display:none}.hero{min-height:500px}.game-hero,.panels{grid-template-columns:1fr}.game-cover{min-height:240px;font-size:90px}.game-actions a{width:100%}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="logo" href="#top">🎮 تكنومسار <small>GAME STORE</small></a>
+<nav class="links"><a href="#top">الرئيسية</a><a href="#computer">الكمبيوتر</a><a href="#mobile">الموبايل</a><a href="#games">كل الألعاب</a></nav></div></header>
+
+<section class="hero" id="top"><div class="hero-art" id="heroArt"></div><div class="wrap hero-content">
+<div class="eyebrow">✨ متجر ألعاب عربي</div><h1 id="heroTitle">اكتشف لعبتك القادمة</h1><p id="heroDesc">مجموعة من الألعاب المجانية والمفتوحة المصدر، بتجربة تصفح سريعة وواجهة احترافية.</p>
+<div class="hero-buttons"><button class="btn primary" onclick="openGame(heroIndex)">🎮 عرض اللعبة</button><a class="btn" href="#games">استكشف الألعاب ↓</a></div><div class="dots" id="dots"></div>
+</div></section>
+
+<main class="wrap">
+<section class="section" id="games"><div class="head"><div class="eyebrow">GAME LIBRARY</div><h2>🎮 مكتبة الألعاب</h2><p>ابحث عن اللعبة التي تريدها وافتح صفحة التفاصيل داخل نفس الملف.</p></div>
+<div class="search"><input id="search" type="search" placeholder="🔎 اكتب اسم اللعبة..." oninput="renderGames()"><button onclick="document.getElementById('search').value='';renderGames()">مسح</button></div>
+<div class="grid" id="gameGrid"></div><div class="empty hidden" id="empty">لا توجد لعبة مطابقة للبحث.</div></section>
+</main>
+<footer>© 2026 <strong>تكنومسار</strong> — متجر ألعاب عربي</footer>
+
+<div id="gamePage" aria-hidden="true"><div class="gamebar"><div id="gameCrumb">🎮 صفحة اللعبة</div><button class="back" onclick="closeGame()">✕ إغلاق</button></div>
+<div class="game-main"><div class="game-hero"><div class="game-cover" id="gameCover"></div><div class="game-info"><h1 id="gameTitle"></h1><div class="big-tags" id="gameTags"></div><p id="gameDesc"></p><div class="game-actions"><a id="gameDownload" class="game-download" target="_blank" rel="noopener">⬇️ تحميل اللعبة</a><a id="gameOfficial" class="game-official" target="_blank" rel="noopener">🔗 الموقع الرسمي</a></div></div></div>
+<div class="panels"><div class="panel"><h2>📖 عن اللعبة</h2><p id="gameLong"></p><h2>⭐ لماذا قد تعجبك؟</h2><p>واجهة متجر سريعة، معلومات واضحة، وزر تحميل مباشر من الرابط الموجود في بيانات اللعبة.</p></div>
+<aside class="panel"><h2>🎮 ألعاب أخرى</h2><div class="recommend" id="recommend"></div></aside></div></div></div>
+
+<script>
+const GAMES = [{"id": 0, "name": "PES 2013", "desc": "لعبة كرة القدم PES 2013", "download": "#", "official": "#", "visual": "https://i.postimg.cc/7L8sJQhM/pes-2013.jpg", "emoji": "🎮", "tags": []}, {"id": 1, "name": "SuperTuxKart", "desc": "لعبة سباق كارت ثلاثية الأبعاد مليئة بالحلبات والشخصيات وأنماط اللعب.", "download": "https://supertuxkart.github.io/stk-website/Download", "official": "https://supertuxkart.github.io/stk-website/Download", "visual": null, "emoji": "🏎️", "tags": ["🏎️ سباق", "🖥️ Windows", "💾 مجانية", "🌐 مفتوحة المصدر"]}, {"id": 2, "name": "0 A.D.", "desc": "استراتيجية تاريخية في العصور القديمة، مع بناء مدن وجيوش ومعارك واسعة.", "download": "https://play0ad.com/download/", "official": "https://play0ad.com/download/", "visual": null, "emoji": "⚔️", "tags": ["⚔️ استراتيجية", "🏛️ تاريخية", "💾 مجانية", "🖥️ Windows"]}, {"id": 3, "name": "Endless Sky", "desc": "استكشف الفضاء، وتاجر، وطوّر سفينتك وخض معارك في مجرة واسعة.", "download": "https://endless-sky.github.io/", "official": "https://endless-sky.github.io/", "visual": null, "emoji": "🚀", "tags": ["🚀 فضاء", "⚔️ قتال", "💾 مجانية", "🖥️ Windows"]}, {"id": 4, "name": "Luanti", "desc": "عالم مفتوح للبناء والاستكشاف والبقاء، مع ألعاب ومحتويات كثيرة.", "download": "https://www.luanti.org/en/downloads/", "official": "https://www.luanti.org/en/downloads/", "visual": null, "emoji": "⛏️", "tags": ["⛏️ بناء", "🌍 عالم مفتوح", "💾 مجانية", "🖥️ Windows"]}, {"id": 5, "name": "Xonotic", "desc": "لعبة تصويب سريعة من منظور الشخص الأول مع خرائط وأسلحة وأنماط لعب متعددة.", "download": "https://xonotic.org/download/", "official": "https://xonotic.org/download/", "visual": null, "emoji": "🎯", "tags": ["🎯 تصويب", "🔫 FPS", "💾 مجانية", "🖥️ Windows"]}, {"id": 6, "name": "OpenSpades", "desc": "لعبة تصويب وبناء جماعية مستوحاة من أسلوب voxel السريع.", "download": "https://openspades.yvt.jp/", "official": "https://openspades.yvt.jp/", "visual": null, "emoji": "🪖", "tags": ["🪖 تصويب", "🧱 بناء", "💾 مجانية", "🌐 Multiplayer"]}, {"id": 7, "name": "Battle for Wesnoth", "desc": "استراتيجية تكتيكية بنظام الأدوار مع حملات فردية ومعارك جماعية.", "download": "https://www.wesnoth.org/downloads/", "official": "https://www.wesnoth.org/downloads/", "visual": null, "emoji": "🏹", "tags": ["🏹 استراتيجية", "⚔️ أدوار", "💾 مجانية", "🖥️ Windows"]}, {"id": 8, "name": "OpenRCT2", "desc": "ابنِ وأدر مدينة ملاهي، واهتم بالألعاب والزوار والمال.", "download": "https://openrct2.org/downloads", "official": "https://openrct2.org/downloads", "visual": null, "emoji": "🎢", "tags": ["🎢 محاكاة", "🏗️ إدارة", "💾 مجانية", "🖥️ Windows"]}, {"id": 9, "name": "OpenTTD", "desc": "أدر شركة نقل كاملة بالقطارات والشاحنات والطائرات والسفن.", "download": "https://www.openttd.org/downloads/openttd-releases/latest.html", "official": "https://www.openttd.org/downloads/openttd-releases/latest.html", "visual": null, "emoji": "🚂", "tags": ["🚂 إدارة", "🏗️ محاكاة", "💾 مجانية", "🖥️ Windows"]}, {"id": 10, "name": "FreeCiv", "desc": "استراتيجية حضارات تعتمد على التطور والتوسع والدبلوماسية عبر العصور.", "download": "https://www.freeciv.org/download/", "official": "https://www.freeciv.org/download/", "visual": null, "emoji": "🏰", "tags": ["🏰 استراتيجية", "🌍 حضارات", "💾 مجانية", "🖥️ Windows"]}, {"id": 11, "name": "SuperTux", "desc": "لعبة منصات ومغامرات كلاسيكية بشخصية Tux ومراحل متعددة.", "download": "https://www.supertux.org/download.html", "official": "https://www.supertux.org/download.html", "visual": null, "emoji": "🏃", "tags": ["🏃 منصات", "🗺️ مغامرة", "💾 مجانية", "🖥️ Windows"]}, {"id": 12, "name": "Secret Maryo Chronicles", "desc": "لعبة منصات ثنائية الأبعاد مليئة بالمراحل والأعداء والاستكشاف.", "download": "https://secretmaryo.org/download/", "official": "https://secretmaryo.org/download/", "visual": null, "emoji": "🧙", "tags": ["🧙 منصات", "🎮 مغامرة", "💾 مجانية", "🖥️ Windows"]}, {"id": 13, "name": "Armagetron Advanced", "desc": "سباق أركيد ثلاثي الأبعاد سريع مستوحى من الدراجات الضوئية.", "download": "https://armagetronad.org/downloads.php", "official": "https://armagetronad.org/downloads.php", "visual": null, "emoji": "🛸", "tags": ["🛸 أركيد", "🏁 سباق", "💾 مجانية", "🌐 Multiplayer"]}, {"id": 14, "name": "Extreme Tux Racer", "desc": "انزل المنحدرات الجليدية بأقصى سرعة وحاول تحقيق أفضل زمن.", "download": "https://extremetuxracer.com/", "official": "https://extremetuxracer.com/", "visual": null, "emoji": "🏁", "tags": ["🏁 سباق", "❄️ ثلج", "💾 مجانية", "🖥️ Windows"]}, {"id": 15, "name": "StepMania", "desc": "لعبة إيقاع وموسيقى تعتمد على التوقيت والسرعة والتنسيق.", "download": "https://stepmania.com/download/", "official": "https://stepmania.com/download/", "visual": null, "emoji": "🎵", "tags": ["🎵 موسيقى", "💃 إيقاع", "💾 مجانية", "🖥️ Windows"]}, {"id": 16, "name": "Hedgewars", "desc": "لعبة استراتيجية جماعية مضحكة تعتمد على فرق من القنافذ والأسلحة.", "download": "https://www.hedgewars.org/download.html", "official": "https://www.hedgewars.org/download.html", "visual": null, "emoji": "🏹", "tags": ["🏹 استراتيجية", "💥 أركيد", "💾 مجانية", "🌐 Multiplayer"]}, {"id": 17, "name": "Warzone 2100", "desc": "استراتيجية حربية في الزمن الحقيقي مع بناء قواعد وأبحاث ووحدات قتالية.", "download": "https://wz2100.net/download/", "official": "https://wz2100.net/download/", "visual": null, "emoji": "🚀", "tags": ["🚀 استراتيجية", "💥 حروب", "💾 مجانية", "🖥️ Windows"]}, {"id": 18, "name": "TORCS", "desc": "محاكاة سباقات سيارات مفتوحة المصدر مع حلبات وسيارات متعددة.", "download": "https://sourceforge.net/projects/torcs/files/", "official": "https://sourceforge.net/projects/torcs/files/", "visual": null, "emoji": "🏎️", "tags": ["🏎️ محاكاة", "🚘 سيارات", "💾 مجانية", "🖥️ Windows"]}, {"id": 19, "name": "Minetest Game", "desc": "تجربة بناء واستكشاف وبقاء داخل عالم مكعبات مفتوح.", "download": "https://www.luanti.org/en/downloads/", "official": "https://www.luanti.org/en/downloads/", "visual": null, "emoji": "🎮", "tags": ["🎮 بقاء", "⛏️ بناء", "💾 مجانية", "🖥️ Windows"]}, {"id": 20, "name": "Unciv", "desc": "لعبة استراتيجية لبناء الحضارات\nوإدارة المدن والتوسع.", "download": "https://f-droid.org/en/packages/com.unciv.app/", "official": "https://f-droid.org/en/packages/com.unciv.app/", "visual": null, "emoji": "🏛️", "tags": ["🏛️ استراتيجية", "📱 Android", "💾 مجانية", "🌐 مفتوحة المصدر"]}, {"id": 21, "name": "Shattered Pixel Dungeon", "desc": "لعبة مغامرات وألغاز داخل زنزانات\nمع تحديات وأسلوب لعب ممتع.", "download": "https://f-droid.org/en/packages/com.shatteredpixel.shatteredpixeldungeon/", "official": "https://f-droid.org/en/packages/com.shatteredpixel.shatteredpixeldungeon/", "visual": null, "emoji": "💎", "tags": ["🧙 مغامرات", "📱 Android", "💾 مجانية", "🌐 مفتوحة المصدر"]}, {"id": 22, "name": "Mindustry", "desc": "ابنِ المصانع ودافع عن قاعدتك\nوأدر الموارد في لعبة استراتيجية وصناعة.", "download": "https://f-droid.org/en/packages/io.anuke.mindustry/", "official": "https://f-droid.org/en/packages/io.anuke.mindustry/", "visual": null, "emoji": "🏭", "tags": ["🏭 استراتيجية", "📱 Android", "💾 مجانية", "🌐 مفتوحة المصدر"]}];
+let heroIndex=0, heroTimer;
+
+function coverStyle(g){
+  return g.visual ? `background-image:linear-gradient(135deg,rgba(7,11,20,.15),rgba(49,46,129,.35)),url("${g.visual}")` : "";
+}
+function renderGames(){
+  const q=(document.getElementById("search").value||"").trim().toLowerCase();
+  const grid=document.getElementById("gameGrid"); grid.innerHTML="";
+  let count=0;
+  GAMES.forEach((g,i)=>{
+    if(q && !(g.name+" "+g.desc+" "+g.tags.join(" ")).toLowerCase().includes(q)) return;
+    count++;
+    const card=document.createElement("article"); card.className="card";
+    const tags=g.tags.slice(0,4).map(t=>`<span class="tag">${esc(t)}</span>`).join("");
+    card.innerHTML=`<div class="cover" style="${coverStyle(g)}">${g.visual?"":esc(g.emoji)}</div>
+      <div class="body"><h3>${esc(g.name)}</h3><p>${esc(g.desc)}</p><div class="tags">${tags}</div>
+      <div class="actions"><button class="details" onclick="openGame(${i})">📄 التفاصيل</button><a class="download" href="${escAttr(g.download)}" target="_blank" rel="noopener">⬇️ تحميل</a></div></div>`;
+    grid.appendChild(card);
+  });
+  document.getElementById("empty").classList.toggle("hidden",count!==0);
+}
+function openGame(i){
+  const g=GAMES[i]; if(!g)return;
+  document.getElementById("gameTitle").textContent=g.name;
+  document.getElementById("gameCrumb").textContent="🎮 تكنومسار › "+g.name;
+  document.getElementById("gameDesc").textContent=g.desc;
+  document.getElementById("gameLong").textContent=g.desc+" يمكنك الرجوع للمتجر واختيار لعبة أخرى في أي وقت.";
+  document.getElementById("gameTags").innerHTML=g.tags.map(t=>`<span class="big-tag">${esc(t)}</span>`).join("");
+  const cover=document.getElementById("gameCover"); cover.textContent=g.visual?"":g.emoji; cover.style=coverStyle(g);
+  const dl=document.getElementById("gameDownload"); dl.href=g.download;
+  const of=document.getElementById("gameOfficial"); of.href=g.official;
+  const rec=document.getElementById("recommend"); rec.innerHTML="";
+  GAMES.filter((x,j)=>j!==i).slice(0,5).forEach(x=>{const j=GAMES.indexOf(x);const b=document.createElement("div");b.className="rec";b.textContent="🎮 "+x.name;b.onclick=()=>openGame(j);rec.appendChild(b)});
+  document.getElementById("gamePage").classList.add("show");document.getElementById("gamePage").setAttribute("aria-hidden","false");document.body.style.overflow="hidden";history.pushState({game:i},"","#"+encodeURIComponent(g.name));
+}
+function closeGame(){document.getElementById("gamePage").classList.remove("show");document.getElementById("gamePage").setAttribute("aria-hidden","true");document.body.style.overflow="";if(location.hash)history.pushState(null,"",location.pathname+location.search)}
+function setHero(i){
+  heroIndex=i; const g=GAMES[i]; if(!g)return;
+  document.getElementById("heroTitle").textContent=g.name;
+  document.getElementById("heroDesc").textContent=g.desc;
+  const art=document.getElementById("heroArt"); art.style=coverStyle(g);
+  document.querySelectorAll(".dot").forEach((d,j)=>d.classList.toggle("active",j===i));
+}
+function initHero(){
+  const dots=document.getElementById("dots"); dots.innerHTML="";
+  GAMES.slice(0,6).forEach((_,i)=>{const d=document.createElement("button");d.className="dot"+(i===0?" active":"");d.onclick=()=>{setHero(i);resetHero()};dots.appendChild(d)});
+  setHero(0);resetHero();
+}
+function resetHero(){clearInterval(heroTimer);heroTimer=setInterval(()=>setHero((heroIndex+1)%Math.min(6,GAMES.length)),5000)}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function escAttr(s){return esc(s)}
+window.addEventListener("popstate",()=>{if(document.getElementById("gamePage").classList.contains("show"))closeGame()});
+renderGames();initHero();
+</script>
+</body></html>
