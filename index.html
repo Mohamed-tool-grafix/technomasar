@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GAMEZONE | متجر الألعاب</title>
-<meta name="description" content="GAMEZONE - متجر ألعاب عربي احترافي">
+<title>تكنومسار | متجر الألعاب</title>
+<meta name="description" content="تكنومسار - متجر ألعاب عربي احترافي">
 
 <style>
 :root{
@@ -21,13 +21,9 @@
   --shadow:0 25px 70px rgba(0,0,0,.45);
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
   margin:0;
@@ -52,30 +48,18 @@ body:before{
   mask-image:linear-gradient(to bottom,#000,transparent 75%);
 }
 
-body.modal-open{
-  overflow:hidden;
-}
+body.modal-open{overflow:hidden}
 
-button,
-input{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
 
 .wrap{
   width:min(1240px,92%);
   margin:auto;
 }
 
-/* ================= HEADER ================= */
+/* HEADER */
 
 header{
   position:sticky;
@@ -113,9 +97,7 @@ header{
   box-shadow:0 0 35px rgba(56,216,255,.22);
 }
 
-.logo-text span{
-  color:var(--cyan);
-}
+.logo-text span{color:var(--cyan)}
 
 .logo small{
   display:block;
@@ -153,7 +135,7 @@ header{
   font-size:13px;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
   min-height:560px;
@@ -229,9 +211,7 @@ header{
   letter-spacing:-3px;
 }
 
-.hero h1 span{
-  color:var(--cyan);
-}
+.hero h1 span{color:var(--cyan)}
 
 .hero p{
   color:#b5c3d6;
@@ -297,11 +277,9 @@ header{
   background:var(--cyan);
 }
 
-/* ================= SECTIONS ================= */
+/* SECTIONS */
 
-.section{
-  padding:70px 0;
-}
+.section{padding:70px 0}
 
 .head-row,
 .section-header{
@@ -346,11 +324,9 @@ header{
   font-size:12px;
 }
 
-.stat b{
-  color:#fff;
-}
+.stat b{color:#fff}
 
-/* ================= SEARCH ================= */
+/* SEARCH */
 
 .toolbar{
   display:flex;
@@ -413,7 +389,7 @@ header{
   border-color:#2b7891;
 }
 
-/* ================= GAMES GRID ================= */
+/* GAMES */
 
 .grid,
 .games-grid{
@@ -440,8 +416,7 @@ header{
   box-shadow:0 25px 55px rgba(0,0,0,.45);
 }
 
-.game-image,
-.cover{
+.game-image{
   height:190px;
   position:relative;
   overflow:hidden;
@@ -468,8 +443,7 @@ header{
   pointer-events:none;
 }
 
-.game-badge,
-.cover-badge{
+.game-badge{
   position:absolute;
   z-index:3;
   top:12px;
@@ -498,13 +472,8 @@ header{
   transition:.2s;
 }
 
-.favorite-btn:hover{
-  transform:scale(1.06);
-}
-
-.favorite-btn.active{
-  color:#ff5873;
-}
+.favorite-btn:hover{transform:scale(1.06)}
+.favorite-btn.active{color:#ff5873}
 
 .game-overlay{
   position:absolute;
@@ -519,9 +488,7 @@ header{
   transition:.25s;
 }
 
-.game-card:hover .game-overlay{
-  opacity:1;
-}
+.game-card:hover .game-overlay{opacity:1}
 
 .game-overlay button{
   padding:11px 17px;
@@ -532,13 +499,11 @@ header{
   font-weight:1000;
 }
 
-.game-info,
-.body{
+.game-info{
   padding:17px;
 }
 
-.game-info h3,
-.body h3{
+.game-info h3{
   margin:0 0 7px;
   font-size:20px;
 }
@@ -565,51 +530,7 @@ header{
   font-weight:1000;
 }
 
-.tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin:12px 0 15px;
-}
-
-.tag{
-  font-size:11px;
-  color:#abc3d8;
-  background:#111f32;
-  border:1px solid #22364f;
-  padding:5px 8px;
-  border-radius:8px;
-}
-
-.actions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-}
-
-.actions button,
-.actions a{
-  padding:11px;
-  border-radius:10px;
-  text-align:center;
-  font-weight:900;
-  border:1px solid #263d58;
-}
-
-.details{
-  background:#14263a;
-  color:#8feaff;
-}
-
-.download{
-  background:linear-gradient(135deg,#16a75d,#20ca79);
-  color:#03150b;
-  border-color:transparent!important;
-}
-
-.hidden{
-  display:none!important;
-}
+.hidden{display:none!important}
 
 .empty{
   grid-column:1/-1;
@@ -619,8 +540,7 @@ header{
   border:1px dashed #24364d;
   border-radius:16px;
 }
-
-/* ================= CATEGORIES ================= */
+  /* ================= CATEGORIES ================= */
 
 .categories-section{
   padding:20px 0 70px;
@@ -1065,12 +985,14 @@ footer,
   <div class="wrap nav">
 
     <a href="#" class="logo">
+
       <span class="logo-icon">🎮</span>
 
       <span class="logo-text">
-        GAME<span>ZONE</span>
+        تكنو<span>مسار</span>
         <small>GAME STORE</small>
       </span>
+
     </a>
 
     <nav class="links">
@@ -1081,7 +1003,7 @@ footer,
     </nav>
 
     <div class="nav-pill">
-      🎮 متجر الألعاب
+      🎮 متجر تكنومسار
     </div>
 
   </div>
@@ -1092,7 +1014,6 @@ footer,
 
 <section class="hero" id="home">
 
-  <!-- Slide 1 -->
   <div class="hero-slide active">
 
     <div
@@ -1103,7 +1024,7 @@ footer,
     <div class="wrap hero-content">
 
       <div class="eyebrow">
-        GAMEZONE STORE
+        تكنومسار STORE
       </div>
 
       <h1>
@@ -1117,6 +1038,7 @@ footer,
       </p>
 
       <div class="hero-buttons">
+
         <a href="#games" class="btn primary">
           🎮 تصفح الألعاب
         </a>
@@ -1124,13 +1046,13 @@ footer,
         <button class="btn" onclick="openGame('pes2013')">
           ⚽ PES 2013
         </button>
+
       </div>
 
     </div>
   </div>
 
 
-  <!-- Slide 2 -->
   <div class="hero-slide">
 
     <div
@@ -1155,16 +1077,21 @@ footer,
       </p>
 
       <div class="hero-buttons">
-        <button class="btn primary" onclick="openGame('pes2013')">
+
+        <button
+          class="btn primary"
+          onclick="openGame('pes2013')">
+
           ⚽ شاهد اللعبة
+
         </button>
+
       </div>
 
     </div>
   </div>
 
 
-  <!-- Slide 3 -->
   <div class="hero-slide">
 
     <div
@@ -1189,9 +1116,11 @@ footer,
       </p>
 
       <div class="hero-buttons">
+
         <a href="#games" class="btn primary">
           🔎 اكتشف المكتبة
         </a>
+
       </div>
 
     </div>
@@ -1199,9 +1128,22 @@ footer,
 
 
   <div class="slider-controls">
-    <button class="dot active" onclick="goSlide(0)"></button>
-    <button class="dot" onclick="goSlide(1)"></button>
-    <button class="dot" onclick="goSlide(2)"></button>
+
+    <button
+      class="dot active"
+      onclick="goSlide(0)">
+    </button>
+
+    <button
+      class="dot"
+      onclick="goSlide(1)">
+    </button>
+
+    <button
+      class="dot"
+      onclick="goSlide(2)">
+    </button>
+
   </div>
 
 </section>
@@ -1218,7 +1160,7 @@ footer,
       <div class="head">
 
         <span class="section-tag">
-          GAME STORE
+          TEKNOMASAR STORE
         </span>
 
         <h2>
@@ -1248,7 +1190,7 @@ footer,
     </div>
 
 
-    <!-- Search -->
+    <!-- SEARCH -->
 
     <div class="toolbar">
 
@@ -1304,7 +1246,7 @@ footer,
     </div>
 
 
-    <!-- Games Grid -->
+    <!-- GAMES GRID -->
 
     <div class="games-grid" id="gamesGrid">
 
@@ -1435,7 +1377,7 @@ footer,
       </article>
 
 
-      <!-- Minecraft -->
+      <!-- MINECRAFT -->
 
       <article
         class="game-card"
@@ -1560,7 +1502,7 @@ footer,
       </article>
 
 
-      <!-- Empty -->
+      <!-- EMPTY -->
 
       <div
         id="emptyState"
@@ -1585,20 +1527,15 @@ footer,
   </div>
 
 </section>
-
-
 <!-- ================= CATEGORIES ================= -->
 
-<section
-  class="categories-section"
-  id="categories">
+<section class="categories-section" id="categories">
 
   <div class="wrap">
 
     <div class="section-header">
 
       <div>
-
         <span class="section-tag">
           EXPLORE
         </span>
@@ -1606,11 +1543,9 @@ footer,
         <h2>
           استكشف الألعاب
         </h2>
-
       </div>
 
     </div>
-
 
     <div class="categories-grid">
 
@@ -1623,15 +1558,8 @@ footer,
         </div>
 
         <div>
-
-          <h3>
-            أكشن
-          </h3>
-
-          <p>
-            ألعاب مليئة بالإثارة
-          </p>
-
+          <h3>أكشن</h3>
+          <p>ألعاب مليئة بالإثارة</p>
         </div>
 
       </button>
@@ -1646,15 +1574,8 @@ footer,
         </div>
 
         <div>
-
-          <h3>
-            رياضة
-          </h3>
-
-          <p>
-            كرة القدم والمزيد
-          </p>
-
+          <h3>رياضة</h3>
+          <p>كرة القدم والمزيد</p>
         </div>
 
       </button>
@@ -1669,15 +1590,8 @@ footer,
         </div>
 
         <div>
-
-          <h3>
-            مغامرات
-          </h3>
-
-          <p>
-            عوالم لا تنتهي
-          </p>
-
+          <h3>مغامرات</h3>
+          <p>عوالم لا تنتهي</p>
         </div>
 
       </button>
@@ -1692,15 +1606,8 @@ footer,
         </div>
 
         <div>
-
-          <h3>
-            سباقات
-          </h3>
-
-          <p>
-            سرعة وإثارة
-          </p>
-
+          <h3>سباقات</h3>
+          <p>سرعة وإثارة</p>
         </div>
 
       </button>
@@ -1727,7 +1634,7 @@ footer,
       <div>
 
         <span class="section-tag">
-          GAME ZONE
+          تكنومسار
         </span>
 
         <h2>
@@ -1744,8 +1651,7 @@ footer,
         onclick="scrollToGames()"
         class="primary-btn">
 
-        تصفح الألعاب
-        ←
+        تصفح الألعاب ←
 
       </button>
 
@@ -1758,9 +1664,7 @@ footer,
 
 <!-- ================= GAME MODAL ================= -->
 
-<div
-  class="game-modal"
-  id="gameModal">
+<div class="game-modal" id="gameModal">
 
   <div
     class="modal-backdrop"
@@ -1802,9 +1706,7 @@ footer,
 
       <div class="modal-rating">
 
-        <span>
-          ★
-        </span>
+        <span>★</span>
 
         <span id="modalRating">
           4.8
@@ -1826,9 +1728,7 @@ footer,
 
         <div>
 
-          <span>
-            🎮
-          </span>
+          <span>🎮</span>
 
           <strong>
             نوع اللعبة
@@ -1843,9 +1743,7 @@ footer,
 
         <div>
 
-          <span>
-            💻
-          </span>
+          <span>💻</span>
 
           <strong>
             المنصة
@@ -1860,9 +1758,7 @@ footer,
 
         <div>
 
-          <span>
-            🌐
-          </span>
+          <span>🌐</span>
 
           <strong>
             اللغة
@@ -1912,7 +1808,6 @@ footer,
 
   <div class="footer-main">
 
-
     <div class="footer-brand">
 
       <div class="logo">
@@ -1922,7 +1817,7 @@ footer,
         </span>
 
         <span class="logo-text">
-          GAME<span>ZONE</span>
+          تكنو<span>مسار</span>
         </span>
 
       </div>
@@ -2007,7 +1902,7 @@ footer,
   <div class="footer-bottom">
 
     <span>
-      © 2026 GAMEZONE — جميع الحقوق محفوظة
+      © 2026 تكنومسار — جميع الحقوق محفوظة
     </span>
 
     <span>
@@ -2040,7 +1935,10 @@ const games = {
     image:"https://upload.wikimedia.org/wikipedia/en/5/5c/Pro_Evolution_Soccer_2013_Cover.jpg",
 
     description:
-      "استمتع بتجربة كرة القدم الكلاسيكية مع Pro Evolution Soccer 2013، واحدة من ألعاب كرة القدم المحبوبة لدى الكثير من اللاعبين."
+      "استمتع بتجربة كرة القدم الكلاسيكية مع Pro Evolution Soccer 2013، واحدة من ألعاب كرة القدم المحبوبة لدى الكثير من اللاعبين.",
+
+    download:
+      "https://youssefsayed2003.blogspot.com/2025/03/2013.html"
 
   },
 
@@ -2058,7 +1956,9 @@ const games = {
     image:"https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
 
     description:
-      "عالم مفتوح مليء بالمغامرات والمهام والاستكشاف وتجربة لعب متنوعة."
+      "عالم مفتوح مليء بالمغامرات والمهام والاستكشاف وتجربة لعب متنوعة.",
+
+    download:""
 
   },
 
@@ -2076,7 +1976,10 @@ const games = {
     image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg",
 
     description:
-      "ابنِ عالمك الخاص واستكشف البيئات المختلفة وصمّم مغامرتك بالطريقة التي تريدها."
+      "ابنِ عالمك الخاص واستكشف البيئات المختلفة وصمّم مغامرتك بالطريقة التي تريدها.",
+
+    download:
+      "https://www.mediafire.com/file/vjxqehwjsnyp3mo/MCPE-Patched-1.21.100.apk/file"
 
   },
 
@@ -2094,53 +1997,65 @@ const games = {
     image:"https://placehold.co/1200x600/172b22/ffffff?text=FIFA+14",
 
     description:
-      "لعبة كرة قدم كلاسيكية تقدم مباريات وحماسًا كبيرًا لمحبي ألعاب كرة القدم."
+      "لعبة كرة قدم كلاسيكية تقدم مباريات وحماسًا كبيرًا لمحبي ألعاب كرة القدم.",
+
+    download:
+      "https://uptogames.net/download-fifa-14-for-pc/"
 
   }
 
 };
 
 
+/* ================= CURRENT GAME ================= */
+
+let currentGameId = null;
+
+
 /* ================= OPEN GAME ================= */
 
 function openGame(gameId){
 
-  const game=games[gameId];
+  const game = games[gameId];
 
   if(!game) return;
 
+  currentGameId = gameId;
 
-  document.getElementById("modalTitle").textContent=
+
+  document.getElementById("modalTitle").textContent =
     game.title;
 
 
-  document.getElementById("modalCategory").textContent=
+  document.getElementById("modalCategory").textContent =
     game.category;
 
 
-  document.getElementById("modalGenre").textContent=
+  document.getElementById("modalGenre").textContent =
     game.genre;
 
 
-  document.getElementById("modalRating").textContent=
+  document.getElementById("modalRating").textContent =
     game.rating;
 
 
-  document.getElementById("modalDescription").textContent=
+  document.getElementById("modalDescription").textContent =
     game.description;
 
 
-  const image=document.getElementById("modalImage");
+  const image =
+    document.getElementById("modalImage");
 
-  image.src=game.image;
+
+  image.src = game.image;
 
 
-  image.onerror=function(){
+  image.onerror = function(){
 
-    this.onerror=null;
+    this.onerror = null;
 
-    this.src=
-      "https://placehold.co/1200x600/111827/ffffff?text="+
+    this.src =
+      "https://placehold.co/1200x600/111827/ffffff?text=" +
       encodeURIComponent(game.title);
 
   };
@@ -2169,6 +2084,34 @@ function closeGame(){
 }
 
 
+/* ================= DOWNLOAD ================= */
+
+function downloadGame(){
+
+  if(!currentGameId) return;
+
+  const game = games[currentGameId];
+
+  if(!game.download){
+
+    alert(
+      "رابط التحميل لهذه اللعبة غير مضاف حاليًا."
+    );
+
+    return;
+
+  }
+
+
+  window.open(
+    game.download,
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+}
+
+
 /* ================= FAVORITES ================= */
 
 function toggleFavorite(button){
@@ -2177,11 +2120,11 @@ function toggleFavorite(button){
 
   if(button.classList.contains("active")){
 
-    button.innerHTML="♥";
+    button.innerHTML = "♥";
 
   }else{
 
-    button.innerHTML="♡";
+    button.innerHTML = "♡";
 
   }
 
@@ -2192,7 +2135,7 @@ function toggleFavorite(button){
 
 function scrollToGames(){
 
-  const section=
+  const section =
     document.getElementById("games");
 
   if(section){
@@ -2208,12 +2151,12 @@ function scrollToGames(){
 
 /* ================= FILTER ================= */
 
-let currentCategory="all";
+let currentCategory = "all";
 
 
 function filterGames(category,button){
 
-  currentCategory=category;
+  currentCategory = category;
 
 
   document
@@ -2239,7 +2182,7 @@ function filterGames(category,button){
 
 function activateCategory(category){
 
-  const buttons=
+  const buttons =
     document.querySelectorAll(".filter");
 
 
@@ -2248,15 +2191,25 @@ function activateCategory(category){
   });
 
 
-  const matching=
+  const categoryNames = {
+
+    action:"أكشن",
+
+    sport:"رياضة",
+
+    adventure:"مغامرات",
+
+    racing:"سباقات"
+
+  };
+
+
+  const matching =
     [...buttons].find(
-      btn=>btn.textContent.toLowerCase()
-      .includes(
-        category==="action"?"أكشن":
-        category==="sport"?"رياضة":
-        category==="adventure"?"مغامرات":
-        "سباقات"
-      )
+      btn =>
+        btn.textContent
+          .toLowerCase()
+          .includes(categoryNames[category])
     );
 
 
@@ -2265,7 +2218,7 @@ function activateCategory(category){
   }
 
 
-  currentCategory=category;
+  currentCategory = category;
 
   applyFilters();
 
@@ -2287,49 +2240,52 @@ function searchGames(){
 
 function applyFilters(){
 
-  const query=
-    document
-      .getElementById("searchInput")
-      .value
+  const input =
+    document.getElementById("searchInput");
+
+
+  const query =
+    input.value
       .trim()
       .toLowerCase();
 
 
-  const cards=
+  const cards =
     document.querySelectorAll(".game-card");
 
 
-  let visible=0;
+  let visible = 0;
 
 
-  cards.forEach(card=>{
+  cards.forEach(card => {
 
-    const category=
+    const category =
       card.dataset.category || "";
 
-    const name=
+
+    const name =
       card.dataset.name || "";
 
 
-    const categoryMatch=
-      currentCategory==="all" ||
-      category===currentCategory;
+    const categoryMatch =
+      currentCategory === "all" ||
+      category === currentCategory;
 
 
-    const searchMatch=
+    const searchMatch =
       !query ||
       name.toLowerCase().includes(query);
 
 
     if(categoryMatch && searchMatch){
 
-      card.style.display="";
+      card.style.display = "";
 
       visible++;
 
     }else{
 
-      card.style.display="none";
+      card.style.display = "none";
 
     }
 
@@ -2340,19 +2296,8 @@ function applyFilters(){
     .getElementById("emptyState")
     .classList.toggle(
       "hidden",
-      visible!==0
+      visible !== 0
     );
-
-}
-
-
-/* ================= DOWNLOAD ================= */
-
-function downloadGame(){
-
-  alert(
-    "أضف رابط التحميل الحقيقي للعبة داخل دالة downloadGame() في الكود."
-  );
 
 }
 
@@ -2363,7 +2308,7 @@ document.addEventListener(
   "keydown",
   function(event){
 
-    if(event.key==="Escape"){
+    if(event.key === "Escape"){
       closeGame();
     }
 
@@ -2373,12 +2318,14 @@ document.addEventListener(
 
 /* ================= HERO SLIDER ================= */
 
-let currentSlide=0;
+let currentSlide = 0;
 
-const slides=
+
+const slides =
   document.querySelectorAll(".hero-slide");
 
-const dots=
+
+const dots =
   document.querySelectorAll(".dot");
 
 
@@ -2387,27 +2334,34 @@ function goSlide(index){
   if(!slides.length) return;
 
 
-  slides[currentSlide].classList.remove("active");
-
-  dots[currentSlide].classList.remove("active");
-
-
-  currentSlide=index;
+  slides[currentSlide]
+    .classList.remove("active");
 
 
-  slides[currentSlide].classList.add("active");
+  dots[currentSlide]
+    .classList.remove("active");
 
-  dots[currentSlide].classList.add("active");
+
+  currentSlide = index;
+
+
+  slides[currentSlide]
+    .classList.add("active");
+
+
+  dots[currentSlide]
+    .classList.add("active");
 
 }
 
 
-/* Auto Slider */
+/* AUTO SLIDER */
 
 setInterval(function(){
 
   goSlide(
-    (currentSlide+1)%slides.length
+    (currentSlide + 1) %
+    slides.length
   );
 
 },5000);
@@ -2419,19 +2373,20 @@ document.addEventListener(
   "DOMContentLoaded",
   function(){
 
-    const cards=
+    const cards =
       document.querySelectorAll(".game-card");
 
 
     document
       .getElementById("gamesCount")
-      .textContent=cards.length;
+      .textContent =
+      cards.length;
 
 
     cards.forEach((card,index)=>{
 
-      card.style.animationDelay=
-        `${index*.08}s`;
+      card.style.animationDelay =
+        `${index * .08}s`;
 
     });
 
