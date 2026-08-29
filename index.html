@@ -391,14 +391,12 @@ header{
 
 /* GAMES */
 
-.grid,
 .games-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(245px,1fr));
   gap:17px;
 }
 
-.card,
 .game-card{
   position:relative;
   overflow:hidden;
@@ -409,7 +407,6 @@ header{
   box-shadow:0 10px 35px rgba(0,0,0,.15);
 }
 
-.card:hover,
 .game-card:hover{
   transform:translateY(-7px);
   border-color:#2e8fa9;
@@ -472,8 +469,13 @@ header{
   transition:.2s;
 }
 
-.favorite-btn:hover{transform:scale(1.06)}
-.favorite-btn.active{color:#ff5873}
+.favorite-btn:hover{
+  transform:scale(1.06);
+}
+
+.favorite-btn.active{
+  color:#ff5873;
+}
 
 .game-overlay{
   position:absolute;
@@ -488,7 +490,9 @@ header{
   transition:.25s;
 }
 
-.game-card:hover .game-overlay{opacity:1}
+.game-card:hover .game-overlay{
+  opacity:1;
+}
 
 .game-overlay button{
   padding:11px 17px;
@@ -530,7 +534,9 @@ header{
   font-weight:1000;
 }
 
-.hidden{display:none!important}
+.hidden{
+  display:none!important;
+}
 
 .empty{
   grid-column:1/-1;
@@ -540,7 +546,8 @@ header{
   border:1px dashed #24364d;
   border-radius:16px;
 }
-  /* ================= CATEGORIES ================= */
+
+/* CATEGORIES */
 
 .categories-section{
   padding:20px 0 70px;
@@ -592,7 +599,7 @@ header{
   font-size:12px;
 }
 
-/* ================= NEWSLETTER ================= */
+/* NEWSLETTER */
 
 .newsletter{
   padding:0 0 70px;
@@ -641,7 +648,7 @@ header{
   font-weight:1000;
 }
 
-/* ================= MODAL ================= */
+/* MODAL */
 
 .game-modal{
   position:fixed;
@@ -794,10 +801,9 @@ header{
   color:#d8e4f1;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
-footer,
-.site-footer{
+footer{
   padding:45px 0 25px;
   border-top:1px solid #172438;
   background:#050914;
@@ -850,7 +856,7 @@ footer,
   font-size:12px;
 }
 
-/* ================= ANIMATION ================= */
+/* ANIMATION */
 
 @keyframes cardIn{
   from{
@@ -867,7 +873,7 @@ footer,
   animation:cardIn .55s ease both;
 }
 
-/* ================= RESPONSIVE ================= */
+/* RESPONSIVE */
 
 @media(max-width:900px){
 
@@ -890,7 +896,6 @@ footer,
   .footer-main{
     grid-template-columns:1fr;
   }
-
 }
 
 @media(max-width:600px){
@@ -929,7 +934,6 @@ footer,
     flex-direction:column;
   }
 
-  .grid,
   .games-grid{
     grid-template-columns:1fr;
   }
@@ -972,14 +976,13 @@ footer,
     flex-direction:column;
     gap:10px;
   }
-
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <header>
   <div class="wrap nav">
@@ -1010,7 +1013,7 @@ footer,
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -1129,27 +1132,16 @@ footer,
 
   <div class="slider-controls">
 
-    <button
-      class="dot active"
-      onclick="goSlide(0)">
-    </button>
-
-    <button
-      class="dot"
-      onclick="goSlide(1)">
-    </button>
-
-    <button
-      class="dot"
-      onclick="goSlide(2)">
-    </button>
+    <button class="dot active" onclick="goSlide(0)"></button>
+    <button class="dot" onclick="goSlide(1)"></button>
+    <button class="dot" onclick="goSlide(2)"></button>
 
   </div>
 
 </section>
 
 
-<!-- ================= GAMES ================= -->
+<!-- GAMES -->
 
 <section class="section" id="games">
 
@@ -1177,7 +1169,7 @@ footer,
 
         <div class="stat">
           الألعاب:
-          <b id="gamesCount">4</b>
+          <b id="gamesCount">5</b>
         </div>
 
         <div class="stat">
@@ -1250,65 +1242,69 @@ footer,
 
     <div class="games-grid" id="gamesGrid">
 
-<!-- محاكي الشاحنات الدول العربية -->
 
-<article
-  class="game-card"
-  data-game="truckArab"
-  data-category="racing"
-  data-name="محاكي الشاحنات الدول العربية محاكي الشاحنات">
+      <!-- TRUCK ARAB -->
 
-  <div class="game-image">
+      <article
+        class="game-card"
+        data-game="truckArab"
+        data-category="racing"
+        data-name="محاكي الشاحنات الدول العربية محاكي الشاحنات">
 
-    <img
-      src="https://placehold.co/900x500/172b22/ffffff?text=Truck+Simulator"
-      alt="محاكي الشاحنات الدول العربية">
+        <div class="game-image">
 
-    <span class="game-badge">
-      RACING
-    </span>
+          <img
+            src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg"
+            alt="محاكي الشاحنات الدول العربية"
+            onerror="this.onerror=null;this.src='https://placehold.co/900x500/172b22/ffffff?text=Truck+Simulator';">
 
-    <button
-      class="favorite-btn"
-      onclick="toggleFavorite(this)">
-      ♡
-    </button>
+          <span class="game-badge">
+            RACING
+          </span>
 
-    <div class="game-overlay">
+          <button
+            class="favorite-btn"
+            onclick="toggleFavorite(this)">
+            ♡
+          </button>
 
-      <button onclick="openGame('truckArab')">
-        عرض اللعبة
-      </button>
+          <div class="game-overlay">
 
-    </div>
+            <button onclick="openGame('truckArab')">
+              عرض اللعبة
+            </button>
 
-  </div>
+          </div>
 
-  <div class="game-info">
+        </div>
 
-    <h3>
-      محاكي الشاحنات الدول العربية
-    </h3>
+        <div class="game-info">
 
-    <p class="game-category">
-      محاكاة • شاحنات • قيادة
-    </p>
+          <h3>
+            محاكي الشاحنات الدول العربية
+          </h3>
 
-    <div class="game-bottom">
+          <p class="game-category">
+            محاكاة • شاحنات • قيادة
+          </p>
 
-      <span class="rating">
-        ★ 4.8
-      </span>
+          <div class="game-bottom">
 
-      <span class="price">
-        مجاني
-      </span>
+            <span class="rating">
+              ★ 4.8
+            </span>
 
-    </div>
+            <span class="price">
+              مجاني
+            </span>
 
-  </div>
+          </div>
 
-</article>
+        </div>
+
+      </article>
+
+
       <!-- PES 2013 -->
 
       <article
@@ -1320,7 +1316,7 @@ footer,
         <div class="game-image">
 
           <img
-            src="https://upload.wikimedia.org/wikipedia/en/5/5c/Pro_Evolution_Soccer_2013_Cover.jpg"
+            src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/file_00000000a93c820aba7a6e700e553412.png"
             alt="PES 2013"
             onerror="this.onerror=null;this.src='https://placehold.co/900x500/10243a/ffffff?text=PES+2013';">
 
@@ -1343,7 +1339,6 @@ footer,
           </div>
 
         </div>
-
 
         <div class="game-info">
 
@@ -1407,7 +1402,6 @@ footer,
 
         </div>
 
-
         <div class="game-info">
 
           <h3>
@@ -1470,7 +1464,6 @@ footer,
 
         </div>
 
-
         <div class="game-info">
 
           <h3>
@@ -1509,8 +1502,9 @@ footer,
         <div class="game-image">
 
           <img
-            src="https://placehold.co/900x500/172b22/ffffff?text=FIFA+14"
-            alt="FIFA 14">
+            src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images%20(1).jpeg"
+            alt="FIFA 14"
+            onerror="this.onerror=null;this.src='https://placehold.co/900x500/172b22/ffffff?text=FIFA+14';">
 
           <span class="game-badge">
             SPORT
@@ -1531,7 +1525,6 @@ footer,
           </div>
 
         </div>
-
 
         <div class="game-info">
 
@@ -1585,7 +1578,9 @@ footer,
   </div>
 
 </section>
-<!-- ================= CATEGORIES ================= -->
+
+
+<!-- CATEGORIES -->
 
 <section class="categories-section" id="categories">
 
@@ -1594,6 +1589,7 @@ footer,
     <div class="section-header">
 
       <div>
+
         <span class="section-tag">
           EXPLORE
         </span>
@@ -1601,6 +1597,7 @@ footer,
         <h2>
           استكشف الألعاب
         </h2>
+
       </div>
 
     </div>
@@ -1677,7 +1674,7 @@ footer,
 </section>
 
 
-<!-- ================= NEWSLETTER ================= -->
+<!-- NEWSLETTER -->
 
 <section class="newsletter">
 
@@ -1720,7 +1717,7 @@ footer,
 </section>
 
 
-<!-- ================= GAME MODAL ================= -->
+<!-- GAME MODAL -->
 
 <div class="game-modal" id="gameModal">
 
@@ -1808,7 +1805,7 @@ footer,
           </strong>
 
           <small>
-            PC
+            PC / Mobile
           </small>
 
         </div>
@@ -1858,10 +1855,9 @@ footer,
 </div>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer
-  class="site-footer"
   id="about">
 
   <div class="footer-main">
@@ -1972,32 +1968,35 @@ footer,
 </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- JAVASCRIPT -->
 
 <script>
 
 /* ================= GAME DATABASE ================= */
 
 const games = {
-truckArab: {
 
-  title:"محاكي الشاحنات الدول العربية",
+  truckArab: {
 
-  category:"RACING",
+    title:"محاكي الشاحنات الدول العربية",
 
-  genre:"محاكاة • شاحنات • قيادة",
+    category:"RACING",
 
-  rating:"4.8",
+    genre:"محاكاة • شاحنات • قيادة",
 
-  image:"https://placehold.co/1200x600/172b22/ffffff?text=Truck+Simulator",
+    rating:"4.8",
 
-  description:
-    "لعبة محاكاة شاحنات وقيادة في أجواء مستوحاة من الدول العربية.",
+    image:
+      "https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg",
 
-  download:
-    "https://c.go4techno.com/abokreeem-833"
+    description:
+      "لعبة محاكاة شاحنات وقيادة في أجواء مستوحاة من الدول العربية.",
 
-},
+    download:""
+
+  },
+
+
   pes2013: {
 
     title:"Pro Evolution Soccer 2013",
@@ -2007,13 +2006,14 @@ truckArab: {
     genre:"كرة القدم",
 
     rating:"4.8",
-image:"https://upload.wikimedia.org/wikipedia/en/5/5c/Pro_Evolution_Soccer_2013_Cover.jpg",
-    image:"https://upload.wikimedia.org/wikipedia/en/5/5c/Pro_Evolution_Soccer_2013_Cover.jpg",
+
+    image:
+      "https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/file_00000000a93c820aba7a6e700e553412.png",
+
     description:
       "استمتع بتجربة كرة القدم الكلاسيكية مع Pro Evolution Soccer 2013، واحدة من ألعاب كرة القدم المحبوبة لدى الكثير من اللاعبين.",
 
-    download:
-      "https://youssefsayed2003.blogspot.com/2025/03/2013.html"
+    download:""
 
   },
 
@@ -2028,12 +2028,13 @@ image:"https://upload.wikimedia.org/wikipedia/en/5/5c/Pro_Evolution_Soccer_2013_
 
     rating:"4.9",
 
-    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
+    image:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
 
     description:
       "عالم مفتوح مليء بالمغامرات والمهام والاستكشاف وتجربة لعب متنوعة.",
 
-  download:"https://uptogames.net/download-grand-theft-auto-v-free/"
+    download:""
 
   },
 
@@ -2048,13 +2049,13 @@ image:"https://upload.wikimedia.org/wikipedia/en/5/5c/Pro_Evolution_Soccer_2013_
 
     rating:"4.9",
 
-    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg",
+    image:
+      "https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg",
 
     description:
       "ابنِ عالمك الخاص واستكشف البيئات المختلفة وصمّم مغامرتك بالطريقة التي تريدها.",
 
-    download:
-      "https://www.mediafire.com/file/vjxqehwjsnyp3mo/MCPE-Patched-1.21.100.apk/file"
+    download:""
 
   },
 
@@ -2069,13 +2070,13 @@ image:"https://upload.wikimedia.org/wikipedia/en/5/5c/Pro_Evolution_Soccer_2013_
 
     rating:"4.7",
 
-    image:"https://placehold.co/1200x600/172b22/ffffff?text=FIFA+14",
+    image:
+      "https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images%20(1).jpeg",
 
     description:
       "لعبة كرة قدم كلاسيكية تقدم مباريات وحماسًا كبيرًا لمحبي ألعاب كرة القدم.",
 
-    download:
-      "https://uptogames.net/download-fifa-14-for-pc/"
+    download:""
 
   }
 
@@ -2097,22 +2098,17 @@ function openGame(gameId){
 
   currentGameId = gameId;
 
-
   document.getElementById("modalTitle").textContent =
     game.title;
-
 
   document.getElementById("modalCategory").textContent =
     game.category;
 
-
   document.getElementById("modalGenre").textContent =
     game.genre;
 
-
   document.getElementById("modalRating").textContent =
     game.rating;
-
 
   document.getElementById("modalDescription").textContent =
     game.description;
@@ -2123,7 +2119,6 @@ function openGame(gameId){
 
 
   image.src = game.image;
-
 
   image.onerror = function(){
 
@@ -2139,7 +2134,6 @@ function openGame(gameId){
   document
     .getElementById("gameModal")
     .classList.add("active");
-
 
   document.body.classList.add("modal-open");
 
@@ -2170,7 +2164,7 @@ function downloadGame(){
   if(!game.download){
 
     alert(
-      "رابط التحميل لهذه اللعبة غير مضاف حاليًا."
+      "رابط التحميل غير مضاف حاليًا لهذه اللعبة."
     );
 
     return;
@@ -2232,7 +2226,6 @@ let currentCategory = "all";
 function filterGames(category,button){
 
   currentCategory = category;
-
 
   document
     .querySelectorAll(".filter")
