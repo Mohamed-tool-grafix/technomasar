@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>تكنومسار | متجر الألعاب</title>
-<meta name="description" content="تكنومسار — متجر ألعاب عربي بواجهة احترافية.">
+<title>GAMEZONE | متجر الألعاب</title>
+<meta name="description" content="GAMEZONE - متجر ألعاب عربي احترافي">
 
 <style>
-
 :root{
-  --bg:#060912;
+  --bg:#050812;
   --panel:#0b1220;
-  --panel2:#0e1829;
-  --line:#1c2b42;
+  --panel2:#101a2c;
+  --line:#20314a;
   --text:#f4f8ff;
   --muted:#91a2ba;
   --cyan:#38d8ff;
-  --blue:#4f7cff;
+  --blue:#5878ff;
   --green:#28d17c;
-  --shadow:0 24px 70px rgba(0,0,0,.42);
+  --danger:#ff5470;
+  --shadow:0 25px 70px rgba(0,0,0,.45);
 }
 
 *{
@@ -32,8 +32,8 @@ html{
 body{
   margin:0;
   background:
-    radial-gradient(circle at 10% -10%,#102d46 0,transparent 30%),
-    radial-gradient(circle at 100% 0,#17183b 0,transparent 27%),
+    radial-gradient(circle at 10% -10%,#12314b 0,transparent 30%),
+    radial-gradient(circle at 100% 0,#211a48 0,transparent 28%),
     var(--bg);
   color:var(--text);
   font-family:"Segoe UI",Tahoma,Arial,sans-serif;
@@ -44,17 +44,16 @@ body:before{
   position:fixed;
   inset:0;
   pointer-events:none;
+  z-index:-1;
   background-image:
     linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
     linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
   background-size:42px 42px;
-  mask-image:linear-gradient(to bottom,#000,transparent 70%);
-  z-index:-1;
+  mask-image:linear-gradient(to bottom,#000,transparent 75%);
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
+body.modal-open{
+  overflow:hidden;
 }
 
 button,
@@ -62,20 +61,29 @@ input{
   font:inherit;
 }
 
+button{
+  cursor:pointer;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
 .wrap{
   width:min(1240px,92%);
   margin:auto;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 header{
   position:sticky;
   top:0;
-  z-index:100;
-  background:rgba(5,9,17,.76);
+  z-index:1000;
+  background:rgba(5,8,18,.78);
   backdrop-filter:blur(22px);
-  border-bottom:1px solid rgba(120,160,210,.12);
+  border-bottom:1px solid rgba(120,160,210,.13);
 }
 
 .nav{
@@ -83,33 +91,37 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  gap:18px;
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:11px;
+  gap:10px;
   font-weight:1000;
-  font-size:22px;
-  color:#fff;
+  font-size:21px;
+  white-space:nowrap;
 }
 
-.logo-mark{
-  width:42px;
-  height:42px;
+.logo-icon{
+  width:43px;
+  height:43px;
   display:grid;
   place-items:center;
-  border-radius:13px;
-  background:linear-gradient(135deg,var(--cyan),#5571ff);
-  box-shadow:0 0 30px #38d8ff35;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  box-shadow:0 0 35px rgba(56,216,255,.22);
+}
+
+.logo-text span{
+  color:var(--cyan);
 }
 
 .logo small{
   display:block;
-  color:#7f91aa;
-  font-size:9px;
-  letter-spacing:2.4px;
+  color:#71849d;
+  font-size:8px;
+  letter-spacing:2.5px;
   margin-top:2px;
 }
 
@@ -123,16 +135,17 @@ header{
   padding:10px 13px;
   border-radius:10px;
   color:#9eacc0;
-  font-weight:700;
+  font-weight:800;
+  transition:.2s;
 }
 
 .links a:hover{
-  background:#111d30;
   color:#fff;
+  background:#111d30;
 }
 
 .nav-pill{
-  border:1px solid #243751;
+  border:1px solid #253752;
   background:#0c1726;
   padding:9px 13px;
   border-radius:11px;
@@ -140,78 +153,80 @@ header{
   font-size:13px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
+  min-height:560px;
   position:relative;
-  min-height:545px;
-  display:flex;
-  align-items:center;
   overflow:hidden;
   border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-.hero-art{
+.hero-slide{
   position:absolute;
-  inset:-25px;
-  background-size:cover;
-  background-position:center;
-  opacity:.32;
-  filter:saturate(1.25);
-  transition:.7s;
+  inset:0;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .7s ease,visibility .7s ease;
 }
 
-.hero:before{
+.hero-slide.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.hero-art{
+  position:absolute;
+  inset:-20px;
+  background-size:cover;
+  background-position:center;
+  filter:saturate(1.25);
+  transform:scale(1.04);
+  transition:transform 6s ease;
+}
+
+.hero-slide.active .hero-art{
+  transform:scale(1.10);
+}
+
+.hero-slide:after{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(
-      circle at 75% 45%,
-      rgba(56,216,255,.16),
-      transparent 27%
-    ),
     linear-gradient(
       90deg,
-      rgba(6,9,18,1) 0%,
-      rgba(6,9,18,.82) 42%,
-      rgba(6,9,18,.3) 100%
+      rgba(5,8,18,1) 0%,
+      rgba(5,8,18,.88) 37%,
+      rgba(5,8,18,.42) 70%,
+      rgba(5,8,18,.15) 100%
+    ),
+    linear-gradient(
+      0deg,
+      var(--bg),
+      transparent 30%
     );
-  z-index:1;
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    0deg,
-    var(--bg),
-    transparent 22%
-  );
-  z-index:1;
 }
 
 .hero-content{
   position:relative;
-  z-index:2;
-  padding:75px 0;
-  max-width:790px;
+  z-index:3;
+  padding:105px 0 80px;
+  max-width:720px;
 }
 
 .eyebrow{
   color:var(--cyan);
   font-size:13px;
   font-weight:1000;
-  letter-spacing:1.7px;
-  text-transform:uppercase;
+  letter-spacing:1.8px;
 }
 
 .hero h1{
-  font-size:clamp(48px,7vw,82px);
+  margin:15px 0;
+  font-size:clamp(45px,7vw,82px);
   line-height:.98;
-  letter-spacing:-2px;
-  margin:14px 0 18px;
+  letter-spacing:-3px;
 }
 
 .hero h1 span{
@@ -219,40 +234,31 @@ header{
 }
 
 .hero p{
-  font-size:18px;
   color:#b5c3d6;
-  line-height:1.95;
-  max-width:690px;
+  font-size:18px;
+  line-height:1.9;
+  max-width:650px;
 }
 
 .hero-buttons{
   display:flex;
-  gap:11px;
+  gap:10px;
   flex-wrap:wrap;
-  margin-top:27px;
+  margin-top:25px;
 }
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
+  gap:7px;
   padding:13px 19px;
   border-radius:13px;
   border:1px solid #293d5b;
   background:#101b2b;
+  color:#fff;
   font-weight:900;
   transition:.2s;
-}
-
-.btn.primary{
-  background:linear-gradient(
-    135deg,
-    var(--cyan),
-    #5680ff
-  );
-  color:#03111b;
-  border-color:transparent;
-  box-shadow:0 10px 30px #38d8ff20;
 }
 
 .btn:hover{
@@ -260,10 +266,21 @@ header{
   filter:brightness(1.08);
 }
 
-.dots{
+.btn.primary{
+  background:linear-gradient(135deg,var(--cyan),#587bff);
+  color:#03111b;
+  border-color:transparent;
+  box-shadow:0 12px 35px rgba(56,216,255,.18);
+}
+
+.slider-controls{
+  position:absolute;
+  z-index:5;
+  bottom:32px;
+  right:50%;
+  transform:translateX(50%);
   display:flex;
   gap:8px;
-  margin-top:27px;
 }
 
 .dot{
@@ -271,38 +288,41 @@ header{
   height:4px;
   border:0;
   border-radius:20px;
-  background:#304158;
-  cursor:pointer;
+  background:#3a4b63;
   transition:.25s;
 }
 
 .dot.active{
-  width:48px;
+  width:52px;
   background:var(--cyan);
 }
 
-/* SECTION */
+/* ================= SECTIONS ================= */
 
 .section{
   padding:70px 0;
 }
 
-.head{
-  margin-bottom:25px;
-}
-
-.head-row{
+.head-row,
+.section-header{
   display:flex;
   justify-content:space-between;
   align-items:end;
   gap:20px;
 }
 
-.head h2{
-  font-size:38px;
-  letter-spacing:-1px;
+.section-tag{
+  color:var(--cyan);
+  font-size:11px;
+  font-weight:1000;
+  letter-spacing:1.6px;
+}
+
+.head h2,
+.section-header h2{
   margin:7px 0;
-  color:#fff;
+  font-size:36px;
+  letter-spacing:-1px;
 }
 
 .head p{
@@ -330,19 +350,19 @@ header{
   color:#fff;
 }
 
-/* SEARCH */
+/* ================= SEARCH ================= */
 
 .toolbar{
   display:flex;
   gap:12px;
   align-items:center;
-  margin:25px 0 20px;
+  margin:27px 0 22px;
   flex-wrap:wrap;
 }
 
 .search{
   display:flex;
-  gap:9px;
+  gap:8px;
   flex:1;
   min-width:260px;
 }
@@ -352,24 +372,22 @@ header{
   padding:15px 17px;
   border-radius:13px;
   border:1px solid #223550;
-  background:rgba(10,19,33,.9);
+  background:#0a1321;
   color:#fff;
   outline:none;
-  box-shadow:inset 0 1px #ffffff05;
 }
 
 .search input:focus{
   border-color:#38d8ff77;
-  box-shadow:0 0 0 4px #38d8ff0d;
+  box-shadow:0 0 0 4px rgba(56,216,255,.06);
 }
 
 .search button{
-  padding:0 17px;
+  padding:0 18px;
   border-radius:13px;
   border:1px solid #263a55;
   background:#111d2d;
-  color:#c6d2e0;
-  cursor:pointer;
+  color:#d3deea;
 }
 
 .filters{
@@ -384,128 +402,167 @@ header{
   border:1px solid #223550;
   background:#0b1422;
   color:#9eafc3;
-  cursor:pointer;
   font-weight:800;
+  transition:.2s;
 }
 
-.filter.active,
-.filter:hover{
+.filter:hover,
+.filter.active{
   background:#112b3d;
   color:#66e4ff;
   border-color:#2b7891;
 }
 
-/* GAME GRID */
+/* ================= GAMES GRID ================= */
 
-.grid{
+.grid,
+.games-grid{
   display:grid;
-  grid-template-columns:
-    repeat(auto-fill,minmax(245px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(245px,1fr));
   gap:17px;
 }
 
-.card{
+.card,
+.game-card{
   position:relative;
-  background:
-    linear-gradient(
-      155deg,
-      rgba(16,27,45,.96),
-      rgba(8,14,24,.96)
-    );
+  overflow:hidden;
+  background:linear-gradient(155deg,rgba(16,27,45,.97),rgba(8,14,24,.97));
   border:1px solid #1c2d44;
   border-radius:19px;
-  overflow:hidden;
   transition:.28s;
-  box-shadow:0 10px 35px #0002;
+  box-shadow:0 10px 35px rgba(0,0,0,.15);
 }
 
-.card:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:
-    linear-gradient(
-      120deg,
-      transparent 35%,
-      #ffffff04,
-      transparent 65%
-    );
-  transform:translateX(-100%);
-  transition:.5s;
-}
-
-.card:hover{
+.card:hover,
+.game-card:hover{
   transform:translateY(-7px);
   border-color:#2e8fa9;
-  box-shadow:0 25px 55px #0007;
+  box-shadow:0 25px 55px rgba(0,0,0,.45);
 }
 
-.card:hover:after{
-  transform:translateX(100%);
-}
-
+.game-image,
 .cover{
   height:190px;
   position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:76px;
-  background:
-    radial-gradient(
-      circle at 25% 20%,
-      #28d8ff55,
-      transparent 25%
-    ),
-    linear-gradient(
-      135deg,
-      #102e4b,
-      #31245e
-    );
-  background-size:cover;
-  background-position:center;
+  overflow:hidden;
+  background:#101827;
 }
 
-.cover:before{
+.game-image img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.game-card:hover .game-image img{
+  transform:scale(1.07);
+}
+
+.game-image:after{
   content:"";
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(
-      0deg,
-      rgba(5,9,16,.8),
-      transparent 58%
-    );
+  background:linear-gradient(0deg,rgba(3,7,13,.85),transparent 58%);
+  pointer-events:none;
 }
 
+.game-badge,
 .cover-badge{
   position:absolute;
+  z-index:3;
   top:12px;
   right:12px;
   padding:6px 9px;
   border-radius:8px;
-  background:#06101ccc;
-  border:1px solid #ffffff18;
+  background:rgba(4,12,20,.82);
+  border:1px solid rgba(255,255,255,.12);
   color:#bdefff;
-  font-size:11px;
-  font-weight:900;
+  font-size:10px;
+  font-weight:1000;
 }
 
+.favorite-btn{
+  position:absolute;
+  z-index:5;
+  top:10px;
+  left:10px;
+  width:38px;
+  height:38px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:11px;
+  background:rgba(5,10,18,.72);
+  color:#fff;
+  font-size:21px;
+  transition:.2s;
+}
+
+.favorite-btn:hover{
+  transform:scale(1.06);
+}
+
+.favorite-btn.active{
+  color:#ff5873;
+}
+
+.game-overlay{
+  position:absolute;
+  z-index:4;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  background:rgba(2,6,13,.45);
+  backdrop-filter:blur(2px);
+  transition:.25s;
+}
+
+.game-card:hover .game-overlay{
+  opacity:1;
+}
+
+.game-overlay button{
+  padding:11px 17px;
+  border:0;
+  border-radius:11px;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  color:#03111b;
+  font-weight:1000;
+}
+
+.game-info,
 .body{
   padding:17px;
 }
 
+.game-info h3,
 .body h3{
   margin:0 0 7px;
-  font-size:21px;
+  font-size:20px;
 }
 
-.body p{
-  color:#9eafc2;
-  min-height:56px;
-  line-height:1.7;
-  font-size:14px;
+.game-category{
+  color:#91a2ba;
+  font-size:13px;
+  margin:0 0 14px;
+}
+
+.game-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.rating{
+  color:#ffd45b;
+  font-weight:900;
+}
+
+.price{
+  color:#42df8c;
+  font-weight:1000;
 }
 
 .tags{
@@ -537,7 +594,6 @@ header{
   text-align:center;
   font-weight:900;
   border:1px solid #263d58;
-  cursor:pointer;
 }
 
 .details{
@@ -546,12 +602,7 @@ header{
 }
 
 .download{
-  background:
-    linear-gradient(
-      135deg,
-      #16a75d,
-      #20ca79
-    );
+  background:linear-gradient(135deg,#16a75d,#20ca79);
   color:#03150b;
   border-color:transparent!important;
 }
@@ -561,605 +612,1833 @@ header{
 }
 
 .empty{
+  grid-column:1/-1;
   text-align:center;
   padding:55px;
   color:#8fa0b7;
+  border:1px dashed #24364d;
+  border-radius:16px;
 }
 
-/* FOOTER */
+/* ================= CATEGORIES ================= */
 
-footer{
-  padding:45px 0;
-  text-align:center;
-  color:#718197;
+.categories-section{
+  padding:20px 0 70px;
+}
+
+.categories-grid{
+  margin-top:25px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.category-card{
+  text-align:right;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:22px;
+  border:1px solid #1e3048;
+  border-radius:17px;
+  background:linear-gradient(145deg,#0d1726,#09111e);
+  color:#fff;
+  transition:.25s;
+}
+
+.category-card:hover{
+  transform:translateY(-4px);
+  border-color:#2b7189;
+  background:#0e1b2c;
+}
+
+.category-icon{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:#12253a;
+  font-size:25px;
+}
+
+.category-card h3{
+  margin:0 0 4px;
+}
+
+.category-card p{
+  margin:0;
+  color:#7f91a9;
+  font-size:12px;
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter{
+  padding:0 0 70px;
+}
+
+.newsletter-content{
+  padding:32px;
+  border:1px solid #20334d;
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 90% 50%,rgba(56,216,255,.12),transparent 30%),
+    linear-gradient(135deg,#0c1828,#0a101c);
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.newsletter-icon{
+  width:65px;
+  height:65px;
+  flex:none;
+  display:grid;
+  place-items:center;
+  border-radius:18px;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  font-size:30px;
+}
+
+.newsletter h2{
+  margin:5px 0;
+}
+
+.newsletter p{
+  margin:0;
+  color:#91a2ba;
+}
+
+.primary-btn{
+  margin-right:auto;
+  flex:none;
+  padding:13px 18px;
+  border:0;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--cyan),var(--blue));
+  color:#03111b;
+  font-weight:1000;
+}
+
+/* ================= MODAL ================= */
+
+.game-modal{
+  position:fixed;
+  inset:0;
+  z-index:5000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  opacity:0;
+  visibility:hidden;
+  transition:.25s;
+}
+
+.game-modal.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(8px);
+}
+
+.game-modal-content{
+  position:relative;
+  z-index:2;
+  width:min(900px,100%);
+  max-height:90vh;
+  overflow:auto;
+  border:1px solid #2a405d;
+  border-radius:22px;
+  background:#09111e;
+  box-shadow:var(--shadow);
+  transform:translateY(25px) scale(.97);
+  transition:.3s;
+}
+
+.game-modal.active .game-modal-content{
+  transform:translateY(0) scale(1);
+}
+
+.modal-close{
+  position:absolute;
+  z-index:10;
+  top:13px;
+  left:13px;
+  width:40px;
+  height:40px;
+  border:1px solid #ffffff20;
+  border-radius:12px;
+  background:#07101ccc;
+  color:#fff;
+  font-size:25px;
+}
+
+.modal-cover{
+  height:330px;
+  background:#0d1726;
+}
+
+.modal-cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.modal-body{
+  padding:27px;
+}
+
+.modal-body h2{
+  font-size:34px;
+  margin:10px 0;
+}
+
+.modal-rating{
+  display:flex;
+  gap:7px;
+  align-items:center;
+  color:#ffd45b;
+  font-weight:900;
+}
+
+.rating-text{
+  color:#8091a8;
+  font-weight:500;
+  font-size:12px;
+}
+
+.modal-body>p{
+  color:#aab9cc;
+  line-height:1.9;
+}
+
+.game-features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:22px 0;
+}
+
+.game-features>div{
+  padding:15px;
+  border:1px solid #1d3048;
+  border-radius:13px;
+  background:#0d1726;
+}
+
+.game-features span{
+  display:block;
+  font-size:21px;
+  margin-bottom:7px;
+}
+
+.game-features strong,
+.game-features small{
+  display:block;
+}
+
+.game-features small{
+  color:#91a2ba;
+  margin-top:4px;
+}
+
+.modal-actions{
+  display:flex;
+  gap:10px;
+}
+
+.download-btn,
+.secondary-btn{
+  padding:13px 18px;
+  border-radius:12px;
+  font-weight:1000;
+}
+
+.download-btn{
+  flex:1;
+  border:0;
+  background:linear-gradient(135deg,#16a75d,#20ca79);
+  color:#03150b;
+}
+
+.secondary-btn{
+  border:1px solid #2a3e59;
+  background:#121e30;
+  color:#d8e4f1;
+}
+
+/* ================= FOOTER ================= */
+
+footer,
+.site-footer{
+  padding:45px 0 25px;
   border-top:1px solid #172438;
   background:#050914;
 }
 
-.footer-brand{
-  color:#dce9f8;
-  font-weight:900;
+.footer-main{
+  width:min(1240px,92%);
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:50px;
 }
-     <!-- Games Section -->
-    <section class="games-section" id="games">
-        <div class="section-header">
-            <div>
-                <span class="section-tag">GAME STORE</span>
-                <h2>أحدث الألعاب</h2>
-            </div>
 
-            <button class="view-all" onclick="showAllGames()">
-                عرض الكل
-                <span>←</span>
-            </button>
+.footer-brand p{
+  max-width:430px;
+  color:#718197;
+  line-height:1.8;
+}
+
+.footer-links{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.footer-links h4{
+  margin-top:0;
+  color:#fff;
+}
+
+.footer-links a{
+  display:block;
+  color:#718197;
+  margin:10px 0;
+  font-size:13px;
+}
+
+.footer-links a:hover{
+  color:var(--cyan);
+}
+
+.footer-bottom{
+  width:min(1240px,92%);
+  margin:35px auto 0;
+  padding-top:20px;
+  border-top:1px solid #142237;
+  display:flex;
+  justify-content:space-between;
+  color:#596a80;
+  font-size:12px;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes cardIn{
+  from{
+    opacity:0;
+    transform:translateY(18px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.game-card{
+  animation:cardIn .55s ease both;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+  .links{
+    display:none;
+  }
+
+  .hero{
+    min-height:520px;
+  }
+
+  .hero-content{
+    padding-top:90px;
+  }
+
+  .categories-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-main{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .wrap{
+    width:94%;
+  }
+
+  .nav{
+    min-height:68px;
+  }
+
+  .nav-pill{
+    display:none;
+  }
+
+  .hero{
+    min-height:540px;
+  }
+
+  .hero-content{
+    padding:85px 0 70px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .head-row,
+  .section-header{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .grid,
+  .games-grid{
+    grid-template-columns:1fr;
+  }
+
+  .categories-grid{
+    grid-template-columns:1fr;
+  }
+
+  .newsletter-content{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .primary-btn{
+    margin-right:0;
+    width:100%;
+  }
+
+  .game-features{
+    grid-template-columns:1fr;
+  }
+
+  .modal-cover{
+    height:210px;
+  }
+
+  .modal-body h2{
+    font-size:26px;
+  }
+
+  .modal-actions{
+    flex-direction:column;
+  }
+
+  .footer-links{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:10px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+  <div class="wrap nav">
+
+    <a href="#" class="logo">
+      <span class="logo-icon">🎮</span>
+
+      <span class="logo-text">
+        GAME<span>ZONE</span>
+        <small>GAME STORE</small>
+      </span>
+    </a>
+
+    <nav class="links">
+      <a href="#home">الرئيسية</a>
+      <a href="#games">الألعاب</a>
+      <a href="#categories">التصنيفات</a>
+      <a href="#about">عن المتجر</a>
+    </nav>
+
+    <div class="nav-pill">
+      🎮 متجر الألعاب
+    </div>
+
+  </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+  <!-- Slide 1 -->
+  <div class="hero-slide active">
+
+    <div
+      class="hero-art"
+      style="background-image:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=85')">
+    </div>
+
+    <div class="wrap hero-content">
+
+      <div class="eyebrow">
+        GAMEZONE STORE
+      </div>
+
+      <h1>
+        عالم الألعاب<br>
+        <span>بين يديك</span>
+      </h1>
+
+      <p>
+        اكتشف مجموعة من الألعاب الرائعة واستمتع
+        بواجهة متجر ألعاب عصرية وسريعة على جهازك.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#games" class="btn primary">
+          🎮 تصفح الألعاب
+        </a>
+
+        <button class="btn" onclick="openGame('pes2013')">
+          ⚽ PES 2013
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Slide 2 -->
+  <div class="hero-slide">
+
+    <div
+      class="hero-art"
+      style="background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1800&q=85')">
+    </div>
+
+    <div class="wrap hero-content">
+
+      <div class="eyebrow">
+        CLASSIC FOOTBALL
+      </div>
+
+      <h1>
+        PES 2013<br>
+        <span>الكلاسيكية</span>
+      </h1>
+
+      <p>
+        ارجع إلى واحدة من أشهر ألعاب كرة القدم
+        الكلاسيكية واستمتع بتجربة مليئة بالحماس.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn primary" onclick="openGame('pes2013')">
+          ⚽ شاهد اللعبة
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- Slide 3 -->
+  <div class="hero-slide">
+
+    <div
+      class="hero-art"
+      style="background-image:url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1800&q=85')">
+    </div>
+
+    <div class="wrap hero-content">
+
+      <div class="eyebrow">
+        YOUR GAME LIBRARY
+      </div>
+
+      <h1>
+        لعبتك<br>
+        <span>المفضلة هنا</span>
+      </h1>
+
+      <p>
+        ابحث بين الألعاب واستخدم التصنيفات للوصول
+        إلى اللعبة التي تريدها بسرعة.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#games" class="btn primary">
+          🔎 اكتشف المكتبة
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="slider-controls">
+    <button class="dot active" onclick="goSlide(0)"></button>
+    <button class="dot" onclick="goSlide(1)"></button>
+    <button class="dot" onclick="goSlide(2)"></button>
+  </div>
+
+</section>
+
+
+<!-- ================= GAMES ================= -->
+
+<section class="section" id="games">
+
+  <div class="wrap">
+
+    <div class="head-row">
+
+      <div class="head">
+
+        <span class="section-tag">
+          GAME STORE
+        </span>
+
+        <h2>
+          أحدث الألعاب
+        </h2>
+
+        <p>
+          اختر لعبتك واستعرض التفاصيل.
+        </p>
+
+      </div>
+
+      <div class="library-stats">
+
+        <div class="stat">
+          الألعاب:
+          <b id="gamesCount">4</b>
         </div>
 
-        <div class="games-grid" id="gamesGrid">
-
-            <!-- PES 2013 -->
-            <article class="game-card">
-                <div class="game-image">
-                    <img
-                        src="https://cdn.cloudflare.steamstatic.com/steam/apps/221380/header.jpg"
-                        alt="PES 2013"
-                        onerror="this.src='https://placehold.co/600x338/111827/ffffff?text=PES+2013'"
-                    >
-
-                    <span class="game-badge">SPORT</span>
-
-                    <button class="favorite-btn" onclick="toggleFavorite(this)">
-                        ♡
-                    </button>
-
-                    <div class="game-overlay">
-                        <button onclick="openGame('pes2013')">
-                            عرض اللعبة
-                        </button>
-                    </div>
-                </div>
-
-                <div class="game-info">
-                    <h3>Pro Evolution Soccer 2013</h3>
-                    <p class="game-category">كرة القدم • رياضة</p>
-
-                    <div class="game-bottom">
-                        <span class="rating">★ 4.8</span>
-                        <span class="price">مجاني</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- GTA V -->
-            <article class="game-card">
-                <div class="game-image">
-                    <img
-                        src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
-                        alt="GTA V"
-                        onerror="this.src='https://placehold.co/600x338/111827/ffffff?text=GTA+V'"
-                    >
-
-                    <span class="game-badge">ACTION</span>
-
-                    <button class="favorite-btn" onclick="toggleFavorite(this)">
-                        ♡
-                    </button>
-
-                    <div class="game-overlay">
-                        <button onclick="openGame('gta5')">
-                            عرض اللعبة
-                        </button>
-                    </div>
-                </div>
-
-                <div class="game-info">
-                    <h3>Grand Theft Auto V</h3>
-                    <p class="game-category">أكشن • عالم مفتوح</p>
-
-                    <div class="game-bottom">
-                        <span class="rating">★ 4.9</span>
-                        <span class="price">مجاني</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Minecraft -->
-            <article class="game-card">
-                <div class="game-image">
-                    <img
-                        src="https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg"
-                        alt="Minecraft"
-                        onerror="this.src='https://placehold.co/600x338/111827/ffffff?text=Minecraft'"
-                    >
-
-                    <span class="game-badge">ADVENTURE</span>
-
-                    <button class="favorite-btn" onclick="toggleFavorite(this)">
-                        ♡
-                    </button>
-
-                    <div class="game-overlay">
-                        <button onclick="openGame('minecraft')">
-                            عرض اللعبة
-                        </button>
-                    </div>
-                </div>
-
-                <div class="game-info">
-                    <h3>Minecraft</h3>
-                    <p class="game-category">مغامرات • بناء</p>
-
-                    <div class="game-bottom">
-                        <span class="rating">★ 4.9</span>
-                        <span class="price">مجاني</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- FIFA 14 -->
-            <article class="game-card">
-                <div class="game-image">
-                    <img
-                        src="https://placehold.co/600x338/111827/ffffff?text=FIFA+14"
-                        alt="FIFA 14"
-                    >
-
-                    <span class="game-badge">SPORT</span>
-
-                    <button class="favorite-btn" onclick="toggleFavorite(this)">
-                        ♡
-                    </button>
-
-                    <div class="game-overlay">
-                        <button onclick="openGame('fifa14')">
-                            عرض اللعبة
-                        </button>
-                    </div>
-                </div>
-
-                <div class="game-info">
-                    <h3>FIFA 14</h3>
-                    <p class="game-category">كرة القدم • رياضة</p>
-
-                    <div class="game-bottom">
-                        <span class="rating">★ 4.7</span>
-                        <span class="price">مجاني</span>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-
-    <!-- Categories -->
-    <section class="categories-section">
-
-        <div class="section-header">
-            <div>
-                <span class="section-tag">EXPLORE</span>
-                <h2>استكشف الألعاب</h2>
-            </div>
+        <div class="stat">
+          مجاني:
+          <b>نعم</b>
         </div>
 
-        <div class="categories-grid">
-
-            <button class="category-card" onclick="filterGames('action')">
-                <div class="category-icon">⚔️</div>
-                <div>
-                    <h3>أكشن</h3>
-                    <p>ألعاب مليئة بالإثارة</p>
-                </div>
-            </button>
-
-            <button class="category-card" onclick="filterGames('sport')">
-                <div class="category-icon">⚽</div>
-                <div>
-                    <h3>رياضة</h3>
-                    <p>كرة القدم والمزيد</p>
-                </div>
-            </button>
-
-            <button class="category-card" onclick="filterGames('adventure')">
-                <div class="category-icon">🗺️</div>
-                <div>
-                    <h3>مغامرات</h3>
-                    <p>عوالم لا تنتهي</p>
-                </div>
-            </button>
-
-            <button class="category-card" onclick="filterGames('racing')">
-                <div class="category-icon">🏎️</div>
-                <div>
-                    <h3>سباقات</h3>
-                    <p>سرعة وإثارة</p>
-                </div>
-            </button>
-
-        </div>
-    </section>
-
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-
-        <div class="newsletter-content">
-
-            <div class="newsletter-icon">
-                🎮
-            </div>
-
-            <div>
-                <span class="section-tag">GAME ZONE</span>
-                <h2>جاهز للعب؟</h2>
-                <p>
-                    اكتشف أفضل الألعاب وحمّل ألعابك المفضلة من مكان واحد.
-                </p>
-            </div>
-
-            <button onclick="scrollToGames()" class="primary-btn">
-                تصفح الألعاب
-                <span>←</span>
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- Game Details Modal -->
-    <div class="game-modal" id="gameModal">
-
-        <div class="modal-backdrop" onclick="closeGame()"></div>
-
-        <div class="game-modal-content">
-
-            <button class="modal-close" onclick="closeGame()">
-                ×
-            </button>
-
-            <div class="modal-cover">
-                <img id="modalImage" src="" alt="">
-            </div>
-
-            <div class="modal-body">
-
-                <span id="modalCategory" class="section-tag">
-                    GAME
-                </span>
-
-                <h2 id="modalTitle">
-                    اسم اللعبة
-                </h2>
-
-                <div class="modal-rating">
-                    <span>★</span>
-                    <span id="modalRating">4.8</span>
-                    <span class="rating-text">تقييم اللاعبين</span>
-                </div>
-
-                <p id="modalDescription">
-                    وصف اللعبة سيظهر هنا.
-                </p>
-
-                <div class="game-features">
-
-                    <div>
-                        <span>🎮</span>
-                        <strong>نوع اللعبة</strong>
-                        <small id="modalGenre">أكشن</small>
-                    </div>
-
-                    <div>
-                        <span>💻</span>
-                        <strong>المنصة</strong>
-                        <small>PC</small>
-                    </div>
-
-                    <div>
-                        <span>🌐</span>
-                        <strong>اللغة</strong>
-                        <small>متعددة</small>
-                    </div>
-
-                </div>
-
-                <div class="modal-actions">
-
-                    <button class="download-btn" onclick="downloadGame()">
-                        ⬇ تحميل اللعبة
-                    </button>
-
-                    <button class="secondary-btn" onclick="closeGame()">
-                        رجوع
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
 
 
-    <!-- Footer -->
-    <footer class="site-footer">
+    <!-- Search -->
 
-        <div class="footer-main">
+    <div class="toolbar">
 
-            <div class="footer-brand">
+      <div class="search">
 
-                <div class="logo">
-                    <span class="logo-icon">🎮</span>
-                    <span>GAME<span>ZONE</span></span>
-                </div>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="ابحث عن لعبة..."
+          oninput="searchGames()">
 
-                <p>
-                    متجر ألعاب عصري لاكتشاف ألعابك المفضلة
-                    والاستمتاع بتجربة ألعاب مميزة.
-                </p>
+        <button onclick="searchGames()">
+          🔎
+        </button>
 
-            </div>
+      </div>
 
 
-            <div class="footer-links">
+      <div class="filters">
 
-                <div>
-                    <h4>المتجر</h4>
-                    <a href="#games">الألعاب</a>
-                    <a href="#categories">التصنيفات</a>
-                    <a href="#">الألعاب الجديدة</a>
-                </div>
+        <button
+          class="filter active"
+          onclick="filterGames('all',this)">
+          الكل
+        </button>
 
-                <div>
-                    <h4>مساعدة</h4>
-                    <a href="#">الأسئلة الشائعة</a>
-                    <a href="#">تواصل معنا</a>
-                    <a href="#">الدعم</a>
-                </div>
+        <button
+          class="filter"
+          onclick="filterGames('action',this)">
+          ⚔️ أكشن
+        </button>
 
-                <div>
-                    <h4>تابعنا</h4>
-                    <a href="#">Facebook</a>
-                    <a href="#">YouTube</a>
-                    <a href="#">Instagram</a>
-                </div>
+        <button
+          class="filter"
+          onclick="filterGames('sport',this)">
+          ⚽ رياضة
+        </button>
 
-            </div>
+        <button
+          class="filter"
+          onclick="filterGames('adventure',this)">
+          🗺️ مغامرات
+        </button>
+
+        <button
+          class="filter"
+          onclick="filterGames('racing',this)">
+          🏎️ سباقات
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Games Grid -->
+
+    <div class="games-grid" id="gamesGrid">
+
+
+      <!-- PES 2013 -->
+
+      <article
+        class="game-card"
+        data-game="pes2013"
+        data-category="sport"
+        data-name="Pro Evolution Soccer 2013 PES 2013 كرة القدم">
+
+        <div class="game-image">
+
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/5/5c/Pro_Evolution_Soccer_2013_Cover.jpg"
+            alt="PES 2013"
+            onerror="this.onerror=null;this.src='https://placehold.co/900x500/10243a/ffffff?text=PES+2013';">
+
+          <span class="game-badge">
+            SPORT
+          </span>
+
+          <button
+            class="favorite-btn"
+            onclick="toggleFavorite(this)">
+            ♡
+          </button>
+
+          <div class="game-overlay">
+
+            <button onclick="openGame('pes2013')">
+              عرض اللعبة
+            </button>
+
+          </div>
 
         </div>
 
 
-        <div class="footer-bottom">
-            <span>
-                © 2026 GAMEZONE — جميع الحقوق محفوظة
+        <div class="game-info">
+
+          <h3>
+            Pro Evolution Soccer 2013
+          </h3>
+
+          <p class="game-category">
+            كرة القدم • رياضة
+          </p>
+
+          <div class="game-bottom">
+
+            <span class="rating">
+              ★ 4.8
             </span>
 
-            <span>
-                Made with 🎮
+            <span class="price">
+              مجاني
             </span>
+
+          </div>
+
         </div>
 
-    </footer>
+      </article>
 
 
-    <!-- JavaScript -->
-    <script>
+      <!-- GTA V -->
 
-        const games = {
+      <article
+        class="game-card"
+        data-game="gta5"
+        data-category="action"
+        data-name="Grand Theft Auto V GTA 5 أكشن">
 
-            pes2013: {
-                title: "Pro Evolution Soccer 2013",
-                category: "SPORT",
-                genre: "كرة القدم",
-                rating: "4.8",
-                image: "https://placehold.co/1200x600/111827/ffffff?text=PES+2013",
-                description:
-                    "استمتع بتجربة كرة القدم الكلاسيكية مع Pro Evolution Soccer 2013."
-            },
+        <div class="game-image">
 
-            gta5: {
-                title: "Grand Theft Auto V",
-                category: "ACTION",
-                genre: "أكشن • عالم مفتوح",
-                rating: "4.9",
-                image: "https://placehold.co/1200x600/111827/ffffff?text=GTA+V",
-                description:
-                    "عالم مفتوح مليء بالمغامرات والمهام والاستكشاف."
-            },
+          <img
+            src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
+            alt="GTA V"
+            onerror="this.onerror=null;this.src='https://placehold.co/900x500/241827/ffffff?text=GTA+V';">
 
-            minecraft: {
-                title: "Minecraft",
-                category: "ADVENTURE",
-                genre: "مغامرات • بناء",
-                rating: "4.9",
-                image: "https://placehold.co/1200x600/111827/ffffff?text=Minecraft",
-                description:
-                    "ابنِ عالمك الخاص واستكشف عوالم لا محدودة."
-            },
+          <span class="game-badge">
+            ACTION
+          </span>
 
-            fifa14: {
-                title: "FIFA 14",
-                category: "SPORT",
-                genre: "كرة القدم",
-                rating: "4.7",
-                image: "https://placehold.co/1200x600/111827/ffffff?text=FIFA+14",
-                description:
-                    "لعبة كرة قدم كلاسيكية تقدم مباريات وحماسًا كبيرًا."
-            }
+          <button
+            class="favorite-btn"
+            onclick="toggleFavorite(this)">
+            ♡
+          </button>
 
-        };
+          <div class="game-overlay">
 
+            <button onclick="openGame('gta5')">
+              عرض اللعبة
+            </button>
 
-        function openGame(gameId) {
+          </div>
 
-            const game = games[gameId];
+        </div>
 
-            if (!game) return;
 
-            document.getElementById("modalTitle").textContent =
-                game.title;
+        <div class="game-info">
 
-            document.getElementById("modalCategory").textContent =
-                game.category;
+          <h3>
+            Grand Theft Auto V
+          </h3>
 
-            document.getElementById("modalGenre").textContent =
-                game.genre;
+          <p class="game-category">
+            أكشن • عالم مفتوح
+          </p>
 
-            document.getElementById("modalRating").textContent =
-                game.rating;
+          <div class="game-bottom">
 
-            document.getElementById("modalDescription").textContent =
-                game.description;
+            <span class="rating">
+              ★ 4.9
+            </span>
 
-            document.getElementById("modalImage").src =
-                game.image;
+            <span class="price">
+              مجاني
+            </span>
 
-            document.getElementById("gameModal").classList.add("active");
+          </div>
 
-            document.body.classList.add("modal-open");
-        }
+        </div>
 
+      </article>
 
-        function closeGame() {
 
-            document.getElementById("gameModal").classList.remove("active");
+      <!-- Minecraft -->
 
-            document.body.classList.remove("modal-open");
-        }
+      <article
+        class="game-card"
+        data-game="minecraft"
+        data-category="adventure"
+        data-name="Minecraft ماينكرافت مغامرات بناء">
 
+        <div class="game-image">
 
-        function toggleFavorite(button) {
+          <img
+            src="https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg"
+            alt="Minecraft"
+            onerror="this.onerror=null;this.src='https://placehold.co/900x500/163b2a/ffffff?text=Minecraft';">
 
-            button.classList.toggle("active");
+          <span class="game-badge">
+            ADVENTURE
+          </span>
 
-            if (button.classList.contains("active")) {
-                button.innerHTML = "♥";
-            } else {
-                button.innerHTML = "♡";
-            }
+          <button
+            class="favorite-btn"
+            onclick="toggleFavorite(this)">
+            ♡
+          </button>
 
-        }
+          <div class="game-overlay">
 
+            <button onclick="openGame('minecraft')">
+              عرض اللعبة
+            </button>
 
-        function scrollToGames() {
+          </div>
 
-            const gamesSection =
-                document.getElementById("games");
+        </div>
 
-            if (gamesSection) {
-                gamesSection.scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
 
-        }
+        <div class="game-info">
 
+          <h3>
+            Minecraft
+          </h3>
 
-        function showAllGames() {
+          <p class="game-category">
+            مغامرات • بناء
+          </p>
 
-            scrollToGames();
+          <div class="game-bottom">
 
-            document.querySelectorAll(".game-card")
-                .forEach(card => {
-                    card.style.display = "";
-                });
+            <span class="rating">
+              ★ 4.9
+            </span>
 
-        }
+            <span class="price">
+              مجاني
+            </span>
 
+          </div>
 
-        function filterGames(category) {
+        </div>
 
-            const cards =
-                document.querySelectorAll(".game-card");
+      </article>
 
-            cards.forEach(card => {
 
-                const badge =
-                    card.querySelector(".game-badge");
+      <!-- FIFA 14 -->
 
-                if (!badge) return;
+      <article
+        class="game-card"
+        data-game="fifa14"
+        data-category="sport"
+        data-name="FIFA 14 فيفا 14 كرة القدم">
 
-                const value =
-                    badge.textContent.toLowerCase();
+        <div class="game-image">
 
-                if (
-                    category === "action" &&
-                    value.includes("action")
-                ) {
-                    card.style.display = "";
-                }
+          <img
+            src="https://placehold.co/900x500/172b22/ffffff?text=FIFA+14"
+            alt="FIFA 14">
 
-                else if (
-                    category === "sport" &&
-                    value.includes("sport")
-                ) {
-                    card.style.display = "";
-                }
+          <span class="game-badge">
+            SPORT
+          </span>
 
-                else if (
-                    category === "adventure" &&
-                    value.includes("adventure")
-                ) {
-                    card.style.display = "";
-                }
+          <button
+            class="favorite-btn"
+            onclick="toggleFavorite(this)">
+            ♡
+          </button>
 
-                else if (
-                    category === "racing" &&
-                    value.includes("racing")
-                ) {
-                    card.style.display = "";
-                }
+          <div class="game-overlay">
 
-                else {
-                    card.style.display = "none";
-                }
+            <button onclick="openGame('fifa14')">
+              عرض اللعبة
+            </button>
 
-            });
+          </div>
 
-            scrollToGames();
-        }
+        </div>
 
 
-        function downloadGame() {
+        <div class="game-info">
 
-            alert(
-                "رابط تحميل اللعبة سيتم إضافته هنا."
-            );
+          <h3>
+            FIFA 14
+          </h3>
 
-        }
+          <p class="game-category">
+            كرة القدم • رياضة
+          </p>
 
+          <div class="game-bottom">
 
-        document.addEventListener(
-            "keydown",
-            function(event) {
+            <span class="rating">
+              ★ 4.7
+            </span>
 
-                if (event.key === "Escape") {
-                    closeGame();
-                }
+            <span class="price">
+              مجاني
+            </span>
 
-            }
-        );
+          </div>
 
+        </div>
 
-        document.addEventListener(
-            "DOMContentLoaded",
-            function() {
+      </article>
 
-                const cards =
-                    document.querySelectorAll(".game-card");
 
-                cards.forEach((card, index) => {
+      <!-- Empty -->
 
-                    card.style.animationDelay =
-                        `${index * 0.08}s`;
+      <div
+        id="emptyState"
+        class="empty hidden">
 
-                });
+        <div style="font-size:40px">
+          🔎
+        </div>
 
-            }
-        );
+        <h3>
+          لم نجد اللعبة
+        </h3>
 
-    </script>
+        <p>
+          جرّب البحث باسم مختلف.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section
+  class="categories-section"
+  id="categories">
+
+  <div class="wrap">
+
+    <div class="section-header">
+
+      <div>
+
+        <span class="section-tag">
+          EXPLORE
+        </span>
+
+        <h2>
+          استكشف الألعاب
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="categories-grid">
+
+      <button
+        class="category-card"
+        onclick="activateCategory('action')">
+
+        <div class="category-icon">
+          ⚔️
+        </div>
+
+        <div>
+
+          <h3>
+            أكشن
+          </h3>
+
+          <p>
+            ألعاب مليئة بالإثارة
+          </p>
+
+        </div>
+
+      </button>
+
+
+      <button
+        class="category-card"
+        onclick="activateCategory('sport')">
+
+        <div class="category-icon">
+          ⚽
+        </div>
+
+        <div>
+
+          <h3>
+            رياضة
+          </h3>
+
+          <p>
+            كرة القدم والمزيد
+          </p>
+
+        </div>
+
+      </button>
+
+
+      <button
+        class="category-card"
+        onclick="activateCategory('adventure')">
+
+        <div class="category-icon">
+          🗺️
+        </div>
+
+        <div>
+
+          <h3>
+            مغامرات
+          </h3>
+
+          <p>
+            عوالم لا تنتهي
+          </p>
+
+        </div>
+
+      </button>
+
+
+      <button
+        class="category-card"
+        onclick="activateCategory('racing')">
+
+        <div class="category-icon">
+          🏎️
+        </div>
+
+        <div>
+
+          <h3>
+            سباقات
+          </h3>
+
+          <p>
+            سرعة وإثارة
+          </p>
+
+        </div>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+  <div class="wrap">
+
+    <div class="newsletter-content">
+
+      <div class="newsletter-icon">
+        🎮
+      </div>
+
+      <div>
+
+        <span class="section-tag">
+          GAME ZONE
+        </span>
+
+        <h2>
+          جاهز للعب؟
+        </h2>
+
+        <p>
+          اكتشف الألعاب الموجودة في المتجر من مكان واحد.
+        </p>
+
+      </div>
+
+      <button
+        onclick="scrollToGames()"
+        class="primary-btn">
+
+        تصفح الألعاب
+        ←
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= GAME MODAL ================= -->
+
+<div
+  class="game-modal"
+  id="gameModal">
+
+  <div
+    class="modal-backdrop"
+    onclick="closeGame()">
+  </div>
+
+
+  <div class="game-modal-content">
+
+    <button
+      class="modal-close"
+      onclick="closeGame()">
+      ×
+    </button>
+
+
+    <div class="modal-cover">
+
+      <img
+        id="modalImage"
+        src=""
+        alt="">
+
+    </div>
+
+
+    <div class="modal-body">
+
+      <span
+        id="modalCategory"
+        class="section-tag">
+        GAME
+      </span>
+
+      <h2 id="modalTitle">
+        اسم اللعبة
+      </h2>
+
+
+      <div class="modal-rating">
+
+        <span>
+          ★
+        </span>
+
+        <span id="modalRating">
+          4.8
+        </span>
+
+        <span class="rating-text">
+          تقييم اللاعبين
+        </span>
+
+      </div>
+
+
+      <p id="modalDescription">
+        وصف اللعبة.
+      </p>
+
+
+      <div class="game-features">
+
+        <div>
+
+          <span>
+            🎮
+          </span>
+
+          <strong>
+            نوع اللعبة
+          </strong>
+
+          <small id="modalGenre">
+            أكشن
+          </small>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            💻
+          </span>
+
+          <strong>
+            المنصة
+          </strong>
+
+          <small>
+            PC
+          </small>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            🌐
+          </span>
+
+          <strong>
+            اللغة
+          </strong>
+
+          <small>
+            متعددة
+          </small>
+
+        </div>
+
+      </div>
+
+
+      <div class="modal-actions">
+
+        <button
+          class="download-btn"
+          onclick="downloadGame()">
+
+          ⬇ تحميل اللعبة
+
+        </button>
+
+        <button
+          class="secondary-btn"
+          onclick="closeGame()">
+
+          رجوع
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer
+  class="site-footer"
+  id="about">
+
+  <div class="footer-main">
+
+
+    <div class="footer-brand">
+
+      <div class="logo">
+
+        <span class="logo-icon">
+          🎮
+        </span>
+
+        <span class="logo-text">
+          GAME<span>ZONE</span>
+        </span>
+
+      </div>
+
+      <p>
+        متجر ألعاب عصري لاكتشاف ألعابك المفضلة
+        والاستمتاع بتجربة ألعاب مميزة.
+      </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <div>
+
+        <h4>
+          المتجر
+        </h4>
+
+        <a href="#games">
+          الألعاب
+        </a>
+
+        <a href="#categories">
+          التصنيفات
+        </a>
+
+        <a href="#home">
+          الرئيسية
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          مساعدة
+        </h4>
+
+        <a href="#">
+          الأسئلة الشائعة
+        </a>
+
+        <a href="#">
+          تواصل معنا
+        </a>
+
+        <a href="#">
+          الدعم
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          تابعنا
+        </h4>
+
+        <a href="#">
+          Facebook
+        </a>
+
+        <a href="#">
+          YouTube
+        </a>
+
+        <a href="#">
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 GAMEZONE — جميع الحقوق محفوظة
+    </span>
+
+    <span>
+      Made with 🎮
+    </span>
+
+  </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* ================= GAME DATABASE ================= */
+
+const games = {
+
+  pes2013: {
+
+    title:"Pro Evolution Soccer 2013",
+
+    category:"SPORT",
+
+    genre:"كرة القدم",
+
+    rating:"4.8",
+
+    image:"https://upload.wikimedia.org/wikipedia/en/5/5c/Pro_Evolution_Soccer_2013_Cover.jpg",
+
+    description:
+      "استمتع بتجربة كرة القدم الكلاسيكية مع Pro Evolution Soccer 2013، واحدة من ألعاب كرة القدم المحبوبة لدى الكثير من اللاعبين."
+
+  },
+
+
+  gta5: {
+
+    title:"Grand Theft Auto V",
+
+    category:"ACTION",
+
+    genre:"أكشن • عالم مفتوح",
+
+    rating:"4.9",
+
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
+
+    description:
+      "عالم مفتوح مليء بالمغامرات والمهام والاستكشاف وتجربة لعب متنوعة."
+
+  },
+
+
+  minecraft: {
+
+    title:"Minecraft",
+
+    category:"ADVENTURE",
+
+    genre:"مغامرات • بناء",
+
+    rating:"4.9",
+
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg",
+
+    description:
+      "ابنِ عالمك الخاص واستكشف البيئات المختلفة وصمّم مغامرتك بالطريقة التي تريدها."
+
+  },
+
+
+  fifa14: {
+
+    title:"FIFA 14",
+
+    category:"SPORT",
+
+    genre:"كرة القدم",
+
+    rating:"4.7",
+
+    image:"https://placehold.co/1200x600/172b22/ffffff?text=FIFA+14",
+
+    description:
+      "لعبة كرة قدم كلاسيكية تقدم مباريات وحماسًا كبيرًا لمحبي ألعاب كرة القدم."
+
+  }
+
+};
+
+
+/* ================= OPEN GAME ================= */
+
+function openGame(gameId){
+
+  const game=games[gameId];
+
+  if(!game) return;
+
+
+  document.getElementById("modalTitle").textContent=
+    game.title;
+
+
+  document.getElementById("modalCategory").textContent=
+    game.category;
+
+
+  document.getElementById("modalGenre").textContent=
+    game.genre;
+
+
+  document.getElementById("modalRating").textContent=
+    game.rating;
+
+
+  document.getElementById("modalDescription").textContent=
+    game.description;
+
+
+  const image=document.getElementById("modalImage");
+
+  image.src=game.image;
+
+
+  image.onerror=function(){
+
+    this.onerror=null;
+
+    this.src=
+      "https://placehold.co/1200x600/111827/ffffff?text="+
+      encodeURIComponent(game.title);
+
+  };
+
+
+  document
+    .getElementById("gameModal")
+    .classList.add("active");
+
+
+  document.body.classList.add("modal-open");
+
+}
+
+
+/* ================= CLOSE GAME ================= */
+
+function closeGame(){
+
+  document
+    .getElementById("gameModal")
+    .classList.remove("active");
+
+  document.body.classList.remove("modal-open");
+
+}
+
+
+/* ================= FAVORITES ================= */
+
+function toggleFavorite(button){
+
+  button.classList.toggle("active");
+
+  if(button.classList.contains("active")){
+
+    button.innerHTML="♥";
+
+  }else{
+
+    button.innerHTML="♡";
+
+  }
+
+}
+
+
+/* ================= SCROLL ================= */
+
+function scrollToGames(){
+
+  const section=
+    document.getElementById("games");
+
+  if(section){
+
+    section.scrollIntoView({
+      behavior:"smooth"
+    });
+
+  }
+
+}
+
+
+/* ================= FILTER ================= */
+
+let currentCategory="all";
+
+
+function filterGames(category,button){
+
+  currentCategory=category;
+
+
+  document
+    .querySelectorAll(".filter")
+    .forEach(btn=>{
+      btn.classList.remove("active");
+    });
+
+
+  if(button){
+    button.classList.add("active");
+  }
+
+
+  applyFilters();
+
+  scrollToGames();
+
+}
+
+
+/* ================= CATEGORY ================= */
+
+function activateCategory(category){
+
+  const buttons=
+    document.querySelectorAll(".filter");
+
+
+  buttons.forEach(btn=>{
+    btn.classList.remove("active");
+  });
+
+
+  const matching=
+    [...buttons].find(
+      btn=>btn.textContent.toLowerCase()
+      .includes(
+        category==="action"?"أكشن":
+        category==="sport"?"رياضة":
+        category==="adventure"?"مغامرات":
+        "سباقات"
+      )
+    );
+
+
+  if(matching){
+    matching.classList.add("active");
+  }
+
+
+  currentCategory=category;
+
+  applyFilters();
+
+  scrollToGames();
+
+}
+
+
+/* ================= SEARCH ================= */
+
+function searchGames(){
+
+  applyFilters();
+
+}
+
+
+/* ================= APPLY FILTERS ================= */
+
+function applyFilters(){
+
+  const query=
+    document
+      .getElementById("searchInput")
+      .value
+      .trim()
+      .toLowerCase();
+
+
+  const cards=
+    document.querySelectorAll(".game-card");
+
+
+  let visible=0;
+
+
+  cards.forEach(card=>{
+
+    const category=
+      card.dataset.category || "";
+
+    const name=
+      card.dataset.name || "";
+
+
+    const categoryMatch=
+      currentCategory==="all" ||
+      category===currentCategory;
+
+
+    const searchMatch=
+      !query ||
+      name.toLowerCase().includes(query);
+
+
+    if(categoryMatch && searchMatch){
+
+      card.style.display="";
+
+      visible++;
+
+    }else{
+
+      card.style.display="none";
+
+    }
+
+  });
+
+
+  document
+    .getElementById("emptyState")
+    .classList.toggle(
+      "hidden",
+      visible!==0
+    );
+
+}
+
+
+/* ================= DOWNLOAD ================= */
+
+function downloadGame(){
+
+  alert(
+    "أضف رابط التحميل الحقيقي للعبة داخل دالة downloadGame() في الكود."
+  );
+
+}
+
+
+/* ================= KEYBOARD ================= */
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key==="Escape"){
+      closeGame();
+    }
+
+  }
+);
+
+
+/* ================= HERO SLIDER ================= */
+
+let currentSlide=0;
+
+const slides=
+  document.querySelectorAll(".hero-slide");
+
+const dots=
+  document.querySelectorAll(".dot");
+
+
+function goSlide(index){
+
+  if(!slides.length) return;
+
+
+  slides[currentSlide].classList.remove("active");
+
+  dots[currentSlide].classList.remove("active");
+
+
+  currentSlide=index;
+
+
+  slides[currentSlide].classList.add("active");
+
+  dots[currentSlide].classList.add("active");
+
+}
+
+
+/* Auto Slider */
+
+setInterval(function(){
+
+  goSlide(
+    (currentSlide+1)%slides.length
+  );
+
+},5000);
+
+
+/* ================= START ================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    const cards=
+      document.querySelectorAll(".game-card");
+
+
+    document
+      .getElementById("gamesCount")
+      .textContent=cards.length;
+
+
+    cards.forEach((card,index)=>{
+
+      card.style.animationDelay=
+        `${index*.08}s`;
+
+    });
+
+  }
+);
+
+</script>
 
 </body>
-</html> 
+</html>
