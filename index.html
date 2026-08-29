@@ -391,12 +391,14 @@ header{
 
 /* GAMES */
 
+.grid,
 .games-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(245px,1fr));
   gap:17px;
 }
 
+.card,
 .game-card{
   position:relative;
   overflow:hidden;
@@ -407,6 +409,7 @@ header{
   box-shadow:0 10px 35px rgba(0,0,0,.15);
 }
 
+.card:hover,
 .game-card:hover{
   transform:translateY(-7px);
   border-color:#2e8fa9;
@@ -469,13 +472,8 @@ header{
   transition:.2s;
 }
 
-.favorite-btn:hover{
-  transform:scale(1.06);
-}
-
-.favorite-btn.active{
-  color:#ff5873;
-}
+.favorite-btn:hover{transform:scale(1.06)}
+.favorite-btn.active{color:#ff5873}
 
 .game-overlay{
   position:absolute;
@@ -490,9 +488,7 @@ header{
   transition:.25s;
 }
 
-.game-card:hover .game-overlay{
-  opacity:1;
-}
+.game-card:hover .game-overlay{opacity:1}
 
 .game-overlay button{
   padding:11px 17px;
@@ -534,9 +530,7 @@ header{
   font-weight:1000;
 }
 
-.hidden{
-  display:none!important;
-}
+.hidden{display:none!important}
 
 .empty{
   grid-column:1/-1;
@@ -803,7 +797,8 @@ header{
 
 /* FOOTER */
 
-footer{
+footer,
+.site-footer{
   padding:45px 0 25px;
   border-top:1px solid #172438;
   background:#050914;
@@ -896,6 +891,7 @@ footer{
   .footer-main{
     grid-template-columns:1fr;
   }
+
 }
 
 @media(max-width:600px){
@@ -934,6 +930,7 @@ footer{
     flex-direction:column;
   }
 
+  .grid,
   .games-grid{
     grid-template-columns:1fr;
   }
@@ -976,6 +973,7 @@ footer{
     flex-direction:column;
     gap:10px;
   }
+
 }
 </style>
 </head>
@@ -1132,9 +1130,20 @@ footer{
 
   <div class="slider-controls">
 
-    <button class="dot active" onclick="goSlide(0)"></button>
-    <button class="dot" onclick="goSlide(1)"></button>
-    <button class="dot" onclick="goSlide(2)"></button>
+    <button
+      class="dot active"
+      onclick="goSlide(0)">
+    </button>
+
+    <button
+      class="dot"
+      onclick="goSlide(1)">
+    </button>
+
+    <button
+      class="dot"
+      onclick="goSlide(2)">
+    </button>
 
   </div>
 
@@ -1243,7 +1252,7 @@ footer{
     <div class="games-grid" id="gamesGrid">
 
 
-      <!-- TRUCK ARAB -->
+      <!-- محاكي الشاحنات الدول العربية -->
 
       <article
         class="game-card"
@@ -1255,8 +1264,7 @@ footer{
 
           <img
             src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg"
-            alt="محاكي الشاحنات الدول العربية"
-            onerror="this.onerror=null;this.src='https://placehold.co/900x500/172b22/ffffff?text=Truck+Simulator';">
+            alt="محاكي الشاحنات الدول العربية">
 
           <span class="game-badge">
             RACING
@@ -1340,6 +1348,7 @@ footer{
 
         </div>
 
+
         <div class="game-info">
 
           <h3>
@@ -1401,6 +1410,7 @@ footer{
           </div>
 
         </div>
+
 
         <div class="game-info">
 
@@ -1464,6 +1474,7 @@ footer{
 
         </div>
 
+
         <div class="game-info">
 
           <h3>
@@ -1525,6 +1536,7 @@ footer{
           </div>
 
         </div>
+
 
         <div class="game-info">
 
@@ -1589,7 +1601,6 @@ footer{
     <div class="section-header">
 
       <div>
-
         <span class="section-tag">
           EXPLORE
         </span>
@@ -1597,7 +1608,6 @@ footer{
         <h2>
           استكشف الألعاب
         </h2>
-
       </div>
 
     </div>
@@ -1805,7 +1815,7 @@ footer{
           </strong>
 
           <small>
-            PC / Mobile
+            PC
           </small>
 
         </div>
@@ -1858,6 +1868,7 @@ footer{
 <!-- FOOTER -->
 
 <footer
+  class="site-footer"
   id="about">
 
   <div class="footer-main">
@@ -1972,7 +1983,7 @@ footer{
 
 <script>
 
-/* ================= GAME DATABASE ================= */
+/* GAME DATABASE */
 
 const games = {
 
@@ -1986,13 +1997,13 @@ const games = {
 
     rating:"4.8",
 
-    image:
-      "https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg",
+    image:"https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg",
 
     description:
       "لعبة محاكاة شاحنات وقيادة في أجواء مستوحاة من الدول العربية.",
 
-    download:""
+    download:
+      "https://c.go4techno.com/abokreeem-833"
 
   },
 
@@ -2007,13 +2018,13 @@ const games = {
 
     rating:"4.8",
 
-    image:
-      "https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/file_00000000a93c820aba7a6e700e553412.png",
+    image:"https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/file_00000000a93c820aba7a6e700e553412.png",
 
     description:
       "استمتع بتجربة كرة القدم الكلاسيكية مع Pro Evolution Soccer 2013، واحدة من ألعاب كرة القدم المحبوبة لدى الكثير من اللاعبين.",
 
-    download:""
+    download:
+      "https://youssefsayed2003.blogspot.com/2025/03/2013.html"
 
   },
 
@@ -2028,13 +2039,13 @@ const games = {
 
     rating:"4.9",
 
-    image:
-      "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
 
     description:
       "عالم مفتوح مليء بالمغامرات والمهام والاستكشاف وتجربة لعب متنوعة.",
 
-    download:""
+    download:
+      "https://uptogames.net/download-grand-theft-auto-v-free/"
 
   },
 
@@ -2049,13 +2060,13 @@ const games = {
 
     rating:"4.9",
 
-    image:
-      "https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg",
+    image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg",
 
     description:
       "ابنِ عالمك الخاص واستكشف البيئات المختلفة وصمّم مغامرتك بالطريقة التي تريدها.",
 
-    download:""
+    download:
+      "https://www.mediafire.com/file/vjxqehwjsnyp3mo/MCPE-Patched-1.21.100.apk/file"
 
   },
 
@@ -2070,25 +2081,25 @@ const games = {
 
     rating:"4.7",
 
-    image:
-      "https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images%20(1).jpeg",
+    image:"https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images%20(1).jpeg",
 
     description:
       "لعبة كرة قدم كلاسيكية تقدم مباريات وحماسًا كبيرًا لمحبي ألعاب كرة القدم.",
 
-    download:""
+    download:
+      "https://uptogames.net/download-fifa-14-for-pc/"
 
   }
 
 };
 
 
-/* ================= CURRENT GAME ================= */
+/* CURRENT GAME */
 
 let currentGameId = null;
 
 
-/* ================= OPEN GAME ================= */
+/* OPEN GAME */
 
 function openGame(gameId){
 
@@ -2113,10 +2124,8 @@ function openGame(gameId){
   document.getElementById("modalDescription").textContent =
     game.description;
 
-
   const image =
     document.getElementById("modalImage");
-
 
   image.src = game.image;
 
@@ -2130,7 +2139,6 @@ function openGame(gameId){
 
   };
 
-
   document
     .getElementById("gameModal")
     .classList.add("active");
@@ -2140,7 +2148,7 @@ function openGame(gameId){
 }
 
 
-/* ================= CLOSE GAME ================= */
+/* CLOSE GAME */
 
 function closeGame(){
 
@@ -2153,7 +2161,7 @@ function closeGame(){
 }
 
 
-/* ================= DOWNLOAD ================= */
+/* DOWNLOAD */
 
 function downloadGame(){
 
@@ -2164,13 +2172,12 @@ function downloadGame(){
   if(!game.download){
 
     alert(
-      "رابط التحميل غير مضاف حاليًا لهذه اللعبة."
+      "رابط التحميل لهذه اللعبة غير مضاف حاليًا."
     );
 
     return;
 
   }
-
 
   window.open(
     game.download,
@@ -2181,7 +2188,7 @@ function downloadGame(){
 }
 
 
-/* ================= FAVORITES ================= */
+/* FAVORITES */
 
 function toggleFavorite(button){
 
@@ -2200,7 +2207,7 @@ function toggleFavorite(button){
 }
 
 
-/* ================= SCROLL ================= */
+/* SCROLL */
 
 function scrollToGames(){
 
@@ -2218,7 +2225,7 @@ function scrollToGames(){
 }
 
 
-/* ================= FILTER ================= */
+/* FILTER */
 
 let currentCategory = "all";
 
@@ -2233,11 +2240,9 @@ function filterGames(category,button){
       btn.classList.remove("active");
     });
 
-
   if(button){
     button.classList.add("active");
   }
-
 
   applyFilters();
 
@@ -2246,18 +2251,16 @@ function filterGames(category,button){
 }
 
 
-/* ================= CATEGORY ================= */
+/* CATEGORY */
 
 function activateCategory(category){
 
   const buttons =
     document.querySelectorAll(".filter");
 
-
   buttons.forEach(btn=>{
     btn.classList.remove("active");
   });
-
 
   const categoryNames = {
 
@@ -2271,7 +2274,6 @@ function activateCategory(category){
 
   };
 
-
   const matching =
     [...buttons].find(
       btn =>
@@ -2280,11 +2282,9 @@ function activateCategory(category){
           .includes(categoryNames[category])
     );
 
-
   if(matching){
     matching.classList.add("active");
   }
-
 
   currentCategory = category;
 
@@ -2295,7 +2295,7 @@ function activateCategory(category){
 }
 
 
-/* ================= SEARCH ================= */
+/* SEARCH */
 
 function searchGames(){
 
@@ -2304,46 +2304,38 @@ function searchGames(){
 }
 
 
-/* ================= APPLY FILTERS ================= */
+/* APPLY FILTERS */
 
 function applyFilters(){
 
   const input =
     document.getElementById("searchInput");
 
-
   const query =
     input.value
       .trim()
       .toLowerCase();
 
-
   const cards =
     document.querySelectorAll(".game-card");
 
-
   let visible = 0;
-
 
   cards.forEach(card => {
 
     const category =
       card.dataset.category || "";
 
-
     const name =
       card.dataset.name || "";
-
 
     const categoryMatch =
       currentCategory === "all" ||
       category === currentCategory;
 
-
     const searchMatch =
       !query ||
       name.toLowerCase().includes(query);
-
 
     if(categoryMatch && searchMatch){
 
@@ -2359,7 +2351,6 @@ function applyFilters(){
 
   });
 
-
   document
     .getElementById("emptyState")
     .classList.toggle(
@@ -2370,7 +2361,7 @@ function applyFilters(){
 }
 
 
-/* ================= KEYBOARD ================= */
+/* KEYBOARD */
 
 document.addEventListener(
   "keydown",
@@ -2384,14 +2375,12 @@ document.addEventListener(
 );
 
 
-/* ================= HERO SLIDER ================= */
+/* HERO SLIDER */
 
 let currentSlide = 0;
 
-
 const slides =
   document.querySelectorAll(".hero-slide");
-
 
 const dots =
   document.querySelectorAll(".dot");
@@ -2401,21 +2390,16 @@ function goSlide(index){
 
   if(!slides.length) return;
 
-
   slides[currentSlide]
     .classList.remove("active");
-
 
   dots[currentSlide]
     .classList.remove("active");
 
-
   currentSlide = index;
-
 
   slides[currentSlide]
     .classList.add("active");
-
 
   dots[currentSlide]
     .classList.add("active");
@@ -2435,7 +2419,7 @@ setInterval(function(){
 },5000);
 
 
-/* ================= START ================= */
+/* START */
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -2444,12 +2428,10 @@ document.addEventListener(
     const cards =
       document.querySelectorAll(".game-card");
 
-
     document
       .getElementById("gamesCount")
       .textContent =
       cards.length;
-
 
     cards.forEach((card,index)=>{
 
