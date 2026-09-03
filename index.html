@@ -6,9 +6,13 @@
 
   <title>تكنومسار | متجر الألعاب</title>
 
-  <meta name="description" content="تكنومسار - متجر ألعاب عربي احترافي">
+  <meta
+    name="description"
+    content="تكنومسار - متجر الألعاب العربي"
+  >
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -17,9 +21,9 @@
 
     body {
       font-family: Arial, Tahoma, sans-serif;
-      background: #0b0f17;
-      color: #fff;
-      line-height: 1.6;
+      background: #0b1220;
+      color: #ffffff;
+      min-height: 100vh;
     }
 
     a {
@@ -27,602 +31,775 @@
       color: inherit;
     }
 
-    /* الهيدر */
+    /* =========================
+       الهيدر
+    ========================= */
+
     header {
-      background: #111827;
-      border-bottom: 1px solid #263244;
+      background: #111a2b;
+      border-bottom: 1px solid #273449;
+
+      padding: 15px 5%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    .header-inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
     .logo {
       font-size: 25px;
       font-weight: bold;
-      color: #00e5ff;
+      color: #00d4ff;
     }
 
-    .logo span {
-      color: #fff;
-    }
+    .header-btn {
+      background: #00d4ff;
+      color: #07111f;
 
-    .home-btn {
-      background: #00bcd4;
-      color: #061018;
-      padding: 9px 16px;
-      border-radius: 8px;
+      padding: 10px 18px;
+
+      border-radius: 10px;
+
       font-weight: bold;
+
+      transition: 0.2s;
     }
 
-    /* البانر */
-    .banner {
-      width: 100%;
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 0 15px;
+    .header-btn:hover {
+      background: #00aacc;
     }
 
-    .banner img {
-      display: block;
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 15px;
-      border: 1px solid #273449;
-      box-shadow: 0 10px 35px rgba(0,0,0,.35);
-    }
 
-    /* الهيرو */
+    /* =========================
+       القسم الرئيسي
+    ========================= */
+
     .hero {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 45px 25px;
-      border-radius: 18px;
+
+      min-height: 70vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       text-align: center;
+
+      padding: 60px 20px;
+
       background:
-        linear-gradient(rgba(4,10,20,.72), rgba(4,10,20,.88)),
-        url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=80")
-        center/cover;
+        radial-gradient(
+          circle at top,
+          #16243d,
+          #0b1220 65%
+        );
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 850px;
+    }
+
+    .hero-icon {
+      font-size: 70px;
+      margin-bottom: 15px;
     }
 
     .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-      color: #00e5ff;
+      font-size: 48px;
+      margin-bottom: 15px;
+
+      color: #ffffff;
+    }
+
+    .hero h1 span {
+      color: #00d4ff;
     }
 
     .hero p {
-      color: #d5dce8;
-      font-size: 18px;
+      color: #aebbd0;
+
+      font-size: 19px;
+
+      line-height: 1.8;
+
+      margin-bottom: 30px;
     }
 
-    .hero-btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: #00e5ff;
-      color: #061018;
-      padding: 12px 25px;
-      border-radius: 9px;
-      font-weight: bold;
-      cursor: pointer;
-    }
 
-    /* المحتوى */
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
+    /* =========================
+       زر تصفح الألعاب
+    ========================= */
 
-    .section-title {
-      display: flex;
+    .browse-btn {
+
+      display: inline-flex;
+
       align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin: 20px 0;
+      justify-content: center;
+
+      background: #00d4ff;
+
+      color: #07111f;
+
+      padding: 15px 30px;
+
+      border-radius: 12px;
+
+      font-size: 18px;
+
+      font-weight: bold;
+
+      min-width: 220px;
+
+      transition: 0.2s;
     }
 
-    .section-title h2 {
-      color: #fff;
+    .browse-btn:hover {
+
+      background: #00aacc;
+
+      transform: translateY(-3px);
     }
 
-    .count {
-      color: #00e5ff;
-    }
 
-    /* البحث */
-    .search-box {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
+    /* =========================
+       المميزات
+    ========================= */
 
-    .search-box input {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #29364a;
-      border-radius: 10px;
-      outline: none;
-      background: #111827;
-      color: #fff;
-      font-size: 16px;
-    }
+    .features {
 
-    .search-box input:focus {
-      border-color: #00e5ff;
-    }
+      width: 90%;
 
-    /* التصنيفات */
-    .categories {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 25px;
-    }
+      max-width: 1100px;
 
-    .category {
-      border: 1px solid #2a394e;
-      background: #111827;
-      color: #fff;
-      padding: 9px 17px;
-      border-radius: 20px;
-      cursor: pointer;
-    }
+      margin: 0 auto;
 
-    .category.active,
-    .category:hover {
-      background: #00e5ff;
-      color: #061018;
-      border-color: #00e5ff;
-    }
+      padding: 50px 0;
 
-    /* الألعاب */
-    .games-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 20px;
     }
 
-    .game-card {
-      background: #111827;
-      border: 1px solid #253247;
+    .feature {
+
+      background: #111a2b;
+
+      border: 1px solid #273449;
+
       border-radius: 15px;
+
+      padding: 25px;
+
+      text-align: center;
+
+      transition: 0.2s;
+    }
+
+    .feature:hover {
+
+      border-color: #00d4ff;
+
+      transform: translateY(-3px);
+    }
+
+    .feature-icon {
+
+      font-size: 38px;
+
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+
+      margin-bottom: 10px;
+
+      font-size: 20px;
+    }
+
+    .feature p {
+
+      color: #aebbd0;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       قسم الألعاب
+    ========================= */
+
+    .games-section {
+
+      width: 90%;
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      padding: 30px 0 60px;
+
+      text-align: center;
+    }
+
+    .games-section h2 {
+
+      font-size: 32px;
+
+      margin-bottom: 10px;
+    }
+
+    .games-section > p {
+
+      color: #aebbd0;
+
+      margin-bottom: 30px;
+    }
+
+
+    /* =========================
+       كروت الألعاب
+    ========================= */
+
+    .games-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+
+      text-align: right;
+    }
+
+    .game-card {
+
+      background: #111a2b;
+
+      border: 1px solid #273449;
+
+      border-radius: 15px;
+
       overflow: hidden;
-      transition: .25s;
+
+      transition: 0.2s;
     }
 
     .game-card:hover {
-      transform: translateY(-5px);
-      border-color: #00e5ff;
-      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+
+      border-color: #00d4ff;
+
+      transform: translateY(-3px);
     }
 
     .game-image {
+
       width: 100%;
-      height: 180px;
+
+      height: 190px;
+
       object-fit: cover;
+
       display: block;
-      background: #202938;
     }
 
     .game-info {
+
       padding: 15px;
     }
 
     .game-info h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
+
+      font-size: 20px;
+
+      margin-bottom: 10px;
     }
 
-    .rating {
-      color: #ffd54a;
-      margin-bottom: 8px;
+    .game-info p {
+
+      color: #aebbd0;
+
+      line-height: 1.7;
+
+      margin-bottom: 15px;
     }
 
     .game-category {
+
       display: inline-block;
-      background: #1c293b;
-      color: #9eefff;
-      padding: 4px 9px;
-      border-radius: 6px;
-      font-size: 12px;
-      margin-bottom: 12px;
+
+      background: #1b2940;
+
+      color: #00d4ff;
+
+      padding: 6px 10px;
+
+      border-radius: 8px;
+
+      font-size: 13px;
+
+      margin-bottom: 15px;
     }
 
     .download-btn {
-      display: block;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
       width: 100%;
-      text-align: center;
-      background: #00e5ff;
-      color: #061018;
-      padding: 10px;
-      border-radius: 8px;
+
+      height: 48px;
+
+      background: #00d4ff;
+
+      color: #07111f;
+
+      border-radius: 10px;
+
       font-weight: bold;
-      cursor: pointer;
+
+      transition: 0.2s;
     }
 
     .download-btn:hover {
-      background: #55efff;
+
+      background: #00aacc;
     }
 
-    .no-results {
-      display: none;
-      text-align: center;
-      padding: 40px;
-      color: #aab5c5;
+
+    /* =========================
+       زر جميع الألعاب
+    ========================= */
+
+    .all-games-btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      margin-top: 30px;
+
+      padding: 13px 25px;
+
+      border: 1px solid #00d4ff;
+
+      border-radius: 10px;
+
+      color: #00d4ff;
+
+      font-weight: bold;
+
+      transition: 0.2s;
     }
 
-    /* الفوتر */
+    .all-games-btn:hover {
+
+      background: #00d4ff;
+
+      color: #07111f;
+    }
+
+
+    /* =========================
+       الفوتر
+    ========================= */
+
     footer {
-      margin-top: 50px;
-      background: #080c13;
-      border-top: 1px solid #253247;
-      padding: 30px 20px;
+
+      border-top: 1px solid #273449;
+
+      background: #0a101c;
+
+      color: #8492a8;
+
       text-align: center;
-      color: #9aa7b8;
+
+      padding: 25px;
     }
 
-    footer strong {
-      color: #00e5ff;
-    }
 
-    /* الموبايل */
-    @media (max-width: 850px) {
+    /* =========================
+       التابلت
+    ========================= */
+
+    @media (max-width: 900px) {
+
       .games-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .features {
+
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .hero h1 {
-        font-size: 32px;
-      }
 
-      .banner img {
-        height: 200px;
+        font-size: 40px;
       }
     }
 
-    @media (max-width: 550px) {
-      .games-grid {
-        grid-template-columns: 1fr;
-      }
 
-      .header-inner {
+    /* =========================
+       الموبايل
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      header {
+
         padding: 12px 15px;
       }
 
       .logo {
-        font-size: 21px;
+
+        font-size: 20px;
+      }
+
+      .header-btn {
+
+        padding: 8px 12px;
+
+        font-size: 14px;
       }
 
       .hero {
-        margin: 15px;
-        padding: 35px 15px;
+
+        min-height: 65vh;
+
+        padding: 50px 15px;
       }
 
-      .banner {
-        margin: 15px auto;
+      .hero-icon {
+
+        font-size: 55px;
       }
 
-      .banner img {
-        height: 160px;
+      .hero h1 {
+
+        font-size: 32px;
       }
+
+      .hero p {
+
+        font-size: 16px;
+      }
+
+      .features {
+
+        grid-template-columns: 1fr;
+
+        width: 92%;
+      }
+
+      .games-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+      .games-section {
+
+        width: 92%;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- الهيدر -->
+
+  <!-- =========================
+       الهيدر
+  ========================= -->
+
   <header>
-    <div class="header-inner">
-      <div class="logo">🎮 تكنومسار <span>| متجر الألعاب</span></div>
-      <a href="#" class="home-btn">الرئيسية</a>
+
+    <div class="logo">
+      🎮 تكنومسار
     </div>
-</header>
 
-<!-- البانر -->
-<div class="banner">
-  <img
-    src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=85"
-    alt="تكنومسار - متجر الألعاب"
-  >
-</div>
+    <a
+      href="games/games.html"
+      class="header-btn">
+      🎮 الألعاب
+    </a>
 
-<!-- الواجهة الرئيسية -->
-<section class="hero">
+  </header>
 
 
-    <h1>🎮 تكنومسار</h1>
-    <p>متجر الألعاب العربي — اكتشف ألعابك المفضلة وحمّلها بسهولة</p>
 
-    <button class="hero-btn" onclick="scrollToGames()">
-      تصفح الألعاب
-    </button>
+  <!-- =========================
+       البانر الرئيسي
+  ========================= -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-icon">
+        🎮
+      </div>
+
+      <h1>
+        مرحبًا بك في
+        <span>تكنومسار</span>
+      </h1>
+
+      <p>
+        اكتشف مجموعة من الألعاب الممتعة
+        والمغامرات والأكشن والرياضة والسباقات
+        في مكان واحد.
+      </p>
+
+      <a
+        href="games/games.html"
+        class="browse-btn">
+        🎮 تصفح الألعاب
+      </a>
+
+    </div>
+
   </section>
 
-  <!-- الألعاب -->
-  <main class="container" id="games">
 
-    <div class="section-title">
-      <h2>🎮 الألعاب</h2>
-      <div class="count">الألعاب: <span id="gameCount">5</span></div>
+
+  <!-- =========================
+       المميزات
+  ========================= -->
+
+  <section class="features">
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        🎮
+      </div>
+
+      <h3>
+        ألعاب متنوعة
+      </h3>
+
+      <p>
+        ألعاب أكشن ورياضة ومغامرات
+        ومحاكاة وسباقات.
+      </p>
+
     </div>
 
-    <!-- البحث -->
-    <div class="search-box">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="🔎 ابحث عن لعبة..."
-        oninput="applyFilters()"
-      >
+
+    <div class="feature">
+
+      <div class="feature-icon">
+        🔎
+      </div>
+
+      <h3>
+        بحث سريع
+      </h3>
+
+      <p>
+        ابحث عن اللعبة التي تريدها
+        بسهولة وسرعة.
+      </p>
+
     </div>
 
-    <!-- التصنيفات -->
-    <div class="categories">
-      <button class="category active" onclick="setCategory('all', this)">
-        الكل
-      </button>
 
-      <button class="category" onclick="setCategory('action', this)">
-        أكشن
-      </button>
+    <div class="feature">
 
-      <button class="category" onclick="setCategory('sport', this)">
-        رياضة
-      </button>
+      <div class="feature-icon">
+        📱
+      </div>
 
-      <button class="category" onclick="setCategory('adventure', this)">
-        مغامرات
-      </button>
+      <h3>
+        يعمل على الموبايل
+      </h3>
 
-      <button class="category" onclick="setCategory('racing', this)">
-        سباقات
-      </button>
+      <p>
+        تصميم متجاوب مع الهاتف
+        والكمبيوتر والتابلت.
+      </p>
+
     </div>
 
-    <!-- شبكة الألعاب -->
-    <div class="games-grid" id="gamesGrid">
+  </section>
 
-      <!-- 1 -->
-      <article class="game-card" data-category="racing" data-name="محاكي الشاحنات الدول العربية">
+
+
+  <!-- =========================
+       ألعاب مختارة
+  ========================= -->
+
+  <section class="games-section">
+
+    <h2>
+      🎮 ألعاب مختارة
+    </h2>
+
+    <p>
+      بعض الألعاب الموجودة في متجر تكنومسار
+    </p>
+
+
+    <div class="games-grid">
+
+
+      <!-- لعبة 1 -->
+
+      <article class="game-card">
+
         <img
           class="game-image"
           src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg"
-          alt="محاكي الشاحنات الدول العربية"
-          loading="lazy"
+          alt="محاكي الشاحنات"
         >
 
         <div class="game-info">
-          <h3>محاكي الشاحنات الدول العربية</h3>
 
-          <div class="rating">★★★★★ 4.8</div>
+          <h3>
+            محاكي الشاحنات الدول العربية
+          </h3>
 
-          <span class="game-category">سباقات</span>
+          <p>
+            لعبة محاكاة قيادة الشاحنات
+            واستكشاف الطرق.
+          </p>
+
+          <span class="game-category">
+            محاكاة
+          </span>
 
           <a
             class="download-btn"
-            href="https://c.go4techno.com/abokreeem-833"
-            target="_blank"
-            rel="noopener"
-          >
-            ⬇️ تحميل اللعبة
+            href="games/games.html">
+            🎮 عرض اللعبة
           </a>
+
         </div>
+
       </article>
 
-      <!-- 2 -->
-      <article class="game-card" data-category="sport" data-name="Pro Evolution Soccer 2013">
+
+
+      <!-- لعبة 2 -->
+
+      <article class="game-card">
+
         <img
           class="game-image"
           src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/file_00000000a93c820aba7a6e700e553412.png"
-          alt="Pro Evolution Soccer 2013"
-          loading="lazy"
+          alt="PES 2013"
         >
 
         <div class="game-info">
-          <h3>Pro Evolution Soccer 2013</h3>
 
-          <div class="rating">★★★★★ 4.8</div>
+          <h3>
+            Pro Evolution Soccer 2013
+          </h3>
 
-          <span class="game-category">رياضة</span>
+          <p>
+            لعبة كرة القدم الشهيرة
+            PES 2013.
+          </p>
+
+          <span class="game-category">
+            رياضة
+          </span>
 
           <a
             class="download-btn"
-            href="https://youssefsayed2003.blogspot.com/2025/03/2013.html"
-            target="_blank"
-            rel="noopener"
-          >
-            ⬇️ تحميل اللعبة
+            href="games/games.html">
+            🎮 عرض اللعبة
           </a>
+
         </div>
+
       </article>
 
-      <!-- 3 -->
-      <article class="game-card" data-category="action" data-name="Grand Theft Auto V">
+
+
+      <!-- لعبة 3 -->
+
+      <article class="game-card">
+
         <img
           class="game-image"
           src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
-          alt="Grand Theft Auto V"
-          loading="lazy"
+          alt="GTA V"
         >
 
         <div class="game-info">
-          <h3>Grand Theft Auto V</h3>
 
-          <div class="rating">★★★★★ 4.9</div>
+          <h3>
+            Grand Theft Auto V
+          </h3>
 
-          <span class="game-category">أكشن</span>
+          <p>
+            لعبة عالم مفتوح وأكشن
+            ومغامرات.
+          </p>
 
-          <a
-            class="download-btn"
-            href="https://uptogames.net/download-grand-theft-auto-v-free/"
-            target="_blank"
-            rel="noopener"
-          >
-            ⬇️ تحميل اللعبة
-          </a>
-        </div>
-      </article>
-
-      <!-- 4 -->
-      <article class="game-card" data-category="adventure" data-name="Minecraft">
-        <img
-          class="game-image"
-          src="https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg"
-          alt="Minecraft"
-          loading="lazy"
-        >
-
-        <div class="game-info">
-          <h3>Minecraft</h3>
-
-          <div class="rating">★★★★★ 4.9</div>
-
-          <span class="game-category">مغامرات</span>
+          <span class="game-category">
+            أكشن
+          </span>
 
           <a
             class="download-btn"
-            href="https://www.mediafire.com/file/vjxqehwjsnyp3mo/MCPE-Patched-1.21.100.apk/file"
-            target="_blank"
-            rel="noopener"
-          >
-            ⬇️ تحميل اللعبة
+            href="games/games.html">
+            🎮 عرض اللعبة
           </a>
+
         </div>
-      </article>
 
-      <!-- 5 -->
-      <article class="game-card" data-category="sport" data-name="FIFA 14">
-        <img
-          class="game-image"
-          src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images%20(1).jpeg"
-          alt="FIFA 14"
-          loading="lazy"
-        >
-
-        <div class="game-info">
-          <h3>FIFA 14</h3>
-
-          <div class="rating">★★★★★ 4.7</div>
-
-          <span class="game-category">رياضة</span>
-
-          <a
-            class="download-btn"
-            href="https://uptogames.net/download-fifa-14-for-pc/"
-            target="_blank"
-            rel="noopener"
-          >
-            ⬇️ تحميل اللعبة
-          </a>
-        </div>
       </article>
 
     </div>
 
-    <div class="no-results" id="noResults">
-      لا توجد ألعاب مطابقة للبحث.
-    </div>
 
-  </main>
+    <!-- جميع الألعاب -->
 
-  <!-- الفوتر -->
+    <a
+      href="games/games.html"
+      class="all-games-btn">
+
+      🎮 مشاهدة جميع الألعاب الـ12
+
+    </a>
+
+  </section>
+
+
+
+  <!-- =========================
+       الفوتر
+  ========================= -->
+
   <footer>
-    <p>
-      <strong>🎮 تكنومسار</strong> — متجر الألعاب
-    </p>
 
-    <p>
-      © 2026 تكنومسار — تصميم وتطوير: محمد حامد
-    </p>
+    © 2026 تكنومسار - متجر الألعاب
+
   </footer>
 
-  <script>
-
-    let currentCategory = "all";
-
-    /* النزول لقسم الألعاب */
-    function scrollToGames() {
-      document.getElementById("games").scrollIntoView({
-        behavior: "smooth"
-      });
-    }
-
-    /* اختيار التصنيف */
-    function setCategory(category, button) {
-
-      currentCategory = category;
-
-      document.querySelectorAll(".category").forEach(function(btn) {
-        btn.classList.remove("active");
-      });
-
-      button.classList.add("active");
-
-      applyFilters();
-    }
-
-    /* البحث والتصفية */
-    function applyFilters() {
-
-      const search =
-        document.getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
-
-      const cards =
-        document.querySelectorAll(".game-card");
-
-      let visible = 0;
-
-      cards.forEach(function(card) {
-
-        const name =
-          card.dataset.name.toLowerCase();
-
-        const category =
-          card.dataset.category;
-
-        const matchesSearch =
-          name.includes(search);
-
-        const matchesCategory =
-          currentCategory === "all" ||
-          category === currentCategory;
-
-        if (matchesSearch && matchesCategory) {
-          card.style.display = "";
-          visible++;
-        } else {
-          card.style.display = "none";
-        }
-
-      });
-
-      document.getElementById("gameCount").textContent = visible;
-
-      document.getElementById("noResults").style.display =
-        visible === 0 ? "block" : "none";
-    }
-
-    /* تحديث العدد عند فتح الموقع */
-    document.addEventListener("DOMContentLoaded", function() {
-      applyFilters();
-    });
-
-  </script>
 
 </body>
 </html>
