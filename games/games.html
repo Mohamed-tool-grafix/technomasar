@@ -1,296 +1,679 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الألعاب | تكنومسار</title>
+  <meta name="description" content="جميع الألعاب المتوفرة في متجر تكنومسار">
 
-<title>ألعاب مجانية للكمبيوتر والموبايل | تكنومسار</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<meta name="description"
-content="تكنومسار - اكتشف ألعاب مجانية ومفتوحة المصدر للكمبيوتر والموبايل.">
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #0b0f17;
+      color: #fff;
+      line-height: 1.6;
+    }
 
-<meta name="robots" content="index, follow">
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-<style>
+    header {
+      background: #111827;
+      border-bottom: 1px solid #263244;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-*{
-    box-sizing:border-box;
-}
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
 
-html{
-    scroll-behavior:smooth;
-}
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #00e5ff;
+    }
 
-body{
-    margin:0;
-    font-family:"Segoe UI",Arial,sans-serif;
-    background:#070b18;
-    color:white;
-    line-height:1.7;
-}
+    .logo span {
+      color: #fff;
+    }
 
-a{
-    text-decoration:none;
-}
+    .home-btn {
+      background: #00e5ff;
+      color: #061018;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
 
-.container{
-    width:min(1150px,92%);
-    margin:auto;
-}
+    .hero {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 45px 25px;
+      border-radius: 18px;
+      text-align: center;
 
-/* ================= HEADER ================= */
+      background:
+        linear-gradient(
+          rgba(4,10,20,.72),
+          rgba(4,10,20,.88)
+        ),
+        url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+    }
 
-header{
-    position:sticky;
-    top:0;
-    z-index:9999;
-    background:rgba(7,11,24,.96);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid #263653;
-}
+    .hero h1 {
+      font-size: 40px;
+      color: #00e5ff;
+      margin-bottom: 10px;
+    }
 
-.header-content{
-    min-height:75px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-}
+    .hero p {
+      color: #d5dce8;
+      font-size: 18px;
+    }
 
-.logo{
-    color:#61e7ff;
-    font-size:25px;
-    font-weight:900;
-}
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
 
-.nav{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-}
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0 20px;
+    }
 
-.nav a{
-    color:#cbd5e1;
-    padding:9px 13px;
-    border-radius:10px;
-    font-weight:bold;
-}
+    .count {
+      color: #00e5ff;
+    }
 
-.nav a:hover{
-    color:#61e7ff;
-    background:#111b30;
-}
+    .search-box {
+      margin-bottom: 20px;
+    }
 
-/* ================= HERO ================= */
+    .search-box input {
+      width: 100%;
+      padding: 14px;
+      background: #111827;
+      border: 1px solid #29364a;
+      border-radius: 10px;
+      color: #fff;
+      outline: none;
+      font-size: 16px;
+    }
 
-.hero{
-    padding:80px 0 65px;
-    text-align:center;
+    .search-box input:focus {
+      border-color: #00e5ff;
+    }
 
-    background:
-    radial-gradient(
-        circle at 20% 20%,
-        rgba(24,197,235,.16),
-        transparent 30%
-    ),
-    radial-gradient(
-        circle at 80% 20%,
-        rgba(117,87,255,.18),
-        transparent 35%
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .category {
+      border: 1px solid #2a394e;
+      background: #111827;
+      color: #fff;
+      padding: 9px 17px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .category.active,
+    .category:hover {
+      background: #00e5ff;
+      color: #061018;
+      border-color: #00e5ff;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .game-card {
+      background: #111827;
+      border: 1px solid #253247;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .game-card:hover {
+      transform: translateY(-5px);
+      border-color: #00e5ff;
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    }
+
+    .game-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      background: #202938;
+    }
+
+    .game-info {
+      padding: 15px;
+    }
+
+    .game-info h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .rating {
+      color: #ffd54a;
+      margin-bottom: 8px;
+    }
+
+    .game-category {
+      display: inline-block;
+      background: #1c293b;
+      color: #9eefff;
+      padding: 4px 9px;
+      border-radius: 6px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .download-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #00e5ff;
+      color: #061018;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .download-btn:hover {
+      background: #55efff;
+    }
+
+    .no-results {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      color: #aab5c5;
+    }
+
+    footer {
+      margin-top: 50px;
+      background: #080c13;
+      border-top: 1px solid #253247;
+      padding: 30px 20px;
+      text-align: center;
+      color: #9aa7b8;
+    }
+
+    footer strong {
+      color: #00e5ff;
+    }
+
+    @media (max-width: 850px) {
+      .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 550px) {
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .hero {
+        margin: 15px;
+        padding: 35px 15px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- الهيدر -->
+  <header>
+    <div class="header-inner">
+
+      <div class="logo">
+        🎮 تكنومسار <span>| متجر الألعاب</span>
+      </div>
+
+      <a href="../index.html" class="home-btn">
+        الرئيسية
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- مقدمة -->
+  <section class="hero">
+
+    <h1>🎮 جميع الألعاب</h1>
+
+    <p>
+      اكتشف الألعاب المتوفرة في متجر تكنومسار
+    </p>
+
+  </section>
+
+
+  <!-- قسم الألعاب -->
+  <main class="container" id="games">
+
+    <div class="section-title">
+
+      <h2>🎮 الألعاب</h2>
+
+      <div class="count">
+        الألعاب: <span id="gameCount">5</span>
+      </div>
+
+    </div>
+
+
+    <!-- البحث -->
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="🔎 ابحث عن لعبة..."
+        oninput="applyFilters()"
+      >
+
+    </div>
+
+
+    <!-- التصنيفات -->
+    <div class="categories">
+
+      <button
+        class="category active"
+        onclick="setCategory('all', this)">
+        الكل
+      </button>
+
+      <button
+        class="category"
+        onclick="setCategory('action', this)">
+        أكشن
+      </button>
+
+      <button
+        class="category"
+        onclick="setCategory('sport', this)">
+        رياضة
+      </button>
+
+      <button
+        class="category"
+        onclick="setCategory('adventure', this)">
+        مغامرات
+      </button>
+
+      <button
+        class="category"
+        onclick="setCategory('racing', this)">
+        سباقات
+      </button>
+
+    </div>
+
+
+    <!-- الألعاب الخمسة -->
+    <div class="games-grid" id="gamesGrid">
+
+
+      <!-- اللعبة 1 -->
+      <article
+        class="game-card"
+        data-category="racing"
+        data-name="محاكي الشاحنات الدول العربية">
+
+        <img
+          class="game-image"
+          src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg"
+          alt="محاكي الشاحنات الدول العربية"
+          loading="lazy"
+        >
+
+        <div class="game-info">
+
+          <h3>
+            محاكي الشاحنات الدول العربية
+          </h3>
+
+          <div class="rating">
+            ★★★★★ 4.8
+          </div>
+
+          <span class="game-category">
+            سباقات
+          </span>
+
+          <a
+            class="download-btn"
+            href="https://c.go4techno.com/abokreeem-833"
+            target="_blank"
+            rel="noopener">
+            ⬇️ تحميل اللعبة
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- اللعبة 2 -->
+      <article
+        class="game-card"
+        data-category="sport"
+        data-name="Pro Evolution Soccer 2013">
+
+        <img
+          class="game-image"
+          src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/file_00000000a93c820aba7a6e700e553412.png"
+          alt="Pro Evolution Soccer 2013"
+          loading="lazy"
+        >
+
+        <div class="game-info">
+
+          <h3>
+            Pro Evolution Soccer 2013
+          </h3>
+
+          <div class="rating">
+            ★★★★★ 4.8
+          </div>
+
+          <span class="game-category">
+            رياضة
+          </span>
+
+          <a
+            class="download-btn"
+            href="https://youssefsayed2003.blogspot.com/2025/03/2013.html"
+            target="_blank"
+            rel="noopener">
+            ⬇️ تحميل اللعبة
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- اللعبة 3 -->
+      <article
+        class="game-card"
+        data-category="action"
+        data-name="Grand Theft Auto V">
+
+        <img
+          class="game-image"
+          src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
+          alt="Grand Theft Auto V"
+          loading="lazy"
+        >
+
+        <div class="game-info">
+
+          <h3>
+            Grand Theft Auto V
+          </h3>
+
+          <div class="rating">
+            ★★★★★ 4.9
+          </div>
+
+          <span class="game-category">
+            أكشن
+          </span>
+
+          <a
+            class="download-btn"
+            href="https://uptogames.net/download-grand-theft-auto-v-free/"
+            target="_blank"
+            rel="noopener">
+            ⬇️ تحميل اللعبة
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- اللعبة 4 -->
+      <article
+        class="game-card"
+        data-category="adventure"
+        data-name="Minecraft">
+
+        <img
+          class="game-image"
+          src="https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg"
+          alt="Minecraft"
+          loading="lazy"
+        >
+
+        <div class="game-info">
+
+          <h3>
+            Minecraft
+          </h3>
+
+          <div class="rating">
+            ★★★★★ 4.9
+          </div>
+
+          <span class="game-category">
+            مغامرات
+          </span>
+
+          <a
+            class="download-btn"
+            href="https://www.mediafire.com/file/vjxqehwjsnyp3mo/MCPE-Patched-1.21.100.apk/file"
+            target="_blank"
+            rel="noopener">
+            ⬇️ تحميل اللعبة
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- اللعبة 5 -->
+      <article
+        class="game-card"
+        data-category="sport"
+        data-name="FIFA 14">
+
+        <img
+          class="game-image"
+          src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images%20(1).jpeg"
+          alt="FIFA 14"
+          loading="lazy"
+        >
+
+        <div class="game-info">
+
+          <h3>
+            FIFA 14
+          </h3>
+
+          <div class="rating">
+            ★★★★★ 4.7
+          </div>
+
+          <span class="game-category">
+            رياضة
+          </span>
+
+          <a
+            class="download-btn"
+            href="https://uptogames.net/download-fifa-14-for-pc/"
+            target="_blank"
+            rel="noopener">
+            ⬇️ تحميل اللعبة
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <div class="no-results" id="noResults">
+      لا توجد ألعاب مطابقة للبحث.
+    </div>
+
+  </main>
+
+
+  <!-- الفوتر -->
+  <footer>
+
+    <p>
+      <strong>🎮 تكنومسار</strong> — متجر الألعاب
+    </p>
+
+    <p>
+      © 2026 تكنومسار — تصميم وتطوير: محمد حامد
+    </p>
+
+  </footer>
+
+
+  <script>
+
+    let currentCategory = "all";
+
+
+    function setCategory(category, button) {
+
+      currentCategory = category;
+
+      document
+        .querySelectorAll(".category")
+        .forEach(function(btn) {
+          btn.classList.remove("active");
+        });
+
+      button.classList.add("active");
+
+      applyFilters();
+    }
+
+
+    function applyFilters() {
+
+      const search =
+        document
+          .getElementById("searchInput")
+          .value
+          .toLowerCase()
+          .trim();
+
+      const cards =
+        document.querySelectorAll(".game-card");
+
+      let visible = 0;
+
+
+      cards.forEach(function(card) {
+
+        const name =
+          card.dataset.name.toLowerCase();
+
+        const category =
+          card.dataset.category;
+
+
+        const matchesSearch =
+          name.includes(search);
+
+        const matchesCategory =
+          currentCategory === "all" ||
+          category === currentCategory;
+
+
+        if (
+          matchesSearch &&
+          matchesCategory
+        ) {
+
+          card.style.display = "";
+
+          visible++;
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+
+      document.getElementById("gameCount")
+        .textContent = visible;
+
+
+      document.getElementById("noResults")
+        .style.display =
+          visible === 0
+            ? "block"
+            : "none";
+    }
+
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function() {
+        applyFilters();
+      }
     );
-}
 
-.badge{
-    display:inline-block;
-    padding:7px 15px;
-    border-radius:50px;
-    background:rgba(24,197,235,.1);
-    border:1px solid rgba(24,197,235,.3);
-    color:#61e7ff;
-    font-weight:bold;
-    margin-bottom:15px;
-}
+  </script>
 
-.hero h1{
-    font-size:clamp(40px,7vw,65px);
-    margin:0 0 15px;
-}
-
-.hero h1 span{
-    color:#61e7ff;
-}
-
-.hero p{
-    max-width:760px;
-    margin:auto;
-    color:#94a3bd;
-    font-size:18px;
-}
-
-/* ================= SEARCH ================= */
-
-.search-area{
-    margin:30px auto 0;
-    max-width:750px;
-}
-
-.search-box{
-    width:100%;
-    padding:16px 20px;
-    border-radius:15px;
-    border:1px solid #263653;
-    outline:none;
-    background:#111b30;
-    color:white;
-    font-size:16px;
-    text-align:right;
-}
-
-.search-box:focus{
-    border-color:#18c5eb;
-    box-shadow:0 0 20px rgba(24,197,235,.12);
-}
-
-.search-box::placeholder{
-    color:#718096;
-}
-
-/* ================= FILTERS ================= */
-
-.filters{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-top:15px;
-}
-
-.filter-btn{
-    border:1px solid #263653;
-    background:#111b30;
-    color:#cbd5e1;
-    padding:9px 15px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:bold;
-    font-size:14px;
-}
-
-.filter-btn:hover,
-.filter-btn.active{
-    background:#18c5eb;
-    color:#03111b;
-    border-color:#18c5eb;
-}
-
-/* ================= COUNTER ================= */
-
-.counter{
-    margin-top:20px;
-    color:#94a3bd;
-}
-
-.counter strong{
-    color:#61e7ff;
-}
-
-/* ================= SECTIONS ================= */
-
-.section{
-    padding:70px 0;
-}
-
-.mobile-section{
-    background:#0b1222;
-    border-top:1px solid rgba(255,255,255,.06);
-    border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.section-head{
-    margin-bottom:30px;
-}
-
-.section-title{
-    margin:0;
-    color:#61e7ff;
-    font-size:35px;
-}
-
-.section-description{
-    color:#94a3bd;
-    margin:5px 0 0;
-}
-
-/* ================= GAMES ================= */
-
-.games{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:22px;
-}
-
-.game-card{
-    background:linear-gradient(145deg,#111b30,#0d1528);
-    border:1px solid #263653;
-    border-radius:20px;
-    padding:22px;
-    text-align:center;
-    transition:.3s;
-}
-
-.game-card:hover{
-    transform:translateY(-7px);
-    border-color:#18c5eb;
-    box-shadow:0 18px 40px rgba(0,0,0,.35);
-}
-
-.game-icon{
-    height:170px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:75px;
-    border-radius:17px;
-    background:linear-gradient(135deg,#075985,#312e81);
-}
-
-.mobile-icon{
-    background:linear-gradient(135deg,#166534,#075985);
-}
-
-.game-card h3{
-    color:#61e7ff;
-    font-size:25px;
-    margin:18px 0 8px;
-}
-
-.description{
-    color:#b7c3d7;
-    min-height:90px;
-}
-
-.tags{
-    display:flex;
-    justify-content:center;
-    gap:7px;
-    flex-wrap:wrap;
-    margin:18px 0;
-}
-
-.tags span{
-    background:#17243d;
-    color:#cbd5e1;
-    padding:5px 9px;
-    border-radius:8px;
-    font-size:12px;
-}
-
-.download{
-    display:block;
-    background:#18c5eb;
-    color:#03111b;
-    padding:13px;
-    border-radius:11px;
-    font
+</body>
+</html>
