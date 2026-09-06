@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تكنومسار | الألعاب</title>
-
-  <style>
+  <title>تكنومسار | الألعاب</title>  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -249,499 +246,469 @@
         height: 210px;
       }
     }
-  </style>
-</head>
+  </style></head><body>  <header>
+    <div class="logo">🎮 تكنومسار</div><a href="../index.html" class="home-btn">
+  🏠 الرئيسية
+</a>
 
-<body>
-
-  <!-- الهيدر -->
-  <header>
-    <div class="logo">🎮 تكنومسار</div>
-
-    <a href="../index.html" class="home-btn">
-      🏠 الرئيسية
-    </a>
-  </header>
-
-
-  <!-- العنوان -->
-  <section class="hero">
+  </header>  <section class="hero">
     <h1>🎮 متجر الألعاب</h1>
     <p>اكتشف ألعابك المفضلة وحمّلها بسهولة</p>
-  </section>
-
-
-  <!-- البحث -->
-  <div class="search-box">
+  </section>  <div class="search-box">
     <input
       type="text"
       id="searchInput"
       placeholder="🔎 ابحث عن لعبة..."
       oninput="applyFilters()"
     >
+  </div>  <div class="categories"><button class="category-btn active" onclick="setCategory('all', this)">
+  الكل
+</button>
+
+<button class="category-btn" onclick="setCategory('action', this)">
+  أكشن
+</button>
+
+<button class="category-btn" onclick="setCategory('sports', this)">
+  رياضة
+</button>
+
+<button class="category-btn" onclick="setCategory('adventure', this)">
+  مغامرات
+</button>
+
+<button class="category-btn" onclick="setCategory('racing', this)">
+  سباقات
+</button>
+
+<button class="category-btn" onclick="setCategory('simulation', this)">
+  محاكاة
+</button>
+
+  </div>  <main class="games-grid" id="gamesGrid"><!-- 1 - محاكي الشاحنات -->
+<article class="game-card" data-category="simulation">
+
+  <img
+    class="game-image"
+    src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg"
+    alt="محاكي الشاحنات الدول العربية">
+
+  <div class="game-info">
+
+    <h3>محاكي الشاحنات الدول العربية</h3>
+
+    <p>
+      لعبة محاكاة قيادة الشاحنات واستكشاف الطرق والدول العربية.
+    </p>
+
+    <div class="rating">⭐⭐⭐⭐☆</div>
+
+    <span class="game-category">محاكاة</span>
+
+    <a
+      class="download-btn"
+      href="https://c.go4techno.com/abokreeem-833"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
+
   </div>
+</article>
 
 
-  <!-- التصنيفات -->
-  <div class="categories">
+<!-- 2 - PES 2013 -->
+<article class="game-card" data-category="sports">
 
-    <button
-      class="category-btn active"
-      onclick="setCategory('all', this)">
-      الكل
-    </button>
+  <img
+    class="game-image"
+    src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/file_00000000a93c820aba7a6e700e553412.png"
+    alt="PES 2013">
 
-    <button
-      class="category-btn"
-      onclick="setCategory('action', this)">
-      أكشن
-    </button>
+  <div class="game-info">
 
-    <button
-      class="category-btn"
-      onclick="setCategory('sports', this)">
-      رياضة
-    </button>
+    <h3>Pro Evolution Soccer 2013</h3>
 
-    <button
-      class="category-btn"
-      onclick="setCategory('adventure', this)">
-      مغامرات
-    </button>
+    <p>
+      لعبة كرة القدم الشهيرة PES 2013.
+    </p>
 
-    <button
-      class="category-btn"
-      onclick="setCategory('racing', this)">
-      سباقات
-    </button>
+    <div class="rating">⭐⭐⭐⭐⭐</div>
 
-    <button
-      class="category-btn"
-      onclick="setCategory('simulation', this)">
-      محاكاة
-    </button>
+    <span class="game-category">رياضة</span>
+
+    <a
+      class="download-btn"
+      href="https://youssefsayed2003.blogspot.com/2025/03/2013.html"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
   </div>
+</article>
 
 
-  <!-- الألعاب -->
-  <main class="games-grid" id="gamesGrid">
+<!-- 3 - GTA V -->
+<article class="game-card" data-category="action">
 
+  <img
+    class="game-image"
+    src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
+    alt="Grand Theft Auto V">
 
-    <!-- 1 - محاكي الشاحنات -->
-    <article class="game-card" data-category="simulation">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg"
-        alt="محاكي الشاحنات الدول العربية"
-      >
+    <h3>Grand Theft Auto V</h3>
 
-      <div class="game-info">
+    <p>
+      لعبة عالم مفتوح وأكشن ومغامرات.
+    </p>
 
-        <h3>محاكي الشاحنات الدول العربية</h3>
+    <div class="rating">⭐⭐⭐⭐⭐</div>
 
-        <p>
-          لعبة محاكاة قيادة الشاحنات واستكشاف الطرق والدول العربية.
-        </p>
+    <span class="game-category">أكشن</span>
 
-        <div class="rating">⭐⭐⭐⭐☆</div>
+    <a
+      class="download-btn"
+      href="https://uptogames.net/download-grand-theft-auto-v-free/"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
-        <span class="game-category">محاكاة</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://c.go4techno.com/abokreeem-833"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<!-- 4 - Minecraft -->
+<article class="game-card" data-category="adventure">
 
+  <img
+    class="game-image"
+    src="https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg"
+    alt="Minecraft">
 
-    <!-- 2 - PES 2013 -->
-    <article class="game-card" data-category="sports">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/file_00000000a93c820aba7a6e700e553412.png"
-        alt="PES 2013"
-      >
+    <h3>Minecraft</h3>
 
-      <div class="game-info">
+    <p>
+      ابنِ عالمك واستكشف المغامرات المختلفة.
+    </p>
 
-        <h3>Pro Evolution Soccer 2013</h3>
+    <div class="rating">⭐⭐⭐⭐⭐</div>
 
-        <p>
-          لعبة كرة القدم الشهيرة PES 2013.
-        </p>
+    <span class="game-category">مغامرات</span>
 
-        <div class="rating">⭐⭐⭐⭐⭐</div>
+    <a
+      class="download-btn"
+      href="https://www.mediafire.com/file/vjxqehwjsnyp3mo/MCPE-Patched-1.21.100.apk/file"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
-        <span class="game-category">رياضة</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://youssefsayed2003.blogspot.com/2025/03/2013.html"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<!-- 5 - FIFA 14 -->
+<article class="game-card" data-category="sports">
 
+  <img
+    class="game-image"
+    src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images%20(1).jpeg"
+    alt="FIFA 14">
 
-    <!-- 3 - GTA V -->
-    <article class="game-card" data-category="action">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
-        alt="Grand Theft Auto V"
-      >
+    <h3>FIFA 14</h3>
 
-      <div class="game-info">
+    <p>
+      لعبة كرة القدم FIFA 14.
+    </p>
 
-        <h3>Grand Theft Auto V</h3>
+    <div class="rating">⭐⭐⭐⭐☆</div>
 
-        <p>
-          لعبة عالم مفتوح وأكشن ومغامرات.
-        </p>
+    <span class="game-category">رياضة</span>
 
-        <div class="rating">⭐⭐⭐⭐⭐</div>
+    <a
+      class="download-btn"
+      href="https://uptogames.net/download-fifa-14-for-pc/"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
-        <span class="game-category">أكشن</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://uptogames.net/download-grand-theft-auto-v-free/"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<!-- 6 - PUBG Mobile -->
+<article class="game-card" data-category="action">
 
+  <img
+    class="game-image"
+    src="https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg"
+    alt="PUBG Mobile">
 
-    <!-- 4 - Minecraft -->
-    <article class="game-card" data-category="adventure">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg"
-        alt="Minecraft"
-      >
+    <h3>PUBG Mobile</h3>
 
-      <div class="game-info">
+    <p>
+      لعبة باتل رويال وأكشن ومنافسات متعددة اللاعبين.
+    </p>
 
-        <h3>Minecraft</h3>
+    <div class="rating">⭐⭐⭐⭐⭐</div>
 
-        <p>
-          ابنِ عالمك واستكشف المغامرات المختلفة.
-        </p>
+    <span class="game-category">أكشن</span>
 
-        <div class="rating">⭐⭐⭐⭐⭐</div>
+    <a
+      class="download-btn"
+      href="https://go4techno.com/pubg-mobile/"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
-        <span class="game-category">مغامرات</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://www.mediafire.com/file/vjxqehwjsnyp3mo/MCPE-Patched-1.21.100.apk/file"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<!-- 7 - GTA San Andreas -->
+<article class="game-card" data-category="action">
 
+  <img
+    class="game-image"
+    src="https://upload.wikimedia.org/wikipedia/en/c/c4/GTASABOX.jpg"
+    alt="GTA San Andreas">
 
-    <!-- 5 - FIFA 14 -->
-    <article class="game-card" data-category="sports">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images%20(1).jpeg"
-        alt="FIFA 14"
-      >
+    <h3>GTA San Andreas</h3>
 
-      <div class="game-info">
+    <p>
+      عالم مفتوح وأكشن ومغامرات في مدينة كبيرة.
+    </p>
 
-        <h3>FIFA 14</h3>
+    <div class="rating">⭐⭐⭐⭐⭐</div>
 
-        <p>
-          لعبة كرة القدم FIFA 14.
-        </p>
+    <span class="game-category">أكشن</span>
 
-        <div class="rating">⭐⭐⭐⭐☆</div>
+    <a
+      class="download-btn"
+      href="https://go4techno.com/%D9%84%D8%B9%D8%A8%D8%A9-gta-san-andreas-%D9%85%D9%87%D9%83%D8%B1%D8%A9/"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
-        <span class="game-category">رياضة</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://uptogames.net/download-fifa-14-for-pc/"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<!-- 8 - Truck Simulator World -->
+<article class="game-card" data-category="simulation">
 
+  <img
+    class="game-image"
+    src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg"
+    alt="Truck Simulator World">
 
-    <!-- 6 - PUBG Mobile -->
-    <article class="game-card" data-category="action">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg"
-        alt="PUBG Mobile"
-      >
+    <h3>Truck Simulator World</h3>
 
-      <div class="game-info">
+    <p>
+      محاكي الشاحنات واستكشاف الطرق والدول العربية.
+    </p>
 
-        <h3>PUBG Mobile</h3>
+    <div class="rating">⭐⭐⭐⭐☆</div>
 
-        <p>
-          لعبة باتل رويال وأكشن ومنافسات متعددة اللاعبين.
-        </p>
+    <span class="game-category">محاكاة</span>
 
-        <div class="rating">⭐⭐⭐⭐⭐</div>
+    <a
+      class="download-btn"
+      href="https://go4techno.com/%D8%AA%D8%AD%D9%85%D9%8A%D9%84-%D9%85%D8%AD%D8%A7%D9%83%D9%8A-%D8%A7%D9%84%D8%B4%D8%A7%D8%AD%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D9%88%D9%84-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-truck-simulator/"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
-        <span class="game-category">أكشن</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://go4techno.com/pubg-mobile/"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<!-- 9 - Chained Together -->
+<article class="game-card" data-category="adventure">
 
+  <img
+    class="game-image"
+    src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2567870/header.jpg"
+    alt="Chained Together">
 
-    <!-- 7 - GTA San Andreas -->
-    <article class="game-card" data-category="action">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://upload.wikimedia.org/wikipedia/en/c/c4/GTASABOX.jpg"
-        alt="GTA San Andreas"
-      >
+    <h3>Chained Together</h3>
 
-      <div class="game-info">
+    <p>
+      مغامرات وتحديات تعتمد على التعاون والتنسيق.
+    </p>
 
-        <h3>GTA San Andreas</h3>
+    <div class="rating">⭐⭐⭐⭐⭐</div>
 
-        <p>
-          عالم مفتوح وأكشن ومغامرات في مدينة كبيرة.
-        </p>
+    <span class="game-category">مغامرات</span>
 
-        <div class="rating">⭐⭐⭐⭐⭐</div>
+    <a
+      class="download-btn"
+      href="https://go4techno.com/%D8%AA%D8%AD%D9%85%D9%8A%D9%84-chained-together-%D9%84%D9%84%D8%A3%D9%86%D8%AF%D8%B1%D9%88%D9%8A%D8%AF/"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
-        <span class="game-category">أكشن</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://go4techno.com/%D9%84%D8%B9%D8%A8%D8%A9-gta-san-andreas-%D9%85%D9%87%D9%83%D8%B1%D8%A9/"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<!-- 10 - Soccer Life Simulator -->
+<article class="game-card" data-category="sports">
 
+  <img
+    class="game-image"
+    src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1911700/header.jpg"
+    alt="Soccer Life Simulator">
 
-    <!-- 8 - Truck Simulator World -->
-    <article class="game-card" data-category="simulation">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg"
-        alt="Truck Simulator World"
-      >
+    <h3>Soccer Life Simulator 2026</h3>
 
-      <div class="game-info">
+    <p>
+      محاكاة حياة لاعب كرة القدم وتطوير مسيرته.
+    </p>
 
-        <h3>Truck Simulator World</h3>
+    <div class="rating">⭐⭐⭐⭐☆</div>
 
-        <p>
-          محاكي الشاحنات واستكشاف الطرق والدول العربية.
-        </p>
+    <span class="game-category">رياضة</span>
 
-        <div class="rating">⭐⭐⭐⭐☆</div>
+    <a
+      class="download-btn"
+      href="https://go4techno.com/soccer-life-simulator/"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
-        <span class="game-category">محاكاة</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://go4techno.com/%D8%AA%D8%AD%D9%85%D9%8A%D9%84-%D9%85%D8%AD%D8%A7%D9%83%D9%8A-%D8%A7%D9%84%D8%B4%D8%A7%D8%AD%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D9%88%D9%84-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-truck-simulator/"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<!-- 11 - Free Fire -->
+<article class="game-card" data-category="action">
 
+  <img
+    class="game-image"
+    src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/freefire.jpg"
+    alt="Free Fire">
 
-    <!-- 9 - Chained Together -->
-    <article class="game-card" data-category="adventure">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2567870/header.jpg"
-        alt="Chained Together"
-      >
+    <h3>Free Fire</h3>
 
-      <div class="game-info">
+    <p>
+      لعبة باتل رويال وأكشن ومنافسات سريعة.
+    </p>
 
-        <h3>Chained Together</h3>
+    <div class="rating">⭐⭐⭐⭐⭐</div>
 
-        <p>
-          مغامرات وتحديات تعتمد على التعاون والتنسيق.
-        </p>
+    <span class="game-category">أكشن</span>
 
-        <div class="rating">⭐⭐⭐⭐⭐</div>
+    <a
+      class="download-btn"
+      href="https://go4techno.com/garena-free-fire"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
-        <span class="game-category">مغامرات</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://go4techno.com/%D8%AA%D8%AD%D9%85%D9%8A%D9%84-chained-together-%D9%84%D9%84%D8%A3%D9%86%D8%AF%D8%B1%D9%88%D9%8A%D8%AF/"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<!-- 12 - GTA 5 Mobile -->
+<article class="game-card" data-category="action">
 
+  <img
+    class="game-image"
+    src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
+    alt="GTA 5 Mobile">
 
-    <!-- 10 - Soccer Life Simulator -->
-    <article class="game-card" data-category="sports">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1911700/header.jpg"
-        alt="Soccer Life Simulator"
-      >
+    <h3>GTA 5 Mobile</h3>
 
-      <div class="game-info">
+    <p>
+      أكشن ومغامرات وعالم مفتوح.
+    </p>
 
-        <h3>Soccer Life Simulator 2026</h3>
+    <div class="rating">⭐⭐⭐⭐⭐</div>
 
-        <p>
-          محاكاة حياة لاعب كرة القدم وتطوير مسيرته.
-        </p>
+    <span class="game-category">أكشن</span>
 
-        <div class="rating">⭐⭐⭐⭐☆</div>
+    <a
+      class="download-btn"
+      href="https://go4techno.com/%D8%AA%D8%AD%D9%85%D9%8A%D9%84-%D9%84%D8%B9%D8%A8%D8%A9-gta-5-mobile/"
+      target="_blank"
+      rel="noopener">
+      ⬇️ تحميل اللعبة
+    </a>
 
-        <span class="game-category">رياضة</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://go4techno.com/soccer-life-simulator/"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<!-- 13 - Mafia 2 -->
+<article class="game-card" data-category="action">
 
+  <img
+    class="game-image"
+    src="mafia2.jpg"
+    alt="Mafia 2">
 
-    <!-- 11 - Free Fire -->
-    <article class="game-card" data-category="action">
+  <div class="game-info">
 
-      <img
-        class="game-image"
-        src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/freefire.jpg"
-        alt="Free Fire"
-      >
+    <h3>Mafia 2</h3>
 
-      <div class="game-info">
+    <p>
+      لعبة أكشن ومغامرات وقصة مليئة بالأحداث في عالم ثلاثي الأبعاد.
+    </p>
 
-        <h3>Free Fire</h3>
+    <div class="rating">⭐⭐⭐⭐⭐</div>
 
-        <p>
-          لعبة باتل رويال وأكشن ومنافسات سريعة.
-        </p>
+    <span class="game-category">أكشن</span>
 
-        <div class="rating">⭐⭐⭐⭐⭐</div>
+    <!-- صفحة Mafia 2 الخاصة بتكنومسار -->
+    <a
+      class="download-btn"
+      href="mafia-2.html">
+      ⬇️ تفاصيل وتحميل اللعبة
+    </a>
 
-        <span class="game-category">أكشن</span>
+  </div>
+</article>
 
-        <a
-          class="download-btn"
-          href="https://go4techno.com/garena-free-fire"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
 
-      </div>
-    </article>
+<div class="no-results" id="noResults">
+  لا توجد ألعاب مطابقة للبحث.
+</div>
 
-
-    <!-- 12 - GTA 5 Mobile -->
-    <article class="game-card" data-category="action">
-
-      <img
-        class="game-image"
-        src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
-        alt="GTA 5 Mobile"
-      >
-
-      <div class="game-info">
-
-        <h3>GTA 5 Mobile</h3>
-
-        <p>
-          أكشن ومغامرات وعالم مفتوح.
-        </p>
-
-        <div class="rating">⭐⭐⭐⭐⭐</div>
-
-        <span class="game-category">أكشن</span>
-
-        <a
-          class="download-btn"
-          href="https://go4techno.com/%D8%AA%D8%AD%D9%85%D9%8A%D9%84-%D9%84%D8%B9%D8%A8%D8%A9-gta-5-mobile/"
-          target="_blank"
-          rel="noopener">
-          ⬇️ تحميل اللعبة
-        </a>
-
-      </div>
-    </article>
-
-
-    <!-- لا توجد نتائج -->
-    <div class="no-results" id="noResults">
-      لا توجد ألعاب مطابقة للبحث.
-    </div>
-
-  </main>
-
-
-  <!-- الفوتر -->
-  <footer>
+  </main>  <footer>
     © 2026 تكنومسار - متجر الألعاب
-  </footer>
-
-
-  <script>
+  </footer>  <script>
 
     let currentCategory = "all";
-
 
     function setCategory(category, button) {
 
@@ -764,13 +731,10 @@
         .toLowerCase()
         .trim();
 
-
       const cards =
         document.querySelectorAll(".game-card");
 
-
       let visibleCount = 0;
-
 
       cards.forEach(function(card) {
 
@@ -779,19 +743,15 @@
           .textContent
           .toLowerCase();
 
-
         const category =
           card.dataset.category;
-
 
         const matchesSearch =
           title.includes(searchValue);
 
-
         const matchesCategory =
           currentCategory === "all" ||
           category === currentCategory;
-
 
         if (matchesSearch && matchesCategory) {
 
@@ -807,19 +767,14 @@
 
       });
 
-
       document.getElementById("noResults").style.display =
         visibleCount === 0 ? "block" : "none";
     }
 
 
     document.addEventListener("DOMContentLoaded", function() {
-
       applyFilters();
-
     });
 
-  </script>
-
-</body>
+  </script></body>
 </html>
