@@ -838,3 +838,25 @@ input {
     }
 }
 ```
+```css
+/* ===============================
+   Games Filters
+================================ */
+
+.active-filter {
+    border-color: var(--blue) !important;
+
+    background:
+        rgba(0, 212, 255, 0.10) !important;
+
+    color: var(--blue) !important;
+}
+
+.filter-btn {
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    border-color: var(--blue);
+}
+```
