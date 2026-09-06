@@ -1,304 +1,371 @@
-```html
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+```javascript
+/* =========================================
+   تكنومسار - قاعدة بيانات الألعاب
+========================================= */
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+const games = [
 
-    <title>تكنومسار | الألعاب</title>
+    {
+        name: "محاكي الشاحنات الدول العربية",
+        image: "https://raw.githubusercontent.com/mohamed-tool-grafix/technomasar/main/games/truck.jpg",
+        category: "simulation",
+        categoryName: "محاكاة",
+        rating: 4,
+        description: "لعبة محاكاة قيادة الشاحنات واستكشاف الطرق والدول العربية.",
+        link: "https://c.go4techno.com/abokreeem-833"
+    },
 
-    <meta name="description"
-          content="تصفح ألعاب تكنومسار وابحث عن لعبتك المفضلة بسهولة">
+    {
+        name: "Pro Evolution Soccer 2013",
+        image: "https://raw.githubusercontent.com/mohamed-tool-grafix/technomasar/main/games/pes2013.jpg",
+        category: "sports",
+        categoryName: "رياضة",
+        rating: 5,
+        description: "لعبة كرة القدم الشهيرة PES 2013.",
+        link: "https://youssefsayed2003.blogspot.com/2025/03/2013.html"
+    },
 
-    <link rel="stylesheet" href="../style.css">
-</head>
+    {
+        name: "Grand Theft Auto V",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
+        category: "action",
+        categoryName: "أكشن",
+        rating: 5,
+        description: "لعبة عالم مفتوح وأكشن ومغامرات.",
+        link: "https://uptogames.net/download-grand-theft-auto-v-free/"
+    },
 
-<body>
+    {
+        name: "Minecraft",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg",
+        category: "adventure",
+        categoryName: "مغامرات",
+        rating: 5,
+        description: "ابنِ عالمك واستكشف المغامرات المختلفة.",
+        link: "https://www.mediafire.com/"
+    },
 
-<header class="header">
+    {
+        name: "FIFA 14",
+        image: "https://raw.githubusercontent.com/mohamed-tool-grafix/technomasar/main/games/fifa14.jpg",
+        category: "sports",
+        categoryName: "رياضة",
+        rating: 4,
+        description: "لعبة كرة القدم FIFA 14.",
+        link: "https://uptogames.net/download-fifa-14-for-pc/"
+    },
 
-    <div class="container nav">
+    {
+        name: "PUBG Mobile",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg",
+        category: "action",
+        categoryName: "أكشن",
+        rating: 5,
+        description: "لعبة باتل رويال ومنافسات متعددة اللاعبين.",
+        link: "https://go4techno.com/pubg-mobile/"
+    },
 
-        <a href="../index.html" class="logo">
-            <span class="logo-icon">🎮</span>
-            <span>تكنومسار</span>
-        </a>
+    {
+        name: "GTA San Andreas",
+        image: "https://upload.wikimedia.org/wikipedia/en/7/7e/GTASABOX.jpg",
+        category: "action",
+        categoryName: "أكشن",
+        rating: 5,
+        description: "عالم مفتوح وأكشن ومغامرات في مدينة كبيرة.",
+        link: "https://go4techno.com/"
+    },
 
-        <nav class="menu">
+    {
+        name: "Truck Simulator World",
+        image: "https://raw.githubusercontent.com/mohamed-tool-grafix/technomasar/main/games/truck.jpg",
+        category: "simulation",
+        categoryName: "محاكاة",
+        rating: 4,
+        description: "محاكي الشاحنات واستكشاف الطرق.",
+        link: "https://go4techno.com/"
+    },
 
-            <a href="../index.html">
-                الرئيسية
-            </a>
+    {
+        name: "Chained Together",
+        image: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2567870/header.jpg",
+        category: "adventure",
+        categoryName: "مغامرات",
+        rating: 5,
+        description: "مغامرات وتحديات تعتمد على التعاون والتنسيق.",
+        link: "https://go4techno.com/"
+    },
 
-            <a href="games.html" class="active">
-                الألعاب
-            </a>
+    {
+        name: "Soccer Life Simulator 2026",
+        image: "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/3002800/header.jpg",
+        category: "sports",
+        categoryName: "رياضة",
+        rating: 4,
+        description: "محاكاة حياة لاعب كرة القدم وتطوير مسيرته.",
+        link: "https://go4techno.com/soccer-life-simulator/"
+    },
 
-            <a href="#categories">
-                التصنيفات
-            </a>
+    {
+        name: "Free Fire",
+        image: "https://raw.githubusercontent.com/mohamed-tool-grafix/technomasar/main/games/freefire.jpg",
+        category: "action",
+        categoryName: "أكشن",
+        rating: 5,
+        description: "لعبة باتل رويال ومنافسات سريعة.",
+        link: "https://go4techno.com/garena-free-fire"
+    },
 
-        </nav>
+    {
+        name: "GTA 5 Mobile",
+        image: "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
+        category: "action",
+        categoryName: "أكشن",
+        rating: 5,
+        description: "أكشن ومغامرات وعالم مفتوح.",
+        link: "https://go4techno.com/"
+    },
 
-        <button class="menu-btn" id="menuBtn">
-            ☰
-        </button>
+    /* ==========================
+       MAFIA 2
+    ========================== */
 
-    </div>
+    {
+        name: "Mafia 2",
+        image: "mafia2.jpg",
+        category: "action",
+        categoryName: "أكشن",
+        rating: 5,
+        description: "لعبة أكشن ومغامرات وقصة في عالم ثلاثي الأبعاد.",
+        link: "mafia-2.html"
+    }
 
-</header>
-
-
-<main>
-
-    <!-- HERO -->
-
-    <section class="hero" style="min-height:360px;">
-
-        <div class="container hero-content">
-
-            <div class="hero-text">
-
-                <div class="badge">
-                    🎮 مكتبة تكنومسار
-                </div>
-
-                <h1>
-                    متجر
-                    <span>الألعاب</span>
-                </h1>
-
-                <p>
-                    اكتشف ألعابك المفضلة وابحث بينها بسهولة.
-                </p>
-
-            </div>
-
-            <div class="hero-game">
-
-                <div class="game-orbit orbit-1"></div>
-                <div class="game-orbit orbit-2"></div>
-
-                <div class="controller">
-                    🎮
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+];
 
 
-    <!-- SEARCH -->
+/* =========================================
+   عناصر الصفحة
+========================================= */
 
-    <section class="search-section">
+const gamesGrid =
+    document.getElementById("gamesGrid");
 
-        <div class="container">
+const gameCount =
+    document.getElementById("gameCount");
 
-            <div class="search-box">
+const noGames =
+    document.getElementById("noGames");
 
-                <span>🔎</span>
+const searchInput =
+    document.getElementById("gameSearch");
 
-                <input
-                    type="search"
-                    id="gameSearch"
-                    placeholder="ابحث عن لعبة..."
-                    autocomplete="off"
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+
+let currentCategory = "all";
+let currentSearch = "";
+
+
+/* =========================================
+   إنشاء كارت لعبة
+========================================= */
+
+function createGameCard(game) {
+
+    const stars =
+        "⭐".repeat(game.rating) +
+        "☆".repeat(5 - game.rating);
+
+    return `
+
+        <article class="game-card">
+
+            <div class="game-image">
+
+                <img
+                    src="${game.image}"
+                    alt="${game.name}"
+                    loading="lazy"
+                    onerror="
+                        this.style.display='none';
+                        this.parentElement.innerHTML='<span class=\\'game-placeholder\\'>🎮</span>';
+                    "
                 >
 
             </div>
 
-        </div>
-
-    </section>
-
-
-    <!-- FILTERS -->
-
-    <section class="section" style="padding-bottom:20px;">
-
-        <div class="container">
-
-            <div
-                id="gameFilters"
-                class="categories-grid"
-                style="
-                    grid-template-columns:repeat(6,1fr);
-                    gap:10px;
-                "
-            >
-
-                <button
-                    class="category-card filter-btn active-filter"
-                    data-category="all"
-                    style="min-height:90px;padding:15px;"
-                >
-                    <span style="font-size:25px;">🎮</span>
-                    <strong>الكل</strong>
-                </button>
-
-                <button
-                    class="category-card filter-btn"
-                    data-category="action"
-                    style="min-height:90px;padding:15px;"
-                >
-                    <span style="font-size:25px;">🔥</span>
-                    <strong>أكشن</strong>
-                </button>
-
-                <button
-                    class="category-card filter-btn"
-                    data-category="sports"
-                    style="min-height:90px;padding:15px;"
-                >
-                    <span style="font-size:25px;">⚽</span>
-                    <strong>رياضة</strong>
-                </button>
-
-                <button
-                    class="category-card filter-btn"
-                    data-category="adventure"
-                    style="min-height:90px;padding:15px;"
-                >
-                    <span style="font-size:25px;">🗺️</span>
-                    <strong>مغامرات</strong>
-                </button>
-
-                <button
-                    class="category-card filter-btn"
-                    data-category="racing"
-                    style="min-height:90px;padding:15px;"
-                >
-                    <span style="font-size:25px;">🏎️</span>
-                    <strong>سباقات</strong>
-                </button>
-
-                <button
-                    class="category-card filter-btn"
-                    data-category="simulation"
-                    style="min-height:90px;padding:15px;"
-                >
-                    <span style="font-size:25px;">🚛</span>
-                    <strong>محاكاة</strong>
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- GAMES -->
-
-    <section class="section">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <div>
-
-                    <span class="small-title">
-                        مكتبة الألعاب
-                    </span>
-
-                    <h2>
-                        🎮 جميع الألعاب
-                    </h2>
-
-                </div>
-
-                <span
-                    id="gameCount"
-                    style="color:#9ba8ba;"
-                ></span>
-
-            </div>
-
-
-            <div
-                id="gamesGrid"
-                class="games-grid"
-            ></div>
-
-
-            <div
-                id="noGames"
-                style="
-                    display:none;
-                    text-align:center;
-                    padding:60px 20px;
-                    color:#9ba8ba;
-                "
-            >
-
-                <div style="font-size:55px;">
-                    🔎
-                </div>
+            <div class="game-info">
 
                 <h3>
-                    لا توجد ألعاب مطابقة
+                    ${game.name}
                 </h3>
 
-                <p>
-                    جرّب كلمة بحث مختلفة أو اختر تصنيفًا آخر.
+                <p class="game-description">
+                    ${game.description}
                 </p>
 
+                <div class="game-meta">
+
+                    <span>
+                        ${game.categoryName}
+                    </span>
+
+                    <span class="rating">
+                        ${stars}
+                    </span>
+
+                </div>
+
+                <a
+                    href="${game.link}"
+                    class="game-btn"
+                >
+                    ⬇️ تفاصيل وتحميل اللعبة
+                </a>
+
             </div>
 
-        </div>
+        </article>
 
-    </section>
-
-</main>
-
-
-<footer class="footer">
-
-    <div class="container footer-content">
-
-        <div>
-
-            <div class="footer-logo">
-                🎮 تكنومسار
-            </div>
-
-            <p>
-                عالم الألعاب بين يديك.
-            </p>
-
-        </div>
-
-        <div>
-
-            <h3>
-                روابط
-            </h3>
-
-            <a href="../index.html">
-                الرئيسية
-            </a>
-
-            <a href="games.html">
-                الألعاب
-            </a>
-
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 تكنومسار — متجر الألعاب
-    </div>
-
-</footer>
+    `;
+}
 
 
-<script src="games.js"></script>
+/* =========================================
+   عرض الألعاب
+========================================= */
 
-</body>
-</html>
+function renderGames() {
+
+    const filteredGames =
+        games.filter(game => {
+
+            const categoryMatch =
+                currentCategory === "all" ||
+                game.category === currentCategory;
+
+            const searchMatch =
+                game.name
+                    .toLowerCase()
+                    .includes(
+                        currentSearch.toLowerCase()
+                    );
+
+            return categoryMatch && searchMatch;
+
+        });
+
+
+    gamesGrid.innerHTML =
+        filteredGames
+            .map(createGameCard)
+            .join("");
+
+
+    gameCount.textContent =
+        `${filteredGames.length} لعبة`;
+
+
+    if (filteredGames.length === 0) {
+
+        noGames.style.display = "block";
+
+    } else {
+
+        noGames.style.display = "none";
+
+    }
+
+}
+
+
+/* =========================================
+   البحث
+========================================= */
+
+searchInput.addEventListener(
+    "input",
+    function () {
+
+        currentSearch =
+            this.value.trim();
+
+        renderGames();
+
+    }
+);
+
+
+/* =========================================
+   التصنيفات
+========================================= */
+
+filterButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function () {
+
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove(
+                    "active-filter"
+                );
+
+            });
+
+
+            this.classList.add(
+                "active-filter"
+            );
+
+
+            currentCategory =
+                this.dataset.category;
+
+
+            renderGames();
+
+        }
+    );
+
+});
+
+
+/* =========================================
+   قائمة الهاتف
+========================================= */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const menu =
+    document.querySelector(".menu");
+
+
+if (menuBtn && menu) {
+
+    menuBtn.addEventListener(
+        "click",
+        () => {
+
+            menu.classList.toggle("show");
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   تشغيل الصفحة
+========================================= */
+
+renderGames();
+
+console.log(
+    "🎮 تكنومسار: تم تحميل",
+    games.length,
+    "لعبة"
+);
 ```
