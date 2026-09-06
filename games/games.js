@@ -1,10 +1,5 @@
 ```javascript
-/* =========================================
-   تكنومسار - قاعدة بيانات الألعاب
-========================================= */
-
 const games = [
-
     {
         name: "محاكي الشاحنات الدول العربية",
         image: "https://raw.githubusercontent.com/mohamed-tool-grafix/technomasar/main/games/truck.jpg",
@@ -125,10 +120,6 @@ const games = [
         link: "https://go4techno.com/"
     },
 
-    /* ==========================
-       MAFIA 2
-    ========================== */
-
     {
         name: "Mafia 2",
         image: "mafia2.jpg",
@@ -138,203 +129,209 @@ const games = [
         description: "لعبة أكشن ومغامرات وقصة في عالم ثلاثي الأبعاد.",
         link: "mafia-2.html"
     }
-
 ];
 
 
-/* =========================================
+/* ===============================
    عناصر الصفحة
-========================================= */
+================================ */
 
-const gamesGrid =
-    document.getElementById("gamesGrid");
-
-const gameCount =
-    document.getElementById("gameCount");
-
-const noGames =
-    document.getElementById("noGames");
-
-const searchInput =
-    document.getElementById("gameSearch");
-
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
+const gamesGrid = document.getElementById("gamesGrid");
+const gameCount = document.getElementById("gameCount");
+const noGames = document.getElementById("noGames");
+const searchInput = document.getElementById("gameSearch");
+const filterButtons = document.querySelectorAll(".filter-btn");
 
 
-let currentCategory = "all";
-let currentSearch = "";
+let selectedCategory = "all";
+let searchText = "";
 
 
-/* =========================================
-   إنشاء كارت لعبة
-========================================= */
+/* ===============================
+   النجوم
+================================ */
 
-function createGameCard(game) {
+function createStars(rating) {
+    let stars = "";
 
-    const stars =
-        "⭐".repeat(game.rating) +
-        "☆".repeat(5 - game.rating);
+    for (let i = 1; i <= 5; i++) {
+        stars += i <= rating ? "⭐" : "☆";
+    }
 
-    return `
-
-        <article class="game-card">
-
-            <div class="game-image">
-
-                <img
-                    src="${game.image}"
-                    alt="${game.name}"
-                    loading="lazy"
-                    onerror="
-                        this.style.display='none';
-                        this.parentElement.innerHTML='<span class=\\'game-placeholder\\'>🎮</span>';
-                    "
-                >
-
-            </div>
-
-            <div class="game-info">
-
-                <h3>
-                    ${game.name}
-                </h3>
-
-                <p class="game-description">
-                    ${game.description}
-                </p>
-
-                <div class="game-meta">
-
-                    <span>
-                        ${game.categoryName}
-                    </span>
-
-                    <span class="rating">
-                        ${stars}
-                    </span>
-
-                </div>
-
-                <a
-                    href="${game.link}"
-                    class="game-btn"
-                >
-                    ⬇️ تفاصيل وتحميل اللعبة
-                </a>
-
-            </div>
-
-        </article>
-
-    `;
+    return stars;
 }
 
 
-/* =========================================
+/* ===============================
+   إنشاء كارت اللعبة
+================================ */
+
+function createGame(game) {
+
+    const card = document.createElement("article");
+    card.className = "game-card";
+
+    const imageBox = document.createElement("div");
+    imageBox.className = "game-image";
+
+    const image = document.createElement("img");
+
+    image.src = game.image;
+    image.alt = game.name;
+    image.loading = "lazy";
+
+    image.onerror = function () {
+        image.style.display = "none";
+
+        const placeholder = document.createElement("span");
+        placeholder.className = "game-placeholder";
+        placeholder.textContent = "🎮";
+
+        imageBox.appendChild(placeholder);
+    };
+
+    imageBox.appendChild(image);
+
+
+    const info = document.createElement("div");
+    info.className = "game-info";
+
+
+    const title = document.createElement("h3");
+    title.textContent = game.name;
+
+
+    const description = document.createElement("p");
+    description.className = "game-description";
+    description.textContent = game.description;
+
+
+    const meta = document.createElement("div");
+    meta.className = "game-meta";
+
+
+    const category = document.createElement("span");
+    category.textContent = game.categoryName;
+
+
+    const rating = document.createElement("span");
+    rating.className = "rating";
+    rating.textContent = createStars(game.rating);
+
+
+    meta.appendChild(category);
+    meta.appendChild(rating);
+
+
+    const button = document.createElement("a");
+    button.className = "game-btn";
+    button.href = game.link;
+    button.textContent = "⬇️ تفاصيل وتحميل اللعبة";
+
+
+    info.appendChild(title);
+    info.appendChild(description);
+    info.appendChild(meta);
+    info.appendChild(button);
+
+    card.appendChild(imageBox);
+    card.appendChild(info);
+
+    return card;
+}
+
+
+/* ===============================
    عرض الألعاب
-========================================= */
+================================ */
 
-function renderGames() {
+function showGames() {
 
-    const filteredGames =
-        games.filter(game => {
+    if (!gamesGrid) {
+        console.error("لم يتم العثور على gamesGrid");
+        return;
+    }
 
-            const categoryMatch =
-                currentCategory === "all" ||
-                game.category === currentCategory;
+    gamesGrid.innerHTML = "";
 
-            const searchMatch =
-                game.name
-                    .toLowerCase()
-                    .includes(
-                        currentSearch.toLowerCase()
-                    );
+    const results = games.filter(function (game) {
 
-            return categoryMatch && searchMatch;
+        const categoryMatch =
+            selectedCategory === "all" ||
+            game.category === selectedCategory;
 
+        const searchMatch =
+            game.name
+                .toLowerCase()
+                .includes(searchText.toLowerCase());
+
+        return categoryMatch && searchMatch;
+    });
+
+
+    results.forEach(function (game) {
+        gamesGrid.appendChild(createGame(game));
+    });
+
+
+    if (gameCount) {
+        gameCount.textContent =
+            results.length + " لعبة";
+    }
+
+
+    if (noGames) {
+        noGames.style.display =
+            results.length === 0 ? "block" : "none";
+    }
+}
+
+
+/* ===============================
+   البحث
+================================ */
+
+if (searchInput) {
+
+    searchInput.addEventListener("input", function () {
+
+        searchText = this.value.trim();
+
+        showGames();
+
+    });
+}
+
+
+/* ===============================
+   التصنيفات
+================================ */
+
+filterButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        selectedCategory =
+            this.dataset.category;
+
+
+        filterButtons.forEach(function (btn) {
+            btn.classList.remove("active-filter");
         });
 
 
-    gamesGrid.innerHTML =
-        filteredGames
-            .map(createGameCard)
-            .join("");
+        this.classList.add("active-filter");
 
+        showGames();
 
-    gameCount.textContent =
-        `${filteredGames.length} لعبة`;
-
-
-    if (filteredGames.length === 0) {
-
-        noGames.style.display = "block";
-
-    } else {
-
-        noGames.style.display = "none";
-
-    }
-
-}
-
-
-/* =========================================
-   البحث
-========================================= */
-
-searchInput.addEventListener(
-    "input",
-    function () {
-
-        currentSearch =
-            this.value.trim();
-
-        renderGames();
-
-    }
-);
-
-
-/* =========================================
-   التصنيفات
-========================================= */
-
-filterButtons.forEach(button => {
-
-    button.addEventListener(
-        "click",
-        function () {
-
-            filterButtons.forEach(btn => {
-
-                btn.classList.remove(
-                    "active-filter"
-                );
-
-            });
-
-
-            this.classList.add(
-                "active-filter"
-            );
-
-
-            currentCategory =
-                this.dataset.category;
-
-
-            renderGames();
-
-        }
-    );
+    });
 
 });
 
 
-/* =========================================
+/* ===============================
    قائمة الهاتف
-========================================= */
+================================ */
 
 const menuBtn =
     document.getElementById("menuBtn");
@@ -345,27 +342,24 @@ const menu =
 
 if (menuBtn && menu) {
 
-    menuBtn.addEventListener(
-        "click",
-        () => {
+    menuBtn.addEventListener("click", function () {
 
-            menu.classList.toggle("show");
+        menu.classList.toggle("show");
 
-        }
-    );
+    });
 
 }
 
 
-/* =========================================
-   تشغيل الصفحة
-========================================= */
+/* ===============================
+   تشغيل
+================================ */
 
-renderGames();
+showGames();
 
 console.log(
-    "🎮 تكنومسار: تم تحميل",
-    games.length,
-    "لعبة"
+    "🎮 تكنومسار: تم تحميل " +
+    games.length +
+    " لعبة"
 );
 ```
