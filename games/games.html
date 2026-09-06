@@ -1,780 +1,304 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تكنومسار | الألعاب</title>  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Tahoma, sans-serif;
-      background: #0b1220;
-      color: #fff;
-      min-height: 100vh;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header {
-      background: #111a2b;
-      border-bottom: 1px solid #273449;
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #00d4ff;
-    }
-
-    .home-btn {
-      background: #00d4ff;
-      color: #07111f;
-      padding: 10px 18px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 45px 20px 30px;
-    }
-
-    .hero h1 {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      color: #aebbd0;
-      font-size: 17px;
-    }
-
-    .search-box {
-      width: 90%;
-      max-width: 700px;
-      margin: 10px auto 25px;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 15px 18px;
-      border-radius: 12px;
-      border: 1px solid #273449;
-      background: #111a2b;
-      color: white;
-      font-size: 16px;
-      outline: none;
-    }
-
-    .search-box input:focus {
-      border-color: #00d4ff;
-    }
-
-    .categories {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 0 15px 25px;
-    }
-
-    .category-btn {
-      border: 1px solid #273449;
-      background: #111a2b;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .category-btn.active,
-    .category-btn:hover {
-      background: #00d4ff;
-      color: #07111f;
-    }
-
-    .games-grid {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      align-items: stretch;
-      padding-bottom: 50px;
-    }
-
-    .game-card {
-      background: #111a2b;
-      border: 1px solid #273449;
-      border-radius: 15px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      transition: 0.2s;
-    }
-
-    .game-card:hover {
-      border-color: #00d4ff;
-      transform: translateY(-3px);
-    }
-
-    .game-image {
-      width: 100%;
-      height: 190px;
-      object-fit: cover;
-      display: block;
-      flex-shrink: 0;
-    }
-
-    .game-info {
-      padding: 15px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .game-info h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      min-height: 50px;
-      line-height: 1.4;
-    }
-
-    .game-info p {
-      color: #aebbd0;
-      line-height: 1.7;
-      margin-bottom: 12px;
-      min-height: 55px;
-    }
-
-    .rating {
-      color: #ffd166;
-      margin-bottom: 12px;
-      min-height: 25px;
-    }
-
-    .game-category {
-      display: inline-block;
-      width: fit-content;
-      background: #1b2940;
-      color: #00d4ff;
-      padding: 6px 10px;
-      border-radius: 8px;
-      font-size: 13px;
-      margin-bottom: 15px;
-    }
-
-    .download-btn {
-      margin-top: auto;
-      width: 100%;
-      height: 50px;
-      min-height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: #00d4ff;
-      color: #07111f;
-      padding: 0;
-      border-radius: 10px;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-
-    .download-btn:hover {
-      background: #00aacc;
-    }
-
-    .no-results {
-      display: none;
-      text-align: center;
-      color: #aebbd0;
-      padding: 40px;
-      grid-column: 1 / -1;
-    }
-
-    footer {
-      border-top: 1px solid #273449;
-      text-align: center;
-      padding: 25px;
-      color: #8492a8;
-      background: #0a101c;
-    }
-
-    @media (max-width: 900px) {
-      .games-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 12px 15px;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
-
-      .hero h1 {
-        font-size: 30px;
-      }
-
-      .games-grid {
-        grid-template-columns: 1fr;
-        width: 92%;
-      }
-
-      .game-image {
-        height: 210px;
-      }
-    }
-  </style></head><body>  <header>
-    <div class="logo">🎮 تكنومسار</div><a href="../index.html" class="home-btn">
-  🏠 الرئيسية
-</a>
-
-  </header>  <section class="hero">
-    <h1>🎮 متجر الألعاب</h1>
-    <p>اكتشف ألعابك المفضلة وحمّلها بسهولة</p>
-  </section>  <div class="search-box">
-    <input
-      type="text"
-      id="searchInput"
-      placeholder="🔎 ابحث عن لعبة..."
-      oninput="applyFilters()"
-    >
-  </div>  <div class="categories"><button class="category-btn active" onclick="setCategory('all', this)">
-  الكل
-</button>
-
-<button class="category-btn" onclick="setCategory('action', this)">
-  أكشن
-</button>
-
-<button class="category-btn" onclick="setCategory('sports', this)">
-  رياضة
-</button>
-
-<button class="category-btn" onclick="setCategory('adventure', this)">
-  مغامرات
-</button>
-
-<button class="category-btn" onclick="setCategory('racing', this)">
-  سباقات
-</button>
-
-<button class="category-btn" onclick="setCategory('simulation', this)">
-  محاكاة
-</button>
-
-  </div>  <main class="games-grid" id="gamesGrid"><!-- 1 - محاكي الشاحنات -->
-<article class="game-card" data-category="simulation">
-
-  <img
-    class="game-image"
-    src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg"
-    alt="محاكي الشاحنات الدول العربية">
-
-  <div class="game-info">
-
-    <h3>محاكي الشاحنات الدول العربية</h3>
-
-    <p>
-      لعبة محاكاة قيادة الشاحنات واستكشاف الطرق والدول العربية.
-    </p>
-
-    <div class="rating">⭐⭐⭐⭐☆</div>
-
-    <span class="game-category">محاكاة</span>
-
-    <a
-      class="download-btn"
-      href="https://c.go4techno.com/abokreeem-833"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
-
-  </div>
-</article>
-
-
-<!-- 2 - PES 2013 -->
-<article class="game-card" data-category="sports">
-
-  <img
-    class="game-image"
-    src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/file_00000000a93c820aba7a6e700e553412.png"
-    alt="PES 2013">
-
-  <div class="game-info">
-
-    <h3>Pro Evolution Soccer 2013</h3>
-
-    <p>
-      لعبة كرة القدم الشهيرة PES 2013.
-    </p>
-
-    <div class="rating">⭐⭐⭐⭐⭐</div>
-
-    <span class="game-category">رياضة</span>
-
-    <a
-      class="download-btn"
-      href="https://youssefsayed2003.blogspot.com/2025/03/2013.html"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
-
-  </div>
-</article>
-
-
-<!-- 3 - GTA V -->
-<article class="game-card" data-category="action">
-
-  <img
-    class="game-image"
-    src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
-    alt="Grand Theft Auto V">
-
-  <div class="game-info">
-
-    <h3>Grand Theft Auto V</h3>
-
-    <p>
-      لعبة عالم مفتوح وأكشن ومغامرات.
-    </p>
-
-    <div class="rating">⭐⭐⭐⭐⭐</div>
-
-    <span class="game-category">أكشن</span>
-
-    <a
-      class="download-btn"
-      href="https://uptogames.net/download-grand-theft-auto-v-free/"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
-
-  </div>
-</article>
-
-
-<!-- 4 - Minecraft -->
-<article class="game-card" data-category="adventure">
-
-  <img
-    class="game-image"
-    src="https://cdn.cloudflare.steamstatic.com/steam/apps/1672970/header.jpg"
-    alt="Minecraft">
-
-  <div class="game-info">
-
-    <h3>Minecraft</h3>
-
-    <p>
-      ابنِ عالمك واستكشف المغامرات المختلفة.
-    </p>
-
-    <div class="rating">⭐⭐⭐⭐⭐</div>
-
-    <span class="game-category">مغامرات</span>
-
-    <a
-      class="download-btn"
-      href="https://www.mediafire.com/file/vjxqehwjsnyp3mo/MCPE-Patched-1.21.100.apk/file"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
-
-  </div>
-</article>
-
-
-<!-- 5 - FIFA 14 -->
-<article class="game-card" data-category="sports">
-
-  <img
-    class="game-image"
-    src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images%20(1).jpeg"
-    alt="FIFA 14">
-
-  <div class="game-info">
-
-    <h3>FIFA 14</h3>
-
-    <p>
-      لعبة كرة القدم FIFA 14.
-    </p>
-
-    <div class="rating">⭐⭐⭐⭐☆</div>
-
-    <span class="game-category">رياضة</span>
-
-    <a
-      class="download-btn"
-      href="https://uptogames.net/download-fifa-14-for-pc/"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
-
-  </div>
-</article>
-
-
-<!-- 6 - PUBG Mobile -->
-<article class="game-card" data-category="action">
-
-  <img
-    class="game-image"
-    src="https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg"
-    alt="PUBG Mobile">
-
-  <div class="game-info">
-
-    <h3>PUBG Mobile</h3>
-
-    <p>
-      لعبة باتل رويال وأكشن ومنافسات متعددة اللاعبين.
-    </p>
-
-    <div class="rating">⭐⭐⭐⭐⭐</div>
-
-    <span class="game-category">أكشن</span>
-
-    <a
-      class="download-btn"
-      href="https://go4techno.com/pubg-mobile/"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
-
-  </div>
-</article>
-
-
-<!-- 7 - GTA San Andreas -->
-<article class="game-card" data-category="action">
-
-  <img
-    class="game-image"
-    src="https://upload.wikimedia.org/wikipedia/en/c/c4/GTASABOX.jpg"
-    alt="GTA San Andreas">
-
-  <div class="game-info">
-
-    <h3>GTA San Andreas</h3>
-
-    <p>
-      عالم مفتوح وأكشن ومغامرات في مدينة كبيرة.
-    </p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="rating">⭐⭐⭐⭐⭐</div>
+    <title>تكنومسار | الألعاب</title>
 
-    <span class="game-category">أكشن</span>
+    <meta name="description"
+          content="تصفح ألعاب تكنومسار وابحث عن لعبتك المفضلة بسهولة">
 
-    <a
-      class="download-btn"
-      href="https://go4techno.com/%D9%84%D8%B9%D8%A8%D8%A9-gta-san-andreas-%D9%85%D9%87%D9%83%D8%B1%D8%A9/"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
+    <link rel="stylesheet" href="../style.css">
+</head>
 
-  </div>
-</article>
+<body>
 
+<header class="header">
 
-<!-- 8 - Truck Simulator World -->
-<article class="game-card" data-category="simulation">
+    <div class="container nav">
 
-  <img
-    class="game-image"
-    src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/images.jpeg"
-    alt="Truck Simulator World">
+        <a href="../index.html" class="logo">
+            <span class="logo-icon">🎮</span>
+            <span>تكنومسار</span>
+        </a>
 
-  <div class="game-info">
+        <nav class="menu">
 
-    <h3>Truck Simulator World</h3>
+            <a href="../index.html">
+                الرئيسية
+            </a>
 
-    <p>
-      محاكي الشاحنات واستكشاف الطرق والدول العربية.
-    </p>
+            <a href="games.html" class="active">
+                الألعاب
+            </a>
 
-    <div class="rating">⭐⭐⭐⭐☆</div>
+            <a href="#categories">
+                التصنيفات
+            </a>
 
-    <span class="game-category">محاكاة</span>
+        </nav>
 
-    <a
-      class="download-btn"
-      href="https://go4techno.com/%D8%AA%D8%AD%D9%85%D9%8A%D9%84-%D9%85%D8%AD%D8%A7%D9%83%D9%8A-%D8%A7%D9%84%D8%B4%D8%A7%D8%AD%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D9%88%D9%84-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-truck-simulator/"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
 
-  </div>
-</article>
+    </div>
 
+</header>
 
-<!-- 9 - Chained Together -->
-<article class="game-card" data-category="adventure">
 
-  <img
-    class="game-image"
-    src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2567870/header.jpg"
-    alt="Chained Together">
+<main>
 
-  <div class="game-info">
+    <!-- HERO -->
 
-    <h3>Chained Together</h3>
+    <section class="hero" style="min-height:360px;">
 
-    <p>
-      مغامرات وتحديات تعتمد على التعاون والتنسيق.
-    </p>
+        <div class="container hero-content">
 
-    <div class="rating">⭐⭐⭐⭐⭐</div>
+            <div class="hero-text">
 
-    <span class="game-category">مغامرات</span>
+                <div class="badge">
+                    🎮 مكتبة تكنومسار
+                </div>
 
-    <a
-      class="download-btn"
-      href="https://go4techno.com/%D8%AA%D8%AD%D9%85%D9%8A%D9%84-chained-together-%D9%84%D9%84%D8%A3%D9%86%D8%AF%D8%B1%D9%88%D9%8A%D8%AF/"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
+                <h1>
+                    متجر
+                    <span>الألعاب</span>
+                </h1>
 
-  </div>
-</article>
+                <p>
+                    اكتشف ألعابك المفضلة وابحث بينها بسهولة.
+                </p>
 
+            </div>
 
-<!-- 10 - Soccer Life Simulator -->
-<article class="game-card" data-category="sports">
+            <div class="hero-game">
 
-  <img
-    class="game-image"
-    src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1911700/header.jpg"
-    alt="Soccer Life Simulator">
+                <div class="game-orbit orbit-1"></div>
+                <div class="game-orbit orbit-2"></div>
 
-  <div class="game-info">
+                <div class="controller">
+                    🎮
+                </div>
 
-    <h3>Soccer Life Simulator 2026</h3>
+            </div>
 
-    <p>
-      محاكاة حياة لاعب كرة القدم وتطوير مسيرته.
-    </p>
+        </div>
 
-    <div class="rating">⭐⭐⭐⭐☆</div>
+    </section>
 
-    <span class="game-category">رياضة</span>
 
-    <a
-      class="download-btn"
-      href="https://go4techno.com/soccer-life-simulator/"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
+    <!-- SEARCH -->
 
-  </div>
-</article>
+    <section class="search-section">
 
+        <div class="container">
 
-<!-- 11 - Free Fire -->
-<article class="game-card" data-category="action">
+            <div class="search-box">
 
-  <img
-    class="game-image"
-    src="https://raw.githubusercontent.com/Mohamed-tool-grafix/technomasar/main/freefire.jpg"
-    alt="Free Fire">
+                <span>🔎</span>
 
-  <div class="game-info">
+                <input
+                    type="search"
+                    id="gameSearch"
+                    placeholder="ابحث عن لعبة..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </div>
 
-    <h3>Free Fire</h3>
+    </section>
+
+
+    <!-- FILTERS -->
+
+    <section class="section" style="padding-bottom:20px;">
 
-    <p>
-      لعبة باتل رويال وأكشن ومنافسات سريعة.
-    </p>
+        <div class="container">
 
-    <div class="rating">⭐⭐⭐⭐⭐</div>
+            <div
+                id="gameFilters"
+                class="categories-grid"
+                style="
+                    grid-template-columns:repeat(6,1fr);
+                    gap:10px;
+                "
+            >
 
-    <span class="game-category">أكشن</span>
+                <button
+                    class="category-card filter-btn active-filter"
+                    data-category="all"
+                    style="min-height:90px;padding:15px;"
+                >
+                    <span style="font-size:25px;">🎮</span>
+                    <strong>الكل</strong>
+                </button>
+
+                <button
+                    class="category-card filter-btn"
+                    data-category="action"
+                    style="min-height:90px;padding:15px;"
+                >
+                    <span style="font-size:25px;">🔥</span>
+                    <strong>أكشن</strong>
+                </button>
 
-    <a
-      class="download-btn"
-      href="https://go4techno.com/garena-free-fire"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
+                <button
+                    class="category-card filter-btn"
+                    data-category="sports"
+                    style="min-height:90px;padding:15px;"
+                >
+                    <span style="font-size:25px;">⚽</span>
+                    <strong>رياضة</strong>
+                </button>
 
-  </div>
-</article>
+                <button
+                    class="category-card filter-btn"
+                    data-category="adventure"
+                    style="min-height:90px;padding:15px;"
+                >
+                    <span style="font-size:25px;">🗺️</span>
+                    <strong>مغامرات</strong>
+                </button>
 
+                <button
+                    class="category-card filter-btn"
+                    data-category="racing"
+                    style="min-height:90px;padding:15px;"
+                >
+                    <span style="font-size:25px;">🏎️</span>
+                    <strong>سباقات</strong>
+                </button>
 
-<!-- 12 - GTA 5 Mobile -->
-<article class="game-card" data-category="action">
+                <button
+                    class="category-card filter-btn"
+                    data-category="simulation"
+                    style="min-height:90px;padding:15px;"
+                >
+                    <span style="font-size:25px;">🚛</span>
+                    <strong>محاكاة</strong>
+                </button>
 
-  <img
-    class="game-image"
-    src="https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg"
-    alt="GTA 5 Mobile">
+            </div>
 
-  <div class="game-info">
+        </div>
 
-    <h3>GTA 5 Mobile</h3>
+    </section>
 
-    <p>
-      أكشن ومغامرات وعالم مفتوح.
-    </p>
 
-    <div class="rating">⭐⭐⭐⭐⭐</div>
+    <!-- GAMES -->
 
-    <span class="game-category">أكشن</span>
+    <section class="section">
 
-    <a
-      class="download-btn"
-      href="https://go4techno.com/%D8%AA%D8%AD%D9%85%D9%8A%D9%84-%D9%84%D8%B9%D8%A8%D8%A9-gta-5-mobile/"
-      target="_blank"
-      rel="noopener">
-      ⬇️ تحميل اللعبة
-    </a>
+        <div class="container">
 
-  </div>
-</article>
+            <div class="section-title">
 
+                <div>
 
-<!-- 13 - Mafia 2 -->
-<article class="game-card" data-category="action">
+                    <span class="small-title">
+                        مكتبة الألعاب
+                    </span>
 
-  <img
-    class="game-image"
-    src="mafia2.jpg"
-    alt="Mafia 2">
+                    <h2>
+                        🎮 جميع الألعاب
+                    </h2>
 
-  <div class="game-info">
+                </div>
 
-    <h3>Mafia 2</h3>
+                <span
+                    id="gameCount"
+                    style="color:#9ba8ba;"
+                ></span>
 
-    <p>
-      لعبة أكشن ومغامرات وقصة مليئة بالأحداث في عالم ثلاثي الأبعاد.
-    </p>
+            </div>
 
-    <div class="rating">⭐⭐⭐⭐⭐</div>
 
-    <span class="game-category">أكشن</span>
+            <div
+                id="gamesGrid"
+                class="games-grid"
+            ></div>
 
-    <!-- صفحة Mafia 2 الخاصة بتكنومسار -->
-    <a
-      class="download-btn"
-      href="mafia-2.html">
-      ⬇️ تفاصيل وتحميل اللعبة
-    </a>
 
-  </div>
-</article>
+            <div
+                id="noGames"
+                style="
+                    display:none;
+                    text-align:center;
+                    padding:60px 20px;
+                    color:#9ba8ba;
+                "
+            >
 
+                <div style="font-size:55px;">
+                    🔎
+                </div>
 
-<div class="no-results" id="noResults">
-  لا توجد ألعاب مطابقة للبحث.
-</div>
+                <h3>
+                    لا توجد ألعاب مطابقة
+                </h3>
 
-  </main>  <footer>
-    © 2026 تكنومسار - متجر الألعاب
-  </footer>  <script>
+                <p>
+                    جرّب كلمة بحث مختلفة أو اختر تصنيفًا آخر.
+                </p>
 
-    let currentCategory = "all";
+            </div>
 
-    function setCategory(category, button) {
+        </div>
 
-      currentCategory = category;
+    </section>
 
-      document.querySelectorAll(".category-btn").forEach(function(btn) {
-        btn.classList.remove("active");
-      });
+</main>
 
-      button.classList.add("active");
 
-      applyFilters();
-    }
+<footer class="footer">
 
+    <div class="container footer-content">
 
-    function applyFilters() {
+        <div>
 
-      const searchValue =
-        document.getElementById("searchInput").value
-        .toLowerCase()
-        .trim();
+            <div class="footer-logo">
+                🎮 تكنومسار
+            </div>
 
-      const cards =
-        document.querySelectorAll(".game-card");
+            <p>
+                عالم الألعاب بين يديك.
+            </p>
 
-      let visibleCount = 0;
+        </div>
 
-      cards.forEach(function(card) {
+        <div>
 
-        const title =
-          card.querySelector("h3")
-          .textContent
-          .toLowerCase();
+            <h3>
+                روابط
+            </h3>
 
-        const category =
-          card.dataset.category;
+            <a href="../index.html">
+                الرئيسية
+            </a>
 
-        const matchesSearch =
-          title.includes(searchValue);
+            <a href="games.html">
+                الألعاب
+            </a>
 
-        const matchesCategory =
-          currentCategory === "all" ||
-          category === currentCategory;
+        </div>
 
-        if (matchesSearch && matchesCategory) {
+    </div>
 
-          card.style.display = "flex";
+    <div class="copyright">
+        © 2026 تكنومسار — متجر الألعاب
+    </div>
 
-          visibleCount++;
+</footer>
 
-        } else {
 
-          card.style.display = "none";
+<script src="games.js"></script>
 
-        }
-
-      });
-
-      document.getElementById("noResults").style.display =
-        visibleCount === 0 ? "block" : "none";
-    }
-
-
-    document.addEventListener("DOMContentLoaded", function() {
-      applyFilters();
-    });
-
-  </script></body>
+</body>
 </html>
+```
