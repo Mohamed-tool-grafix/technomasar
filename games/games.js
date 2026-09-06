@@ -142,7 +142,6 @@ const noGames = document.getElementById("noGames");
 const searchInput = document.getElementById("gameSearch");
 const filterButtons = document.querySelectorAll(".filter-btn");
 
-
 let selectedCategory = "all";
 let searchText = "";
 
@@ -183,11 +182,14 @@ function createGame(game) {
     image.onerror = function () {
         image.style.display = "none";
 
-        const placeholder = document.createElement("span");
-        placeholder.className = "game-placeholder";
-        placeholder.textContent = "🎮";
+        if (!imageBox.querySelector(".game-placeholder")) {
+            const placeholder = document.createElement("span");
 
-        imageBox.appendChild(placeholder);
+            placeholder.className = "game-placeholder";
+            placeholder.textContent = "🎮";
+
+            imageBox.appendChild(placeholder);
+        }
     };
 
     imageBox.appendChild(image);
@@ -275,8 +277,7 @@ function showGames() {
 
 
     if (gameCount) {
-        gameCount.textContent =
-            results.length + " لعبة";
+        gameCount.textContent = results.length + " لعبة";
     }
 
 
@@ -311,14 +312,11 @@ filterButtons.forEach(function (button) {
 
     button.addEventListener("click", function () {
 
-        selectedCategory =
-            this.dataset.category;
-
+        selectedCategory = this.dataset.category;
 
         filterButtons.forEach(function (btn) {
             btn.classList.remove("active-filter");
         });
-
 
         this.classList.add("active-filter");
 
@@ -333,12 +331,8 @@ filterButtons.forEach(function (button) {
    قائمة الهاتف
 ================================ */
 
-const menuBtn =
-    document.getElementById("menuBtn");
-
-const menu =
-    document.querySelector(".menu");
-
+const menuBtn = document.getElementById("menuBtn");
+const menu = document.querySelector(".menu");
 
 if (menuBtn && menu) {
 
@@ -352,7 +346,7 @@ if (menuBtn && menu) {
 
 
 /* ===============================
-   تشغيل
+   تشغيل الألعاب
 ================================ */
 
 showGames();
