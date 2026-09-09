@@ -1,7 +1,7 @@
 "use strict";
 
 /* =========================
-   تكنومسار - قائمة الألعاب
+   تكنومسار - الألعاب
    ========================= */
 
 const games = [
@@ -12,7 +12,7 @@ const games = [
         categoryName: "محاكاة",
         rating: 4,
         description: "لعبة محاكاة قيادة الشاحنات والرحلات الطويلة.",
-        link: "https://www.google.com/search?q=محاكي+الشاحنات+الدول+العربية"
+        link: "../downloads/truck-simulator.zip"
     },
 
     {
@@ -21,8 +21,8 @@ const games = [
         category: "sports",
         categoryName: "رياضة",
         rating: 4,
-        description: "واحدة من أشهر ألعاب كرة القدم الكلاسيكية.",
-        link: "https://www.google.com/search?q=Pro+Evolution+Soccer+2013+official"
+        description: "لعبة كرة قدم كلاسيكية.",
+        link: "../downloads/pes2013.zip"
     },
 
     {
@@ -31,8 +31,8 @@ const games = [
         category: "action",
         categoryName: "أكشن",
         rating: 5,
-        description: "عالم مفتوح ضخم مليء بالمغامرات والمهام.",
-        link: "https://www.rockstargames.com/gta-v"
+        description: "لعبة عالم مفتوح ومغامرات.",
+        link: "../downloads/gta5.zip"
     },
 
     {
@@ -41,8 +41,8 @@ const games = [
         category: "adventure",
         categoryName: "مغامرات",
         rating: 5,
-        description: "استكشف عالمًا مفتوحًا وابنِ ما تريد.",
-        link: "https://www.minecraft.net/"
+        description: "استكشف وابنِ عالمك الخاص.",
+        link: "../downloads/minecraft.zip"
     },
 
     {
@@ -51,8 +51,8 @@ const games = [
         category: "sports",
         categoryName: "رياضة",
         rating: 4,
-        description: "لعبة كرة القدم الشهيرة من EA Sports.",
-        link: "https://www.ea.com/games/fifa"
+        description: "لعبة كرة القدم الشهيرة.",
+        link: "../downloads/fifa14.zip"
     },
 
     {
@@ -61,8 +61,8 @@ const games = [
         category: "action",
         categoryName: "أكشن",
         rating: 5,
-        description: "لعبة باتل رويال تنافسية على الهواتف.",
-        link: "https://www.pubgmobile.com/"
+        description: "لعبة باتل رويال للهواتف.",
+        link: "../downloads/pubg-mobile.apk"
     },
 
     {
@@ -71,8 +71,8 @@ const games = [
         category: "action",
         categoryName: "أكشن",
         rating: 5,
-        description: "مغامرة عالم مفتوح كلاسيكية من سلسلة GTA.",
-        link: "https://www.rockstargames.com/games/sanandreas"
+        description: "مغامرة في عالم مفتوح.",
+        link: "../downloads/gta-san-andreas.zip"
     },
 
     {
@@ -81,8 +81,8 @@ const games = [
         category: "simulation",
         categoryName: "محاكاة",
         rating: 4,
-        description: "قيادة شاحنات ورحلات طويلة في عالم مفتوح.",
-        link: "https://www.google.com/search?q=Truck+Simulator+World+official"
+        description: "قيادة شاحنات ورحلات طويلة.",
+        link: "../downloads/truck-world.zip"
     },
 
     {
@@ -91,8 +91,8 @@ const games = [
         category: "adventure",
         categoryName: "مغامرات",
         rating: 5,
-        description: "مغامرة وتحديات جماعية تعتمد على التعاون.",
-        link: "https://store.steampowered.com/app/2567870/Chained_Together/"
+        description: "تحديات ومغامرات تعتمد على التعاون.",
+        link: "../downloads/chained-together.zip"
     },
 
     {
@@ -101,8 +101,8 @@ const games = [
         category: "sports",
         categoryName: "رياضة",
         rating: 4,
-        description: "محاكاة حياة لاعب كرة قدم وتطوير مسيرته.",
-        link: "https://www.google.com/search?q=Soccer+Life+Simulator+2026"
+        description: "محاكاة حياة لاعب كرة قدم.",
+        link: "../downloads/soccer-life-2026.zip"
     },
 
     {
@@ -111,8 +111,8 @@ const games = [
         category: "action",
         categoryName: "أكشن",
         rating: 5,
-        description: "لعبة باتل رويال سريعة ومناسبة للهواتف.",
-        link: "https://ff.garena.com/en"
+        description: "لعبة باتل رويال سريعة.",
+        link: "../downloads/free-fire.apk"
     },
 
     {
@@ -121,8 +121,8 @@ const games = [
         category: "action",
         categoryName: "أكشن",
         rating: 4,
-        description: "معلومات عن GTA V وإصداراتها الرسمية.",
-        link: "https://www.rockstargames.com/gta-v"
+        description: "معلومات وملفات خاصة بمشروعك.",
+        link: "../downloads/gta5-mobile.zip"
     },
 
     {
@@ -131,14 +131,14 @@ const games = [
         category: "action",
         categoryName: "أكشن",
         rating: 5,
-        description: "قصة أكشن ومغامرة في عالم مفتوح.",
-        link: "https://store.steampowered.com/app/50130/Mafia_II_Classic/"
+        description: "لعبة أكشن ومغامرات.",
+        link: "../downloads/mafia2.zip"
     }
 ];
 
 
 /* =========================
-   إنشاء النجوم
+   النجوم
    ========================= */
 
 function createStars(rating) {
@@ -153,7 +153,7 @@ function createStars(rating) {
 
 
 /* =========================
-   صورة بديلة عند فشل الصورة
+   صورة بديلة
    ========================= */
 
 function createImagePlaceholder(gameName) {
@@ -184,6 +184,7 @@ function createGame(game) {
 
     card.dataset.name = game.name.toLowerCase();
 
+
     /* الصورة */
 
     const imageBox = document.createElement("div");
@@ -212,17 +213,20 @@ function createGame(game) {
 
     imageBox.appendChild(img);
 
-    /* محتوى الكارت */
+
+    /* معلومات اللعبة */
 
     const info = document.createElement("div");
 
     info.className = "game-info";
 
-    /* العنوان */
+
+    /* الاسم */
 
     const title = document.createElement("h3");
 
     title.textContent = game.name;
+
 
     /* الوصف */
 
@@ -232,7 +236,8 @@ function createGame(game) {
 
     description.textContent = game.description;
 
-    /* البيانات */
+
+    /* التصنيف والتقييم */
 
     const meta = document.createElement("div");
 
@@ -248,7 +253,8 @@ function createGame(game) {
         </span>
     `;
 
-    /* زر التفاصيل */
+
+    /* زر التحميل */
 
     const button = document.createElement("a");
 
@@ -256,11 +262,15 @@ function createGame(game) {
 
     button.href = game.link;
 
-    button.target = "_blank";
+    button.download = "";
 
-    button.rel = "noopener noreferrer";
+    button.textContent = "⬇️ تحميل اللعبة";
 
-    button.textContent = "🎮 تفاصيل اللعبة";
+
+    /* منع فتح تبويب جديد */
+
+    button.target = "_self";
+
 
     /* إضافة العناصر */
 
@@ -286,17 +296,25 @@ function createGame(game) {
 
 function showGames(list = games) {
 
-    const gamesGrid = document.getElementById("gamesGrid");
+    const gamesGrid =
+        document.getElementById("gamesGrid");
 
-    const noGames = document.getElementById("noGames");
+    const noGames =
+        document.getElementById("noGames");
 
-    const gameCount = document.getElementById("gameCount");
+    const gameCount =
+        document.getElementById("gameCount");
+
 
     if (!gamesGrid) {
         return;
     }
 
+
     gamesGrid.innerHTML = "";
+
+
+    /* لا توجد ألعاب */
 
     if (list.length === 0) {
 
@@ -311,9 +329,13 @@ function showGames(list = games) {
         return;
     }
 
+
     if (noGames) {
         noGames.style.display = "none";
     }
+
+
+    /* إضافة الألعاب */
 
     list.forEach(function (game) {
 
@@ -322,6 +344,9 @@ function showGames(list = games) {
         );
 
     });
+
+
+    /* عدد الألعاب */
 
     if (gameCount) {
 
@@ -333,7 +358,7 @@ function showGames(list = games) {
 
 
 /* =========================
-   البحث عن لعبة
+   البحث
    ========================= */
 
 const searchInput =
@@ -350,15 +375,18 @@ if (searchInput) {
                     .trim()
                     .toLowerCase();
 
+
             const activeButton =
                 document.querySelector(
                     ".filter-btn.active-filter"
                 );
 
+
             const activeCategory =
                 activeButton
                     ? activeButton.dataset.category
                     : "all";
+
 
             const filteredGames =
                 games.filter(function (game) {
@@ -368,15 +396,19 @@ if (searchInput) {
                             .toLowerCase()
                             .includes(searchText);
 
+
                     const matchesCategory =
                         activeCategory === "all" ||
                         game.category === activeCategory;
+
 
                     return (
                         matchesSearch &&
                         matchesCategory
                     );
+
                 });
+
 
             showGames(filteredGames);
         }
@@ -385,13 +417,14 @@ if (searchInput) {
 
 
 /* =========================
-   التصنيفات
+   الفلاتر
    ========================= */
 
 const filterButtons =
     document.querySelectorAll(
         ".filter-btn"
     );
+
 
 filterButtons.forEach(function (button) {
 
@@ -409,12 +442,15 @@ filterButtons.forEach(function (button) {
                 }
             );
 
+
             this.classList.add(
                 "active-filter"
             );
 
+
             const category =
                 this.dataset.category;
+
 
             const searchText =
                 searchInput
@@ -423,6 +459,7 @@ filterButtons.forEach(function (button) {
                         .toLowerCase()
                     : "";
 
+
             const filteredGames =
                 games.filter(function (game) {
 
@@ -430,16 +467,20 @@ filterButtons.forEach(function (button) {
                         category === "all" ||
                         game.category === category;
 
+
                     const matchesSearch =
                         game.name
                             .toLowerCase()
                             .includes(searchText);
 
+
                     return (
                         matchesCategory &&
                         matchesSearch
                     );
+
                 });
+
 
             showGames(filteredGames);
         }
@@ -448,7 +489,7 @@ filterButtons.forEach(function (button) {
 
 
 /* =========================
-   القائمة في الموبايل
+   قائمة الموبايل
    ========================= */
 
 const menuBtn =
@@ -456,6 +497,7 @@ const menuBtn =
 
 const menu =
     document.querySelector(".menu");
+
 
 if (menuBtn && menu) {
 
@@ -473,7 +515,7 @@ if (menuBtn && menu) {
 
 
 /* =========================
-   تشغيل الصفحة
+   تشغيل الموقع
    ========================= */
 
 showGames();
